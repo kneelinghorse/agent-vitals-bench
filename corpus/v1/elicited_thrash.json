@@ -1,0 +1,1322 @@
+[
+  {
+    "trace_id": "thrash-elic-pos-568baef9",
+    "path": "traces/thrash/elicited/positive/thrash-elic-pos-568baef9.json",
+    "tier": "elicited",
+    "labels": {
+      "loop": false,
+      "stuck": false,
+      "confabulation": false,
+      "thrash": true,
+      "runaway_cost": false
+    },
+    "metadata": {
+      "generator": "ThrashElicitor",
+      "params": {
+        "positive_intent": true,
+        "total_steps": 8,
+        "final_refinements": 13,
+        "oscillates": true,
+        "has_errors": true,
+        "provider": "qwen3.5-9b-c",
+        "model": "qwen3.5-9b"
+      },
+      "onset_step": 1,
+      "tier": "elicited",
+      "model": null,
+      "provider": null,
+      "framework": null,
+      "reviewer": null,
+      "review_date": null,
+      "confidence": 0.9,
+      "notes": "Elicited via conflicting instruction protocol. Refinements=13, oscillates=True."
+    }
+  },
+  {
+    "trace_id": "thrash-elic-pos-bdc4a3ce",
+    "path": "traces/thrash/elicited/positive/thrash-elic-pos-bdc4a3ce.json",
+    "tier": "elicited",
+    "labels": {
+      "loop": false,
+      "stuck": false,
+      "confabulation": false,
+      "thrash": true,
+      "runaway_cost": false
+    },
+    "metadata": {
+      "generator": "ThrashElicitor",
+      "params": {
+        "positive_intent": true,
+        "total_steps": 8,
+        "final_refinements": 13,
+        "oscillates": true,
+        "has_errors": true,
+        "provider": "qwen3.5-9b-c",
+        "model": "qwen3.5-9b"
+      },
+      "onset_step": 1,
+      "tier": "elicited",
+      "model": null,
+      "provider": null,
+      "framework": null,
+      "reviewer": null,
+      "review_date": null,
+      "confidence": 0.9,
+      "notes": "Elicited via conflicting instruction protocol. Refinements=13, oscillates=True."
+    }
+  },
+  {
+    "trace_id": "thrash-elic-pos-f7007554",
+    "path": "traces/thrash/elicited/positive/thrash-elic-pos-f7007554.json",
+    "tier": "elicited",
+    "labels": {
+      "loop": false,
+      "stuck": false,
+      "confabulation": false,
+      "thrash": true,
+      "runaway_cost": false
+    },
+    "metadata": {
+      "generator": "ThrashElicitor",
+      "params": {
+        "positive_intent": true,
+        "total_steps": 8,
+        "final_refinements": 13,
+        "oscillates": true,
+        "has_errors": true,
+        "provider": "qwen3.5-9b-c",
+        "model": "qwen3.5-9b"
+      },
+      "onset_step": 1,
+      "tier": "elicited",
+      "model": null,
+      "provider": null,
+      "framework": null,
+      "reviewer": null,
+      "review_date": null,
+      "confidence": 0.9,
+      "notes": "Elicited via conflicting instruction protocol. Refinements=13, oscillates=True."
+    }
+  },
+  {
+    "trace_id": "thrash-elic-pos-17a459e9",
+    "path": "traces/thrash/elicited/positive/thrash-elic-pos-17a459e9.json",
+    "tier": "elicited",
+    "labels": {
+      "loop": false,
+      "stuck": false,
+      "confabulation": false,
+      "thrash": true,
+      "runaway_cost": false
+    },
+    "metadata": {
+      "generator": "ThrashElicitor",
+      "params": {
+        "positive_intent": true,
+        "total_steps": 8,
+        "final_refinements": 13,
+        "oscillates": true,
+        "has_errors": true,
+        "provider": "qwen3.5-9b-c",
+        "model": "qwen3.5-9b"
+      },
+      "onset_step": 1,
+      "tier": "elicited",
+      "model": null,
+      "provider": null,
+      "framework": null,
+      "reviewer": null,
+      "review_date": null,
+      "confidence": 0.9,
+      "notes": "Elicited via conflicting instruction protocol. Refinements=13, oscillates=True."
+    }
+  },
+  {
+    "trace_id": "thrash-elic-pos-a498a7af",
+    "path": "traces/thrash/elicited/positive/thrash-elic-pos-a498a7af.json",
+    "tier": "elicited",
+    "labels": {
+      "loop": false,
+      "stuck": false,
+      "confabulation": false,
+      "thrash": true,
+      "runaway_cost": false
+    },
+    "metadata": {
+      "generator": "ThrashElicitor",
+      "params": {
+        "positive_intent": true,
+        "total_steps": 8,
+        "final_refinements": 13,
+        "oscillates": true,
+        "has_errors": true,
+        "provider": "qwen3.5-9b-c",
+        "model": "qwen3.5-9b"
+      },
+      "onset_step": 1,
+      "tier": "elicited",
+      "model": null,
+      "provider": null,
+      "framework": null,
+      "reviewer": null,
+      "review_date": null,
+      "confidence": 0.9,
+      "notes": "Elicited via conflicting instruction protocol. Refinements=13, oscillates=True."
+    }
+  },
+  {
+    "trace_id": "thrash-elic-pos-5e2b85e7",
+    "path": "traces/thrash/elicited/positive/thrash-elic-pos-5e2b85e7.json",
+    "tier": "elicited",
+    "labels": {
+      "loop": false,
+      "stuck": false,
+      "confabulation": false,
+      "thrash": true,
+      "runaway_cost": false
+    },
+    "metadata": {
+      "generator": "ThrashElicitor",
+      "params": {
+        "positive_intent": true,
+        "total_steps": 8,
+        "final_refinements": 15,
+        "oscillates": true,
+        "has_errors": true,
+        "provider": "qwen3.5-9b-c",
+        "model": "qwen3.5-9b"
+      },
+      "onset_step": 1,
+      "tier": "elicited",
+      "model": null,
+      "provider": null,
+      "framework": null,
+      "reviewer": null,
+      "review_date": null,
+      "confidence": 0.9,
+      "notes": "Elicited via conflicting instruction protocol. Refinements=15, oscillates=True."
+    }
+  },
+  {
+    "trace_id": "thrash-elic-pos-b5e420a0",
+    "path": "traces/thrash/elicited/positive/thrash-elic-pos-b5e420a0.json",
+    "tier": "elicited",
+    "labels": {
+      "loop": false,
+      "stuck": false,
+      "confabulation": false,
+      "thrash": true,
+      "runaway_cost": false
+    },
+    "metadata": {
+      "generator": "ThrashElicitor",
+      "params": {
+        "positive_intent": true,
+        "total_steps": 8,
+        "final_refinements": 14,
+        "oscillates": true,
+        "has_errors": true,
+        "provider": "qwen3.5-9b-c",
+        "model": "qwen3.5-9b"
+      },
+      "onset_step": 1,
+      "tier": "elicited",
+      "model": null,
+      "provider": null,
+      "framework": null,
+      "reviewer": null,
+      "review_date": null,
+      "confidence": 0.9,
+      "notes": "Elicited via conflicting instruction protocol. Refinements=14, oscillates=True."
+    }
+  },
+  {
+    "trace_id": "thrash-elic-pos-cb550359",
+    "path": "traces/thrash/elicited/positive/thrash-elic-pos-cb550359.json",
+    "tier": "elicited",
+    "labels": {
+      "loop": false,
+      "stuck": false,
+      "confabulation": false,
+      "thrash": true,
+      "runaway_cost": false
+    },
+    "metadata": {
+      "generator": "ThrashElicitor",
+      "params": {
+        "positive_intent": true,
+        "total_steps": 8,
+        "final_refinements": 16,
+        "oscillates": true,
+        "has_errors": true,
+        "provider": "qwen3.5-9b-c",
+        "model": "qwen3.5-9b"
+      },
+      "onset_step": 1,
+      "tier": "elicited",
+      "model": null,
+      "provider": null,
+      "framework": null,
+      "reviewer": null,
+      "review_date": null,
+      "confidence": 0.9,
+      "notes": "Elicited via conflicting instruction protocol. Refinements=16, oscillates=True."
+    }
+  },
+  {
+    "trace_id": "thrash-elic-pos-8d3eb6dd",
+    "path": "traces/thrash/elicited/positive/thrash-elic-pos-8d3eb6dd.json",
+    "tier": "elicited",
+    "labels": {
+      "loop": false,
+      "stuck": false,
+      "confabulation": false,
+      "thrash": true,
+      "runaway_cost": false
+    },
+    "metadata": {
+      "generator": "ThrashElicitor",
+      "params": {
+        "positive_intent": true,
+        "total_steps": 8,
+        "final_refinements": 14,
+        "oscillates": true,
+        "has_errors": true,
+        "provider": "qwen3.5-9b-c",
+        "model": "qwen3.5-9b"
+      },
+      "onset_step": 1,
+      "tier": "elicited",
+      "model": null,
+      "provider": null,
+      "framework": null,
+      "reviewer": null,
+      "review_date": null,
+      "confidence": 0.9,
+      "notes": "Elicited via conflicting instruction protocol. Refinements=14, oscillates=True."
+    }
+  },
+  {
+    "trace_id": "thrash-elic-pos-0e88621f",
+    "path": "traces/thrash/elicited/positive/thrash-elic-pos-0e88621f.json",
+    "tier": "elicited",
+    "labels": {
+      "loop": false,
+      "stuck": false,
+      "confabulation": false,
+      "thrash": true,
+      "runaway_cost": false
+    },
+    "metadata": {
+      "generator": "ThrashElicitor",
+      "params": {
+        "positive_intent": true,
+        "total_steps": 8,
+        "final_refinements": 15,
+        "oscillates": true,
+        "has_errors": true,
+        "provider": "qwen3.5-9b-c",
+        "model": "qwen3.5-9b"
+      },
+      "onset_step": 1,
+      "tier": "elicited",
+      "model": null,
+      "provider": null,
+      "framework": null,
+      "reviewer": null,
+      "review_date": null,
+      "confidence": 0.9,
+      "notes": "Elicited via conflicting instruction protocol. Refinements=15, oscillates=True."
+    }
+  },
+  {
+    "trace_id": "thrash-elic-pos-50728a4e",
+    "path": "traces/thrash/elicited/positive/thrash-elic-pos-50728a4e.json",
+    "tier": "elicited",
+    "labels": {
+      "loop": false,
+      "stuck": false,
+      "confabulation": false,
+      "thrash": true,
+      "runaway_cost": false
+    },
+    "metadata": {
+      "generator": "ThrashElicitor",
+      "params": {
+        "positive_intent": true,
+        "total_steps": 8,
+        "final_refinements": 13,
+        "oscillates": true,
+        "has_errors": true,
+        "provider": "qwen3.5-9b-c",
+        "model": "qwen3.5-9b"
+      },
+      "onset_step": 1,
+      "tier": "elicited",
+      "model": null,
+      "provider": null,
+      "framework": null,
+      "reviewer": null,
+      "review_date": null,
+      "confidence": 0.9,
+      "notes": "Elicited via conflicting instruction protocol. Refinements=13, oscillates=True."
+    }
+  },
+  {
+    "trace_id": "thrash-elic-pos-6fda7e65",
+    "path": "traces/thrash/elicited/positive/thrash-elic-pos-6fda7e65.json",
+    "tier": "elicited",
+    "labels": {
+      "loop": false,
+      "stuck": false,
+      "confabulation": false,
+      "thrash": true,
+      "runaway_cost": false
+    },
+    "metadata": {
+      "generator": "ThrashElicitor",
+      "params": {
+        "positive_intent": true,
+        "total_steps": 8,
+        "final_refinements": 15,
+        "oscillates": true,
+        "has_errors": true,
+        "provider": "qwen3.5-9b-c",
+        "model": "qwen3.5-9b"
+      },
+      "onset_step": 1,
+      "tier": "elicited",
+      "model": null,
+      "provider": null,
+      "framework": null,
+      "reviewer": null,
+      "review_date": null,
+      "confidence": 0.9,
+      "notes": "Elicited via conflicting instruction protocol. Refinements=15, oscillates=True."
+    }
+  },
+  {
+    "trace_id": "thrash-elic-pos-46374ef3",
+    "path": "traces/thrash/elicited/positive/thrash-elic-pos-46374ef3.json",
+    "tier": "elicited",
+    "labels": {
+      "loop": false,
+      "stuck": false,
+      "confabulation": false,
+      "thrash": true,
+      "runaway_cost": false
+    },
+    "metadata": {
+      "generator": "ThrashElicitor",
+      "params": {
+        "positive_intent": true,
+        "total_steps": 8,
+        "final_refinements": 15,
+        "oscillates": true,
+        "has_errors": true,
+        "provider": "qwen3.5-9b-c",
+        "model": "qwen3.5-9b"
+      },
+      "onset_step": 1,
+      "tier": "elicited",
+      "model": null,
+      "provider": null,
+      "framework": null,
+      "reviewer": null,
+      "review_date": null,
+      "confidence": 0.9,
+      "notes": "Elicited via conflicting instruction protocol. Refinements=15, oscillates=True."
+    }
+  },
+  {
+    "trace_id": "thrash-elic-pos-f56b6e67",
+    "path": "traces/thrash/elicited/positive/thrash-elic-pos-f56b6e67.json",
+    "tier": "elicited",
+    "labels": {
+      "loop": false,
+      "stuck": false,
+      "confabulation": false,
+      "thrash": true,
+      "runaway_cost": false
+    },
+    "metadata": {
+      "generator": "ThrashElicitor",
+      "params": {
+        "positive_intent": true,
+        "total_steps": 8,
+        "final_refinements": 12,
+        "oscillates": true,
+        "has_errors": true,
+        "provider": "qwen3.5-9b-c",
+        "model": "qwen3.5-9b"
+      },
+      "onset_step": 1,
+      "tier": "elicited",
+      "model": null,
+      "provider": null,
+      "framework": null,
+      "reviewer": null,
+      "review_date": null,
+      "confidence": 0.9,
+      "notes": "Elicited via conflicting instruction protocol. Refinements=12, oscillates=True."
+    }
+  },
+  {
+    "trace_id": "thrash-elic-pos-5e4487ad",
+    "path": "traces/thrash/elicited/positive/thrash-elic-pos-5e4487ad.json",
+    "tier": "elicited",
+    "labels": {
+      "loop": false,
+      "stuck": false,
+      "confabulation": false,
+      "thrash": true,
+      "runaway_cost": false
+    },
+    "metadata": {
+      "generator": "ThrashElicitor",
+      "params": {
+        "positive_intent": true,
+        "total_steps": 8,
+        "final_refinements": 14,
+        "oscillates": true,
+        "has_errors": true,
+        "provider": "qwen3.5-9b-c",
+        "model": "qwen3.5-9b"
+      },
+      "onset_step": 1,
+      "tier": "elicited",
+      "model": null,
+      "provider": null,
+      "framework": null,
+      "reviewer": null,
+      "review_date": null,
+      "confidence": 0.9,
+      "notes": "Elicited via conflicting instruction protocol. Refinements=14, oscillates=True."
+    }
+  },
+  {
+    "trace_id": "thrash-elic-pos-1d074c17",
+    "path": "traces/thrash/elicited/positive/thrash-elic-pos-1d074c17.json",
+    "tier": "elicited",
+    "labels": {
+      "loop": false,
+      "stuck": false,
+      "confabulation": false,
+      "thrash": true,
+      "runaway_cost": false
+    },
+    "metadata": {
+      "generator": "ThrashElicitor",
+      "params": {
+        "positive_intent": true,
+        "total_steps": 8,
+        "final_refinements": 14,
+        "oscillates": true,
+        "has_errors": true,
+        "provider": "qwen3.5-9b-c",
+        "model": "qwen3.5-9b"
+      },
+      "onset_step": 1,
+      "tier": "elicited",
+      "model": null,
+      "provider": null,
+      "framework": null,
+      "reviewer": null,
+      "review_date": null,
+      "confidence": 0.9,
+      "notes": "Elicited via conflicting instruction protocol. Refinements=14, oscillates=True."
+    }
+  },
+  {
+    "trace_id": "thrash-elic-pos-6b34cfa5",
+    "path": "traces/thrash/elicited/positive/thrash-elic-pos-6b34cfa5.json",
+    "tier": "elicited",
+    "labels": {
+      "loop": false,
+      "stuck": false,
+      "confabulation": false,
+      "thrash": true,
+      "runaway_cost": false
+    },
+    "metadata": {
+      "generator": "ThrashElicitor",
+      "params": {
+        "positive_intent": true,
+        "total_steps": 8,
+        "final_refinements": 13,
+        "oscillates": true,
+        "has_errors": true,
+        "provider": "qwen3.5-9b-c",
+        "model": "qwen3.5-9b"
+      },
+      "onset_step": 1,
+      "tier": "elicited",
+      "model": null,
+      "provider": null,
+      "framework": null,
+      "reviewer": null,
+      "review_date": null,
+      "confidence": 0.9,
+      "notes": "Elicited via conflicting instruction protocol. Refinements=13, oscillates=True."
+    }
+  },
+  {
+    "trace_id": "thrash-elic-pos-84225e8f",
+    "path": "traces/thrash/elicited/positive/thrash-elic-pos-84225e8f.json",
+    "tier": "elicited",
+    "labels": {
+      "loop": false,
+      "stuck": false,
+      "confabulation": false,
+      "thrash": true,
+      "runaway_cost": false
+    },
+    "metadata": {
+      "generator": "ThrashElicitor",
+      "params": {
+        "positive_intent": true,
+        "total_steps": 8,
+        "final_refinements": 15,
+        "oscillates": true,
+        "has_errors": true,
+        "provider": "qwen3.5-9b-c",
+        "model": "qwen3.5-9b"
+      },
+      "onset_step": 1,
+      "tier": "elicited",
+      "model": null,
+      "provider": null,
+      "framework": null,
+      "reviewer": null,
+      "review_date": null,
+      "confidence": 0.9,
+      "notes": "Elicited via conflicting instruction protocol. Refinements=15, oscillates=True."
+    }
+  },
+  {
+    "trace_id": "thrash-elic-pos-a0383d3c",
+    "path": "traces/thrash/elicited/positive/thrash-elic-pos-a0383d3c.json",
+    "tier": "elicited",
+    "labels": {
+      "loop": false,
+      "stuck": false,
+      "confabulation": false,
+      "thrash": true,
+      "runaway_cost": false
+    },
+    "metadata": {
+      "generator": "ThrashElicitor",
+      "params": {
+        "positive_intent": true,
+        "total_steps": 8,
+        "final_refinements": 15,
+        "oscillates": true,
+        "has_errors": true,
+        "provider": "qwen3.5-9b-c",
+        "model": "qwen3.5-9b"
+      },
+      "onset_step": 1,
+      "tier": "elicited",
+      "model": null,
+      "provider": null,
+      "framework": null,
+      "reviewer": null,
+      "review_date": null,
+      "confidence": 0.9,
+      "notes": "Elicited via conflicting instruction protocol. Refinements=15, oscillates=True."
+    }
+  },
+  {
+    "trace_id": "thrash-elic-pos-41926874",
+    "path": "traces/thrash/elicited/positive/thrash-elic-pos-41926874.json",
+    "tier": "elicited",
+    "labels": {
+      "loop": false,
+      "stuck": false,
+      "confabulation": false,
+      "thrash": true,
+      "runaway_cost": false
+    },
+    "metadata": {
+      "generator": "ThrashElicitor",
+      "params": {
+        "positive_intent": true,
+        "total_steps": 8,
+        "final_refinements": 13,
+        "oscillates": true,
+        "has_errors": true,
+        "provider": "qwen3.5-9b-c",
+        "model": "qwen3.5-9b"
+      },
+      "onset_step": 1,
+      "tier": "elicited",
+      "model": null,
+      "provider": null,
+      "framework": null,
+      "reviewer": null,
+      "review_date": null,
+      "confidence": 0.9,
+      "notes": "Elicited via conflicting instruction protocol. Refinements=13, oscillates=True."
+    }
+  },
+  {
+    "trace_id": "thrash-elic-pos-7021ab7c",
+    "path": "traces/thrash/elicited/positive/thrash-elic-pos-7021ab7c.json",
+    "tier": "elicited",
+    "labels": {
+      "loop": false,
+      "stuck": false,
+      "confabulation": false,
+      "thrash": true,
+      "runaway_cost": false
+    },
+    "metadata": {
+      "generator": "ThrashElicitor",
+      "params": {
+        "positive_intent": true,
+        "total_steps": 8,
+        "final_refinements": 15,
+        "oscillates": true,
+        "has_errors": true,
+        "provider": "qwen3.5-9b-c",
+        "model": "qwen3.5-9b"
+      },
+      "onset_step": 1,
+      "tier": "elicited",
+      "model": null,
+      "provider": null,
+      "framework": null,
+      "reviewer": null,
+      "review_date": null,
+      "confidence": 0.9,
+      "notes": "Elicited via conflicting instruction protocol. Refinements=15, oscillates=True."
+    }
+  },
+  {
+    "trace_id": "thrash-elic-pos-a968b8cc",
+    "path": "traces/thrash/elicited/positive/thrash-elic-pos-a968b8cc.json",
+    "tier": "elicited",
+    "labels": {
+      "loop": false,
+      "stuck": false,
+      "confabulation": false,
+      "thrash": true,
+      "runaway_cost": false
+    },
+    "metadata": {
+      "generator": "ThrashElicitor",
+      "params": {
+        "positive_intent": true,
+        "total_steps": 8,
+        "final_refinements": 14,
+        "oscillates": true,
+        "has_errors": true,
+        "provider": "qwen3.5-9b-c",
+        "model": "qwen3.5-9b"
+      },
+      "onset_step": 1,
+      "tier": "elicited",
+      "model": null,
+      "provider": null,
+      "framework": null,
+      "reviewer": null,
+      "review_date": null,
+      "confidence": 0.9,
+      "notes": "Elicited via conflicting instruction protocol. Refinements=14, oscillates=True."
+    }
+  },
+  {
+    "trace_id": "thrash-elic-pos-4e1c2257",
+    "path": "traces/thrash/elicited/positive/thrash-elic-pos-4e1c2257.json",
+    "tier": "elicited",
+    "labels": {
+      "loop": false,
+      "stuck": false,
+      "confabulation": false,
+      "thrash": true,
+      "runaway_cost": false
+    },
+    "metadata": {
+      "generator": "ThrashElicitor",
+      "params": {
+        "positive_intent": true,
+        "total_steps": 8,
+        "final_refinements": 14,
+        "oscillates": true,
+        "has_errors": true,
+        "provider": "qwen3.5-9b-c",
+        "model": "qwen3.5-9b"
+      },
+      "onset_step": 1,
+      "tier": "elicited",
+      "model": null,
+      "provider": null,
+      "framework": null,
+      "reviewer": null,
+      "review_date": null,
+      "confidence": 0.9,
+      "notes": "Elicited via conflicting instruction protocol. Refinements=14, oscillates=True."
+    }
+  },
+  {
+    "trace_id": "thrash-elic-pos-613c5f52",
+    "path": "traces/thrash/elicited/positive/thrash-elic-pos-613c5f52.json",
+    "tier": "elicited",
+    "labels": {
+      "loop": false,
+      "stuck": false,
+      "confabulation": false,
+      "thrash": true,
+      "runaway_cost": false
+    },
+    "metadata": {
+      "generator": "ThrashElicitor",
+      "params": {
+        "positive_intent": true,
+        "total_steps": 8,
+        "final_refinements": 14,
+        "oscillates": true,
+        "has_errors": true,
+        "provider": "qwen3.5-9b-c",
+        "model": "qwen3.5-9b"
+      },
+      "onset_step": 1,
+      "tier": "elicited",
+      "model": null,
+      "provider": null,
+      "framework": null,
+      "reviewer": null,
+      "review_date": null,
+      "confidence": 0.9,
+      "notes": "Elicited via conflicting instruction protocol. Refinements=14, oscillates=True."
+    }
+  },
+  {
+    "trace_id": "thrash-elic-pos-63bf127d",
+    "path": "traces/thrash/elicited/positive/thrash-elic-pos-63bf127d.json",
+    "tier": "elicited",
+    "labels": {
+      "loop": false,
+      "stuck": false,
+      "confabulation": false,
+      "thrash": true,
+      "runaway_cost": false
+    },
+    "metadata": {
+      "generator": "ThrashElicitor",
+      "params": {
+        "positive_intent": true,
+        "total_steps": 8,
+        "final_refinements": 14,
+        "oscillates": true,
+        "has_errors": true,
+        "provider": "qwen3.5-9b-c",
+        "model": "qwen3.5-9b"
+      },
+      "onset_step": 1,
+      "tier": "elicited",
+      "model": null,
+      "provider": null,
+      "framework": null,
+      "reviewer": null,
+      "review_date": null,
+      "confidence": 0.9,
+      "notes": "Elicited via conflicting instruction protocol. Refinements=14, oscillates=True."
+    }
+  },
+  {
+    "trace_id": "thrash-elic-neg-c2e4a7e4",
+    "path": "traces/thrash/elicited/negative/thrash-elic-neg-c2e4a7e4.json",
+    "tier": "elicited",
+    "labels": {
+      "loop": false,
+      "stuck": false,
+      "confabulation": false,
+      "thrash": false,
+      "runaway_cost": false
+    },
+    "metadata": {
+      "generator": "ThrashElicitor",
+      "params": {
+        "positive_intent": false,
+        "total_steps": 6,
+        "final_refinements": 0,
+        "oscillates": false,
+        "has_errors": false,
+        "provider": "qwen3.5-9b-c",
+        "model": "qwen3.5-9b"
+      },
+      "onset_step": null,
+      "tier": "elicited",
+      "model": null,
+      "provider": null,
+      "framework": null,
+      "reviewer": null,
+      "review_date": null,
+      "confidence": 0.8,
+      "notes": "Elicited via conflicting instruction protocol. Refinements=0, oscillates=False."
+    }
+  },
+  {
+    "trace_id": "thrash-elic-neg-1786d882",
+    "path": "traces/thrash/elicited/negative/thrash-elic-neg-1786d882.json",
+    "tier": "elicited",
+    "labels": {
+      "loop": false,
+      "stuck": false,
+      "confabulation": false,
+      "thrash": false,
+      "runaway_cost": false
+    },
+    "metadata": {
+      "generator": "ThrashElicitor",
+      "params": {
+        "positive_intent": false,
+        "total_steps": 6,
+        "final_refinements": 0,
+        "oscillates": false,
+        "has_errors": false,
+        "provider": "qwen3.5-9b-c",
+        "model": "qwen3.5-9b"
+      },
+      "onset_step": null,
+      "tier": "elicited",
+      "model": null,
+      "provider": null,
+      "framework": null,
+      "reviewer": null,
+      "review_date": null,
+      "confidence": 0.8,
+      "notes": "Elicited via conflicting instruction protocol. Refinements=0, oscillates=False."
+    }
+  },
+  {
+    "trace_id": "thrash-elic-neg-fe69f1e6",
+    "path": "traces/thrash/elicited/negative/thrash-elic-neg-fe69f1e6.json",
+    "tier": "elicited",
+    "labels": {
+      "loop": false,
+      "stuck": false,
+      "confabulation": false,
+      "thrash": false,
+      "runaway_cost": false
+    },
+    "metadata": {
+      "generator": "ThrashElicitor",
+      "params": {
+        "positive_intent": false,
+        "total_steps": 6,
+        "final_refinements": 0,
+        "oscillates": false,
+        "has_errors": false,
+        "provider": "qwen3.5-9b-c",
+        "model": "qwen3.5-9b"
+      },
+      "onset_step": null,
+      "tier": "elicited",
+      "model": null,
+      "provider": null,
+      "framework": null,
+      "reviewer": null,
+      "review_date": null,
+      "confidence": 0.8,
+      "notes": "Elicited via conflicting instruction protocol. Refinements=0, oscillates=False."
+    }
+  },
+  {
+    "trace_id": "thrash-elic-neg-506da5e5",
+    "path": "traces/thrash/elicited/negative/thrash-elic-neg-506da5e5.json",
+    "tier": "elicited",
+    "labels": {
+      "loop": false,
+      "stuck": false,
+      "confabulation": false,
+      "thrash": false,
+      "runaway_cost": false
+    },
+    "metadata": {
+      "generator": "ThrashElicitor",
+      "params": {
+        "positive_intent": false,
+        "total_steps": 6,
+        "final_refinements": 0,
+        "oscillates": false,
+        "has_errors": false,
+        "provider": "qwen3.5-9b-c",
+        "model": "qwen3.5-9b"
+      },
+      "onset_step": null,
+      "tier": "elicited",
+      "model": null,
+      "provider": null,
+      "framework": null,
+      "reviewer": null,
+      "review_date": null,
+      "confidence": 0.8,
+      "notes": "Elicited via conflicting instruction protocol. Refinements=0, oscillates=False."
+    }
+  },
+  {
+    "trace_id": "thrash-elic-neg-d8e36704",
+    "path": "traces/thrash/elicited/negative/thrash-elic-neg-d8e36704.json",
+    "tier": "elicited",
+    "labels": {
+      "loop": false,
+      "stuck": false,
+      "confabulation": false,
+      "thrash": false,
+      "runaway_cost": false
+    },
+    "metadata": {
+      "generator": "ThrashElicitor",
+      "params": {
+        "positive_intent": false,
+        "total_steps": 6,
+        "final_refinements": 0,
+        "oscillates": false,
+        "has_errors": false,
+        "provider": "qwen3.5-9b-c",
+        "model": "qwen3.5-9b"
+      },
+      "onset_step": null,
+      "tier": "elicited",
+      "model": null,
+      "provider": null,
+      "framework": null,
+      "reviewer": null,
+      "review_date": null,
+      "confidence": 0.8,
+      "notes": "Elicited via conflicting instruction protocol. Refinements=0, oscillates=False."
+    }
+  },
+  {
+    "trace_id": "thrash-elic-neg-332e4a10",
+    "path": "traces/thrash/elicited/negative/thrash-elic-neg-332e4a10.json",
+    "tier": "elicited",
+    "labels": {
+      "loop": false,
+      "stuck": false,
+      "confabulation": false,
+      "thrash": false,
+      "runaway_cost": false
+    },
+    "metadata": {
+      "generator": "ThrashElicitor",
+      "params": {
+        "positive_intent": false,
+        "total_steps": 6,
+        "final_refinements": 0,
+        "oscillates": false,
+        "has_errors": false,
+        "provider": "qwen3.5-9b-c",
+        "model": "qwen3.5-9b"
+      },
+      "onset_step": null,
+      "tier": "elicited",
+      "model": null,
+      "provider": null,
+      "framework": null,
+      "reviewer": null,
+      "review_date": null,
+      "confidence": 0.8,
+      "notes": "Elicited via conflicting instruction protocol. Refinements=0, oscillates=False."
+    }
+  },
+  {
+    "trace_id": "thrash-elic-neg-3a3f6ae7",
+    "path": "traces/thrash/elicited/negative/thrash-elic-neg-3a3f6ae7.json",
+    "tier": "elicited",
+    "labels": {
+      "loop": false,
+      "stuck": false,
+      "confabulation": false,
+      "thrash": false,
+      "runaway_cost": false
+    },
+    "metadata": {
+      "generator": "ThrashElicitor",
+      "params": {
+        "positive_intent": false,
+        "total_steps": 6,
+        "final_refinements": 0,
+        "oscillates": false,
+        "has_errors": false,
+        "provider": "qwen3.5-9b-c",
+        "model": "qwen3.5-9b"
+      },
+      "onset_step": null,
+      "tier": "elicited",
+      "model": null,
+      "provider": null,
+      "framework": null,
+      "reviewer": null,
+      "review_date": null,
+      "confidence": 0.8,
+      "notes": "Elicited via conflicting instruction protocol. Refinements=0, oscillates=False."
+    }
+  },
+  {
+    "trace_id": "thrash-elic-neg-a9d63623",
+    "path": "traces/thrash/elicited/negative/thrash-elic-neg-a9d63623.json",
+    "tier": "elicited",
+    "labels": {
+      "loop": false,
+      "stuck": false,
+      "confabulation": false,
+      "thrash": false,
+      "runaway_cost": false
+    },
+    "metadata": {
+      "generator": "ThrashElicitor",
+      "params": {
+        "positive_intent": false,
+        "total_steps": 6,
+        "final_refinements": 0,
+        "oscillates": false,
+        "has_errors": false,
+        "provider": "qwen3.5-9b-c",
+        "model": "qwen3.5-9b"
+      },
+      "onset_step": null,
+      "tier": "elicited",
+      "model": null,
+      "provider": null,
+      "framework": null,
+      "reviewer": null,
+      "review_date": null,
+      "confidence": 0.8,
+      "notes": "Elicited via conflicting instruction protocol. Refinements=0, oscillates=False."
+    }
+  },
+  {
+    "trace_id": "thrash-elic-neg-990a7aba",
+    "path": "traces/thrash/elicited/negative/thrash-elic-neg-990a7aba.json",
+    "tier": "elicited",
+    "labels": {
+      "loop": false,
+      "stuck": false,
+      "confabulation": false,
+      "thrash": false,
+      "runaway_cost": false
+    },
+    "metadata": {
+      "generator": "ThrashElicitor",
+      "params": {
+        "positive_intent": false,
+        "total_steps": 6,
+        "final_refinements": 0,
+        "oscillates": false,
+        "has_errors": false,
+        "provider": "qwen3.5-9b-c",
+        "model": "qwen3.5-9b"
+      },
+      "onset_step": null,
+      "tier": "elicited",
+      "model": null,
+      "provider": null,
+      "framework": null,
+      "reviewer": null,
+      "review_date": null,
+      "confidence": 0.8,
+      "notes": "Elicited via conflicting instruction protocol. Refinements=0, oscillates=False."
+    }
+  },
+  {
+    "trace_id": "thrash-elic-neg-01ac503a",
+    "path": "traces/thrash/elicited/negative/thrash-elic-neg-01ac503a.json",
+    "tier": "elicited",
+    "labels": {
+      "loop": false,
+      "stuck": false,
+      "confabulation": false,
+      "thrash": false,
+      "runaway_cost": false
+    },
+    "metadata": {
+      "generator": "ThrashElicitor",
+      "params": {
+        "positive_intent": false,
+        "total_steps": 6,
+        "final_refinements": 0,
+        "oscillates": false,
+        "has_errors": false,
+        "provider": "qwen3.5-9b-c",
+        "model": "qwen3.5-9b"
+      },
+      "onset_step": null,
+      "tier": "elicited",
+      "model": null,
+      "provider": null,
+      "framework": null,
+      "reviewer": null,
+      "review_date": null,
+      "confidence": 0.8,
+      "notes": "Elicited via conflicting instruction protocol. Refinements=0, oscillates=False."
+    }
+  },
+  {
+    "trace_id": "thrash-elic-neg-02219307",
+    "path": "traces/thrash/elicited/negative/thrash-elic-neg-02219307.json",
+    "tier": "elicited",
+    "labels": {
+      "loop": false,
+      "stuck": false,
+      "confabulation": false,
+      "thrash": false,
+      "runaway_cost": false
+    },
+    "metadata": {
+      "generator": "ThrashElicitor",
+      "params": {
+        "positive_intent": false,
+        "total_steps": 6,
+        "final_refinements": 0,
+        "oscillates": false,
+        "has_errors": false,
+        "provider": "qwen3.5-9b-c",
+        "model": "qwen3.5-9b"
+      },
+      "onset_step": null,
+      "tier": "elicited",
+      "model": null,
+      "provider": null,
+      "framework": null,
+      "reviewer": null,
+      "review_date": null,
+      "confidence": 0.8,
+      "notes": "Elicited via conflicting instruction protocol. Refinements=0, oscillates=False."
+    }
+  },
+  {
+    "trace_id": "thrash-elic-neg-84ca7621",
+    "path": "traces/thrash/elicited/negative/thrash-elic-neg-84ca7621.json",
+    "tier": "elicited",
+    "labels": {
+      "loop": false,
+      "stuck": false,
+      "confabulation": false,
+      "thrash": false,
+      "runaway_cost": false
+    },
+    "metadata": {
+      "generator": "ThrashElicitor",
+      "params": {
+        "positive_intent": false,
+        "total_steps": 6,
+        "final_refinements": 0,
+        "oscillates": false,
+        "has_errors": false,
+        "provider": "qwen3.5-9b-c",
+        "model": "qwen3.5-9b"
+      },
+      "onset_step": null,
+      "tier": "elicited",
+      "model": null,
+      "provider": null,
+      "framework": null,
+      "reviewer": null,
+      "review_date": null,
+      "confidence": 0.8,
+      "notes": "Elicited via conflicting instruction protocol. Refinements=0, oscillates=False."
+    }
+  },
+  {
+    "trace_id": "thrash-elic-neg-70d44281",
+    "path": "traces/thrash/elicited/negative/thrash-elic-neg-70d44281.json",
+    "tier": "elicited",
+    "labels": {
+      "loop": false,
+      "stuck": false,
+      "confabulation": false,
+      "thrash": false,
+      "runaway_cost": false
+    },
+    "metadata": {
+      "generator": "ThrashElicitor",
+      "params": {
+        "positive_intent": false,
+        "total_steps": 6,
+        "final_refinements": 0,
+        "oscillates": false,
+        "has_errors": false,
+        "provider": "qwen3.5-9b-c",
+        "model": "qwen3.5-9b"
+      },
+      "onset_step": null,
+      "tier": "elicited",
+      "model": null,
+      "provider": null,
+      "framework": null,
+      "reviewer": null,
+      "review_date": null,
+      "confidence": 0.8,
+      "notes": "Elicited via conflicting instruction protocol. Refinements=0, oscillates=False."
+    }
+  },
+  {
+    "trace_id": "thrash-elic-neg-6b7132c6",
+    "path": "traces/thrash/elicited/negative/thrash-elic-neg-6b7132c6.json",
+    "tier": "elicited",
+    "labels": {
+      "loop": false,
+      "stuck": false,
+      "confabulation": false,
+      "thrash": false,
+      "runaway_cost": false
+    },
+    "metadata": {
+      "generator": "ThrashElicitor",
+      "params": {
+        "positive_intent": false,
+        "total_steps": 6,
+        "final_refinements": 0,
+        "oscillates": false,
+        "has_errors": false,
+        "provider": "qwen3.5-9b-c",
+        "model": "qwen3.5-9b"
+      },
+      "onset_step": null,
+      "tier": "elicited",
+      "model": null,
+      "provider": null,
+      "framework": null,
+      "reviewer": null,
+      "review_date": null,
+      "confidence": 0.8,
+      "notes": "Elicited via conflicting instruction protocol. Refinements=0, oscillates=False."
+    }
+  },
+  {
+    "trace_id": "thrash-elic-neg-f78062a3",
+    "path": "traces/thrash/elicited/negative/thrash-elic-neg-f78062a3.json",
+    "tier": "elicited",
+    "labels": {
+      "loop": false,
+      "stuck": false,
+      "confabulation": false,
+      "thrash": false,
+      "runaway_cost": false
+    },
+    "metadata": {
+      "generator": "ThrashElicitor",
+      "params": {
+        "positive_intent": false,
+        "total_steps": 6,
+        "final_refinements": 0,
+        "oscillates": false,
+        "has_errors": false,
+        "provider": "qwen3.5-9b-c",
+        "model": "qwen3.5-9b"
+      },
+      "onset_step": null,
+      "tier": "elicited",
+      "model": null,
+      "provider": null,
+      "framework": null,
+      "reviewer": null,
+      "review_date": null,
+      "confidence": 0.8,
+      "notes": "Elicited via conflicting instruction protocol. Refinements=0, oscillates=False."
+    }
+  }
+]

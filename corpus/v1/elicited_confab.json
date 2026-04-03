@@ -1,0 +1,1612 @@
+[
+  {
+    "trace_id": "confab-elic-pos-8ad0a74e",
+    "path": "traces/confabulation/elicited/positive/confab-elic-pos-8ad0a74e.json",
+    "tier": "elicited",
+    "labels": {
+      "loop": false,
+      "stuck": false,
+      "confabulation": true,
+      "thrash": false,
+      "runaway_cost": false
+    },
+    "metadata": {
+      "generator": "ConfabElicitor",
+      "params": {
+        "positive_intent": true,
+        "total_steps": 6,
+        "papers_per_step": 8,
+        "final_ratio": 0.1974,
+        "total_findings": 76,
+        "total_sources": 15,
+        "total_fabricated": 61,
+        "provider": "qwen3.5-9b-a",
+        "model": "qwen3.5-9b"
+      },
+      "onset_step": 0,
+      "tier": "elicited",
+      "model": null,
+      "provider": null,
+      "framework": null,
+      "reviewer": null,
+      "review_date": null,
+      "confidence": 0.9,
+      "notes": "Elicited via citation protocol. Ratio=0.197, fabricated=61."
+    }
+  },
+  {
+    "trace_id": "confab-elic-pos-a0b14796",
+    "path": "traces/confabulation/elicited/positive/confab-elic-pos-a0b14796.json",
+    "tier": "elicited",
+    "labels": {
+      "loop": false,
+      "stuck": false,
+      "confabulation": true,
+      "thrash": false,
+      "runaway_cost": false
+    },
+    "metadata": {
+      "generator": "ConfabElicitor",
+      "params": {
+        "positive_intent": true,
+        "total_steps": 6,
+        "papers_per_step": 8,
+        "final_ratio": 0.1875,
+        "total_findings": 32,
+        "total_sources": 6,
+        "total_fabricated": 26,
+        "provider": "qwen3.5-9b-a",
+        "model": "qwen3.5-9b"
+      },
+      "onset_step": 2,
+      "tier": "elicited",
+      "model": null,
+      "provider": null,
+      "framework": null,
+      "reviewer": null,
+      "review_date": null,
+      "confidence": 0.9,
+      "notes": "Elicited via citation protocol. Ratio=0.188, fabricated=26."
+    }
+  },
+  {
+    "trace_id": "confab-elic-pos-cc9c6004",
+    "path": "traces/confabulation/elicited/positive/confab-elic-pos-cc9c6004.json",
+    "tier": "elicited",
+    "labels": {
+      "loop": false,
+      "stuck": false,
+      "confabulation": true,
+      "thrash": false,
+      "runaway_cost": false
+    },
+    "metadata": {
+      "generator": "ConfabElicitor",
+      "params": {
+        "positive_intent": true,
+        "total_steps": 6,
+        "papers_per_step": 8,
+        "final_ratio": 0.25,
+        "total_findings": 44,
+        "total_sources": 11,
+        "total_fabricated": 33,
+        "provider": "qwen3.5-9b-a",
+        "model": "qwen3.5-9b"
+      },
+      "onset_step": 0,
+      "tier": "elicited",
+      "model": null,
+      "provider": null,
+      "framework": null,
+      "reviewer": null,
+      "review_date": null,
+      "confidence": 0.8,
+      "notes": "Elicited via citation protocol. Ratio=0.250, fabricated=33."
+    }
+  },
+  {
+    "trace_id": "confab-elic-pos-ae60feaf",
+    "path": "traces/confabulation/elicited/positive/confab-elic-pos-ae60feaf.json",
+    "tier": "elicited",
+    "labels": {
+      "loop": false,
+      "stuck": false,
+      "confabulation": true,
+      "thrash": false,
+      "runaway_cost": false
+    },
+    "metadata": {
+      "generator": "ConfabElicitor",
+      "params": {
+        "positive_intent": true,
+        "total_steps": 6,
+        "papers_per_step": 8,
+        "final_ratio": 0.2222,
+        "total_findings": 54,
+        "total_sources": 12,
+        "total_fabricated": 42,
+        "provider": "qwen3.5-9b-a",
+        "model": "qwen3.5-9b"
+      },
+      "onset_step": 0,
+      "tier": "elicited",
+      "model": null,
+      "provider": null,
+      "framework": null,
+      "reviewer": null,
+      "review_date": null,
+      "confidence": 0.8,
+      "notes": "Elicited via citation protocol. Ratio=0.222, fabricated=42."
+    }
+  },
+  {
+    "trace_id": "confab-elic-pos-474ead47",
+    "path": "traces/confabulation/elicited/positive/confab-elic-pos-474ead47.json",
+    "tier": "elicited",
+    "labels": {
+      "loop": false,
+      "stuck": false,
+      "confabulation": true,
+      "thrash": false,
+      "runaway_cost": false
+    },
+    "metadata": {
+      "generator": "ConfabElicitor",
+      "params": {
+        "positive_intent": true,
+        "total_steps": 6,
+        "papers_per_step": 8,
+        "final_ratio": 0.1967,
+        "total_findings": 61,
+        "total_sources": 12,
+        "total_fabricated": 49,
+        "provider": "qwen3.5-9b-a",
+        "model": "qwen3.5-9b"
+      },
+      "onset_step": 0,
+      "tier": "elicited",
+      "model": null,
+      "provider": null,
+      "framework": null,
+      "reviewer": null,
+      "review_date": null,
+      "confidence": 0.9,
+      "notes": "Elicited via citation protocol. Ratio=0.197, fabricated=49."
+    }
+  },
+  {
+    "trace_id": "confab-elic-pos-97408e6a",
+    "path": "traces/confabulation/elicited/positive/confab-elic-pos-97408e6a.json",
+    "tier": "elicited",
+    "labels": {
+      "loop": false,
+      "stuck": false,
+      "confabulation": true,
+      "thrash": false,
+      "runaway_cost": false
+    },
+    "metadata": {
+      "generator": "ConfabElicitor",
+      "params": {
+        "positive_intent": true,
+        "total_steps": 6,
+        "papers_per_step": 8,
+        "final_ratio": 0.1964,
+        "total_findings": 56,
+        "total_sources": 11,
+        "total_fabricated": 45,
+        "provider": "qwen3.5-9b-a",
+        "model": "qwen3.5-9b"
+      },
+      "onset_step": 1,
+      "tier": "elicited",
+      "model": null,
+      "provider": null,
+      "framework": null,
+      "reviewer": null,
+      "review_date": null,
+      "confidence": 0.9,
+      "notes": "Elicited via citation protocol. Ratio=0.196, fabricated=45."
+    }
+  },
+  {
+    "trace_id": "confab-elic-pos-f277d59d",
+    "path": "traces/confabulation/elicited/positive/confab-elic-pos-f277d59d.json",
+    "tier": "elicited",
+    "labels": {
+      "loop": false,
+      "stuck": false,
+      "confabulation": true,
+      "thrash": false,
+      "runaway_cost": false
+    },
+    "metadata": {
+      "generator": "ConfabElicitor",
+      "params": {
+        "positive_intent": true,
+        "total_steps": 6,
+        "papers_per_step": 8,
+        "final_ratio": 0.0625,
+        "total_findings": 64,
+        "total_sources": 4,
+        "total_fabricated": 60,
+        "provider": "qwen3.5-9b-a",
+        "model": "qwen3.5-9b"
+      },
+      "onset_step": 0,
+      "tier": "elicited",
+      "model": null,
+      "provider": null,
+      "framework": null,
+      "reviewer": null,
+      "review_date": null,
+      "confidence": 0.9,
+      "notes": "Elicited via citation protocol. Ratio=0.062, fabricated=60."
+    }
+  },
+  {
+    "trace_id": "confab-elic-pos-054c823e",
+    "path": "traces/confabulation/elicited/positive/confab-elic-pos-054c823e.json",
+    "tier": "elicited",
+    "labels": {
+      "loop": false,
+      "stuck": false,
+      "confabulation": true,
+      "thrash": false,
+      "runaway_cost": false
+    },
+    "metadata": {
+      "generator": "ConfabElicitor",
+      "params": {
+        "positive_intent": true,
+        "total_steps": 6,
+        "papers_per_step": 8,
+        "final_ratio": 0.2131,
+        "total_findings": 61,
+        "total_sources": 13,
+        "total_fabricated": 48,
+        "provider": "qwen3.5-9b-a",
+        "model": "qwen3.5-9b"
+      },
+      "onset_step": 0,
+      "tier": "elicited",
+      "model": null,
+      "provider": null,
+      "framework": null,
+      "reviewer": null,
+      "review_date": null,
+      "confidence": 0.8,
+      "notes": "Elicited via citation protocol. Ratio=0.213, fabricated=48."
+    }
+  },
+  {
+    "trace_id": "confab-elic-pos-ea7e6778",
+    "path": "traces/confabulation/elicited/positive/confab-elic-pos-ea7e6778.json",
+    "tier": "elicited",
+    "labels": {
+      "loop": false,
+      "stuck": false,
+      "confabulation": true,
+      "thrash": false,
+      "runaway_cost": false
+    },
+    "metadata": {
+      "generator": "ConfabElicitor",
+      "params": {
+        "positive_intent": true,
+        "total_steps": 6,
+        "papers_per_step": 8,
+        "final_ratio": 0.1719,
+        "total_findings": 64,
+        "total_sources": 11,
+        "total_fabricated": 53,
+        "provider": "qwen3.5-9b-a",
+        "model": "qwen3.5-9b"
+      },
+      "onset_step": 1,
+      "tier": "elicited",
+      "model": null,
+      "provider": null,
+      "framework": null,
+      "reviewer": null,
+      "review_date": null,
+      "confidence": 0.9,
+      "notes": "Elicited via citation protocol. Ratio=0.172, fabricated=53."
+    }
+  },
+  {
+    "trace_id": "confab-elic-pos-c3eb0430",
+    "path": "traces/confabulation/elicited/positive/confab-elic-pos-c3eb0430.json",
+    "tier": "elicited",
+    "labels": {
+      "loop": false,
+      "stuck": false,
+      "confabulation": true,
+      "thrash": false,
+      "runaway_cost": false
+    },
+    "metadata": {
+      "generator": "ConfabElicitor",
+      "params": {
+        "positive_intent": true,
+        "total_steps": 6,
+        "papers_per_step": 8,
+        "final_ratio": 0.25,
+        "total_findings": 56,
+        "total_sources": 14,
+        "total_fabricated": 42,
+        "provider": "qwen3.5-9b-a",
+        "model": "qwen3.5-9b"
+      },
+      "onset_step": 1,
+      "tier": "elicited",
+      "model": null,
+      "provider": null,
+      "framework": null,
+      "reviewer": null,
+      "review_date": null,
+      "confidence": 0.8,
+      "notes": "Elicited via citation protocol. Ratio=0.250, fabricated=42."
+    }
+  },
+  {
+    "trace_id": "confab-elic-pos-6e30eea8",
+    "path": "traces/confabulation/elicited/positive/confab-elic-pos-6e30eea8.json",
+    "tier": "elicited",
+    "labels": {
+      "loop": false,
+      "stuck": false,
+      "confabulation": true,
+      "thrash": false,
+      "runaway_cost": false
+    },
+    "metadata": {
+      "generator": "ConfabElicitor",
+      "params": {
+        "positive_intent": true,
+        "total_steps": 6,
+        "papers_per_step": 8,
+        "final_ratio": 0.1667,
+        "total_findings": 48,
+        "total_sources": 8,
+        "total_fabricated": 40,
+        "provider": "qwen3.5-9b-a",
+        "model": "qwen3.5-9b"
+      },
+      "onset_step": 0,
+      "tier": "elicited",
+      "model": null,
+      "provider": null,
+      "framework": null,
+      "reviewer": null,
+      "review_date": null,
+      "confidence": 0.9,
+      "notes": "Elicited via citation protocol. Ratio=0.167, fabricated=40."
+    }
+  },
+  {
+    "trace_id": "confab-elic-pos-dbb56f9f",
+    "path": "traces/confabulation/elicited/positive/confab-elic-pos-dbb56f9f.json",
+    "tier": "elicited",
+    "labels": {
+      "loop": false,
+      "stuck": false,
+      "confabulation": true,
+      "thrash": false,
+      "runaway_cost": false
+    },
+    "metadata": {
+      "generator": "ConfabElicitor",
+      "params": {
+        "positive_intent": true,
+        "total_steps": 6,
+        "papers_per_step": 8,
+        "final_ratio": 0.2308,
+        "total_findings": 52,
+        "total_sources": 12,
+        "total_fabricated": 40,
+        "provider": "qwen3.5-9b-a",
+        "model": "qwen3.5-9b"
+      },
+      "onset_step": 2,
+      "tier": "elicited",
+      "model": null,
+      "provider": null,
+      "framework": null,
+      "reviewer": null,
+      "review_date": null,
+      "confidence": 0.8,
+      "notes": "Elicited via citation protocol. Ratio=0.231, fabricated=40."
+    }
+  },
+  {
+    "trace_id": "confab-elic-pos-bb454cc8",
+    "path": "traces/confabulation/elicited/positive/confab-elic-pos-bb454cc8.json",
+    "tier": "elicited",
+    "labels": {
+      "loop": false,
+      "stuck": false,
+      "confabulation": true,
+      "thrash": false,
+      "runaway_cost": false
+    },
+    "metadata": {
+      "generator": "ConfabElicitor",
+      "params": {
+        "positive_intent": true,
+        "total_steps": 6,
+        "papers_per_step": 8,
+        "final_ratio": 0.2464,
+        "total_findings": 69,
+        "total_sources": 17,
+        "total_fabricated": 52,
+        "provider": "qwen3.5-9b-a",
+        "model": "qwen3.5-9b"
+      },
+      "onset_step": 0,
+      "tier": "elicited",
+      "model": null,
+      "provider": null,
+      "framework": null,
+      "reviewer": null,
+      "review_date": null,
+      "confidence": 0.8,
+      "notes": "Elicited via citation protocol. Ratio=0.246, fabricated=52."
+    }
+  },
+  {
+    "trace_id": "confab-elic-pos-b8a84028",
+    "path": "traces/confabulation/elicited/positive/confab-elic-pos-b8a84028.json",
+    "tier": "elicited",
+    "labels": {
+      "loop": false,
+      "stuck": false,
+      "confabulation": true,
+      "thrash": false,
+      "runaway_cost": false
+    },
+    "metadata": {
+      "generator": "ConfabElicitor",
+      "params": {
+        "positive_intent": true,
+        "total_steps": 6,
+        "papers_per_step": 8,
+        "final_ratio": 0.1224,
+        "total_findings": 49,
+        "total_sources": 6,
+        "total_fabricated": 43,
+        "provider": "qwen3.5-9b-a",
+        "model": "qwen3.5-9b"
+      },
+      "onset_step": 0,
+      "tier": "elicited",
+      "model": null,
+      "provider": null,
+      "framework": null,
+      "reviewer": null,
+      "review_date": null,
+      "confidence": 0.9,
+      "notes": "Elicited via citation protocol. Ratio=0.122, fabricated=43."
+    }
+  },
+  {
+    "trace_id": "confab-elic-pos-63500426",
+    "path": "traces/confabulation/elicited/positive/confab-elic-pos-63500426.json",
+    "tier": "elicited",
+    "labels": {
+      "loop": false,
+      "stuck": false,
+      "confabulation": true,
+      "thrash": false,
+      "runaway_cost": false
+    },
+    "metadata": {
+      "generator": "ConfabElicitor",
+      "params": {
+        "positive_intent": true,
+        "total_steps": 6,
+        "papers_per_step": 8,
+        "final_ratio": 0.1351,
+        "total_findings": 74,
+        "total_sources": 10,
+        "total_fabricated": 64,
+        "provider": "qwen3.5-9b-a",
+        "model": "qwen3.5-9b"
+      },
+      "onset_step": 1,
+      "tier": "elicited",
+      "model": null,
+      "provider": null,
+      "framework": null,
+      "reviewer": null,
+      "review_date": null,
+      "confidence": 0.9,
+      "notes": "Elicited via citation protocol. Ratio=0.135, fabricated=64."
+    }
+  },
+  {
+    "trace_id": "confab-elic-neg-0cbe9575",
+    "path": "traces/confabulation/elicited/negative/confab-elic-neg-0cbe9575.json",
+    "tier": "elicited",
+    "labels": {
+      "loop": false,
+      "stuck": false,
+      "confabulation": true,
+      "thrash": false,
+      "runaway_cost": false
+    },
+    "metadata": {
+      "generator": "ConfabElicitor",
+      "params": {
+        "positive_intent": false,
+        "total_steps": 6,
+        "papers_per_step": 8,
+        "final_ratio": 0.1385,
+        "total_findings": 65,
+        "total_sources": 9,
+        "total_fabricated": 56,
+        "provider": "qwen3.5-9b-a",
+        "model": "qwen3.5-9b"
+      },
+      "onset_step": 2,
+      "tier": "elicited",
+      "model": null,
+      "provider": null,
+      "framework": null,
+      "reviewer": null,
+      "review_date": null,
+      "confidence": 0.9,
+      "notes": "Elicited via citation protocol. Ratio=0.138, fabricated=56."
+    }
+  },
+  {
+    "trace_id": "confab-elic-neg-a190e6b8",
+    "path": "traces/confabulation/elicited/negative/confab-elic-neg-a190e6b8.json",
+    "tier": "elicited",
+    "labels": {
+      "loop": false,
+      "stuck": false,
+      "confabulation": true,
+      "thrash": false,
+      "runaway_cost": false
+    },
+    "metadata": {
+      "generator": "ConfabElicitor",
+      "params": {
+        "positive_intent": false,
+        "total_steps": 6,
+        "papers_per_step": 8,
+        "final_ratio": 0.1413,
+        "total_findings": 92,
+        "total_sources": 13,
+        "total_fabricated": 79,
+        "provider": "qwen3.5-9b-a",
+        "model": "qwen3.5-9b"
+      },
+      "onset_step": 0,
+      "tier": "elicited",
+      "model": null,
+      "provider": null,
+      "framework": null,
+      "reviewer": null,
+      "review_date": null,
+      "confidence": 0.9,
+      "notes": "Elicited via citation protocol. Ratio=0.141, fabricated=79."
+    }
+  },
+  {
+    "trace_id": "confab-elic-neg-4accbc24",
+    "path": "traces/confabulation/elicited/negative/confab-elic-neg-4accbc24.json",
+    "tier": "elicited",
+    "labels": {
+      "loop": false,
+      "stuck": false,
+      "confabulation": true,
+      "thrash": false,
+      "runaway_cost": false
+    },
+    "metadata": {
+      "generator": "ConfabElicitor",
+      "params": {
+        "positive_intent": false,
+        "total_steps": 6,
+        "papers_per_step": 8,
+        "final_ratio": 0.1948,
+        "total_findings": 77,
+        "total_sources": 15,
+        "total_fabricated": 62,
+        "provider": "qwen3.5-9b-a",
+        "model": "qwen3.5-9b"
+      },
+      "onset_step": 0,
+      "tier": "elicited",
+      "model": null,
+      "provider": null,
+      "framework": null,
+      "reviewer": null,
+      "review_date": null,
+      "confidence": 0.9,
+      "notes": "Elicited via citation protocol. Ratio=0.195, fabricated=62."
+    }
+  },
+  {
+    "trace_id": "confab-elic-neg-4282bdc9",
+    "path": "traces/confabulation/elicited/negative/confab-elic-neg-4282bdc9.json",
+    "tier": "elicited",
+    "labels": {
+      "loop": false,
+      "stuck": false,
+      "confabulation": true,
+      "thrash": false,
+      "runaway_cost": false
+    },
+    "metadata": {
+      "generator": "ConfabElicitor",
+      "params": {
+        "positive_intent": false,
+        "total_steps": 6,
+        "papers_per_step": 8,
+        "final_ratio": 0.2143,
+        "total_findings": 98,
+        "total_sources": 21,
+        "total_fabricated": 77,
+        "provider": "qwen3.5-9b-a",
+        "model": "qwen3.5-9b"
+      },
+      "onset_step": 0,
+      "tier": "elicited",
+      "model": null,
+      "provider": null,
+      "framework": null,
+      "reviewer": null,
+      "review_date": null,
+      "confidence": 0.8,
+      "notes": "Elicited via citation protocol. Ratio=0.214, fabricated=77."
+    }
+  },
+  {
+    "trace_id": "confab-elic-neg-31bfab34",
+    "path": "traces/confabulation/elicited/negative/confab-elic-neg-31bfab34.json",
+    "tier": "elicited",
+    "labels": {
+      "loop": false,
+      "stuck": false,
+      "confabulation": true,
+      "thrash": false,
+      "runaway_cost": false
+    },
+    "metadata": {
+      "generator": "ConfabElicitor",
+      "params": {
+        "positive_intent": false,
+        "total_steps": 6,
+        "papers_per_step": 8,
+        "final_ratio": 0.1316,
+        "total_findings": 76,
+        "total_sources": 10,
+        "total_fabricated": 66,
+        "provider": "qwen3.5-9b-a",
+        "model": "qwen3.5-9b"
+      },
+      "onset_step": 1,
+      "tier": "elicited",
+      "model": null,
+      "provider": null,
+      "framework": null,
+      "reviewer": null,
+      "review_date": null,
+      "confidence": 0.9,
+      "notes": "Elicited via citation protocol. Ratio=0.132, fabricated=66."
+    }
+  },
+  {
+    "trace_id": "confab-elic-neg-ead876b8",
+    "path": "traces/confabulation/elicited/negative/confab-elic-neg-ead876b8.json",
+    "tier": "elicited",
+    "labels": {
+      "loop": false,
+      "stuck": false,
+      "confabulation": true,
+      "thrash": false,
+      "runaway_cost": false
+    },
+    "metadata": {
+      "generator": "ConfabElicitor",
+      "params": {
+        "positive_intent": false,
+        "total_steps": 6,
+        "papers_per_step": 8,
+        "final_ratio": 0.0583,
+        "total_findings": 120,
+        "total_sources": 7,
+        "total_fabricated": 113,
+        "provider": "qwen3.5-9b-a",
+        "model": "qwen3.5-9b"
+      },
+      "onset_step": 0,
+      "tier": "elicited",
+      "model": null,
+      "provider": null,
+      "framework": null,
+      "reviewer": null,
+      "review_date": null,
+      "confidence": 0.9,
+      "notes": "Elicited via citation protocol. Ratio=0.058, fabricated=113."
+    }
+  },
+  {
+    "trace_id": "confab-elic-neg-91b6f0c7",
+    "path": "traces/confabulation/elicited/negative/confab-elic-neg-91b6f0c7.json",
+    "tier": "elicited",
+    "labels": {
+      "loop": false,
+      "stuck": false,
+      "confabulation": true,
+      "thrash": false,
+      "runaway_cost": false
+    },
+    "metadata": {
+      "generator": "ConfabElicitor",
+      "params": {
+        "positive_intent": false,
+        "total_steps": 6,
+        "papers_per_step": 8,
+        "final_ratio": 0.2353,
+        "total_findings": 68,
+        "total_sources": 16,
+        "total_fabricated": 52,
+        "provider": "qwen3.5-9b-a",
+        "model": "qwen3.5-9b"
+      },
+      "onset_step": 2,
+      "tier": "elicited",
+      "model": null,
+      "provider": null,
+      "framework": null,
+      "reviewer": null,
+      "review_date": null,
+      "confidence": 0.8,
+      "notes": "Elicited via citation protocol. Ratio=0.235, fabricated=52."
+    }
+  },
+  {
+    "trace_id": "confab-elic-neg-714668a3",
+    "path": "traces/confabulation/elicited/negative/confab-elic-neg-714668a3.json",
+    "tier": "elicited",
+    "labels": {
+      "loop": false,
+      "stuck": false,
+      "confabulation": true,
+      "thrash": false,
+      "runaway_cost": false
+    },
+    "metadata": {
+      "generator": "ConfabElicitor",
+      "params": {
+        "positive_intent": false,
+        "total_steps": 6,
+        "papers_per_step": 8,
+        "final_ratio": 0.0851,
+        "total_findings": 94,
+        "total_sources": 8,
+        "total_fabricated": 86,
+        "provider": "qwen3.5-9b-a",
+        "model": "qwen3.5-9b"
+      },
+      "onset_step": 0,
+      "tier": "elicited",
+      "model": null,
+      "provider": null,
+      "framework": null,
+      "reviewer": null,
+      "review_date": null,
+      "confidence": 0.9,
+      "notes": "Elicited via citation protocol. Ratio=0.085, fabricated=86."
+    }
+  },
+  {
+    "trace_id": "confab-elic-pos-f548b8e8",
+    "path": "traces/confabulation/elicited/positive/confab-elic-pos-f548b8e8.json",
+    "tier": "elicited",
+    "labels": {
+      "loop": false,
+      "stuck": false,
+      "confabulation": true,
+      "thrash": false,
+      "runaway_cost": false
+    },
+    "metadata": {
+      "generator": "ConfabElicitor",
+      "params": {
+        "positive_intent": true,
+        "total_steps": 6,
+        "papers_per_step": 8,
+        "final_ratio": 0.2128,
+        "total_findings": 47,
+        "total_sources": 10,
+        "total_fabricated": 37,
+        "provider": "qwen3.5-9b-b",
+        "model": "qwen3.5-9b"
+      },
+      "onset_step": 0,
+      "tier": "elicited",
+      "model": null,
+      "provider": null,
+      "framework": null,
+      "reviewer": null,
+      "review_date": null,
+      "confidence": 0.8,
+      "notes": "Elicited via citation protocol. Ratio=0.213, fabricated=37."
+    }
+  },
+  {
+    "trace_id": "confab-elic-pos-af0b846f",
+    "path": "traces/confabulation/elicited/positive/confab-elic-pos-af0b846f.json",
+    "tier": "elicited",
+    "labels": {
+      "loop": false,
+      "stuck": false,
+      "confabulation": true,
+      "thrash": false,
+      "runaway_cost": false
+    },
+    "metadata": {
+      "generator": "ConfabElicitor",
+      "params": {
+        "positive_intent": true,
+        "total_steps": 6,
+        "papers_per_step": 8,
+        "final_ratio": 0.2203,
+        "total_findings": 59,
+        "total_sources": 13,
+        "total_fabricated": 46,
+        "provider": "qwen3.5-9b-b",
+        "model": "qwen3.5-9b"
+      },
+      "onset_step": 1,
+      "tier": "elicited",
+      "model": null,
+      "provider": null,
+      "framework": null,
+      "reviewer": null,
+      "review_date": null,
+      "confidence": 0.8,
+      "notes": "Elicited via citation protocol. Ratio=0.220, fabricated=46."
+    }
+  },
+  {
+    "trace_id": "confab-elic-pos-659c7744",
+    "path": "traces/confabulation/elicited/positive/confab-elic-pos-659c7744.json",
+    "tier": "elicited",
+    "labels": {
+      "loop": false,
+      "stuck": false,
+      "confabulation": true,
+      "thrash": false,
+      "runaway_cost": false
+    },
+    "metadata": {
+      "generator": "ConfabElicitor",
+      "params": {
+        "positive_intent": true,
+        "total_steps": 6,
+        "papers_per_step": 8,
+        "final_ratio": 0.2,
+        "total_findings": 45,
+        "total_sources": 9,
+        "total_fabricated": 36,
+        "provider": "qwen3.5-9b-b",
+        "model": "qwen3.5-9b"
+      },
+      "onset_step": 0,
+      "tier": "elicited",
+      "model": null,
+      "provider": null,
+      "framework": null,
+      "reviewer": null,
+      "review_date": null,
+      "confidence": 0.8,
+      "notes": "Elicited via citation protocol. Ratio=0.200, fabricated=36."
+    }
+  },
+  {
+    "trace_id": "confab-elic-pos-2fd37a5b",
+    "path": "traces/confabulation/elicited/positive/confab-elic-pos-2fd37a5b.json",
+    "tier": "elicited",
+    "labels": {
+      "loop": false,
+      "stuck": false,
+      "confabulation": true,
+      "thrash": false,
+      "runaway_cost": false
+    },
+    "metadata": {
+      "generator": "ConfabElicitor",
+      "params": {
+        "positive_intent": true,
+        "total_steps": 6,
+        "papers_per_step": 8,
+        "final_ratio": 0.2927,
+        "total_findings": 41,
+        "total_sources": 12,
+        "total_fabricated": 29,
+        "provider": "qwen3.5-9b-b",
+        "model": "qwen3.5-9b"
+      },
+      "onset_step": 0,
+      "tier": "elicited",
+      "model": null,
+      "provider": null,
+      "framework": null,
+      "reviewer": null,
+      "review_date": null,
+      "confidence": 0.8,
+      "notes": "Elicited via citation protocol. Ratio=0.293, fabricated=29."
+    }
+  },
+  {
+    "trace_id": "confab-elic-pos-be33680a",
+    "path": "traces/confabulation/elicited/positive/confab-elic-pos-be33680a.json",
+    "tier": "elicited",
+    "labels": {
+      "loop": false,
+      "stuck": false,
+      "confabulation": true,
+      "thrash": false,
+      "runaway_cost": false
+    },
+    "metadata": {
+      "generator": "ConfabElicitor",
+      "params": {
+        "positive_intent": true,
+        "total_steps": 6,
+        "papers_per_step": 8,
+        "final_ratio": 0.1719,
+        "total_findings": 64,
+        "total_sources": 11,
+        "total_fabricated": 53,
+        "provider": "qwen3.5-9b-b",
+        "model": "qwen3.5-9b"
+      },
+      "onset_step": 0,
+      "tier": "elicited",
+      "model": null,
+      "provider": null,
+      "framework": null,
+      "reviewer": null,
+      "review_date": null,
+      "confidence": 0.9,
+      "notes": "Elicited via citation protocol. Ratio=0.172, fabricated=53."
+    }
+  },
+  {
+    "trace_id": "confab-elic-pos-62f70374",
+    "path": "traces/confabulation/elicited/positive/confab-elic-pos-62f70374.json",
+    "tier": "elicited",
+    "labels": {
+      "loop": false,
+      "stuck": false,
+      "confabulation": true,
+      "thrash": false,
+      "runaway_cost": false
+    },
+    "metadata": {
+      "generator": "ConfabElicitor",
+      "params": {
+        "positive_intent": true,
+        "total_steps": 6,
+        "papers_per_step": 8,
+        "final_ratio": 0.098,
+        "total_findings": 51,
+        "total_sources": 5,
+        "total_fabricated": 46,
+        "provider": "qwen3.5-9b-b",
+        "model": "qwen3.5-9b"
+      },
+      "onset_step": 0,
+      "tier": "elicited",
+      "model": null,
+      "provider": null,
+      "framework": null,
+      "reviewer": null,
+      "review_date": null,
+      "confidence": 0.9,
+      "notes": "Elicited via citation protocol. Ratio=0.098, fabricated=46."
+    }
+  },
+  {
+    "trace_id": "confab-elic-pos-bd97f41c",
+    "path": "traces/confabulation/elicited/positive/confab-elic-pos-bd97f41c.json",
+    "tier": "elicited",
+    "labels": {
+      "loop": false,
+      "stuck": false,
+      "confabulation": true,
+      "thrash": false,
+      "runaway_cost": false
+    },
+    "metadata": {
+      "generator": "ConfabElicitor",
+      "params": {
+        "positive_intent": true,
+        "total_steps": 6,
+        "papers_per_step": 8,
+        "final_ratio": 0.1923,
+        "total_findings": 52,
+        "total_sources": 10,
+        "total_fabricated": 42,
+        "provider": "qwen3.5-9b-b",
+        "model": "qwen3.5-9b"
+      },
+      "onset_step": 0,
+      "tier": "elicited",
+      "model": null,
+      "provider": null,
+      "framework": null,
+      "reviewer": null,
+      "review_date": null,
+      "confidence": 0.9,
+      "notes": "Elicited via citation protocol. Ratio=0.192, fabricated=42."
+    }
+  },
+  {
+    "trace_id": "confab-elic-pos-cbd5cf76",
+    "path": "traces/confabulation/elicited/positive/confab-elic-pos-cbd5cf76.json",
+    "tier": "elicited",
+    "labels": {
+      "loop": false,
+      "stuck": false,
+      "confabulation": true,
+      "thrash": false,
+      "runaway_cost": false
+    },
+    "metadata": {
+      "generator": "ConfabElicitor",
+      "params": {
+        "positive_intent": true,
+        "total_steps": 6,
+        "papers_per_step": 8,
+        "final_ratio": 0.1731,
+        "total_findings": 52,
+        "total_sources": 9,
+        "total_fabricated": 43,
+        "provider": "qwen3.5-9b-b",
+        "model": "qwen3.5-9b"
+      },
+      "onset_step": 0,
+      "tier": "elicited",
+      "model": null,
+      "provider": null,
+      "framework": null,
+      "reviewer": null,
+      "review_date": null,
+      "confidence": 0.9,
+      "notes": "Elicited via citation protocol. Ratio=0.173, fabricated=43."
+    }
+  },
+  {
+    "trace_id": "confab-elic-pos-c1f82666",
+    "path": "traces/confabulation/elicited/negative/confab-elic-pos-c1f82666.json",
+    "tier": "elicited",
+    "labels": {
+      "loop": false,
+      "stuck": false,
+      "confabulation": false,
+      "thrash": false,
+      "runaway_cost": false
+    },
+    "metadata": {
+      "generator": "ConfabElicitor",
+      "params": {
+        "positive_intent": true,
+        "total_steps": 6,
+        "papers_per_step": 8,
+        "final_ratio": 0.3509,
+        "total_findings": 57,
+        "total_sources": 20,
+        "total_fabricated": 37,
+        "provider": "qwen3.5-9b-b",
+        "model": "qwen3.5-9b"
+      },
+      "onset_step": 2,
+      "tier": "elicited",
+      "model": null,
+      "provider": null,
+      "framework": null,
+      "reviewer": null,
+      "review_date": null,
+      "confidence": 0.8,
+      "notes": "Elicited via citation protocol. Ratio=0.351, fabricated=37."
+    }
+  },
+  {
+    "trace_id": "confab-elic-pos-d620042c",
+    "path": "traces/confabulation/elicited/positive/confab-elic-pos-d620042c.json",
+    "tier": "elicited",
+    "labels": {
+      "loop": false,
+      "stuck": false,
+      "confabulation": true,
+      "thrash": false,
+      "runaway_cost": false
+    },
+    "metadata": {
+      "generator": "ConfabElicitor",
+      "params": {
+        "positive_intent": true,
+        "total_steps": 6,
+        "papers_per_step": 8,
+        "final_ratio": 0.2424,
+        "total_findings": 66,
+        "total_sources": 16,
+        "total_fabricated": 50,
+        "provider": "qwen3.5-9b-b",
+        "model": "qwen3.5-9b"
+      },
+      "onset_step": 0,
+      "tier": "elicited",
+      "model": null,
+      "provider": null,
+      "framework": null,
+      "reviewer": null,
+      "review_date": null,
+      "confidence": 0.8,
+      "notes": "Elicited via citation protocol. Ratio=0.242, fabricated=50."
+    }
+  },
+  {
+    "trace_id": "confab-elic-pos-0cb26eae",
+    "path": "traces/confabulation/elicited/positive/confab-elic-pos-0cb26eae.json",
+    "tier": "elicited",
+    "labels": {
+      "loop": false,
+      "stuck": false,
+      "confabulation": true,
+      "thrash": false,
+      "runaway_cost": false
+    },
+    "metadata": {
+      "generator": "ConfabElicitor",
+      "params": {
+        "positive_intent": true,
+        "total_steps": 6,
+        "papers_per_step": 8,
+        "final_ratio": 0.2,
+        "total_findings": 50,
+        "total_sources": 10,
+        "total_fabricated": 40,
+        "provider": "qwen3.5-9b-b",
+        "model": "qwen3.5-9b"
+      },
+      "onset_step": 0,
+      "tier": "elicited",
+      "model": null,
+      "provider": null,
+      "framework": null,
+      "reviewer": null,
+      "review_date": null,
+      "confidence": 0.8,
+      "notes": "Elicited via citation protocol. Ratio=0.200, fabricated=40."
+    }
+  },
+  {
+    "trace_id": "confab-elic-pos-7af4a379",
+    "path": "traces/confabulation/elicited/positive/confab-elic-pos-7af4a379.json",
+    "tier": "elicited",
+    "labels": {
+      "loop": false,
+      "stuck": false,
+      "confabulation": true,
+      "thrash": false,
+      "runaway_cost": false
+    },
+    "metadata": {
+      "generator": "ConfabElicitor",
+      "params": {
+        "positive_intent": true,
+        "total_steps": 6,
+        "papers_per_step": 8,
+        "final_ratio": 0.193,
+        "total_findings": 57,
+        "total_sources": 11,
+        "total_fabricated": 46,
+        "provider": "qwen3.5-9b-b",
+        "model": "qwen3.5-9b"
+      },
+      "onset_step": 0,
+      "tier": "elicited",
+      "model": null,
+      "provider": null,
+      "framework": null,
+      "reviewer": null,
+      "review_date": null,
+      "confidence": 0.9,
+      "notes": "Elicited via citation protocol. Ratio=0.193, fabricated=46."
+    }
+  },
+  {
+    "trace_id": "confab-elic-pos-ff73e16d",
+    "path": "traces/confabulation/elicited/positive/confab-elic-pos-ff73e16d.json",
+    "tier": "elicited",
+    "labels": {
+      "loop": false,
+      "stuck": false,
+      "confabulation": true,
+      "thrash": false,
+      "runaway_cost": false
+    },
+    "metadata": {
+      "generator": "ConfabElicitor",
+      "params": {
+        "positive_intent": true,
+        "total_steps": 6,
+        "papers_per_step": 8,
+        "final_ratio": 0.1231,
+        "total_findings": 65,
+        "total_sources": 8,
+        "total_fabricated": 57,
+        "provider": "qwen3.5-9b-b",
+        "model": "qwen3.5-9b"
+      },
+      "onset_step": 1,
+      "tier": "elicited",
+      "model": null,
+      "provider": null,
+      "framework": null,
+      "reviewer": null,
+      "review_date": null,
+      "confidence": 0.9,
+      "notes": "Elicited via citation protocol. Ratio=0.123, fabricated=57."
+    }
+  },
+  {
+    "trace_id": "confab-elic-pos-dd76f970",
+    "path": "traces/confabulation/elicited/positive/confab-elic-pos-dd76f970.json",
+    "tier": "elicited",
+    "labels": {
+      "loop": false,
+      "stuck": false,
+      "confabulation": true,
+      "thrash": false,
+      "runaway_cost": false
+    },
+    "metadata": {
+      "generator": "ConfabElicitor",
+      "params": {
+        "positive_intent": true,
+        "total_steps": 6,
+        "papers_per_step": 8,
+        "final_ratio": 0.2679,
+        "total_findings": 56,
+        "total_sources": 15,
+        "total_fabricated": 41,
+        "provider": "qwen3.5-9b-b",
+        "model": "qwen3.5-9b"
+      },
+      "onset_step": 0,
+      "tier": "elicited",
+      "model": null,
+      "provider": null,
+      "framework": null,
+      "reviewer": null,
+      "review_date": null,
+      "confidence": 0.8,
+      "notes": "Elicited via citation protocol. Ratio=0.268, fabricated=41."
+    }
+  },
+  {
+    "trace_id": "confab-elic-pos-2484b566",
+    "path": "traces/confabulation/elicited/negative/confab-elic-pos-2484b566.json",
+    "tier": "elicited",
+    "labels": {
+      "loop": false,
+      "stuck": false,
+      "confabulation": false,
+      "thrash": false,
+      "runaway_cost": false
+    },
+    "metadata": {
+      "generator": "ConfabElicitor",
+      "params": {
+        "positive_intent": true,
+        "total_steps": 6,
+        "papers_per_step": 8,
+        "final_ratio": 0.339,
+        "total_findings": 59,
+        "total_sources": 20,
+        "total_fabricated": 39,
+        "provider": "qwen3.5-9b-b",
+        "model": "qwen3.5-9b"
+      },
+      "onset_step": 0,
+      "tier": "elicited",
+      "model": null,
+      "provider": null,
+      "framework": null,
+      "reviewer": null,
+      "review_date": null,
+      "confidence": 0.8,
+      "notes": "Elicited via citation protocol. Ratio=0.339, fabricated=39."
+    }
+  },
+  {
+    "trace_id": "confab-elic-neg-d59fa33f",
+    "path": "traces/confabulation/elicited/negative/confab-elic-neg-d59fa33f.json",
+    "tier": "elicited",
+    "labels": {
+      "loop": false,
+      "stuck": false,
+      "confabulation": true,
+      "thrash": false,
+      "runaway_cost": false
+    },
+    "metadata": {
+      "generator": "ConfabElicitor",
+      "params": {
+        "positive_intent": false,
+        "total_steps": 6,
+        "papers_per_step": 8,
+        "final_ratio": 0.2075,
+        "total_findings": 106,
+        "total_sources": 22,
+        "total_fabricated": 84,
+        "provider": "qwen3.5-9b-b",
+        "model": "qwen3.5-9b"
+      },
+      "onset_step": 0,
+      "tier": "elicited",
+      "model": null,
+      "provider": null,
+      "framework": null,
+      "reviewer": null,
+      "review_date": null,
+      "confidence": 0.8,
+      "notes": "Elicited via citation protocol. Ratio=0.208, fabricated=84."
+    }
+  },
+  {
+    "trace_id": "confab-elic-neg-c5afbb7a",
+    "path": "traces/confabulation/elicited/negative/confab-elic-neg-c5afbb7a.json",
+    "tier": "elicited",
+    "labels": {
+      "loop": false,
+      "stuck": false,
+      "confabulation": true,
+      "thrash": false,
+      "runaway_cost": false
+    },
+    "metadata": {
+      "generator": "ConfabElicitor",
+      "params": {
+        "positive_intent": false,
+        "total_steps": 6,
+        "papers_per_step": 8,
+        "final_ratio": 0.2532,
+        "total_findings": 79,
+        "total_sources": 20,
+        "total_fabricated": 59,
+        "provider": "qwen3.5-9b-b",
+        "model": "qwen3.5-9b"
+      },
+      "onset_step": 5,
+      "tier": "elicited",
+      "model": null,
+      "provider": null,
+      "framework": null,
+      "reviewer": null,
+      "review_date": null,
+      "confidence": 0.8,
+      "notes": "Elicited via citation protocol. Ratio=0.253, fabricated=59."
+    }
+  },
+  {
+    "trace_id": "confab-elic-neg-180ed8e8",
+    "path": "traces/confabulation/elicited/negative/confab-elic-neg-180ed8e8.json",
+    "tier": "elicited",
+    "labels": {
+      "loop": false,
+      "stuck": false,
+      "confabulation": true,
+      "thrash": false,
+      "runaway_cost": false
+    },
+    "metadata": {
+      "generator": "ConfabElicitor",
+      "params": {
+        "positive_intent": false,
+        "total_steps": 6,
+        "papers_per_step": 8,
+        "final_ratio": 0.1806,
+        "total_findings": 72,
+        "total_sources": 13,
+        "total_fabricated": 59,
+        "provider": "qwen3.5-9b-b",
+        "model": "qwen3.5-9b"
+      },
+      "onset_step": 0,
+      "tier": "elicited",
+      "model": null,
+      "provider": null,
+      "framework": null,
+      "reviewer": null,
+      "review_date": null,
+      "confidence": 0.9,
+      "notes": "Elicited via citation protocol. Ratio=0.181, fabricated=59."
+    }
+  },
+  {
+    "trace_id": "confab-elic-neg-a92e75af",
+    "path": "traces/confabulation/elicited/negative/confab-elic-neg-a92e75af.json",
+    "tier": "elicited",
+    "labels": {
+      "loop": false,
+      "stuck": false,
+      "confabulation": true,
+      "thrash": false,
+      "runaway_cost": false
+    },
+    "metadata": {
+      "generator": "ConfabElicitor",
+      "params": {
+        "positive_intent": false,
+        "total_steps": 6,
+        "papers_per_step": 8,
+        "final_ratio": 0.1032,
+        "total_findings": 126,
+        "total_sources": 13,
+        "total_fabricated": 113,
+        "provider": "qwen3.5-9b-b",
+        "model": "qwen3.5-9b"
+      },
+      "onset_step": 0,
+      "tier": "elicited",
+      "model": null,
+      "provider": null,
+      "framework": null,
+      "reviewer": null,
+      "review_date": null,
+      "confidence": 0.9,
+      "notes": "Elicited via citation protocol. Ratio=0.103, fabricated=113."
+    }
+  },
+  {
+    "trace_id": "confab-elic-neg-aab38941",
+    "path": "traces/confabulation/elicited/negative/confab-elic-neg-aab38941.json",
+    "tier": "elicited",
+    "labels": {
+      "loop": false,
+      "stuck": false,
+      "confabulation": true,
+      "thrash": false,
+      "runaway_cost": false
+    },
+    "metadata": {
+      "generator": "ConfabElicitor",
+      "params": {
+        "positive_intent": false,
+        "total_steps": 6,
+        "papers_per_step": 8,
+        "final_ratio": 0.1682,
+        "total_findings": 107,
+        "total_sources": 18,
+        "total_fabricated": 89,
+        "provider": "qwen3.5-9b-b",
+        "model": "qwen3.5-9b"
+      },
+      "onset_step": 0,
+      "tier": "elicited",
+      "model": null,
+      "provider": null,
+      "framework": null,
+      "reviewer": null,
+      "review_date": null,
+      "confidence": 0.9,
+      "notes": "Elicited via citation protocol. Ratio=0.168, fabricated=89."
+    }
+  },
+  {
+    "trace_id": "confab-elic-neg-c4d92346",
+    "path": "traces/confabulation/elicited/negative/confab-elic-neg-c4d92346.json",
+    "tier": "elicited",
+    "labels": {
+      "loop": false,
+      "stuck": false,
+      "confabulation": true,
+      "thrash": false,
+      "runaway_cost": false
+    },
+    "metadata": {
+      "generator": "ConfabElicitor",
+      "params": {
+        "positive_intent": false,
+        "total_steps": 6,
+        "papers_per_step": 8,
+        "final_ratio": 0.1111,
+        "total_findings": 90,
+        "total_sources": 10,
+        "total_fabricated": 80,
+        "provider": "qwen3.5-9b-b",
+        "model": "qwen3.5-9b"
+      },
+      "onset_step": 0,
+      "tier": "elicited",
+      "model": null,
+      "provider": null,
+      "framework": null,
+      "reviewer": null,
+      "review_date": null,
+      "confidence": 0.9,
+      "notes": "Elicited via citation protocol. Ratio=0.111, fabricated=80."
+    }
+  },
+  {
+    "trace_id": "confab-elic-neg-79638d85",
+    "path": "traces/confabulation/elicited/negative/confab-elic-neg-79638d85.json",
+    "tier": "elicited",
+    "labels": {
+      "loop": false,
+      "stuck": false,
+      "confabulation": true,
+      "thrash": false,
+      "runaway_cost": false
+    },
+    "metadata": {
+      "generator": "ConfabElicitor",
+      "params": {
+        "positive_intent": false,
+        "total_steps": 6,
+        "papers_per_step": 8,
+        "final_ratio": 0.287,
+        "total_findings": 115,
+        "total_sources": 33,
+        "total_fabricated": 82,
+        "provider": "qwen3.5-9b-b",
+        "model": "qwen3.5-9b"
+      },
+      "onset_step": 0,
+      "tier": "elicited",
+      "model": null,
+      "provider": null,
+      "framework": null,
+      "reviewer": null,
+      "review_date": null,
+      "confidence": 0.8,
+      "notes": "Elicited via citation protocol. Ratio=0.287, fabricated=82."
+    }
+  },
+  {
+    "trace_id": "confab-elic-neg-a8614033",
+    "path": "traces/confabulation/elicited/negative/confab-elic-neg-a8614033.json",
+    "tier": "elicited",
+    "labels": {
+      "loop": false,
+      "stuck": false,
+      "confabulation": false,
+      "thrash": false,
+      "runaway_cost": false
+    },
+    "metadata": {
+      "generator": "ConfabElicitor",
+      "params": {
+        "positive_intent": false,
+        "total_steps": 6,
+        "papers_per_step": 8,
+        "final_ratio": 0.3151,
+        "total_findings": 73,
+        "total_sources": 23,
+        "total_fabricated": 50,
+        "provider": "qwen3.5-9b-b",
+        "model": "qwen3.5-9b"
+      },
+      "onset_step": 0,
+      "tier": "elicited",
+      "model": null,
+      "provider": null,
+      "framework": null,
+      "reviewer": null,
+      "review_date": null,
+      "confidence": 0.8,
+      "notes": "Elicited via citation protocol. Ratio=0.315, fabricated=50."
+    }
+  }
+]

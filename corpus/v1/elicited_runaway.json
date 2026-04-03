@@ -1,0 +1,1362 @@
+[
+  {
+    "trace_id": "runaway-elic-pos-d8dd59f4",
+    "path": "traces/runaway_cost/elicited/positive/runaway-elic-pos-d8dd59f4.json",
+    "tier": "elicited",
+    "labels": {
+      "loop": false,
+      "stuck": false,
+      "confabulation": false,
+      "thrash": false,
+      "runaway_cost": true
+    },
+    "metadata": {
+      "generator": "RunawayCostElicitor",
+      "params": {
+        "positive_intent": true,
+        "total_steps": 8,
+        "baseline_tokens": 345.3,
+        "peak_tokens": 4096,
+        "peak_ratio": 11.86,
+        "is_increasing": true,
+        "provider": "qwen3.5-9b-b",
+        "model": "qwen3.5-9b"
+      },
+      "onset_step": 3,
+      "tier": "elicited",
+      "model": null,
+      "provider": null,
+      "framework": null,
+      "reviewer": null,
+      "review_date": null,
+      "confidence": 0.9,
+      "notes": "Elicited via open-ended task protocol. Baseline=345, peak=4096, ratio=11.9x."
+    }
+  },
+  {
+    "trace_id": "runaway-elic-pos-63c6ad28",
+    "path": "traces/runaway_cost/elicited/positive/runaway-elic-pos-63c6ad28.json",
+    "tier": "elicited",
+    "labels": {
+      "loop": false,
+      "stuck": false,
+      "confabulation": false,
+      "thrash": false,
+      "runaway_cost": true
+    },
+    "metadata": {
+      "generator": "RunawayCostElicitor",
+      "params": {
+        "positive_intent": true,
+        "total_steps": 8,
+        "baseline_tokens": 370.7,
+        "peak_tokens": 4096,
+        "peak_ratio": 11.05,
+        "is_increasing": true,
+        "provider": "qwen3.5-9b-b",
+        "model": "qwen3.5-9b"
+      },
+      "onset_step": 4,
+      "tier": "elicited",
+      "model": null,
+      "provider": null,
+      "framework": null,
+      "reviewer": null,
+      "review_date": null,
+      "confidence": 0.9,
+      "notes": "Elicited via open-ended task protocol. Baseline=371, peak=4096, ratio=11.1x."
+    }
+  },
+  {
+    "trace_id": "runaway-elic-pos-b7835134",
+    "path": "traces/runaway_cost/elicited/positive/runaway-elic-pos-b7835134.json",
+    "tier": "elicited",
+    "labels": {
+      "loop": false,
+      "stuck": false,
+      "confabulation": false,
+      "thrash": false,
+      "runaway_cost": true
+    },
+    "metadata": {
+      "generator": "RunawayCostElicitor",
+      "params": {
+        "positive_intent": true,
+        "total_steps": 8,
+        "baseline_tokens": 362.3,
+        "peak_tokens": 4096,
+        "peak_ratio": 11.3,
+        "is_increasing": true,
+        "provider": "qwen3.5-9b-b",
+        "model": "qwen3.5-9b"
+      },
+      "onset_step": 4,
+      "tier": "elicited",
+      "model": null,
+      "provider": null,
+      "framework": null,
+      "reviewer": null,
+      "review_date": null,
+      "confidence": 0.9,
+      "notes": "Elicited via open-ended task protocol. Baseline=362, peak=4096, ratio=11.3x."
+    }
+  },
+  {
+    "trace_id": "runaway-elic-pos-a650ca83",
+    "path": "traces/runaway_cost/elicited/positive/runaway-elic-pos-a650ca83.json",
+    "tier": "elicited",
+    "labels": {
+      "loop": false,
+      "stuck": false,
+      "confabulation": false,
+      "thrash": false,
+      "runaway_cost": true
+    },
+    "metadata": {
+      "generator": "RunawayCostElicitor",
+      "params": {
+        "positive_intent": true,
+        "total_steps": 8,
+        "baseline_tokens": 352.3,
+        "peak_tokens": 4096,
+        "peak_ratio": 11.63,
+        "is_increasing": true,
+        "provider": "qwen3.5-9b-b",
+        "model": "qwen3.5-9b"
+      },
+      "onset_step": 3,
+      "tier": "elicited",
+      "model": null,
+      "provider": null,
+      "framework": null,
+      "reviewer": null,
+      "review_date": null,
+      "confidence": 0.9,
+      "notes": "Elicited via open-ended task protocol. Baseline=352, peak=4096, ratio=11.6x."
+    }
+  },
+  {
+    "trace_id": "runaway-elic-pos-0afaef34",
+    "path": "traces/runaway_cost/elicited/positive/runaway-elic-pos-0afaef34.json",
+    "tier": "elicited",
+    "labels": {
+      "loop": false,
+      "stuck": false,
+      "confabulation": false,
+      "thrash": false,
+      "runaway_cost": true
+    },
+    "metadata": {
+      "generator": "RunawayCostElicitor",
+      "params": {
+        "positive_intent": true,
+        "total_steps": 8,
+        "baseline_tokens": 359.0,
+        "peak_tokens": 4096,
+        "peak_ratio": 11.41,
+        "is_increasing": true,
+        "provider": "qwen3.5-9b-b",
+        "model": "qwen3.5-9b"
+      },
+      "onset_step": 3,
+      "tier": "elicited",
+      "model": null,
+      "provider": null,
+      "framework": null,
+      "reviewer": null,
+      "review_date": null,
+      "confidence": 0.9,
+      "notes": "Elicited via open-ended task protocol. Baseline=359, peak=4096, ratio=11.4x."
+    }
+  },
+  {
+    "trace_id": "runaway-elic-pos-aa4d66bc",
+    "path": "traces/runaway_cost/elicited/positive/runaway-elic-pos-aa4d66bc.json",
+    "tier": "elicited",
+    "labels": {
+      "loop": false,
+      "stuck": false,
+      "confabulation": false,
+      "thrash": false,
+      "runaway_cost": true
+    },
+    "metadata": {
+      "generator": "RunawayCostElicitor",
+      "params": {
+        "positive_intent": true,
+        "total_steps": 8,
+        "baseline_tokens": 373.7,
+        "peak_tokens": 4096,
+        "peak_ratio": 10.96,
+        "is_increasing": true,
+        "provider": "qwen3.5-9b-b",
+        "model": "qwen3.5-9b"
+      },
+      "onset_step": 4,
+      "tier": "elicited",
+      "model": null,
+      "provider": null,
+      "framework": null,
+      "reviewer": null,
+      "review_date": null,
+      "confidence": 0.9,
+      "notes": "Elicited via open-ended task protocol. Baseline=374, peak=4096, ratio=11.0x."
+    }
+  },
+  {
+    "trace_id": "runaway-elic-pos-a203b98c",
+    "path": "traces/runaway_cost/elicited/positive/runaway-elic-pos-a203b98c.json",
+    "tier": "elicited",
+    "labels": {
+      "loop": false,
+      "stuck": false,
+      "confabulation": false,
+      "thrash": false,
+      "runaway_cost": true
+    },
+    "metadata": {
+      "generator": "RunawayCostElicitor",
+      "params": {
+        "positive_intent": true,
+        "total_steps": 8,
+        "baseline_tokens": 357.0,
+        "peak_tokens": 4096,
+        "peak_ratio": 11.47,
+        "is_increasing": true,
+        "provider": "qwen3.5-9b-b",
+        "model": "qwen3.5-9b"
+      },
+      "onset_step": 3,
+      "tier": "elicited",
+      "model": null,
+      "provider": null,
+      "framework": null,
+      "reviewer": null,
+      "review_date": null,
+      "confidence": 0.9,
+      "notes": "Elicited via open-ended task protocol. Baseline=357, peak=4096, ratio=11.5x."
+    }
+  },
+  {
+    "trace_id": "runaway-elic-pos-abbb104a",
+    "path": "traces/runaway_cost/elicited/positive/runaway-elic-pos-abbb104a.json",
+    "tier": "elicited",
+    "labels": {
+      "loop": false,
+      "stuck": false,
+      "confabulation": false,
+      "thrash": false,
+      "runaway_cost": true
+    },
+    "metadata": {
+      "generator": "RunawayCostElicitor",
+      "params": {
+        "positive_intent": true,
+        "total_steps": 8,
+        "baseline_tokens": 361.3,
+        "peak_tokens": 4096,
+        "peak_ratio": 11.34,
+        "is_increasing": true,
+        "provider": "qwen3.5-9b-b",
+        "model": "qwen3.5-9b"
+      },
+      "onset_step": 3,
+      "tier": "elicited",
+      "model": null,
+      "provider": null,
+      "framework": null,
+      "reviewer": null,
+      "review_date": null,
+      "confidence": 0.9,
+      "notes": "Elicited via open-ended task protocol. Baseline=361, peak=4096, ratio=11.3x."
+    }
+  },
+  {
+    "trace_id": "runaway-elic-pos-fed6d30e",
+    "path": "traces/runaway_cost/elicited/positive/runaway-elic-pos-fed6d30e.json",
+    "tier": "elicited",
+    "labels": {
+      "loop": false,
+      "stuck": false,
+      "confabulation": false,
+      "thrash": false,
+      "runaway_cost": true
+    },
+    "metadata": {
+      "generator": "RunawayCostElicitor",
+      "params": {
+        "positive_intent": true,
+        "total_steps": 8,
+        "baseline_tokens": 349.3,
+        "peak_tokens": 4096,
+        "peak_ratio": 11.73,
+        "is_increasing": true,
+        "provider": "qwen3.5-9b-b",
+        "model": "qwen3.5-9b"
+      },
+      "onset_step": 3,
+      "tier": "elicited",
+      "model": null,
+      "provider": null,
+      "framework": null,
+      "reviewer": null,
+      "review_date": null,
+      "confidence": 0.9,
+      "notes": "Elicited via open-ended task protocol. Baseline=349, peak=4096, ratio=11.7x."
+    }
+  },
+  {
+    "trace_id": "runaway-elic-pos-1438990a",
+    "path": "traces/runaway_cost/elicited/positive/runaway-elic-pos-1438990a.json",
+    "tier": "elicited",
+    "labels": {
+      "loop": false,
+      "stuck": false,
+      "confabulation": false,
+      "thrash": false,
+      "runaway_cost": true
+    },
+    "metadata": {
+      "generator": "RunawayCostElicitor",
+      "params": {
+        "positive_intent": true,
+        "total_steps": 8,
+        "baseline_tokens": 335.0,
+        "peak_tokens": 4096,
+        "peak_ratio": 12.23,
+        "is_increasing": true,
+        "provider": "qwen3.5-9b-b",
+        "model": "qwen3.5-9b"
+      },
+      "onset_step": 3,
+      "tier": "elicited",
+      "model": null,
+      "provider": null,
+      "framework": null,
+      "reviewer": null,
+      "review_date": null,
+      "confidence": 0.9,
+      "notes": "Elicited via open-ended task protocol. Baseline=335, peak=4096, ratio=12.2x."
+    }
+  },
+  {
+    "trace_id": "runaway-elic-pos-624e846a",
+    "path": "traces/runaway_cost/elicited/positive/runaway-elic-pos-624e846a.json",
+    "tier": "elicited",
+    "labels": {
+      "loop": false,
+      "stuck": false,
+      "confabulation": false,
+      "thrash": false,
+      "runaway_cost": true
+    },
+    "metadata": {
+      "generator": "RunawayCostElicitor",
+      "params": {
+        "positive_intent": true,
+        "total_steps": 8,
+        "baseline_tokens": 368.7,
+        "peak_tokens": 4096,
+        "peak_ratio": 11.11,
+        "is_increasing": true,
+        "provider": "qwen3.5-9b-b",
+        "model": "qwen3.5-9b"
+      },
+      "onset_step": 4,
+      "tier": "elicited",
+      "model": null,
+      "provider": null,
+      "framework": null,
+      "reviewer": null,
+      "review_date": null,
+      "confidence": 0.9,
+      "notes": "Elicited via open-ended task protocol. Baseline=369, peak=4096, ratio=11.1x."
+    }
+  },
+  {
+    "trace_id": "runaway-elic-pos-88df33fc",
+    "path": "traces/runaway_cost/elicited/positive/runaway-elic-pos-88df33fc.json",
+    "tier": "elicited",
+    "labels": {
+      "loop": false,
+      "stuck": false,
+      "confabulation": false,
+      "thrash": false,
+      "runaway_cost": true
+    },
+    "metadata": {
+      "generator": "RunawayCostElicitor",
+      "params": {
+        "positive_intent": true,
+        "total_steps": 8,
+        "baseline_tokens": 378.7,
+        "peak_tokens": 4096,
+        "peak_ratio": 10.82,
+        "is_increasing": true,
+        "provider": "qwen3.5-9b-b",
+        "model": "qwen3.5-9b"
+      },
+      "onset_step": 4,
+      "tier": "elicited",
+      "model": null,
+      "provider": null,
+      "framework": null,
+      "reviewer": null,
+      "review_date": null,
+      "confidence": 0.9,
+      "notes": "Elicited via open-ended task protocol. Baseline=379, peak=4096, ratio=10.8x."
+    }
+  },
+  {
+    "trace_id": "runaway-elic-pos-b51a1a66",
+    "path": "traces/runaway_cost/elicited/positive/runaway-elic-pos-b51a1a66.json",
+    "tier": "elicited",
+    "labels": {
+      "loop": false,
+      "stuck": false,
+      "confabulation": false,
+      "thrash": false,
+      "runaway_cost": true
+    },
+    "metadata": {
+      "generator": "RunawayCostElicitor",
+      "params": {
+        "positive_intent": true,
+        "total_steps": 8,
+        "baseline_tokens": 367.7,
+        "peak_tokens": 4096,
+        "peak_ratio": 11.14,
+        "is_increasing": true,
+        "provider": "qwen3.5-9b-b",
+        "model": "qwen3.5-9b"
+      },
+      "onset_step": 4,
+      "tier": "elicited",
+      "model": null,
+      "provider": null,
+      "framework": null,
+      "reviewer": null,
+      "review_date": null,
+      "confidence": 0.9,
+      "notes": "Elicited via open-ended task protocol. Baseline=368, peak=4096, ratio=11.1x."
+    }
+  },
+  {
+    "trace_id": "runaway-elic-pos-d7dafac4",
+    "path": "traces/runaway_cost/elicited/positive/runaway-elic-pos-d7dafac4.json",
+    "tier": "elicited",
+    "labels": {
+      "loop": false,
+      "stuck": false,
+      "confabulation": false,
+      "thrash": false,
+      "runaway_cost": true
+    },
+    "metadata": {
+      "generator": "RunawayCostElicitor",
+      "params": {
+        "positive_intent": true,
+        "total_steps": 8,
+        "baseline_tokens": 392.3,
+        "peak_tokens": 4096,
+        "peak_ratio": 10.44,
+        "is_increasing": true,
+        "provider": "qwen3.5-9b-b",
+        "model": "qwen3.5-9b"
+      },
+      "onset_step": 4,
+      "tier": "elicited",
+      "model": null,
+      "provider": null,
+      "framework": null,
+      "reviewer": null,
+      "review_date": null,
+      "confidence": 0.9,
+      "notes": "Elicited via open-ended task protocol. Baseline=392, peak=4096, ratio=10.4x."
+    }
+  },
+  {
+    "trace_id": "runaway-elic-pos-c15bbdc8",
+    "path": "traces/runaway_cost/elicited/positive/runaway-elic-pos-c15bbdc8.json",
+    "tier": "elicited",
+    "labels": {
+      "loop": false,
+      "stuck": false,
+      "confabulation": false,
+      "thrash": false,
+      "runaway_cost": true
+    },
+    "metadata": {
+      "generator": "RunawayCostElicitor",
+      "params": {
+        "positive_intent": true,
+        "total_steps": 8,
+        "baseline_tokens": 360.3,
+        "peak_tokens": 4096,
+        "peak_ratio": 11.37,
+        "is_increasing": true,
+        "provider": "qwen3.5-9b-b",
+        "model": "qwen3.5-9b"
+      },
+      "onset_step": 3,
+      "tier": "elicited",
+      "model": null,
+      "provider": null,
+      "framework": null,
+      "reviewer": null,
+      "review_date": null,
+      "confidence": 0.9,
+      "notes": "Elicited via open-ended task protocol. Baseline=360, peak=4096, ratio=11.4x."
+    }
+  },
+  {
+    "trace_id": "runaway-elic-pos-a13aaa66",
+    "path": "traces/runaway_cost/elicited/positive/runaway-elic-pos-a13aaa66.json",
+    "tier": "elicited",
+    "labels": {
+      "loop": false,
+      "stuck": false,
+      "confabulation": false,
+      "thrash": false,
+      "runaway_cost": true
+    },
+    "metadata": {
+      "generator": "RunawayCostElicitor",
+      "params": {
+        "positive_intent": true,
+        "total_steps": 8,
+        "baseline_tokens": 384.0,
+        "peak_tokens": 4096,
+        "peak_ratio": 10.67,
+        "is_increasing": true,
+        "provider": "qwen3.5-9b-b",
+        "model": "qwen3.5-9b"
+      },
+      "onset_step": 4,
+      "tier": "elicited",
+      "model": null,
+      "provider": null,
+      "framework": null,
+      "reviewer": null,
+      "review_date": null,
+      "confidence": 0.9,
+      "notes": "Elicited via open-ended task protocol. Baseline=384, peak=4096, ratio=10.7x."
+    }
+  },
+  {
+    "trace_id": "runaway-elic-pos-2499c332",
+    "path": "traces/runaway_cost/elicited/positive/runaway-elic-pos-2499c332.json",
+    "tier": "elicited",
+    "labels": {
+      "loop": false,
+      "stuck": false,
+      "confabulation": false,
+      "thrash": false,
+      "runaway_cost": true
+    },
+    "metadata": {
+      "generator": "RunawayCostElicitor",
+      "params": {
+        "positive_intent": true,
+        "total_steps": 8,
+        "baseline_tokens": 342.0,
+        "peak_tokens": 4096,
+        "peak_ratio": 11.98,
+        "is_increasing": true,
+        "provider": "qwen3.5-9b-b",
+        "model": "qwen3.5-9b"
+      },
+      "onset_step": 3,
+      "tier": "elicited",
+      "model": null,
+      "provider": null,
+      "framework": null,
+      "reviewer": null,
+      "review_date": null,
+      "confidence": 0.9,
+      "notes": "Elicited via open-ended task protocol. Baseline=342, peak=4096, ratio=12.0x."
+    }
+  },
+  {
+    "trace_id": "runaway-elic-pos-99d5b70c",
+    "path": "traces/runaway_cost/elicited/positive/runaway-elic-pos-99d5b70c.json",
+    "tier": "elicited",
+    "labels": {
+      "loop": false,
+      "stuck": false,
+      "confabulation": false,
+      "thrash": false,
+      "runaway_cost": true
+    },
+    "metadata": {
+      "generator": "RunawayCostElicitor",
+      "params": {
+        "positive_intent": true,
+        "total_steps": 8,
+        "baseline_tokens": 341.7,
+        "peak_tokens": 4096,
+        "peak_ratio": 11.99,
+        "is_increasing": true,
+        "provider": "qwen3.5-9b-b",
+        "model": "qwen3.5-9b"
+      },
+      "onset_step": 3,
+      "tier": "elicited",
+      "model": null,
+      "provider": null,
+      "framework": null,
+      "reviewer": null,
+      "review_date": null,
+      "confidence": 0.9,
+      "notes": "Elicited via open-ended task protocol. Baseline=342, peak=4096, ratio=12.0x."
+    }
+  },
+  {
+    "trace_id": "runaway-elic-pos-112bcd5e",
+    "path": "traces/runaway_cost/elicited/positive/runaway-elic-pos-112bcd5e.json",
+    "tier": "elicited",
+    "labels": {
+      "loop": false,
+      "stuck": false,
+      "confabulation": false,
+      "thrash": false,
+      "runaway_cost": true
+    },
+    "metadata": {
+      "generator": "RunawayCostElicitor",
+      "params": {
+        "positive_intent": true,
+        "total_steps": 8,
+        "baseline_tokens": 372.3,
+        "peak_tokens": 4096,
+        "peak_ratio": 11.0,
+        "is_increasing": true,
+        "provider": "qwen3.5-9b-b",
+        "model": "qwen3.5-9b"
+      },
+      "onset_step": 4,
+      "tier": "elicited",
+      "model": null,
+      "provider": null,
+      "framework": null,
+      "reviewer": null,
+      "review_date": null,
+      "confidence": 0.9,
+      "notes": "Elicited via open-ended task protocol. Baseline=372, peak=4096, ratio=11.0x."
+    }
+  },
+  {
+    "trace_id": "runaway-elic-pos-41d773b7",
+    "path": "traces/runaway_cost/elicited/positive/runaway-elic-pos-41d773b7.json",
+    "tier": "elicited",
+    "labels": {
+      "loop": false,
+      "stuck": false,
+      "confabulation": false,
+      "thrash": false,
+      "runaway_cost": true
+    },
+    "metadata": {
+      "generator": "RunawayCostElicitor",
+      "params": {
+        "positive_intent": true,
+        "total_steps": 8,
+        "baseline_tokens": 372.0,
+        "peak_tokens": 4096,
+        "peak_ratio": 11.01,
+        "is_increasing": true,
+        "provider": "qwen3.5-9b-b",
+        "model": "qwen3.5-9b"
+      },
+      "onset_step": 4,
+      "tier": "elicited",
+      "model": null,
+      "provider": null,
+      "framework": null,
+      "reviewer": null,
+      "review_date": null,
+      "confidence": 0.9,
+      "notes": "Elicited via open-ended task protocol. Baseline=372, peak=4096, ratio=11.0x."
+    }
+  },
+  {
+    "trace_id": "runaway-elic-pos-efaad1be",
+    "path": "traces/runaway_cost/elicited/positive/runaway-elic-pos-efaad1be.json",
+    "tier": "elicited",
+    "labels": {
+      "loop": false,
+      "stuck": false,
+      "confabulation": false,
+      "thrash": false,
+      "runaway_cost": true
+    },
+    "metadata": {
+      "generator": "RunawayCostElicitor",
+      "params": {
+        "positive_intent": true,
+        "total_steps": 8,
+        "baseline_tokens": 359.0,
+        "peak_tokens": 4096,
+        "peak_ratio": 11.41,
+        "is_increasing": true,
+        "provider": "qwen3.5-9b-b",
+        "model": "qwen3.5-9b"
+      },
+      "onset_step": 3,
+      "tier": "elicited",
+      "model": null,
+      "provider": null,
+      "framework": null,
+      "reviewer": null,
+      "review_date": null,
+      "confidence": 0.9,
+      "notes": "Elicited via open-ended task protocol. Baseline=359, peak=4096, ratio=11.4x."
+    }
+  },
+  {
+    "trace_id": "runaway-elic-pos-3094f0d9",
+    "path": "traces/runaway_cost/elicited/positive/runaway-elic-pos-3094f0d9.json",
+    "tier": "elicited",
+    "labels": {
+      "loop": false,
+      "stuck": false,
+      "confabulation": false,
+      "thrash": false,
+      "runaway_cost": true
+    },
+    "metadata": {
+      "generator": "RunawayCostElicitor",
+      "params": {
+        "positive_intent": true,
+        "total_steps": 8,
+        "baseline_tokens": 341.7,
+        "peak_tokens": 4096,
+        "peak_ratio": 11.99,
+        "is_increasing": true,
+        "provider": "qwen3.5-9b-b",
+        "model": "qwen3.5-9b"
+      },
+      "onset_step": 3,
+      "tier": "elicited",
+      "model": null,
+      "provider": null,
+      "framework": null,
+      "reviewer": null,
+      "review_date": null,
+      "confidence": 0.9,
+      "notes": "Elicited via open-ended task protocol. Baseline=342, peak=4096, ratio=12.0x."
+    }
+  },
+  {
+    "trace_id": "runaway-elic-pos-caf1c311",
+    "path": "traces/runaway_cost/elicited/positive/runaway-elic-pos-caf1c311.json",
+    "tier": "elicited",
+    "labels": {
+      "loop": false,
+      "stuck": false,
+      "confabulation": false,
+      "thrash": false,
+      "runaway_cost": true
+    },
+    "metadata": {
+      "generator": "RunawayCostElicitor",
+      "params": {
+        "positive_intent": true,
+        "total_steps": 8,
+        "baseline_tokens": 362.3,
+        "peak_tokens": 4096,
+        "peak_ratio": 11.3,
+        "is_increasing": true,
+        "provider": "qwen3.5-9b-b",
+        "model": "qwen3.5-9b"
+      },
+      "onset_step": 4,
+      "tier": "elicited",
+      "model": null,
+      "provider": null,
+      "framework": null,
+      "reviewer": null,
+      "review_date": null,
+      "confidence": 0.9,
+      "notes": "Elicited via open-ended task protocol. Baseline=362, peak=4096, ratio=11.3x."
+    }
+  },
+  {
+    "trace_id": "runaway-elic-pos-909ee82d",
+    "path": "traces/runaway_cost/elicited/positive/runaway-elic-pos-909ee82d.json",
+    "tier": "elicited",
+    "labels": {
+      "loop": false,
+      "stuck": false,
+      "confabulation": false,
+      "thrash": false,
+      "runaway_cost": true
+    },
+    "metadata": {
+      "generator": "RunawayCostElicitor",
+      "params": {
+        "positive_intent": true,
+        "total_steps": 8,
+        "baseline_tokens": 362.0,
+        "peak_tokens": 4096,
+        "peak_ratio": 11.31,
+        "is_increasing": true,
+        "provider": "qwen3.5-9b-b",
+        "model": "qwen3.5-9b"
+      },
+      "onset_step": 3,
+      "tier": "elicited",
+      "model": null,
+      "provider": null,
+      "framework": null,
+      "reviewer": null,
+      "review_date": null,
+      "confidence": 0.9,
+      "notes": "Elicited via open-ended task protocol. Baseline=362, peak=4096, ratio=11.3x."
+    }
+  },
+  {
+    "trace_id": "runaway-elic-pos-1e4c6f00",
+    "path": "traces/runaway_cost/elicited/positive/runaway-elic-pos-1e4c6f00.json",
+    "tier": "elicited",
+    "labels": {
+      "loop": false,
+      "stuck": false,
+      "confabulation": false,
+      "thrash": false,
+      "runaway_cost": true
+    },
+    "metadata": {
+      "generator": "RunawayCostElicitor",
+      "params": {
+        "positive_intent": true,
+        "total_steps": 8,
+        "baseline_tokens": 353.3,
+        "peak_tokens": 4096,
+        "peak_ratio": 11.59,
+        "is_increasing": true,
+        "provider": "qwen3.5-9b-b",
+        "model": "qwen3.5-9b"
+      },
+      "onset_step": 3,
+      "tier": "elicited",
+      "model": null,
+      "provider": null,
+      "framework": null,
+      "reviewer": null,
+      "review_date": null,
+      "confidence": 0.9,
+      "notes": "Elicited via open-ended task protocol. Baseline=353, peak=4096, ratio=11.6x."
+    }
+  },
+  {
+    "trace_id": "runaway-elic-neg-959d2433",
+    "path": "traces/runaway_cost/elicited/negative/runaway-elic-neg-959d2433.json",
+    "tier": "elicited",
+    "labels": {
+      "loop": false,
+      "stuck": false,
+      "confabulation": false,
+      "thrash": false,
+      "runaway_cost": false
+    },
+    "metadata": {
+      "generator": "RunawayCostElicitor",
+      "params": {
+        "positive_intent": false,
+        "total_steps": 6,
+        "baseline_tokens": 349.3,
+        "peak_tokens": 559,
+        "peak_ratio": 1.6,
+        "is_increasing": false,
+        "provider": "qwen3.5-9b-b",
+        "model": "qwen3.5-9b"
+      },
+      "onset_step": null,
+      "tier": "elicited",
+      "model": null,
+      "provider": null,
+      "framework": null,
+      "reviewer": null,
+      "review_date": null,
+      "confidence": 0.9,
+      "notes": "Elicited via open-ended task protocol. Baseline=349, peak=559, ratio=1.6x."
+    }
+  },
+  {
+    "trace_id": "runaway-elic-neg-daac19e5",
+    "path": "traces/runaway_cost/elicited/negative/runaway-elic-neg-daac19e5.json",
+    "tier": "elicited",
+    "labels": {
+      "loop": false,
+      "stuck": false,
+      "confabulation": false,
+      "thrash": false,
+      "runaway_cost": false
+    },
+    "metadata": {
+      "generator": "RunawayCostElicitor",
+      "params": {
+        "positive_intent": false,
+        "total_steps": 6,
+        "baseline_tokens": 366.0,
+        "peak_tokens": 559,
+        "peak_ratio": 1.53,
+        "is_increasing": false,
+        "provider": "qwen3.5-9b-b",
+        "model": "qwen3.5-9b"
+      },
+      "onset_step": null,
+      "tier": "elicited",
+      "model": null,
+      "provider": null,
+      "framework": null,
+      "reviewer": null,
+      "review_date": null,
+      "confidence": 0.9,
+      "notes": "Elicited via open-ended task protocol. Baseline=366, peak=559, ratio=1.5x."
+    }
+  },
+  {
+    "trace_id": "runaway-elic-neg-f0fe7123",
+    "path": "traces/runaway_cost/elicited/negative/runaway-elic-neg-f0fe7123.json",
+    "tier": "elicited",
+    "labels": {
+      "loop": false,
+      "stuck": false,
+      "confabulation": false,
+      "thrash": false,
+      "runaway_cost": false
+    },
+    "metadata": {
+      "generator": "RunawayCostElicitor",
+      "params": {
+        "positive_intent": false,
+        "total_steps": 6,
+        "baseline_tokens": 357.3,
+        "peak_tokens": 559,
+        "peak_ratio": 1.56,
+        "is_increasing": false,
+        "provider": "qwen3.5-9b-b",
+        "model": "qwen3.5-9b"
+      },
+      "onset_step": null,
+      "tier": "elicited",
+      "model": null,
+      "provider": null,
+      "framework": null,
+      "reviewer": null,
+      "review_date": null,
+      "confidence": 0.9,
+      "notes": "Elicited via open-ended task protocol. Baseline=357, peak=559, ratio=1.6x."
+    }
+  },
+  {
+    "trace_id": "runaway-elic-neg-6410026a",
+    "path": "traces/runaway_cost/elicited/negative/runaway-elic-neg-6410026a.json",
+    "tier": "elicited",
+    "labels": {
+      "loop": false,
+      "stuck": false,
+      "confabulation": false,
+      "thrash": false,
+      "runaway_cost": false
+    },
+    "metadata": {
+      "generator": "RunawayCostElicitor",
+      "params": {
+        "positive_intent": false,
+        "total_steps": 6,
+        "baseline_tokens": 362.0,
+        "peak_tokens": 559,
+        "peak_ratio": 1.54,
+        "is_increasing": false,
+        "provider": "qwen3.5-9b-b",
+        "model": "qwen3.5-9b"
+      },
+      "onset_step": null,
+      "tier": "elicited",
+      "model": null,
+      "provider": null,
+      "framework": null,
+      "reviewer": null,
+      "review_date": null,
+      "confidence": 0.9,
+      "notes": "Elicited via open-ended task protocol. Baseline=362, peak=559, ratio=1.5x."
+    }
+  },
+  {
+    "trace_id": "runaway-elic-neg-8b25741e",
+    "path": "traces/runaway_cost/elicited/negative/runaway-elic-neg-8b25741e.json",
+    "tier": "elicited",
+    "labels": {
+      "loop": false,
+      "stuck": false,
+      "confabulation": false,
+      "thrash": false,
+      "runaway_cost": false
+    },
+    "metadata": {
+      "generator": "RunawayCostElicitor",
+      "params": {
+        "positive_intent": false,
+        "total_steps": 6,
+        "baseline_tokens": 361.7,
+        "peak_tokens": 558,
+        "peak_ratio": 1.54,
+        "is_increasing": false,
+        "provider": "qwen3.5-9b-b",
+        "model": "qwen3.5-9b"
+      },
+      "onset_step": null,
+      "tier": "elicited",
+      "model": null,
+      "provider": null,
+      "framework": null,
+      "reviewer": null,
+      "review_date": null,
+      "confidence": 0.9,
+      "notes": "Elicited via open-ended task protocol. Baseline=362, peak=558, ratio=1.5x."
+    }
+  },
+  {
+    "trace_id": "runaway-elic-neg-8f3ada63",
+    "path": "traces/runaway_cost/elicited/negative/runaway-elic-neg-8f3ada63.json",
+    "tier": "elicited",
+    "labels": {
+      "loop": false,
+      "stuck": false,
+      "confabulation": false,
+      "thrash": false,
+      "runaway_cost": false
+    },
+    "metadata": {
+      "generator": "RunawayCostElicitor",
+      "params": {
+        "positive_intent": false,
+        "total_steps": 6,
+        "baseline_tokens": 323.3,
+        "peak_tokens": 445,
+        "peak_ratio": 1.38,
+        "is_increasing": false,
+        "provider": "qwen3.5-9b-b",
+        "model": "qwen3.5-9b"
+      },
+      "onset_step": null,
+      "tier": "elicited",
+      "model": null,
+      "provider": null,
+      "framework": null,
+      "reviewer": null,
+      "review_date": null,
+      "confidence": 0.9,
+      "notes": "Elicited via open-ended task protocol. Baseline=323, peak=445, ratio=1.4x."
+    }
+  },
+  {
+    "trace_id": "runaway-elic-neg-d73bbd91",
+    "path": "traces/runaway_cost/elicited/negative/runaway-elic-neg-d73bbd91.json",
+    "tier": "elicited",
+    "labels": {
+      "loop": false,
+      "stuck": false,
+      "confabulation": false,
+      "thrash": false,
+      "runaway_cost": false
+    },
+    "metadata": {
+      "generator": "RunawayCostElicitor",
+      "params": {
+        "positive_intent": false,
+        "total_steps": 6,
+        "baseline_tokens": 363.7,
+        "peak_tokens": 559,
+        "peak_ratio": 1.54,
+        "is_increasing": false,
+        "provider": "qwen3.5-9b-b",
+        "model": "qwen3.5-9b"
+      },
+      "onset_step": null,
+      "tier": "elicited",
+      "model": null,
+      "provider": null,
+      "framework": null,
+      "reviewer": null,
+      "review_date": null,
+      "confidence": 0.9,
+      "notes": "Elicited via open-ended task protocol. Baseline=364, peak=559, ratio=1.5x."
+    }
+  },
+  {
+    "trace_id": "runaway-elic-neg-25bf8be3",
+    "path": "traces/runaway_cost/elicited/negative/runaway-elic-neg-25bf8be3.json",
+    "tier": "elicited",
+    "labels": {
+      "loop": false,
+      "stuck": false,
+      "confabulation": false,
+      "thrash": false,
+      "runaway_cost": false
+    },
+    "metadata": {
+      "generator": "RunawayCostElicitor",
+      "params": {
+        "positive_intent": false,
+        "total_steps": 6,
+        "baseline_tokens": 353.7,
+        "peak_tokens": 559,
+        "peak_ratio": 1.58,
+        "is_increasing": false,
+        "provider": "qwen3.5-9b-b",
+        "model": "qwen3.5-9b"
+      },
+      "onset_step": null,
+      "tier": "elicited",
+      "model": null,
+      "provider": null,
+      "framework": null,
+      "reviewer": null,
+      "review_date": null,
+      "confidence": 0.9,
+      "notes": "Elicited via open-ended task protocol. Baseline=354, peak=559, ratio=1.6x."
+    }
+  },
+  {
+    "trace_id": "runaway-elic-neg-4c055817",
+    "path": "traces/runaway_cost/elicited/negative/runaway-elic-neg-4c055817.json",
+    "tier": "elicited",
+    "labels": {
+      "loop": false,
+      "stuck": false,
+      "confabulation": false,
+      "thrash": false,
+      "runaway_cost": false
+    },
+    "metadata": {
+      "generator": "RunawayCostElicitor",
+      "params": {
+        "positive_intent": false,
+        "total_steps": 6,
+        "baseline_tokens": 360.3,
+        "peak_tokens": 559,
+        "peak_ratio": 1.55,
+        "is_increasing": false,
+        "provider": "qwen3.5-9b-b",
+        "model": "qwen3.5-9b"
+      },
+      "onset_step": null,
+      "tier": "elicited",
+      "model": null,
+      "provider": null,
+      "framework": null,
+      "reviewer": null,
+      "review_date": null,
+      "confidence": 0.9,
+      "notes": "Elicited via open-ended task protocol. Baseline=360, peak=559, ratio=1.6x."
+    }
+  },
+  {
+    "trace_id": "runaway-elic-neg-d4276e84",
+    "path": "traces/runaway_cost/elicited/negative/runaway-elic-neg-d4276e84.json",
+    "tier": "elicited",
+    "labels": {
+      "loop": false,
+      "stuck": false,
+      "confabulation": false,
+      "thrash": false,
+      "runaway_cost": false
+    },
+    "metadata": {
+      "generator": "RunawayCostElicitor",
+      "params": {
+        "positive_intent": false,
+        "total_steps": 6,
+        "baseline_tokens": 368.7,
+        "peak_tokens": 559,
+        "peak_ratio": 1.52,
+        "is_increasing": false,
+        "provider": "qwen3.5-9b-b",
+        "model": "qwen3.5-9b"
+      },
+      "onset_step": null,
+      "tier": "elicited",
+      "model": null,
+      "provider": null,
+      "framework": null,
+      "reviewer": null,
+      "review_date": null,
+      "confidence": 0.9,
+      "notes": "Elicited via open-ended task protocol. Baseline=369, peak=559, ratio=1.5x."
+    }
+  },
+  {
+    "trace_id": "runaway-elic-neg-768776e4",
+    "path": "traces/runaway_cost/elicited/negative/runaway-elic-neg-768776e4.json",
+    "tier": "elicited",
+    "labels": {
+      "loop": false,
+      "stuck": false,
+      "confabulation": false,
+      "thrash": false,
+      "runaway_cost": false
+    },
+    "metadata": {
+      "generator": "RunawayCostElicitor",
+      "params": {
+        "positive_intent": false,
+        "total_steps": 6,
+        "baseline_tokens": 374.0,
+        "peak_tokens": 559,
+        "peak_ratio": 1.49,
+        "is_increasing": false,
+        "provider": "qwen3.5-9b-b",
+        "model": "qwen3.5-9b"
+      },
+      "onset_step": null,
+      "tier": "elicited",
+      "model": null,
+      "provider": null,
+      "framework": null,
+      "reviewer": null,
+      "review_date": null,
+      "confidence": 0.9,
+      "notes": "Elicited via open-ended task protocol. Baseline=374, peak=559, ratio=1.5x."
+    }
+  },
+  {
+    "trace_id": "runaway-elic-neg-d5e9a4ab",
+    "path": "traces/runaway_cost/elicited/negative/runaway-elic-neg-d5e9a4ab.json",
+    "tier": "elicited",
+    "labels": {
+      "loop": false,
+      "stuck": false,
+      "confabulation": false,
+      "thrash": false,
+      "runaway_cost": false
+    },
+    "metadata": {
+      "generator": "RunawayCostElicitor",
+      "params": {
+        "positive_intent": false,
+        "total_steps": 6,
+        "baseline_tokens": 358.7,
+        "peak_tokens": 559,
+        "peak_ratio": 1.56,
+        "is_increasing": false,
+        "provider": "qwen3.5-9b-b",
+        "model": "qwen3.5-9b"
+      },
+      "onset_step": null,
+      "tier": "elicited",
+      "model": null,
+      "provider": null,
+      "framework": null,
+      "reviewer": null,
+      "review_date": null,
+      "confidence": 0.9,
+      "notes": "Elicited via open-ended task protocol. Baseline=359, peak=559, ratio=1.6x."
+    }
+  },
+  {
+    "trace_id": "runaway-elic-neg-9855f282",
+    "path": "traces/runaway_cost/elicited/negative/runaway-elic-neg-9855f282.json",
+    "tier": "elicited",
+    "labels": {
+      "loop": false,
+      "stuck": false,
+      "confabulation": false,
+      "thrash": false,
+      "runaway_cost": false
+    },
+    "metadata": {
+      "generator": "RunawayCostElicitor",
+      "params": {
+        "positive_intent": false,
+        "total_steps": 6,
+        "baseline_tokens": 368.7,
+        "peak_tokens": 559,
+        "peak_ratio": 1.52,
+        "is_increasing": false,
+        "provider": "qwen3.5-9b-b",
+        "model": "qwen3.5-9b"
+      },
+      "onset_step": null,
+      "tier": "elicited",
+      "model": null,
+      "provider": null,
+      "framework": null,
+      "reviewer": null,
+      "review_date": null,
+      "confidence": 0.9,
+      "notes": "Elicited via open-ended task protocol. Baseline=369, peak=559, ratio=1.5x."
+    }
+  },
+  {
+    "trace_id": "runaway-elic-neg-2851ec24",
+    "path": "traces/runaway_cost/elicited/negative/runaway-elic-neg-2851ec24.json",
+    "tier": "elicited",
+    "labels": {
+      "loop": false,
+      "stuck": false,
+      "confabulation": false,
+      "thrash": false,
+      "runaway_cost": false
+    },
+    "metadata": {
+      "generator": "RunawayCostElicitor",
+      "params": {
+        "positive_intent": false,
+        "total_steps": 6,
+        "baseline_tokens": 367.7,
+        "peak_tokens": 552,
+        "peak_ratio": 1.5,
+        "is_increasing": false,
+        "provider": "qwen3.5-9b-b",
+        "model": "qwen3.5-9b"
+      },
+      "onset_step": null,
+      "tier": "elicited",
+      "model": null,
+      "provider": null,
+      "framework": null,
+      "reviewer": null,
+      "review_date": null,
+      "confidence": 0.9,
+      "notes": "Elicited via open-ended task protocol. Baseline=368, peak=552, ratio=1.5x."
+    }
+  },
+  {
+    "trace_id": "runaway-elic-neg-2e2a78fa",
+    "path": "traces/runaway_cost/elicited/negative/runaway-elic-neg-2e2a78fa.json",
+    "tier": "elicited",
+    "labels": {
+      "loop": false,
+      "stuck": false,
+      "confabulation": false,
+      "thrash": false,
+      "runaway_cost": false
+    },
+    "metadata": {
+      "generator": "RunawayCostElicitor",
+      "params": {
+        "positive_intent": false,
+        "total_steps": 6,
+        "baseline_tokens": 342.3,
+        "peak_tokens": 559,
+        "peak_ratio": 1.63,
+        "is_increasing": false,
+        "provider": "qwen3.5-9b-b",
+        "model": "qwen3.5-9b"
+      },
+      "onset_step": null,
+      "tier": "elicited",
+      "model": null,
+      "provider": null,
+      "framework": null,
+      "reviewer": null,
+      "review_date": null,
+      "confidence": 0.9,
+      "notes": "Elicited via open-ended task protocol. Baseline=342, peak=559, ratio=1.6x."
+    }
+  }
+]
