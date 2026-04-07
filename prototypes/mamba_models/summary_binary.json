@@ -1,0 +1,81 @@
+{
+  "trace_count": 1494,
+  "skipped_traces": 0,
+  "feature_count": 17,
+  "model_params": 97345,
+  "mode": "binary",
+  "metrics": {
+    "loop": {
+      "detector": "loop",
+      "f1": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "positives": 212,
+      "negatives": 1282,
+      "true_positives": 212,
+      "false_positives": 0,
+      "false_negatives": 0,
+      "true_negatives": 1282,
+      "artifact_path": "/Users/mac-studio/projects/unified-system-state/agent-vitals-bench/prototypes/mamba_models/loop.pt",
+      "f1_std": 0.0
+    },
+    "stuck": {
+      "detector": "stuck",
+      "f1": 0.989247311827957,
+      "precision": 0.9787234042553191,
+      "recall": 1.0,
+      "positives": 138,
+      "negatives": 1356,
+      "true_positives": 138,
+      "false_positives": 3,
+      "false_negatives": 0,
+      "true_negatives": 1353,
+      "artifact_path": "/Users/mac-studio/projects/unified-system-state/agent-vitals-bench/prototypes/mamba_models/stuck.pt",
+      "f1_std": 0.008701997592564023
+    },
+    "confabulation": {
+      "detector": "confabulation",
+      "f1": 0.987012987012987,
+      "precision": 0.987012987012987,
+      "recall": 0.987012987012987,
+      "positives": 308,
+      "negatives": 1186,
+      "true_positives": 304,
+      "false_positives": 4,
+      "false_negatives": 4,
+      "true_negatives": 1182,
+      "artifact_path": "/Users/mac-studio/projects/unified-system-state/agent-vitals-bench/prototypes/mamba_models/confabulation.pt",
+      "f1_std": 0.008418673915006567
+    },
+    "thrash": {
+      "detector": "thrash",
+      "f1": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "positives": 261,
+      "negatives": 1233,
+      "true_positives": 261,
+      "false_positives": 0,
+      "false_negatives": 0,
+      "true_negatives": 1233,
+      "artifact_path": "/Users/mac-studio/projects/unified-system-state/agent-vitals-bench/prototypes/mamba_models/thrash.pt",
+      "f1_std": 0.0
+    },
+    "runaway_cost": {
+      "detector": "runaway_cost",
+      "f1": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "positives": 229,
+      "negatives": 1265,
+      "true_positives": 229,
+      "false_positives": 0,
+      "false_negatives": 0,
+      "true_negatives": 1265,
+      "artifact_path": "/Users/mac-studio/projects/unified-system-state/agent-vitals-bench/prototypes/mamba_models/runaway_cost.pt",
+      "f1_std": 0.0
+    }
+  },
+  "output_dir": "/Users/mac-studio/projects/unified-system-state/agent-vitals-bench/prototypes/mamba_models",
+  "device": "mps"
+}
