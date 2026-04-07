@@ -5,7 +5,7 @@ from __future__ import annotations
 import argparse
 import json
 import sys
-from dataclasses import dataclass, field
+from dataclasses import dataclass
 from pathlib import Path
 from typing import Any
 
@@ -41,6 +41,21 @@ class EvaluationResult:
     detector_metrics: dict[str, DetectorMetrics]
     gate_results: dict[str, dict[str, Any]]
     detectors_evaluated: tuple[str, ...]
+    profile: str | None = None
+    excluded_detectors: tuple[str, ...] = ()
+
+
+def _detect_excluded_detectors(config: VitalsConfig) -> tuple[str, ...]:
+    """Determine which detectors are intentionally disabled by profile config.
+
+    When a detector is disabled by design (e.g., stuck with workflow_stuck_enabled=none),
+    it should be excluded from the composite gate rather than counting as NO-GO.
+    """
+    excluded: list[str] = []
+    mode = (config.workflow_stuck_enabled or "").strip().lower().replace("_", "-")
+    if mode in ("none", "off", "disabled"):
+        excluded.append("stuck")
+    return tuple(excluded)
 
 
 def load_manifest(corpus_version: str) -> list[dict[str, Any]]:
@@ -119,8 +134,7 @@ def replay_trace(
     thrash_fired = False
     runaway_fired = False
     runaway_from_burn_rate = False  # Track burn_rate_anomaly from detect_loop
-    last_detector_priority: str | None = None  # Final step's priority for tiebreaker
-
+    final_confabulation_detected = False  # av-s06-m01: final-step adjudication
     # Replay through detect_loop step by step (accumulating history)
     for i, snapshot in enumerate(snapshots):
         history = snapshots[:i] if i > 0 else None
@@ -134,11 +148,7 @@ def replay_trace(
             has_content_similarity = True
 
         # Preserve stuck when it's the priority detector in a co-occurrence
-        if (
-            result.loop_detected
-            and result.stuck_detected
-            and result.detector_priority == "stuck"
-        ):
+        if result.loop_detected and result.stuck_detected and result.detector_priority == "stuck":
             preserve_stuck_overlap = True
 
         if result.loop_detected:
@@ -154,12 +164,11 @@ def replay_trace(
 
         if result.confabulation_detected:
             predictions["confabulation"] = True
-
-        # Track the final step's detector_priority for co-occurrence tiebreaker.
-        # The last step has the most evidence and gives the best determination
-        # when content_similarity isn't available (e.g. synthetic traces).
-        if result.detector_priority:
-            last_detector_priority = result.detector_priority
+        # av-s06-m01: capture final-step confab verdict for whole-trace
+        # adjudication. Overwritten each iteration so the value after the
+        # loop is the verdict from the last snapshot, which the bench
+        # reference uses as its one-shot evaluation.
+        final_confabulation_detected = result.confabulation_detected
 
         # Bridge burn_rate_anomaly → runaway_cost: detect_loop computes
         # burn_rate_anomaly as a stuck candidate, then suppresses stuck_detected.
@@ -169,12 +178,23 @@ def replay_trace(
         if result.stuck_trigger == "burn_rate_anomaly":
             runaway_from_burn_rate = True
 
+    # av-s06-m01: final-step adjudication for causal confabulation.
+    # Streaming per-step replay aggregates with any-step semantics, but the
+    # bench reference evaluates the whole trace once at the tail. The two
+    # diverge on Path 3 (verified_source_decoupling) when an early window
+    # is weak but later windows recover. The final loop iteration above
+    # already calls detect_loop with the full prefix as history, which is
+    # the bench-equivalent one-shot. Override-only: if streaming says
+    # "fired" but final-step says "no", final-step wins for trace label.
+    if predictions["confabulation"] and not final_confabulation_detected:
+        predictions["confabulation"] = False
+
     # Derive stop signals from the final snapshot for thrash/runaway_cost
     final = snapshots[-1]
     stop = derive_stop_signals(
         final,
         step_count=len(snapshots),
-        thrash_error_threshold=1,
+        thrash_error_threshold=cfg.thrash_error_threshold,
     )
     if stop.thrash_detected:
         thrash_fired = True
@@ -189,9 +209,8 @@ def replay_trace(
     # AND stuck was not the priority detector at any step.
     if stuck_fired and loop_fired and not (thrash_fired or runaway_fired):
         if (
-            (has_content_similarity or best_loop_trigger == "content_similarity")
-            and not preserve_stuck_overlap
-        ):
+            has_content_similarity or best_loop_trigger == "content_similarity"
+        ) and not preserve_stuck_overlap:
             stuck_fired = False
 
     predictions["loop"] = loop_fired
@@ -207,9 +226,23 @@ def run_evaluation(
     detectors: tuple[str, ...] | None = None,
     min_confidence: float = 0.8,
     config: VitalsConfig | None = None,
+    profile: str | None = None,
 ) -> EvaluationResult:
-    """Run full evaluation pipeline against a corpus version."""
+    """Run full evaluation pipeline against a corpus version.
+
+    Args:
+        profile: Framework profile name (langgraph, crewai, dspy).
+            When set, applies per-profile threshold overrides from
+            agent-vitals thresholds.yaml via VitalsConfig.for_framework().
+            Traces are also filtered to matching framework if the manifest
+            entry includes a ``framework`` field.
+    """
     target_detectors = detectors or DETECTORS
+
+    # Load base config, then apply per-profile overrides if requested
+    base_config = config or VitalsConfig.from_yaml()
+    effective_config = base_config.for_framework(profile) if profile else base_config
+
     manifest = load_manifest(corpus_version)
 
     trace_results: list[TraceResult] = []
@@ -219,6 +252,12 @@ def run_evaluation(
         meta_confidence = entry.get("metadata", {}).get("confidence", 0.0)
         if meta_confidence < min_confidence:
             continue
+
+        # Filter by framework profile when specified
+        if profile:
+            entry_framework = entry.get("metadata", {}).get("framework")
+            if entry_framework and entry_framework != profile:
+                continue
 
         trace_id = entry["trace_id"]
         labels = entry["labels"]
@@ -230,20 +269,32 @@ def run_evaluation(
         mission_id = snapshots[0].mission_id if snapshots else None
         wf_type = resolve_workflow_type(trace_id, mission_id)
 
-        predictions = replay_trace(snapshots, config, workflow_type=wf_type)
+        predictions = replay_trace(snapshots, effective_config, workflow_type=wf_type)
 
-        trace_results.append(TraceResult(
-            trace_id=trace_id,
-            labels=labels,
-            predictions=predictions,
-            confidence=meta_confidence,
-        ))
+        trace_results.append(
+            TraceResult(
+                trace_id=trace_id,
+                labels=labels,
+                predictions=predictions,
+                confidence=meta_confidence,
+            )
+        )
 
     # Compute metrics per detector
     detector_metrics = compute_metrics(trace_results, target_detectors)
 
+    # Detect disabled detectors for gate exclusion
+    excluded = _detect_excluded_detectors(effective_config)
+
     # Check gates
     gate_results = check_all_gates(detector_metrics)
+
+    # Mark excluded detectors
+    for name in excluded:
+        if name in gate_results:
+            gate_results[name]["excluded"] = True
+            gate_results[name]["status"] = "EXCLUDED"
+            gate_results[name]["exclude_reason"] = "detector disabled by profile"
 
     return EvaluationResult(
         corpus_version=corpus_version,
@@ -252,6 +303,8 @@ def run_evaluation(
         detector_metrics=detector_metrics,
         gate_results=gate_results,
         detectors_evaluated=target_detectors,
+        profile=profile,
+        excluded_detectors=excluded,
     )
 
 
@@ -269,6 +322,12 @@ def main() -> None:
         default=0.8,
         help="Minimum trace confidence for inclusion (default: 0.8)",
     )
+    parser.add_argument(
+        "--profile",
+        default=None,
+        choices=["langgraph", "crewai", "dspy"],
+        help="Framework profile — applies per-profile threshold overrides from agent-vitals",
+    )
     args = parser.parse_args()
 
     detectors_arg: tuple[str, ...] | None = None
@@ -279,15 +338,17 @@ def main() -> None:
         corpus_version=args.corpus,
         detectors=detectors_arg,
         min_confidence=args.min_confidence,
+        profile=args.profile,
     )
 
     report = report_results(result)
     print(report)
 
-    # Exit with non-zero if any evaluated detector failed gate
+    # Exit with non-zero if any non-excluded detector failed gate
     any_failed = any(
         not g.get("passed", False)
         for g in result.gate_results.values()
+        if not g.get("excluded", False)
     )
     sys.exit(1 if any_failed and result.trace_count > 0 else 0)
 

@@ -21,13 +21,15 @@ def report_results(result: EvaluationResult, *, save: bool = True) -> str:
     lines: list[str] = []
     now = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
 
-    lines.append(f"# Agent Vitals Bench — Gate Report")
-    lines.append(f"")
+    profile_label = result.profile or "default"
+    lines.append("# Agent Vitals Bench — Gate Report")
+    lines.append("")
     lines.append(f"**Corpus:** {result.corpus_version}")
+    lines.append(f"**Profile:** {profile_label}")
     lines.append(f"**Traces evaluated:** {result.trace_count}")
     lines.append(f"**Detectors:** {', '.join(result.detectors_evaluated)}")
     lines.append(f"**Generated:** {now}")
-    lines.append(f"")
+    lines.append("")
 
     # Summary table
     lines.append("## Gate Results")
@@ -36,9 +38,20 @@ def report_results(result: EvaluationResult, *, save: bool = True) -> str:
     lines.append("|----------|---|---|----|----- |------|-----------|--------|")
 
     all_passed = True
+    excluded_names: list[str] = []
     for name in result.detectors_evaluated:
         gate = result.gate_results.get(name)
         if not gate:
+            continue
+        if gate.get("excluded", False):
+            excluded_names.append(name)
+            reason = gate.get("exclude_reason", "disabled by profile")
+            lines.append(
+                f"| {name} "
+                f"| — | — | — | — | — "
+                f"| {gate['total_positives']} "
+                f"| **EXCLUDED** ({reason}) |"
+            )
             continue
         status_icon = "HARD GATE" if gate["passed"] else "NO-GO"
         if not gate["passed"]:
@@ -56,7 +69,15 @@ def report_results(result: EvaluationResult, *, save: bool = True) -> str:
 
     lines.append("")
     composite_status = "PASS" if all_passed else "FAIL"
-    lines.append(f"**Composite gate:** {composite_status}")
+    evaluated_count = len(result.detectors_evaluated) - len(excluded_names)
+    if excluded_names:
+        lines.append(
+            f"**Composite gate:** {composite_status} "
+            f"({evaluated_count} evaluated, {len(excluded_names)} excluded: "
+            f"{', '.join(excluded_names)})"
+        )
+    else:
+        lines.append(f"**Composite gate:** {composite_status}")
     lines.append("")
 
     # Detailed confusion matrices
@@ -85,8 +106,7 @@ def report_results(result: EvaluationResult, *, save: bool = True) -> str:
         for check_name, check in gate["checks"].items():
             icon = "pass" if check["passed"] else "FAIL"
             lines.append(
-                f"- {check_name}: {check['actual']} "
-                f"(required: {check['required']}) — {icon}"
+                f"- {check_name}: {check['actual']} (required: {check['required']}) — {icon}"
             )
         lines.append("")
 
@@ -95,15 +115,18 @@ def report_results(result: EvaluationResult, *, save: bool = True) -> str:
     if save:
         REPORTS_DIR.mkdir(exist_ok=True)
         date_str = datetime.now(timezone.utc).strftime("%Y%m%d")
-        report_path = REPORTS_DIR / f"eval-{date_str}-{result.corpus_version}.md"
+        suffix = f"-{result.profile}" if result.profile else ""
+        report_path = REPORTS_DIR / f"eval-{date_str}-{result.corpus_version}{suffix}.md"
         report_path.write_text(report_text)
 
         # Also save JSON for machine consumption
-        json_path = REPORTS_DIR / f"eval-{date_str}-{result.corpus_version}.json"
+        json_path = REPORTS_DIR / f"eval-{date_str}-{result.corpus_version}{suffix}.json"
         json_data = {
             "corpus_version": result.corpus_version,
+            "profile": profile_label,
             "trace_count": result.trace_count,
             "generated_at": now,
+            "excluded_detectors": list(result.excluded_detectors),
             "detectors": {
                 name: result.detector_metrics[name].as_dict()
                 for name in result.detectors_evaluated
