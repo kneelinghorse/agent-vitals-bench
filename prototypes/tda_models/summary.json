@@ -1,0 +1,73 @@
+{
+  "trace_count": 1195,
+  "skipped_traces": 299,
+  "feature_count": 663,
+  "metrics": {
+    "loop": {
+      "detector": "loop",
+      "f1": 0.9929742388758782,
+      "precision": 0.986046511627907,
+      "recall": 1.0,
+      "positives": 212,
+      "negatives": 983,
+      "true_positives": 212,
+      "false_positives": 3,
+      "false_negatives": 0,
+      "true_negatives": 980,
+      "artifact_path": "/Users/mac-studio/projects/unified-system-state/agent-vitals-bench/prototypes/tda_models/loop.joblib"
+    },
+    "stuck": {
+      "detector": "stuck",
+      "f1": 0.9861751152073732,
+      "precision": 0.981651376146789,
+      "recall": 0.9907407407407407,
+      "positives": 108,
+      "negatives": 1087,
+      "true_positives": 107,
+      "false_positives": 2,
+      "false_negatives": 1,
+      "true_negatives": 1085,
+      "artifact_path": "/Users/mac-studio/projects/unified-system-state/agent-vitals-bench/prototypes/tda_models/stuck.joblib"
+    },
+    "confabulation": {
+      "detector": "confabulation",
+      "f1": 0.9905660377358492,
+      "precision": 0.995260663507109,
+      "recall": 0.9859154929577465,
+      "positives": 213,
+      "negatives": 982,
+      "true_positives": 210,
+      "false_positives": 1,
+      "false_negatives": 3,
+      "true_negatives": 981,
+      "artifact_path": "/Users/mac-studio/projects/unified-system-state/agent-vitals-bench/prototypes/tda_models/confabulation.joblib"
+    },
+    "thrash": {
+      "detector": "thrash",
+      "f1": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "positives": 231,
+      "negatives": 964,
+      "true_positives": 231,
+      "false_positives": 0,
+      "false_negatives": 0,
+      "true_negatives": 964,
+      "artifact_path": "/Users/mac-studio/projects/unified-system-state/agent-vitals-bench/prototypes/tda_models/thrash.joblib"
+    },
+    "runaway_cost": {
+      "detector": "runaway_cost",
+      "f1": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "positives": 199,
+      "negatives": 996,
+      "true_positives": 199,
+      "false_positives": 0,
+      "false_negatives": 0,
+      "true_negatives": 996,
+      "artifact_path": "/Users/mac-studio/projects/unified-system-state/agent-vitals-bench/prototypes/tda_models/runaway_cost.joblib"
+    }
+  },
+  "output_dir": "/Users/mac-studio/projects/unified-system-state/agent-vitals-bench/prototypes/tda_models"
+}
