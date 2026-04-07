@@ -21,6 +21,7 @@ import anthropic
 # Response dataclass
 # ---------------------------------------------------------------------------
 
+
 @dataclass(frozen=True, slots=True)
 class GenerateResult:
     """Standardized response from any LLM provider."""
@@ -37,6 +38,7 @@ class GenerateResult:
 # ---------------------------------------------------------------------------
 # Base provider
 # ---------------------------------------------------------------------------
+
 
 class Provider(ABC):
     """Base class for LLM providers used in elicitation."""
@@ -122,6 +124,7 @@ class LocalLlamaCppProvider(Provider):
 # OpenAI API
 # ---------------------------------------------------------------------------
 
+
 class OpenAIProvider(Provider):
     """OpenAI API provider."""
 
@@ -168,6 +171,7 @@ class OpenAIProvider(Provider):
 # Anthropic API
 # ---------------------------------------------------------------------------
 
+
 class AnthropicProvider(Provider):
     """Anthropic Claude API provider."""
 
@@ -177,9 +181,7 @@ class AnthropicProvider(Provider):
         self, model: str = "claude-haiku-4-5-20251001", api_key: str | None = None
     ) -> None:
         self._model = model
-        self._client = anthropic.Anthropic(
-            api_key=api_key or os.environ["ANTHROPIC_API_KEY"]
-        )
+        self._client = anthropic.Anthropic(api_key=api_key or os.environ["ANTHROPIC_API_KEY"])
 
     def generate(
         self,
@@ -199,9 +201,7 @@ class AnthropicProvider(Provider):
             kwargs["system"] = system
 
         resp = self._client.messages.create(**kwargs)
-        content = "".join(
-            block.text for block in resp.content if block.type == "text"
-        )
+        content = "".join(block.text for block in resp.content if block.type == "text")
         return GenerateResult(
             content=content,
             prompt_tokens=resp.usage.input_tokens,
@@ -217,32 +217,31 @@ class AnthropicProvider(Provider):
 # ---------------------------------------------------------------------------
 
 # OpenRouter model presets for multi-provider corpus collection.
+# Check https://openrouter.ai/rankings for current model IDs.
 OPENROUTER_MODELS: dict[str, str] = {
-    "anthropic": "anthropic/claude-haiku-4-5-20251001",
-    "gemini": "google/gemini-2.0-flash-001",
-    "codex": "openai/codex-mini-latest",
-    "qwen-72b": "qwen/qwen3.5-72b",
+    "claude-4-sonnet": "anthropic/claude-4-sonnet-20250522",
+    "gemini-2.5-flash": "google/gemini-2.5-flash",
+    "gemini-2.5-pro": "google/gemini-2.5-pro",
+    "gpt-4.1-mini": "openai/gpt-4.1-mini-2025-04-14",
+    "qwen3-coder": "qwen/qwen3-coder-480b-a35b-07-25",
 }
 
 
 class OpenRouterProvider(Provider):
     """OpenRouter multi-model proxy.
 
-    Supports model presets via OPENROUTER_MODELS dict:
-      - "anthropic" → claude-haiku-4-5-20251001
-      - "gemini" → gemini-2.0-flash-001
-      - "codex" → codex-mini-latest
-      - "qwen-72b" → qwen3.5-72b (default)
+    Supports model presets via OPENROUTER_MODELS dict.
+    Check https://openrouter.ai/rankings for current model IDs.
 
-    Use via registry: get_provider("openrouter", model="anthropic")
-    or get_provider("openrouter-anthropic") for preset shortcuts.
+    Use via registry: get_provider("openrouter", model="google/gemini-2.5-flash")
+    or get_provider("openrouter-gemini-2.5-flash") for preset shortcuts.
     """
 
     name = "openrouter"
 
     def __init__(
         self,
-        model: str = "qwen/qwen3.5-72b",
+        model: str = "google/gemini-2.5-flash",
         api_key: str | None = None,
     ) -> None:
         # Resolve preset names to full model IDs
@@ -290,6 +289,7 @@ class OpenRouterProvider(Provider):
 # MiniMax API (OpenAI-compatible)
 # ---------------------------------------------------------------------------
 
+
 class MiniMaxProvider(Provider):
     """MiniMax API provider (OpenAI-compatible endpoint)."""
 
@@ -297,12 +297,12 @@ class MiniMaxProvider(Provider):
 
     def __init__(
         self,
-        model: str = "MiniMax-Text-01",
+        model: str = "MiniMax-M2.7",
         api_key: str | None = None,
     ) -> None:
         self._model = model
         self._client = openai.OpenAI(
-            base_url="https://api.minimaxi.chat/v1",
+            base_url="https://api.minimax.io/v1",
             api_key=api_key or os.environ["MINIMAX_API_KEY"],
         )
 
@@ -342,6 +342,7 @@ class MiniMaxProvider(Provider):
 # ---------------------------------------------------------------------------
 # DeepSeek API (OpenAI-compatible)
 # ---------------------------------------------------------------------------
+
 
 class DeepSeekProvider(Provider):
     """DeepSeek API provider (OpenAI-compatible endpoint)."""
@@ -395,6 +396,7 @@ class DeepSeekProvider(Provider):
 # ---------------------------------------------------------------------------
 # DOI verification via Semantic Scholar
 # ---------------------------------------------------------------------------
+
 
 def verify_doi(doi: str, api_key: str | None = None) -> bool:
     """Check whether a DOI resolves to a real paper via Semantic Scholar.
@@ -454,16 +456,14 @@ def get_provider(name: str, **kwargs: Any) -> Provider:
 
     # OpenRouter preset shortcuts: openrouter-anthropic, openrouter-gemini, etc.
     if name.startswith("openrouter-"):
-        preset = name[len("openrouter-"):]
+        preset = name[len("openrouter-") :]
         if preset in OPENROUTER_MODELS:
             return OpenRouterProvider(model=preset, **kwargs)
 
     cls = registry.get(name)
     if cls is None:
         available = sorted(
-            set(LOCAL_ENDPOINTS)
-            | set(registry)
-            | {f"openrouter-{k}" for k in OPENROUTER_MODELS}
+            set(LOCAL_ENDPOINTS) | set(registry) | {f"openrouter-{k}" for k in OPENROUTER_MODELS}
         )
         raise ValueError(f"Unknown provider {name!r}. Available: {available}")
     return cls(**kwargs)
