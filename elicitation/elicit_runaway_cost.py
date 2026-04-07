@@ -25,6 +25,7 @@ from generators.base import TraceMetadata
 # Task banks
 # ---------------------------------------------------------------------------
 
+
 @dataclass(frozen=True, slots=True)
 class EscalatingTask:
     """An open-ended research task with follow-up prompts that grow scope."""
@@ -139,23 +140,16 @@ ESCALATING_TASKS: list[EscalatingTask] = [
 CONSTRAINED_TASKS: list[str] = [
     "In exactly 3 paragraphs, summarize the key differences between TCP and UDP. "
     "Keep each paragraph under 100 words.",
-
     "List the top 5 sorting algorithms by average time complexity. "
     "One sentence per algorithm, no more than 200 words total.",
-
     "Explain the difference between SQL JOIN types (INNER, LEFT, RIGHT, FULL) "
     "using a single example with two small tables. Keep it under 300 words.",
-
     "Write a Python function that validates an email address using regex. "
     "Include exactly 3 test cases. No additional explanation needed.",
-
     "In 2-3 sentences, explain what a container is and how it differs from a VM.",
-
     "List 5 common HTTP status codes with one-line descriptions. "
     "Total response should be under 100 words.",
-
     "Explain the CAP theorem in exactly one paragraph (under 150 words).",
-
     "Write a one-line bash command that finds all Python files modified "
     "in the last 24 hours. No explanation needed.",
 ]
@@ -197,6 +191,7 @@ class ElicitationRun:
 # Token analysis
 # ---------------------------------------------------------------------------
 
+
 def _compute_baseline(step_tokens: list[int], n_baseline: int = 3) -> float:
     """Average of the first n steps' token counts."""
     if len(step_tokens) < n_baseline:
@@ -204,7 +199,9 @@ def _compute_baseline(step_tokens: list[int], n_baseline: int = 3) -> float:
     return sum(step_tokens[:n_baseline]) / n_baseline
 
 
-def _find_burn_onset(step_tokens: list[int], multiplier: float = BURN_RATE_MULTIPLIER) -> int | None:
+def _find_burn_onset(
+    step_tokens: list[int], multiplier: float = BURN_RATE_MULTIPLIER
+) -> int | None:
     """Find first step where per-step tokens exceed multiplier × baseline."""
     if len(step_tokens) < 4:
         return None
@@ -230,6 +227,7 @@ def _tokens_increasing(step_tokens: list[int], window: int = 3) -> bool:
 # Snapshot builder
 # ---------------------------------------------------------------------------
 
+
 def _build_snapshot(
     trace_id: str,
     step: int,
@@ -250,28 +248,23 @@ def _build_snapshot(
         objectives_covered=objectives,
         # Floor at 0.5 during runaway phase to keep source_productive=True
         coverage_score=round(max(0.5, min(0.85, progress * 0.85)), 3)
-        if is_runaway_phase else round(min(0.85, progress * 0.85), 3),
-        confidence_score=round(0.35, 3) if is_runaway_phase
-        else round(0.4 + progress * 0.3, 3),
+        if is_runaway_phase
+        else round(min(0.85, progress * 0.85), 3),
+        confidence_score=round(0.35, 3) if is_runaway_phase else round(0.4 + progress * 0.3, 3),
         total_tokens=cumulative_tokens,
         prompt_tokens=sr.prompt_tokens,
         completion_tokens=sr.completion_tokens,
         error_count=0,
-        convergence_delta=round(0.01, 4) if is_runaway_phase
-        else round(0.1 + progress * 0.05, 4),
+        convergence_delta=round(0.01, 4) if is_runaway_phase else round(0.1 + progress * 0.05, 4),
     )
 
     metrics = TemporalMetricsResult(
         cv_coverage=round(0.35, 4),
         cv_findings_rate=round(0.15, 4) if is_runaway_phase else round(0.2, 4),
-        dm_coverage=round(0.25, 4) if is_runaway_phase
-        else round(0.6 + progress * 0.15, 4),
-        dm_findings=round(0.2, 4) if is_runaway_phase
-        else round(0.55 + progress * 0.2, 4),
-        qpf_tokens=round(0.3 + step * 0.05, 4) if is_runaway_phase
-        else round(0.6, 4),
-        cs_effort=round(0.2, 4) if is_runaway_phase
-        else round(0.5 + progress * 0.15, 4),
+        dm_coverage=round(0.25, 4) if is_runaway_phase else round(0.6 + progress * 0.15, 4),
+        dm_findings=round(0.2, 4) if is_runaway_phase else round(0.55 + progress * 0.2, 4),
+        qpf_tokens=round(0.3 + step * 0.05, 4) if is_runaway_phase else round(0.6, 4),
+        cs_effort=round(0.2, 4) if is_runaway_phase else round(0.5 + progress * 0.15, 4),
     )
 
     return VitalsSnapshot(
@@ -288,6 +281,7 @@ def _build_snapshot(
 # ---------------------------------------------------------------------------
 # Core elicitor
 # ---------------------------------------------------------------------------
+
 
 def elicit_runaway_cost(
     provider: Provider,
@@ -323,12 +317,20 @@ def elicit_runaway_cost(
 
     if positive:
         _run_positive(
-            provider, trace_id, total_steps, steps, snapshots,
+            provider,
+            trace_id,
+            total_steps,
+            steps,
+            snapshots,
             step_token_counts,
         )
     else:
         _run_negative(
-            provider, trace_id, total_steps, steps, snapshots,
+            provider,
+            trace_id,
+            total_steps,
+            steps,
+            snapshots,
             step_token_counts,
         )
 
@@ -429,9 +431,7 @@ def _run_positive(
             )
             max_tokens = min(4096, 1024 + (step_idx - 3) * 512)
 
-        result: GenerateResult = provider.generate(
-            prompt, temperature=0.7, max_tokens=max_tokens
-        )
+        result: GenerateResult = provider.generate(prompt, temperature=0.7, max_tokens=max_tokens)
 
         # Only accumulate context during runaway phase
         if step_idx >= 3:
@@ -484,9 +484,7 @@ def _run_negative(
         task = tasks[step_idx % len(tasks)]
 
         # Fixed, small max_tokens — explicit cost constraint
-        result: GenerateResult = provider.generate(
-            task, temperature=0.3, max_tokens=512
-        )
+        result: GenerateResult = provider.generate(task, temperature=0.3, max_tokens=512)
 
         cumulative_tokens += result.total_tokens
         step_token_counts.append(result.total_tokens)

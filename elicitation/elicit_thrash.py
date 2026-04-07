@@ -25,6 +25,7 @@ from generators.base import TraceMetadata
 # Prompt banks — initial + contradictory pairs
 # ---------------------------------------------------------------------------
 
+
 @dataclass(frozen=True, slots=True)
 class ConflictScenario:
     """An initial task and a contradictory follow-up."""
@@ -137,25 +138,18 @@ CONFLICT_SCENARIOS: list[ConflictScenario] = [
 COHERENT_TASKS: list[str] = [
     "Write a Python function that reads a CSV file, filters rows where the 'status' "
     "column is 'active', and returns the result as a pandas DataFrame. Include type hints.",
-
     "Explain the CAP theorem and provide one concrete example of a distributed system "
     "that prioritizes availability over consistency.",
-
     "Write a SQL query that finds the top 10 customers by total order value in the "
     "last 30 days, joining the customers and orders tables.",
-
     "Create a simple REST API endpoint in Flask that accepts a JSON body with 'name' "
     "and 'email' fields and returns a 201 response with the created user.",
-
     "Describe the difference between horizontal and vertical scaling, and give two "
     "scenarios where each approach is more appropriate.",
-
     "Write a Dockerfile for a Node.js Express application that uses multi-stage "
     "builds to keep the final image small.",
-
     "Implement a binary search function in Python that returns the index of the "
     "target element or -1 if not found. Include edge case handling.",
-
     "Explain how database indexing works and provide guidelines for when to add "
     "an index vs when indexing would hurt performance.",
 ]
@@ -164,6 +158,7 @@ COHERENT_TASKS: list[str] = [
 # ---------------------------------------------------------------------------
 # Step result type
 # ---------------------------------------------------------------------------
+
 
 @dataclass(frozen=True, slots=True)
 class ThrashStepResult:
@@ -195,6 +190,7 @@ class ElicitationRun:
 # Signal analysis
 # ---------------------------------------------------------------------------
 
+
 def _objectives_oscillate(objectives_seq: list[int]) -> bool:
     """Check if objectives_covered has at least one increase-then-decrease."""
     if len(objectives_seq) < 3:
@@ -211,9 +207,18 @@ def _objectives_oscillate(objectives_seq: list[int]) -> bool:
 def _count_approach_keywords(text: str) -> int:
     """Rough heuristic: count distinct technical approaches mentioned."""
     keywords = [
-        "instead", "switch", "actually", "however", "alternatively",
-        "on the other hand", "different approach", "reconsider",
-        "let me try", "another way", "revised", "updated",
+        "instead",
+        "switch",
+        "actually",
+        "however",
+        "alternatively",
+        "on the other hand",
+        "different approach",
+        "reconsider",
+        "let me try",
+        "another way",
+        "revised",
+        "updated",
     ]
     return sum(1 for kw in keywords if kw.lower() in text.lower())
 
@@ -221,6 +226,7 @@ def _count_approach_keywords(text: str) -> int:
 # ---------------------------------------------------------------------------
 # Snapshot builder
 # ---------------------------------------------------------------------------
+
 
 def _build_snapshot(
     trace_id: str,
@@ -241,31 +247,29 @@ def _build_snapshot(
         findings_count=findings,
         sources_count=findings + 2,
         objectives_covered=objectives,
-        coverage_score=round(min(1.0, max(0.0, progress * 0.4 + 0.1 * (
-            -1 if is_thrash_phase and step % 2 == 1 else 1
-        ))), 3),
-        confidence_score=round(0.3, 3) if is_thrash_phase
-        else round(0.4 + progress * 0.3, 3),
+        coverage_score=round(
+            min(
+                1.0,
+                max(0.0, progress * 0.4 + 0.1 * (-1 if is_thrash_phase and step % 2 == 1 else 1)),
+            ),
+            3,
+        ),
+        confidence_score=round(0.3, 3) if is_thrash_phase else round(0.4 + progress * 0.3, 3),
         total_tokens=cumulative_tokens,
         prompt_tokens=sr.prompt_tokens,
         completion_tokens=sr.completion_tokens,
         error_count=error_count,
         refinement_count=refinement_count,
-        convergence_delta=round(0.01, 4) if is_thrash_phase
-        else round(0.12 + progress * 0.03, 4),
+        convergence_delta=round(0.01, 4) if is_thrash_phase else round(0.12 + progress * 0.03, 4),
     )
 
     metrics = TemporalMetricsResult(
-        cv_coverage=round(0.5 + step * 0.05, 4) if is_thrash_phase
-        else round(0.25, 4),
+        cv_coverage=round(0.5 + step * 0.05, 4) if is_thrash_phase else round(0.25, 4),
         cv_findings_rate=round(0.4, 4) if is_thrash_phase else round(0.2, 4),
-        dm_coverage=round(0.2, 4) if is_thrash_phase
-        else round(0.6 + progress * 0.15, 4),
-        dm_findings=round(0.2, 4) if is_thrash_phase
-        else round(0.55 + progress * 0.2, 4),
+        dm_coverage=round(0.2, 4) if is_thrash_phase else round(0.6 + progress * 0.15, 4),
+        dm_findings=round(0.2, 4) if is_thrash_phase else round(0.55 + progress * 0.2, 4),
         qpf_tokens=round(0.6, 4),
-        cs_effort=round(0.25, 4) if is_thrash_phase
-        else round(0.5 + progress * 0.15, 4),
+        cs_effort=round(0.25, 4) if is_thrash_phase else round(0.5 + progress * 0.15, 4),
     )
 
     return VitalsSnapshot(
@@ -282,6 +286,7 @@ def _build_snapshot(
 # ---------------------------------------------------------------------------
 # Core elicitor
 # ---------------------------------------------------------------------------
+
 
 def elicit_thrash(
     provider: Provider,
@@ -316,11 +321,19 @@ def elicit_thrash(
 
     if positive:
         _run_positive(
-            provider, trace_id, total_steps, steps, snapshots,
+            provider,
+            trace_id,
+            total_steps,
+            steps,
+            snapshots,
         )
     else:
         _run_negative(
-            provider, trace_id, total_steps, steps, snapshots,
+            provider,
+            trace_id,
+            total_steps,
+            steps,
+            snapshots,
         )
 
     # Rebuild objectives sequence from snapshots
@@ -331,12 +344,7 @@ def elicit_thrash(
     has_errors = any(s.signals.error_count > 0 for s in snapshots)
     oscillates = _objectives_oscillate(objectives_seq)
 
-    is_positive = (
-        final_refinements >= 3
-        and has_errors
-        and oscillates
-        and len(snapshots) >= 3
-    )
+    is_positive = final_refinements >= 3 and has_errors and oscillates and len(snapshots) >= 3
 
     labels = {
         "loop": False,
@@ -350,7 +358,10 @@ def elicit_thrash(
     onset_step: int | None = None
     for i, snap in enumerate(snapshots):
         if snap.signals.error_count > 0 and i > 0:
-            if snapshots[i].signals.objectives_covered != snapshots[i - 1].signals.objectives_covered:
+            if (
+                snapshots[i].signals.objectives_covered
+                != snapshots[i - 1].signals.objectives_covered
+            ):
                 onset_step = i
                 break
 
@@ -420,9 +431,7 @@ def _run_positive(
             if step_idx > 0:
                 refinement_count += 1
 
-        result: GenerateResult = provider.generate(
-            prompt, temperature=0.8, max_tokens=2048
-        )
+        result: GenerateResult = provider.generate(prompt, temperature=0.8, max_tokens=2048)
 
         # Count approach switches in the response
         switches = _count_approach_keywords(result.content)
@@ -472,9 +481,7 @@ def _run_negative(
     for step_idx in range(total_steps):
         task = tasks[step_idx % len(tasks)]
 
-        result: GenerateResult = provider.generate(
-            task, temperature=0.3, max_tokens=2048
-        )
+        result: GenerateResult = provider.generate(task, temperature=0.3, max_tokens=2048)
 
         cumulative_tokens += result.total_tokens
 
