@@ -206,14 +206,14 @@ class TestOpenRouterProvider:
         mock_client = MagicMock()
         mock_cls.return_value = mock_client
         mock_client.chat.completions.create.return_value = _openai_response(
-            model="qwen/qwen3.5-72b"
+            model="google/gemini-2.5-flash"
         )
 
         p = OpenRouterProvider(api_key="sk-or-test")
         result = p.generate("hello")
 
         assert result.provider == "openrouter"
-        assert result.model == "qwen/qwen3.5-72b"
+        assert result.model == "google/gemini-2.5-flash"
 
         # Verify base_url was set to openrouter
         init_kwargs = mock_cls.call_args
@@ -231,8 +231,10 @@ class TestMiniMaxProvider:
         mock_client = MagicMock()
         mock_cls.return_value = mock_client
         mock_client.chat.completions.create.return_value = _openai_response(
-            content="minimax output", model="MiniMax-Text-01",
-            prompt_tokens=15, completion_tokens=8,
+            content="minimax output",
+            model="MiniMax-M2.7",
+            prompt_tokens=15,
+            completion_tokens=8,
         )
 
         p = MiniMaxProvider(api_key="mm-test")
@@ -246,7 +248,7 @@ class TestMiniMaxProvider:
 
         # Verify base_url was set to MiniMax
         init_kwargs = mock_cls.call_args
-        assert "minimaxi.chat" in init_kwargs.kwargs["base_url"]
+        assert "minimax.io" in init_kwargs.kwargs["base_url"]
 
     @patch("elicitation.providers.openai.OpenAI")
     def test_no_system(self, mock_cls: MagicMock) -> None:
@@ -274,8 +276,10 @@ class TestDeepSeekProvider:
         mock_client = MagicMock()
         mock_cls.return_value = mock_client
         mock_client.chat.completions.create.return_value = _openai_response(
-            content="deepseek output", model="deepseek-chat",
-            prompt_tokens=12, completion_tokens=6,
+            content="deepseek output",
+            model="deepseek-chat",
+            prompt_tokens=12,
+            completion_tokens=6,
         )
 
         p = DeepSeekProvider(api_key="ds-test")
@@ -309,14 +313,14 @@ class TestDeepSeekProvider:
 
 class TestOpenRouterPresets:
     @patch("elicitation.providers.openai.OpenAI")
-    def test_preset_anthropic(self, mock_cls: MagicMock) -> None:
+    def test_preset_claude(self, mock_cls: MagicMock) -> None:
         mock_client = MagicMock()
         mock_cls.return_value = mock_client
         mock_client.chat.completions.create.return_value = _openai_response(
-            model=OPENROUTER_MODELS["anthropic"]
+            model=OPENROUTER_MODELS["claude-4-sonnet"]
         )
 
-        p = OpenRouterProvider(model="anthropic", api_key="sk-or-test")
+        p = OpenRouterProvider(model="claude-4-sonnet", api_key="sk-or-test")
         result = p.generate("hello")
         assert "claude" in result.model
 
@@ -325,24 +329,24 @@ class TestOpenRouterPresets:
         mock_client = MagicMock()
         mock_cls.return_value = mock_client
         mock_client.chat.completions.create.return_value = _openai_response(
-            model=OPENROUTER_MODELS["gemini"]
+            model=OPENROUTER_MODELS["gemini-2.5-flash"]
         )
 
-        p = OpenRouterProvider(model="gemini", api_key="sk-or-test")
+        p = OpenRouterProvider(model="gemini-2.5-flash", api_key="sk-or-test")
         result = p.generate("hello")
         assert "gemini" in result.model
 
     @patch("elicitation.providers.openai.OpenAI")
-    def test_preset_codex(self, mock_cls: MagicMock) -> None:
+    def test_preset_gpt(self, mock_cls: MagicMock) -> None:
         mock_client = MagicMock()
         mock_cls.return_value = mock_client
         mock_client.chat.completions.create.return_value = _openai_response(
-            model=OPENROUTER_MODELS["codex"]
+            model=OPENROUTER_MODELS["gpt-4.1-mini"]
         )
 
-        p = OpenRouterProvider(model="codex", api_key="sk-or-test")
+        p = OpenRouterProvider(model="gpt-4.1-mini", api_key="sk-or-test")
         result = p.generate("hello")
-        assert "codex" in result.model
+        assert "gpt" in result.model
 
     @patch("elicitation.providers.openai.OpenAI")
     def test_full_model_id_passthrough(self, mock_cls: MagicMock) -> None:
@@ -367,9 +371,9 @@ class TestNewProviderRegistry:
         names = list_providers()
         assert "minimax" in names
         assert "deepseek" in names
-        assert "openrouter-anthropic" in names
-        assert "openrouter-gemini" in names
-        assert "openrouter-codex" in names
+        assert "openrouter-claude-4-sonnet" in names
+        assert "openrouter-gemini-2.5-flash" in names
+        assert "openrouter-gpt-4.1-mini" in names
 
     @patch("elicitation.providers.openai.OpenAI")
     def test_get_minimax(self, mock_cls: MagicMock) -> None:
@@ -383,13 +387,13 @@ class TestNewProviderRegistry:
 
     @patch("elicitation.providers.openai.OpenAI")
     def test_get_openrouter_preset(self, mock_cls: MagicMock) -> None:
-        p = get_provider("openrouter-anthropic", api_key="sk-or-test")
+        p = get_provider("openrouter-claude-4-sonnet", api_key="sk-or-test")
         assert isinstance(p, OpenRouterProvider)
         assert "claude" in p._model
 
     @patch("elicitation.providers.openai.OpenAI")
     def test_get_openrouter_gemini(self, mock_cls: MagicMock) -> None:
-        p = get_provider("openrouter-gemini", api_key="sk-or-test")
+        p = get_provider("openrouter-gemini-2.5-flash", api_key="sk-or-test")
         assert isinstance(p, OpenRouterProvider)
         assert "gemini" in p._model
 

@@ -76,9 +76,7 @@ class TestObjectivesOscillate:
 class TestPositiveElicitation:
     def test_produces_positive_trace(self) -> None:
         provider = _make_mock_provider()
-        run = elicit_thrash(
-            provider, positive=True, total_steps=8, trace_id="test-thrash-pos"
-        )
+        run = elicit_thrash(provider, positive=True, total_steps=8, trace_id="test-thrash-pos")
 
         assert isinstance(run, ElicitationRun)
         assert run.positive is True
@@ -138,9 +136,7 @@ class TestPositiveElicitation:
 class TestNegativeElicitation:
     def test_produces_negative_trace(self) -> None:
         provider = _make_mock_provider(content="Here is a clear answer.")
-        run = elicit_thrash(
-            provider, positive=False, total_steps=6, trace_id="test-thrash-neg"
-        )
+        run = elicit_thrash(provider, positive=False, total_steps=6, trace_id="test-thrash-neg")
 
         assert run.metadata.labels["thrash"] is False
         assert run.metadata.tier == "elicited"

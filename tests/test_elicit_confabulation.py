@@ -23,8 +23,7 @@ from elicitation.providers import GenerateResult, Provider
 class TestExtractDois:
     def test_finds_dois(self) -> None:
         text = (
-            "Paper 1 (DOI: 10.1038/nature12373). "
-            "Paper 2 has DOI 10.1145/3292500.3330919 and more."
+            "Paper 1 (DOI: 10.1038/nature12373). Paper 2 has DOI 10.1145/3292500.3330919 and more."
         )
         dois = extract_dois(text)
         assert "10.1038/nature12373" in dois
@@ -91,9 +90,7 @@ class TestPositiveElicitation:
         )
         provider = _make_mock_provider([response])
 
-        run = elicit_confabulation(
-            provider, positive=True, total_steps=4, trace_id="test-pos-001"
-        )
+        run = elicit_confabulation(provider, positive=True, total_steps=4, trace_id="test-pos-001")
 
         assert isinstance(run, ElicitationRun)
         assert run.positive is True
@@ -160,9 +157,7 @@ class TestNegativeElicitation:
         )
         provider = _make_mock_provider([response])
 
-        run = elicit_confabulation(
-            provider, positive=False, total_steps=4, trace_id="test-neg-001"
-        )
+        run = elicit_confabulation(provider, positive=False, total_steps=4, trace_id="test-neg-001")
 
         assert run.metadata.labels["confabulation"] is False
         assert run.metadata.onset_step is None
@@ -253,6 +248,75 @@ class TestEdgeCases:
             assert snap.signals.sources_count >= 0
             assert 0.0 <= snap.signals.coverage_score <= 1.0
             assert 0.0 <= snap.signals.confidence_score <= 1.0
+
+
+# ---------------------------------------------------------------------------
+# Topic banks
+# ---------------------------------------------------------------------------
+
+
+# ---------------------------------------------------------------------------
+# Frontier model protocol revision (Sprint 13, s13-m02)
+# ---------------------------------------------------------------------------
+
+
+class TestVerifiedSourceRatio:
+    @patch("elicitation.elicit_confabulation.verify_doi")
+    def test_frontier_high_volume_fabrication(self, mock_verify: MagicMock) -> None:
+        """Frontier model: 15 DOIs/step, ~25% verify → positive via verified_source_ratio."""
+        # 4 verified out of 15 DOIs per step = 0.267 verified_source_ratio
+        verify_cycle = [True, True, True, True] + [False] * 11
+        mock_verify.side_effect = verify_cycle * 6  # 6 steps
+
+        response = "\n".join([f"Paper {i + 1}. DOI: 10.1234/doi{i:03d}" for i in range(15)])
+        provider = _make_mock_provider([response])
+
+        run = elicit_confabulation(provider, positive=True, total_steps=6)
+
+        # 4/15 = 0.267 < 0.3 → positive ground truth
+        assert run.metadata.labels["confabulation"] is True
+        assert run.metadata.params["verified_source_ratio"] < 0.3
+
+    @patch("elicitation.elicit_confabulation.verify_doi")
+    def test_sources_count_equals_all_dois(self, mock_verify: MagicMock) -> None:
+        """sources_count tracks all DOIs cited (agent perspective), not just verified."""
+        mock_verify.return_value = False
+        response = "P1. DOI: 10.1234/a\nP2. DOI: 10.1234/b\nP3. DOI: 10.1234/c"
+        provider = _make_mock_provider([response])
+
+        run = elicit_confabulation(provider, positive=True, total_steps=2)
+
+        # 2 steps × 3 DOIs = 6 total DOIs
+        last = run.snapshots[-1]
+        assert last.signals.sources_count == last.signals.findings_count
+        assert last.signals.findings_count == 6
+        assert last.signals.unverified_sources_count == 6
+        assert last.signals.verified_sources_count == 0
+
+    @patch("elicitation.elicit_confabulation.verify_doi")
+    def test_verified_ratio_in_params(self, mock_verify: MagicMock) -> None:
+        """Metadata includes verified_source_ratio field."""
+        mock_verify.return_value = False
+        response = "Paper. DOI: 10.1234/fake"
+        provider = _make_mock_provider([response])
+
+        run = elicit_confabulation(provider, positive=True, total_steps=3)
+
+        assert "verified_source_ratio" in run.metadata.params
+        assert "total_verified" in run.metadata.params
+        assert run.metadata.params["verified_source_ratio"] == 0.0
+        assert run.metadata.params["total_verified"] == 0
+
+    @patch("elicitation.elicit_confabulation.verify_doi")
+    def test_default_papers_per_step_is_20(self, mock_verify: MagicMock) -> None:
+        """Default papers_per_step increased to 20 for frontier model coverage."""
+        mock_verify.return_value = False
+        response = "Paper. DOI: 10.1234/fake"
+        provider = _make_mock_provider([response])
+
+        run = elicit_confabulation(provider, positive=True, total_steps=2)
+
+        assert run.metadata.params["papers_per_step"] == 20
 
 
 # ---------------------------------------------------------------------------
