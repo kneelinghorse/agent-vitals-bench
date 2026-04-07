@@ -1,30 +1,31 @@
 {
   "corpus_version": "v1",
   "profile": "default",
-  "trace_count": 1117,
-  "generated_at": "2026-04-03 21:42 UTC",
+  "trace_count": 1178,
+  "generated_at": "2026-04-05 05:17 UTC",
+  "excluded_detectors": [],
   "detectors": {
     "loop": {
       "detector": "loop",
-      "tp": 216,
+      "tp": 212,
       "fp": 0,
       "fn": 0,
-      "tn": 901,
+      "tn": 966,
       "precision": 1.0,
       "recall": 1.0,
       "f1": 1.0,
-      "precision_lb": 0.9825,
+      "precision_lb": 0.9822,
       "precision_ub": 1.0,
-      "recall_lb": 0.9825,
+      "recall_lb": 0.9822,
       "recall_ub": 1.0,
-      "total_positives": 216
+      "total_positives": 212
     },
     "stuck": {
       "detector": "stuck",
       "tp": 138,
       "fp": 3,
       "fn": 0,
-      "tn": 976,
+      "tn": 1037,
       "precision": 0.9787,
       "recall": 1.0,
       "f1": 0.9892,
@@ -36,48 +37,48 @@
     },
     "confabulation": {
       "detector": "confabulation",
-      "tp": 187,
-      "fp": 3,
-      "fn": 20,
-      "tn": 907,
-      "precision": 0.9842,
-      "recall": 0.9034,
-      "f1": 0.9421,
-      "precision_lb": 0.9546,
-      "precision_ub": 0.9946,
-      "recall_lb": 0.8555,
-      "recall_ub": 0.9366,
-      "total_positives": 207
+      "tp": 199,
+      "fp": 10,
+      "fn": 28,
+      "tn": 941,
+      "precision": 0.9522,
+      "recall": 0.8767,
+      "f1": 0.9128,
+      "precision_lb": 0.9142,
+      "precision_ub": 0.9738,
+      "recall_lb": 0.8275,
+      "recall_ub": 0.9133,
+      "total_positives": 227
     },
     "thrash": {
       "detector": "thrash",
-      "tp": 163,
+      "tp": 173,
       "fp": 0,
       "fn": 0,
-      "tn": 954,
+      "tn": 1005,
       "precision": 1.0,
       "recall": 1.0,
       "f1": 1.0,
-      "precision_lb": 0.977,
+      "precision_lb": 0.9783,
       "precision_ub": 1.0,
-      "recall_lb": 0.977,
+      "recall_lb": 0.9783,
       "recall_ub": 1.0,
-      "total_positives": 163
+      "total_positives": 173
     },
     "runaway_cost": {
       "detector": "runaway_cost",
-      "tp": 158,
-      "fp": 20,
+      "tp": 163,
+      "fp": 22,
       "fn": 0,
-      "tn": 939,
-      "precision": 0.8876,
+      "tn": 993,
+      "precision": 0.8811,
       "recall": 1.0,
-      "f1": 0.9405,
-      "precision_lb": 0.8328,
-      "precision_ub": 0.9261,
-      "recall_lb": 0.9763,
+      "f1": 0.9368,
+      "precision_lb": 0.8265,
+      "precision_ub": 0.9201,
+      "recall_lb": 0.977,
       "recall_ub": 1.0,
-      "total_positives": 158
+      "total_positives": 163
     }
   },
   "gates": {
@@ -88,23 +89,23 @@
       "precision": 1.0,
       "recall": 1.0,
       "f1": 1.0,
-      "precision_lb": 0.9825,
-      "recall_lb": 0.9825,
-      "total_positives": 216,
+      "precision_lb": 0.9822,
+      "recall_lb": 0.9822,
+      "total_positives": 212,
       "checks": {
         "min_positives": {
           "required": 25,
-          "actual": 216,
+          "actual": 212,
           "passed": true
         },
         "precision_lb": {
           "required": 0.8,
-          "actual": 0.9825,
+          "actual": 0.9822,
           "passed": true
         },
         "recall_lb": {
           "required": 0.75,
-          "actual": 0.9825,
+          "actual": 0.9822,
           "passed": true
         }
       }
@@ -141,26 +142,26 @@
       "detector": "confabulation",
       "passed": true,
       "status": "HARD GATE",
-      "precision": 0.9842,
-      "recall": 0.9034,
-      "f1": 0.9421,
-      "precision_lb": 0.9546,
-      "recall_lb": 0.8555,
-      "total_positives": 207,
+      "precision": 0.9522,
+      "recall": 0.8767,
+      "f1": 0.9128,
+      "precision_lb": 0.9142,
+      "recall_lb": 0.8275,
+      "total_positives": 227,
       "checks": {
         "min_positives": {
           "required": 25,
-          "actual": 207,
+          "actual": 227,
           "passed": true
         },
         "precision_lb": {
           "required": 0.8,
-          "actual": 0.9546,
+          "actual": 0.9142,
           "passed": true
         },
         "recall_lb": {
           "required": 0.75,
-          "actual": 0.8555,
+          "actual": 0.8275,
           "passed": true
         }
       }
@@ -172,7 +173,35 @@
       "precision": 1.0,
       "recall": 1.0,
       "f1": 1.0,
-      "precision_lb": 0.977,
+      "precision_lb": 0.9783,
+      "recall_lb": 0.9783,
+      "total_positives": 173,
+      "checks": {
+        "min_positives": {
+          "required": 25,
+          "actual": 173,
+          "passed": true
+        },
+        "precision_lb": {
+          "required": 0.8,
+          "actual": 0.9783,
+          "passed": true
+        },
+        "recall_lb": {
+          "required": 0.75,
+          "actual": 0.9783,
+          "passed": true
+        }
+      }
+    },
+    "runaway_cost": {
+      "detector": "runaway_cost",
+      "passed": true,
+      "status": "HARD GATE",
+      "precision": 0.8811,
+      "recall": 1.0,
+      "f1": 0.9368,
+      "precision_lb": 0.8265,
       "recall_lb": 0.977,
       "total_positives": 163,
       "checks": {
@@ -183,40 +212,12 @@
         },
         "precision_lb": {
           "required": 0.8,
-          "actual": 0.977,
+          "actual": 0.8265,
           "passed": true
         },
         "recall_lb": {
           "required": 0.75,
           "actual": 0.977,
-          "passed": true
-        }
-      }
-    },
-    "runaway_cost": {
-      "detector": "runaway_cost",
-      "passed": true,
-      "status": "HARD GATE",
-      "precision": 0.8876,
-      "recall": 1.0,
-      "f1": 0.9405,
-      "precision_lb": 0.8328,
-      "recall_lb": 0.9763,
-      "total_positives": 158,
-      "checks": {
-        "min_positives": {
-          "required": 25,
-          "actual": 158,
-          "passed": true
-        },
-        "precision_lb": {
-          "required": 0.8,
-          "actual": 0.8328,
-          "passed": true
-        },
-        "recall_lb": {
-          "required": 0.75,
-          "actual": 0.9763,
           "passed": true
         }
       }

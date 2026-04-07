@@ -1,139 +1,139 @@
 {
   "corpus_version": "v1",
-  "profile": "default",
-  "trace_count": 1117,
+  "profile": "dspy",
+  "trace_count": 935,
   "generated_at": "2026-04-03 21:42 UTC",
   "detectors": {
     "loop": {
       "detector": "loop",
-      "tp": 216,
-      "fp": 0,
+      "tp": 184,
+      "fp": 51,
       "fn": 0,
-      "tn": 901,
-      "precision": 1.0,
+      "tn": 700,
+      "precision": 0.783,
       "recall": 1.0,
-      "f1": 1.0,
-      "precision_lb": 0.9825,
-      "precision_ub": 1.0,
-      "recall_lb": 0.9825,
+      "f1": 0.8783,
+      "precision_lb": 0.726,
+      "precision_ub": 0.8309,
+      "recall_lb": 0.9795,
       "recall_ub": 1.0,
-      "total_positives": 216
+      "total_positives": 184
     },
     "stuck": {
       "detector": "stuck",
-      "tp": 138,
-      "fp": 3,
-      "fn": 0,
-      "tn": 976,
-      "precision": 0.9787,
-      "recall": 1.0,
-      "f1": 0.9892,
-      "precision_lb": 0.9393,
-      "precision_ub": 0.9927,
-      "recall_lb": 0.9729,
-      "recall_ub": 1.0,
-      "total_positives": 138
+      "tp": 0,
+      "fp": 0,
+      "fn": 102,
+      "tn": 833,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "precision_lb": 0.0,
+      "precision_ub": 0.0,
+      "recall_lb": 0.0,
+      "recall_ub": 0.0363,
+      "total_positives": 102
     },
     "confabulation": {
       "detector": "confabulation",
-      "tp": 187,
+      "tp": 151,
       "fp": 3,
       "fn": 20,
-      "tn": 907,
-      "precision": 0.9842,
-      "recall": 0.9034,
-      "f1": 0.9421,
-      "precision_lb": 0.9546,
-      "precision_ub": 0.9946,
-      "recall_lb": 0.8555,
-      "recall_ub": 0.9366,
-      "total_positives": 207
+      "tn": 761,
+      "precision": 0.9805,
+      "recall": 0.883,
+      "f1": 0.9292,
+      "precision_lb": 0.9443,
+      "precision_ub": 0.9934,
+      "recall_lb": 0.8263,
+      "recall_ub": 0.923,
+      "total_positives": 171
     },
     "thrash": {
       "detector": "thrash",
-      "tp": 163,
+      "tp": 139,
       "fp": 0,
       "fn": 0,
-      "tn": 954,
+      "tn": 796,
       "precision": 1.0,
       "recall": 1.0,
       "f1": 1.0,
-      "precision_lb": 0.977,
+      "precision_lb": 0.9731,
       "precision_ub": 1.0,
-      "recall_lb": 0.977,
+      "recall_lb": 0.9731,
       "recall_ub": 1.0,
-      "total_positives": 163
+      "total_positives": 139
     },
     "runaway_cost": {
       "detector": "runaway_cost",
-      "tp": 158,
-      "fp": 20,
+      "tp": 134,
+      "fp": 44,
       "fn": 0,
-      "tn": 939,
-      "precision": 0.8876,
+      "tn": 757,
+      "precision": 0.7528,
       "recall": 1.0,
-      "f1": 0.9405,
-      "precision_lb": 0.8328,
-      "precision_ub": 0.9261,
-      "recall_lb": 0.9763,
+      "f1": 0.859,
+      "precision_lb": 0.6845,
+      "precision_ub": 0.8104,
+      "recall_lb": 0.9721,
       "recall_ub": 1.0,
-      "total_positives": 158
+      "total_positives": 134
     }
   },
   "gates": {
     "loop": {
       "detector": "loop",
-      "passed": true,
-      "status": "HARD GATE",
-      "precision": 1.0,
+      "passed": false,
+      "status": "NO-GO",
+      "precision": 0.783,
       "recall": 1.0,
-      "f1": 1.0,
-      "precision_lb": 0.9825,
-      "recall_lb": 0.9825,
-      "total_positives": 216,
+      "f1": 0.8783,
+      "precision_lb": 0.726,
+      "recall_lb": 0.9795,
+      "total_positives": 184,
       "checks": {
         "min_positives": {
           "required": 25,
-          "actual": 216,
+          "actual": 184,
           "passed": true
         },
         "precision_lb": {
           "required": 0.8,
-          "actual": 0.9825,
-          "passed": true
+          "actual": 0.726,
+          "passed": false
         },
         "recall_lb": {
           "required": 0.75,
-          "actual": 0.9825,
+          "actual": 0.9795,
           "passed": true
         }
       }
     },
     "stuck": {
       "detector": "stuck",
-      "passed": true,
-      "status": "HARD GATE",
-      "precision": 0.9787,
-      "recall": 1.0,
-      "f1": 0.9892,
-      "precision_lb": 0.9393,
-      "recall_lb": 0.9729,
-      "total_positives": 138,
+      "passed": false,
+      "status": "NO-GO",
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "precision_lb": 0.0,
+      "recall_lb": 0.0,
+      "total_positives": 102,
       "checks": {
         "min_positives": {
           "required": 25,
-          "actual": 138,
+          "actual": 102,
           "passed": true
         },
         "precision_lb": {
           "required": 0.8,
-          "actual": 0.9393,
-          "passed": true
+          "actual": 0.0,
+          "passed": false
         },
         "recall_lb": {
           "required": 0.75,
-          "actual": 0.9729,
-          "passed": true
+          "actual": 0.0,
+          "passed": false
         }
       }
     },
@@ -141,26 +141,26 @@
       "detector": "confabulation",
       "passed": true,
       "status": "HARD GATE",
-      "precision": 0.9842,
-      "recall": 0.9034,
-      "f1": 0.9421,
-      "precision_lb": 0.9546,
-      "recall_lb": 0.8555,
-      "total_positives": 207,
+      "precision": 0.9805,
+      "recall": 0.883,
+      "f1": 0.9292,
+      "precision_lb": 0.9443,
+      "recall_lb": 0.8263,
+      "total_positives": 171,
       "checks": {
         "min_positives": {
           "required": 25,
-          "actual": 207,
+          "actual": 171,
           "passed": true
         },
         "precision_lb": {
           "required": 0.8,
-          "actual": 0.9546,
+          "actual": 0.9443,
           "passed": true
         },
         "recall_lb": {
           "required": 0.75,
-          "actual": 0.8555,
+          "actual": 0.8263,
           "passed": true
         }
       }
@@ -172,51 +172,51 @@
       "precision": 1.0,
       "recall": 1.0,
       "f1": 1.0,
-      "precision_lb": 0.977,
-      "recall_lb": 0.977,
-      "total_positives": 163,
+      "precision_lb": 0.9731,
+      "recall_lb": 0.9731,
+      "total_positives": 139,
       "checks": {
         "min_positives": {
           "required": 25,
-          "actual": 163,
+          "actual": 139,
           "passed": true
         },
         "precision_lb": {
           "required": 0.8,
-          "actual": 0.977,
+          "actual": 0.9731,
           "passed": true
         },
         "recall_lb": {
           "required": 0.75,
-          "actual": 0.977,
+          "actual": 0.9731,
           "passed": true
         }
       }
     },
     "runaway_cost": {
       "detector": "runaway_cost",
-      "passed": true,
-      "status": "HARD GATE",
-      "precision": 0.8876,
+      "passed": false,
+      "status": "NO-GO",
+      "precision": 0.7528,
       "recall": 1.0,
-      "f1": 0.9405,
-      "precision_lb": 0.8328,
-      "recall_lb": 0.9763,
-      "total_positives": 158,
+      "f1": 0.859,
+      "precision_lb": 0.6845,
+      "recall_lb": 0.9721,
+      "total_positives": 134,
       "checks": {
         "min_positives": {
           "required": 25,
-          "actual": 158,
+          "actual": 134,
           "passed": true
         },
         "precision_lb": {
           "required": 0.8,
-          "actual": 0.8328,
-          "passed": true
+          "actual": 0.6845,
+          "passed": false
         },
         "recall_lb": {
           "required": 0.75,
-          "actual": 0.9763,
+          "actual": 0.9721,
           "passed": true
         }
       }
