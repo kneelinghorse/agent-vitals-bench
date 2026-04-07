@@ -32,7 +32,10 @@ class TestLoopGenerator:
 
     def test_findings_plateau_in_positive(self) -> None:
         snapshots, _ = self.gen.generate(
-            loop_start=3, loop_length=5, total_steps=10, pattern="exact",
+            loop_start=3,
+            loop_length=5,
+            total_steps=10,
+            pattern="exact",
         )
         # After loop_start, findings should freeze
         plateau_findings = [s.signals.findings_count for s in snapshots[3:]]
@@ -40,7 +43,9 @@ class TestLoopGenerator:
 
     def test_tokens_keep_growing_in_loop(self) -> None:
         snapshots, _ = self.gen.generate(
-            loop_start=3, loop_length=5, total_steps=10,
+            loop_start=3,
+            loop_length=5,
+            total_steps=10,
         )
         loop_tokens = [s.signals.total_tokens for s in snapshots[3:]]
         assert loop_tokens == sorted(loop_tokens)
@@ -66,7 +71,10 @@ class TestLoopGenerator:
 
     def test_semantic_pattern_has_variation(self) -> None:
         snapshots, _ = self.gen.generate(
-            loop_start=3, loop_length=6, total_steps=10, pattern="semantic",
+            loop_start=3,
+            loop_length=6,
+            total_steps=10,
+            pattern="semantic",
         )
         loop_findings = [s.signals.findings_count for s in snapshots[3:]]
         # Semantic pattern should have some variation (not all identical)
@@ -74,7 +82,10 @@ class TestLoopGenerator:
 
     def test_exact_pattern_is_frozen(self) -> None:
         snapshots, _ = self.gen.generate(
-            loop_start=3, loop_length=5, total_steps=10, pattern="exact",
+            loop_start=3,
+            loop_length=5,
+            total_steps=10,
+            pattern="exact",
         )
         loop_findings = [s.signals.findings_count for s in snapshots[3:]]
         assert len(set(loop_findings)) == 1
@@ -137,10 +148,14 @@ class TestStuckGenerator:
 
     def test_fast_rise_burns_more_tokens(self) -> None:
         slow, _ = self.gen.generate(
-            step_count=8, stuck_start=3, token_burn_pattern="slow_rise",
+            step_count=8,
+            stuck_start=3,
+            token_burn_pattern="slow_rise",
         )
         fast, _ = self.gen.generate(
-            step_count=8, stuck_start=3, token_burn_pattern="fast_rise",
+            step_count=8,
+            stuck_start=3,
+            token_burn_pattern="fast_rise",
         )
         slow_final = slow[-1].signals.total_tokens
         fast_final = fast[-1].signals.total_tokens

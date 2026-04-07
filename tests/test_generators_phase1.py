@@ -1,7 +1,7 @@
 """Tests for Phase 1 generators: confabulation, thrash, runaway_cost."""
 
 import pytest
-from generators.confabulation import ConfabGenerator
+from generators.confabulation import CONFAB_DELAYED_PATTERNS, ConfabGenerator
 from generators.thrash import ThrashGenerator
 from generators.runaway_cost import RunawayCostGenerator
 
@@ -25,7 +25,9 @@ class TestConfabGenerator:
 
     def test_source_finding_ratio_drops(self) -> None:
         snapshots, _ = self.gen.generate(
-            total_steps=10, onset_step=3, source_finding_ratio=0.2,
+            total_steps=10,
+            onset_step=3,
+            source_finding_ratio=0.2,
         )
         # Before onset: sources > findings (healthy ratio)
         pre = snapshots[1]
@@ -44,7 +46,9 @@ class TestConfabGenerator:
 
     def test_sources_stagnate(self) -> None:
         snapshots, _ = self.gen.generate(
-            total_steps=10, onset_step=3, source_finding_ratio=0.15,
+            total_steps=10,
+            onset_step=3,
+            source_finding_ratio=0.15,
         )
         confab_sources = [s.signals.sources_count for s in snapshots[4:]]
         # Sources should be roughly flat or declining
@@ -52,7 +56,9 @@ class TestConfabGenerator:
 
     def test_confidence_inflated(self) -> None:
         snapshots, _ = self.gen.generate(
-            total_steps=8, onset_step=3, confidence_inflation=0.4,
+            total_steps=8,
+            onset_step=3,
+            confidence_inflation=0.4,
         )
         confab_conf = snapshots[-1].signals.confidence_score
         assert confab_conf >= 0.6  # Inflated above healthy baseline
@@ -75,6 +81,90 @@ class TestConfabGenerator:
         with pytest.raises(ValueError):
             self.gen.generate(total_steps=2)
 
+    @pytest.mark.parametrize("pattern", CONFAB_DELAYED_PATTERNS)
+    def test_delayed_positive_patterns_add_healthy_preamble(self, pattern: str) -> None:
+        snapshots, meta = self.gen.generate(
+            total_steps=12,
+            onset_step=3,
+            source_finding_ratio=0.18,
+            confidence_inflation=0.3,
+            pattern=pattern,
+            positive=True,
+        )
+
+        pre_ratios = [
+            snap.signals.sources_count / snap.signals.findings_count for snap in snapshots[:3]
+        ]
+        post_ratios = [
+            snap.signals.sources_count / snap.signals.findings_count for snap in snapshots[3:]
+        ]
+
+        assert all(ratio > 1.0 for ratio in pre_ratios)
+        assert min(post_ratios) < 0.3
+        assert all(snap.signals.sources_count >= 10 for snap in snapshots[3:])
+        assert meta.params["pattern"] == pattern
+        assert meta.labels["confabulation"] is True
+
+    def test_delayed_gradual_pattern_declines_over_multiple_steps(self) -> None:
+        snapshots, _ = self.gen.generate(
+            total_steps=14,
+            onset_step=4,
+            source_finding_ratio=0.18,
+            pattern="delayed_gradual",
+            positive=True,
+        )
+        ratios = [
+            snap.signals.sources_count / snap.signals.findings_count for snap in snapshots[4:9]
+        ]
+        assert ratios[0] > ratios[1] > ratios[2]
+        assert ratios[-1] < 0.35
+
+    def test_delayed_oscillating_pattern_has_sawtooth_drop(self) -> None:
+        snapshots, _ = self.gen.generate(
+            total_steps=14,
+            onset_step=4,
+            source_finding_ratio=0.18,
+            pattern="delayed_oscillating",
+            positive=True,
+        )
+        ratios = [
+            snap.signals.sources_count / snap.signals.findings_count for snap in snapshots[4:9]
+        ]
+        deltas = [ratios[idx + 1] - ratios[idx] for idx in range(len(ratios) - 1)]
+        assert any(delta > 0 for delta in deltas)
+        assert any(delta < 0 for delta in deltas)
+        assert ratios[-1] < 0.3
+
+    @pytest.mark.parametrize("pattern", CONFAB_DELAYED_PATTERNS)
+    def test_delayed_recovery_negative_variants_recover(self, pattern: str) -> None:
+        snapshots, meta = self.gen.generate(
+            total_steps=12,
+            onset_step=3,
+            recovery_step=6,
+            source_finding_ratio=0.18,
+            pattern=pattern,
+            positive=False,
+        )
+
+        ratios = [snap.signals.sources_count / snap.signals.findings_count for snap in snapshots]
+
+        assert meta.labels["confabulation"] is False
+        assert meta.onset_step is None
+        assert meta.params["recovery_step"] == 6
+        assert min(ratios[3:6]) > 0.3
+        assert ratios[-1] > ratios[5]
+        assert ratios[-1] >= 0.55
+
+    def test_delayed_negative_requires_recovery(self) -> None:
+        with pytest.raises(ValueError):
+            self.gen.generate(
+                total_steps=10,
+                onset_step=3,
+                source_finding_ratio=0.18,
+                pattern="delayed_sharp",
+                positive=False,
+            )
+
 
 class TestThrashGenerator:
     def setup_method(self) -> None:
@@ -94,7 +184,9 @@ class TestThrashGenerator:
 
     def test_errors_accumulate(self) -> None:
         snapshots, _ = self.gen.generate(
-            total_steps=8, onset_step=2, error_spikes=3,
+            total_steps=8,
+            onset_step=2,
+            error_spikes=3,
         )
         thrash_errors = [s.signals.error_count for s in snapshots[2:]]
         assert thrash_errors[-1] > 0
@@ -102,7 +194,9 @@ class TestThrashGenerator:
 
     def test_refinement_count_grows(self) -> None:
         snapshots, _ = self.gen.generate(
-            total_steps=8, onset_step=2, refinement_growth=2,
+            total_steps=8,
+            onset_step=2,
+            refinement_growth=2,
         )
         thrash_refinements = [s.signals.refinement_count for s in snapshots[2:]]
         assert thrash_refinements[-1] > thrash_refinements[0]
@@ -111,8 +205,10 @@ class TestThrashGenerator:
         snapshots, _ = self.gen.generate(total_steps=10, onset_step=2)
         thrash_objectives = [s.signals.objectives_covered for s in snapshots[2:]]
         # Should have both increases and decreases (oscillation)
-        deltas = [thrash_objectives[i+1] - thrash_objectives[i]
-                  for i in range(len(thrash_objectives) - 1)]
+        deltas = [
+            thrash_objectives[i + 1] - thrash_objectives[i]
+            for i in range(len(thrash_objectives) - 1)
+        ]
         has_increase = any(d > 0 for d in deltas)
         has_decrease = any(d < 0 for d in deltas)
         assert has_increase or has_decrease  # At least some oscillation
@@ -144,17 +240,22 @@ class TestRunawayCostGenerator:
 
     def test_token_growth_accelerates(self) -> None:
         snapshots, _ = self.gen.generate(
-            total_steps=8, onset_step=3, cost_growth="quadratic", burn_rate=4.0,
+            total_steps=8,
+            onset_step=3,
+            cost_growth="quadratic",
+            burn_rate=4.0,
         )
         # Per-step token deltas should grow in runaway phase
         tokens = [s.signals.total_tokens for s in snapshots]
-        deltas = [tokens[i+1] - tokens[i] for i in range(len(tokens) - 1)]
+        deltas = [tokens[i + 1] - tokens[i] for i in range(len(tokens) - 1)]
         runaway_deltas = deltas[3:]  # After onset
         assert runaway_deltas[-1] > runaway_deltas[0]
 
     def test_findings_stagnate(self) -> None:
         snapshots, _ = self.gen.generate(
-            total_steps=8, onset_step=3, cost_growth="quadratic",
+            total_steps=8,
+            onset_step=3,
+            cost_growth="quadratic",
         )
         runaway_findings = [s.signals.findings_count for s in snapshots[3:]]
         # Findings should barely move
@@ -162,14 +263,20 @@ class TestRunawayCostGenerator:
 
     def test_linear_growth(self) -> None:
         snapshots, _ = self.gen.generate(
-            total_steps=8, onset_step=3, cost_growth="linear", burn_rate=3.0,
+            total_steps=8,
+            onset_step=3,
+            cost_growth="linear",
+            burn_rate=3.0,
         )
         tokens = [s.signals.total_tokens for s in snapshots]
         assert tokens[-1] > tokens[3]
 
     def test_step_growth(self) -> None:
         snapshots, _ = self.gen.generate(
-            total_steps=8, onset_step=3, cost_growth="step", burn_rate=5.0,
+            total_steps=8,
+            onset_step=3,
+            cost_growth="step",
+            burn_rate=5.0,
         )
         tokens = [s.signals.total_tokens for s in snapshots]
         assert tokens[-1] > tokens[3]
@@ -177,7 +284,7 @@ class TestRunawayCostGenerator:
     def test_negative_has_steady_tokens(self) -> None:
         snapshots, _ = self.gen.generate(positive=False, total_steps=8)
         tokens = [s.signals.total_tokens for s in snapshots]
-        deltas = [tokens[i+1] - tokens[i] for i in range(len(tokens) - 1)]
+        deltas = [tokens[i + 1] - tokens[i] for i in range(len(tokens) - 1)]
         # All deltas should be roughly equal (steady burn)
         assert max(deltas) < min(deltas) * 3
 
@@ -187,10 +294,13 @@ class TestRunawayCostGenerator:
 
     def test_quadratic_has_accelerating_deltas(self) -> None:
         snapshots, _ = self.gen.generate(
-            total_steps=10, onset_step=3, cost_growth="quadratic", burn_rate=5.0,
+            total_steps=10,
+            onset_step=3,
+            cost_growth="quadratic",
+            burn_rate=5.0,
         )
         tokens = [s.signals.total_tokens for s in snapshots]
-        deltas = [tokens[i+1] - tokens[i] for i in range(len(tokens) - 1)]
+        deltas = [tokens[i + 1] - tokens[i] for i in range(len(tokens) - 1)]
         runaway_deltas = deltas[3:]
         # Quadratic: later deltas should be larger than early ones
         assert runaway_deltas[-1] > runaway_deltas[0]

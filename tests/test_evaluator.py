@@ -1,11 +1,7 @@
 """Tests for the evaluator pipeline."""
 
-import json
-import tempfile
-from pathlib import Path
-
 import pytest
-from evaluator.metrics import DetectorMetrics, compute_metrics
+from evaluator.metrics import DetectorMetrics
 from evaluator.gate import check_gate, check_all_gates
 
 
