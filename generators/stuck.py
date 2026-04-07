@@ -60,27 +60,36 @@ class StuckGenerator(TraceGenerator):
         for step in range(step_count):
             if positive and step >= stuck_start:
                 signals, metrics = self._stuck_step(
-                    step, stuck_start, dm_value, cv_value,
-                    token_burn_pattern, base_tokens_per_step, step_count,
+                    step,
+                    stuck_start,
+                    dm_value,
+                    cv_value,
+                    token_burn_pattern,
+                    base_tokens_per_step,
+                    step_count,
                 )
             else:
                 signals, metrics = self._progress_step(
-                    step, step_count, base_tokens_per_step,
+                    step,
+                    step_count,
+                    base_tokens_per_step,
                 )
 
             # Stuck phase: low output_similarity (agent flails, not repeating)
             sim = 0.15 if (positive and step >= stuck_start) else None
 
-            snapshots.append(VitalsSnapshot(
-                mission_id=f"bench-{trace_id}",
-                run_id=trace_id,
-                loop_index=step,
-                signals=signals,
-                metrics=metrics,
-                health_state="healthy",
-                timestamp=self._make_timestamp(step),
-                output_similarity=sim,
-            ))
+            snapshots.append(
+                VitalsSnapshot(
+                    mission_id=f"bench-{trace_id}",
+                    run_id=trace_id,
+                    loop_index=step,
+                    signals=signals,
+                    metrics=metrics,
+                    health_state="healthy",
+                    timestamp=self._make_timestamp(step),
+                    output_similarity=sim,
+                )
+            )
 
         labels = self._default_labels()
         labels["stuck"] = positive
@@ -156,9 +165,7 @@ class StuckGenerator(TraceGenerator):
         # that DM/CV remain the dominant stuck signals.
         steps_stuck = step - stuck_start
         frozen_findings = stuck_start + max(0, steps_stuck // 3)
-        frozen_coverage = round(
-            stuck_start / total_steps * 0.85 + steps_stuck * 0.005, 3
-        )
+        frozen_coverage = round(stuck_start / total_steps * 0.85 + steps_stuck * 0.005, 3)
 
         # Token burn depends on pattern
         if token_burn_pattern == "flat":
@@ -166,7 +173,7 @@ class StuckGenerator(TraceGenerator):
         elif token_burn_pattern == "slow_rise":
             tokens = base_tokens * (step + 1) + int(steps_stuck * base_tokens * 0.3)
         else:  # fast_rise
-            tokens = base_tokens * (step + 1) + int(steps_stuck ** 2 * base_tokens * 0.5)
+            tokens = base_tokens * (step + 1) + int(steps_stuck**2 * base_tokens * 0.5)
 
         signals = RawSignals(
             findings_count=frozen_findings,

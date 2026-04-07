@@ -59,25 +59,35 @@ class RunawayCostGenerator(TraceGenerator):
         for step in range(total_steps):
             if positive and step >= onset_step:
                 signals, metrics, step_tokens = self._runaway_step(
-                    step, onset_step, total_steps, cost_growth,
-                    burn_rate, base_tokens_per_step, cumulative_tokens,
+                    step,
+                    onset_step,
+                    total_steps,
+                    cost_growth,
+                    burn_rate,
+                    base_tokens_per_step,
+                    cumulative_tokens,
                 )
             else:
                 signals, metrics, step_tokens = self._healthy_step(
-                    step, total_steps, base_tokens_per_step, cumulative_tokens,
+                    step,
+                    total_steps,
+                    base_tokens_per_step,
+                    cumulative_tokens,
                 )
 
             cumulative_tokens += step_tokens
 
-            snapshots.append(VitalsSnapshot(
-                mission_id=f"bench-{trace_id}",
-                run_id=trace_id,
-                loop_index=step,
-                signals=signals,
-                metrics=metrics,
-                health_state="healthy",
-                timestamp=self._make_timestamp(step),
-            ))
+            snapshots.append(
+                VitalsSnapshot(
+                    mission_id=f"bench-{trace_id}",
+                    run_id=trace_id,
+                    loop_index=step,
+                    signals=signals,
+                    metrics=metrics,
+                    health_state="healthy",
+                    timestamp=self._make_timestamp(step),
+                )
+            )
 
         labels = self._default_labels()
         labels["runaway_cost"] = positive
@@ -113,8 +123,8 @@ class RunawayCostGenerator(TraceGenerator):
         total = cumulative + step_tokens
 
         signals = RawSignals(
-            findings_count=step + 3,    # Higher baseline for source_productive
-            sources_count=step + 8,     # >= 10 for source_productive
+            findings_count=step + 3,  # Higher baseline for source_productive
+            sources_count=step + 8,  # >= 10 for source_productive
             objectives_covered=min(step + 1, 4),
             coverage_score=round(progress * 0.85, 3),  # Natural growth, no floor
             confidence_score=round(0.4 + progress * 0.3, 3),

@@ -64,26 +64,35 @@ class LoopGenerator(TraceGenerator):
         for step in range(total_steps):
             if positive and step >= loop_start:
                 signals, metrics = self._loop_step(
-                    step, loop_start, pattern, base_tokens_per_step, total_steps,
+                    step,
+                    loop_start,
+                    pattern,
+                    base_tokens_per_step,
+                    total_steps,
                 )
             else:
                 signals, metrics = self._progress_step(
-                    step, total_steps, base_tokens_per_step, positive,
+                    step,
+                    total_steps,
+                    base_tokens_per_step,
+                    positive,
                 )
 
             # Loop phase: high output_similarity (agent repeats content)
             sim = 0.92 if (positive and step >= loop_start) else None
 
-            snapshots.append(VitalsSnapshot(
-                mission_id=f"bench-{trace_id}",
-                run_id=trace_id,
-                loop_index=step,
-                signals=signals,
-                metrics=metrics,
-                health_state="healthy",
-                timestamp=self._make_timestamp(step),
-                output_similarity=sim,
-            ))
+            snapshots.append(
+                VitalsSnapshot(
+                    mission_id=f"bench-{trace_id}",
+                    run_id=trace_id,
+                    loop_index=step,
+                    signals=signals,
+                    metrics=metrics,
+                    health_state="healthy",
+                    timestamp=self._make_timestamp(step),
+                    output_similarity=sim,
+                )
+            )
 
         labels = self._default_labels()
         labels["loop"] = positive
@@ -163,7 +172,7 @@ class LoopGenerator(TraceGenerator):
         noise = 0
         if pattern == "semantic":
             # Slight variation but no real progress
-            noise = (step % 2)  # 0 or 1 variation in findings
+            noise = step % 2  # 0 or 1 variation in findings
         elif pattern == "partial":
             # Occasional progress leak (makes detection harder)
             noise = 1 if step % 3 == 0 else 0

@@ -1,13 +1,10 @@
-"""Base class and types for synthetic trace generators."""
+"""Base types and helpers for synthetic trace generators."""
 
 from __future__ import annotations
 
-from abc import ABC, abstractmethod
 from dataclasses import dataclass, field
 from datetime import datetime, timezone
 from typing import Any
-
-from agent_vitals.schema import VitalsSnapshot
 
 
 @dataclass(frozen=True, slots=True)
@@ -22,6 +19,7 @@ class TraceMetadata:
     onset_step: int | None = None
     confidence: float = 1.0
     notes: str = ""
+    framework: str | None = None
 
     def as_manifest_entry(self, path: str) -> dict[str, Any]:
         return {
@@ -36,7 +34,7 @@ class TraceMetadata:
                 "tier": self.tier,
                 "model": None,
                 "provider": None,
-                "framework": None,
+                "framework": self.framework,
                 "reviewer": None,
                 "review_date": None,
                 "confidence": self.confidence,
@@ -45,18 +43,34 @@ class TraceMetadata:
         }
 
 
-class TraceGenerator(ABC):
-    """Base class for synthetic trace generators."""
+# Per-framework signal adjustments derived from agent-vitals thresholds.yaml profiles.
+# Each framework's thresholds differ, so generators must calibrate signals accordingly.
+FRAMEWORK_PROFILES: dict[str, dict[str, Any]] = {
+    "langgraph": {
+        # loop_consecutive_pct=0.4 (lower → loop triggers earlier)
+        # burn_rate_multiplier=2.5 (lower → runaway triggers at less burn)
+        "loop_consecutive_pct": 0.4,
+        "burn_rate_multiplier": 2.5,
+    },
+    "crewai": {
+        # burn_rate_multiplier=3.0 (higher → needs more burn for runaway)
+        # token_scale_factor=0.7 (tokens are scaled down)
+        "burn_rate_multiplier": 3.0,
+        "token_scale_factor": 0.7,
+    },
+    "dspy": {
+        # loop_consecutive_pct=0.7 (higher → needs longer plateau for loop)
+        # stuck_dm_threshold=0.1 (lower → stuck triggers at lower dm)
+        # workflow_stuck_enabled=none (stuck is disabled)
+        "loop_consecutive_pct": 0.7,
+        "stuck_dm_threshold": 0.1,
+        "workflow_stuck_enabled": "none",
+    },
+}
 
-    @abstractmethod
-    def generate(self, **kwargs: Any) -> tuple[list[VitalsSnapshot], TraceMetadata]:
-        """Generate a trace with known ground truth.
 
-        Returns:
-            Tuple of (snapshots, metadata) where metadata contains labels
-            and generator parameters for the manifest.
-        """
-        ...
+class TraceGenerator:
+    """Shared helpers for synthetic trace generators."""
 
     @staticmethod
     def _make_timestamp(step: int) -> datetime:

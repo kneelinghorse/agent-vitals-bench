@@ -57,23 +57,31 @@ class ThrashGenerator(TraceGenerator):
         for step in range(total_steps):
             if positive and step >= onset_step:
                 signals, metrics = self._thrash_step(
-                    step, onset_step, total_steps, error_spikes,
-                    refinement_growth, base_tokens_per_step,
+                    step,
+                    onset_step,
+                    total_steps,
+                    error_spikes,
+                    refinement_growth,
+                    base_tokens_per_step,
                 )
             else:
                 signals, metrics = self._healthy_step(
-                    step, total_steps, base_tokens_per_step,
+                    step,
+                    total_steps,
+                    base_tokens_per_step,
                 )
 
-            snapshots.append(VitalsSnapshot(
-                mission_id=f"bench-{trace_id}",
-                run_id=trace_id,
-                loop_index=step,
-                signals=signals,
-                metrics=metrics,
-                health_state="healthy",
-                timestamp=self._make_timestamp(step),
-            ))
+            snapshots.append(
+                VitalsSnapshot(
+                    mission_id=f"bench-{trace_id}",
+                    run_id=trace_id,
+                    loop_index=step,
+                    signals=signals,
+                    metrics=metrics,
+                    health_state="healthy",
+                    timestamp=self._make_timestamp(step),
+                )
+            )
 
         labels = self._default_labels()
         labels["thrash"] = positive
@@ -140,7 +148,6 @@ class ThrashGenerator(TraceGenerator):
         base_tokens: int,
     ) -> tuple[RawSignals, TemporalMetricsResult]:
         """Thrash step — errors spike, objectives oscillate, refinements climb."""
-        progress = (step + 1) / total_steps
         steps_thrash = step - onset_step
 
         # Error accumulation with spikes
