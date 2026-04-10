@@ -1,0 +1,4014 @@
+{
+  "generated_at": "2026-04-10T03:33:20.918597+00:00",
+  "corpus": "v1",
+  "runtime_mode": "default",
+  "agent_vitals_version": "1.16.0",
+  "summary": {
+    "total_fps": 30,
+    "fps_with_stuck_cofire": 24,
+    "fps_with_same_step_cooccurrence": 0,
+    "fps_with_temporal_separation": 24,
+    "fps_without_stuck": 6,
+    "mixed_label_traces": 0
+  },
+  "fp_traces": [
+    {
+      "trace_id": "stuck-syn-021",
+      "labels": {
+        "loop": false,
+        "stuck": true,
+        "confabulation": false,
+        "thrash": false,
+        "runaway_cost": false
+      },
+      "total_steps": 8,
+      "stuck_fires_at": [
+        3,
+        4,
+        6,
+        7
+      ],
+      "runaway_fires_at": [
+        5
+      ],
+      "same_step_overlap": [],
+      "has_same_step_cooccurrence": false,
+      "temporal_gap": 1,
+      "steps": [
+        {
+          "step": 0,
+          "loop_index": 0,
+          "coverage_score": 0.106,
+          "findings_count": 1,
+          "total_tokens": 500,
+          "detectors_fired": {}
+        },
+        {
+          "step": 1,
+          "loop_index": 1,
+          "coverage_score": 0.212,
+          "findings_count": 2,
+          "total_tokens": 1000,
+          "detectors_fired": {}
+        },
+        {
+          "step": 2,
+          "loop_index": 2,
+          "coverage_score": 0.212,
+          "findings_count": 2,
+          "total_tokens": 1500,
+          "detectors_fired": {}
+        },
+        {
+          "step": 3,
+          "loop_index": 3,
+          "coverage_score": 0.217,
+          "findings_count": 2,
+          "total_tokens": 2250,
+          "detectors_fired": {
+            "stuck": {
+              "fired": true,
+              "confidence": 0.725,
+              "trigger": "findings_plateau"
+            }
+          }
+        },
+        {
+          "step": 4,
+          "loop_index": 4,
+          "coverage_score": 0.223,
+          "findings_count": 2,
+          "total_tokens": 3500,
+          "detectors_fired": {
+            "stuck": {
+              "fired": true,
+              "confidence": 0.725,
+              "trigger": "findings_plateau"
+            }
+          }
+        },
+        {
+          "step": 5,
+          "loop_index": 5,
+          "coverage_score": 0.227,
+          "findings_count": 3,
+          "total_tokens": 5250,
+          "detectors_fired": {
+            "runaway_cost": {
+              "fired": true,
+              "confidence": null
+            }
+          }
+        },
+        {
+          "step": 6,
+          "loop_index": 6,
+          "coverage_score": 0.232,
+          "findings_count": 3,
+          "total_tokens": 7500,
+          "detectors_fired": {
+            "stuck": {
+              "fired": true,
+              "confidence": 0.775,
+              "trigger": "coverage_stagnation"
+            }
+          }
+        },
+        {
+          "step": 7,
+          "loop_index": 7,
+          "coverage_score": 0.237,
+          "findings_count": 3,
+          "total_tokens": 10250,
+          "detectors_fired": {
+            "stuck": {
+              "fired": true,
+              "confidence": 0.775,
+              "trigger": "coverage_stagnation"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "trace_id": "stuck-syn-024",
+      "labels": {
+        "loop": false,
+        "stuck": true,
+        "confabulation": false,
+        "thrash": false,
+        "runaway_cost": false
+      },
+      "total_steps": 8,
+      "stuck_fires_at": [
+        3,
+        4,
+        6,
+        7
+      ],
+      "runaway_fires_at": [
+        5
+      ],
+      "same_step_overlap": [],
+      "has_same_step_cooccurrence": false,
+      "temporal_gap": 1,
+      "steps": [
+        {
+          "step": 0,
+          "loop_index": 0,
+          "coverage_score": 0.106,
+          "findings_count": 1,
+          "total_tokens": 500,
+          "detectors_fired": {}
+        },
+        {
+          "step": 1,
+          "loop_index": 1,
+          "coverage_score": 0.212,
+          "findings_count": 2,
+          "total_tokens": 1000,
+          "detectors_fired": {}
+        },
+        {
+          "step": 2,
+          "loop_index": 2,
+          "coverage_score": 0.212,
+          "findings_count": 2,
+          "total_tokens": 1500,
+          "detectors_fired": {}
+        },
+        {
+          "step": 3,
+          "loop_index": 3,
+          "coverage_score": 0.217,
+          "findings_count": 2,
+          "total_tokens": 2250,
+          "detectors_fired": {
+            "stuck": {
+              "fired": true,
+              "confidence": 0.725,
+              "trigger": "findings_plateau"
+            }
+          }
+        },
+        {
+          "step": 4,
+          "loop_index": 4,
+          "coverage_score": 0.223,
+          "findings_count": 2,
+          "total_tokens": 3500,
+          "detectors_fired": {
+            "stuck": {
+              "fired": true,
+              "confidence": 0.725,
+              "trigger": "findings_plateau"
+            }
+          }
+        },
+        {
+          "step": 5,
+          "loop_index": 5,
+          "coverage_score": 0.227,
+          "findings_count": 3,
+          "total_tokens": 5250,
+          "detectors_fired": {
+            "runaway_cost": {
+              "fired": true,
+              "confidence": null
+            }
+          }
+        },
+        {
+          "step": 6,
+          "loop_index": 6,
+          "coverage_score": 0.232,
+          "findings_count": 3,
+          "total_tokens": 7500,
+          "detectors_fired": {
+            "stuck": {
+              "fired": true,
+              "confidence": 0.8917,
+              "trigger": "coverage_stagnation"
+            }
+          }
+        },
+        {
+          "step": 7,
+          "loop_index": 7,
+          "coverage_score": 0.237,
+          "findings_count": 3,
+          "total_tokens": 10250,
+          "detectors_fired": {
+            "stuck": {
+              "fired": true,
+              "confidence": 0.8917,
+              "trigger": "coverage_stagnation"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "trace_id": "stuck-syn-027",
+      "labels": {
+        "loop": false,
+        "stuck": true,
+        "confabulation": false,
+        "thrash": false,
+        "runaway_cost": false
+      },
+      "total_steps": 8,
+      "stuck_fires_at": [
+        3,
+        4,
+        6,
+        7
+      ],
+      "runaway_fires_at": [
+        5
+      ],
+      "same_step_overlap": [],
+      "has_same_step_cooccurrence": false,
+      "temporal_gap": 1,
+      "steps": [
+        {
+          "step": 0,
+          "loop_index": 0,
+          "coverage_score": 0.106,
+          "findings_count": 1,
+          "total_tokens": 500,
+          "detectors_fired": {}
+        },
+        {
+          "step": 1,
+          "loop_index": 1,
+          "coverage_score": 0.212,
+          "findings_count": 2,
+          "total_tokens": 1000,
+          "detectors_fired": {}
+        },
+        {
+          "step": 2,
+          "loop_index": 2,
+          "coverage_score": 0.212,
+          "findings_count": 2,
+          "total_tokens": 1500,
+          "detectors_fired": {}
+        },
+        {
+          "step": 3,
+          "loop_index": 3,
+          "coverage_score": 0.217,
+          "findings_count": 2,
+          "total_tokens": 2250,
+          "detectors_fired": {
+            "stuck": {
+              "fired": true,
+              "confidence": 0.725,
+              "trigger": "findings_plateau"
+            }
+          }
+        },
+        {
+          "step": 4,
+          "loop_index": 4,
+          "coverage_score": 0.223,
+          "findings_count": 2,
+          "total_tokens": 3500,
+          "detectors_fired": {
+            "stuck": {
+              "fired": true,
+              "confidence": 0.725,
+              "trigger": "findings_plateau"
+            }
+          }
+        },
+        {
+          "step": 5,
+          "loop_index": 5,
+          "coverage_score": 0.227,
+          "findings_count": 3,
+          "total_tokens": 5250,
+          "detectors_fired": {
+            "runaway_cost": {
+              "fired": true,
+              "confidence": null
+            }
+          }
+        },
+        {
+          "step": 6,
+          "loop_index": 6,
+          "coverage_score": 0.232,
+          "findings_count": 3,
+          "total_tokens": 7500,
+          "detectors_fired": {
+            "stuck": {
+              "fired": true,
+              "confidence": 0.825,
+              "trigger": "coverage_stagnation"
+            }
+          }
+        },
+        {
+          "step": 7,
+          "loop_index": 7,
+          "coverage_score": 0.237,
+          "findings_count": 3,
+          "total_tokens": 10250,
+          "detectors_fired": {
+            "stuck": {
+              "fired": true,
+              "confidence": 0.825,
+              "trigger": "coverage_stagnation"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "trace_id": "stuck-syn-030",
+      "labels": {
+        "loop": false,
+        "stuck": true,
+        "confabulation": false,
+        "thrash": false,
+        "runaway_cost": false
+      },
+      "total_steps": 8,
+      "stuck_fires_at": [
+        4,
+        5,
+        7
+      ],
+      "runaway_fires_at": [
+        6
+      ],
+      "same_step_overlap": [],
+      "has_same_step_cooccurrence": false,
+      "temporal_gap": 1,
+      "steps": [
+        {
+          "step": 0,
+          "loop_index": 0,
+          "coverage_score": 0.106,
+          "findings_count": 1,
+          "total_tokens": 500,
+          "detectors_fired": {}
+        },
+        {
+          "step": 1,
+          "loop_index": 1,
+          "coverage_score": 0.212,
+          "findings_count": 2,
+          "total_tokens": 1000,
+          "detectors_fired": {}
+        },
+        {
+          "step": 2,
+          "loop_index": 2,
+          "coverage_score": 0.319,
+          "findings_count": 3,
+          "total_tokens": 1500,
+          "detectors_fired": {}
+        },
+        {
+          "step": 3,
+          "loop_index": 3,
+          "coverage_score": 0.319,
+          "findings_count": 3,
+          "total_tokens": 2000,
+          "detectors_fired": {}
+        },
+        {
+          "step": 4,
+          "loop_index": 4,
+          "coverage_score": 0.324,
+          "findings_count": 3,
+          "total_tokens": 2750,
+          "detectors_fired": {
+            "stuck": {
+              "fired": true,
+              "confidence": 0.725,
+              "trigger": "findings_plateau"
+            }
+          }
+        },
+        {
+          "step": 5,
+          "loop_index": 5,
+          "coverage_score": 0.329,
+          "findings_count": 3,
+          "total_tokens": 4000,
+          "detectors_fired": {
+            "stuck": {
+              "fired": true,
+              "confidence": 0.725,
+              "trigger": "findings_plateau"
+            }
+          }
+        },
+        {
+          "step": 6,
+          "loop_index": 6,
+          "coverage_score": 0.334,
+          "findings_count": 4,
+          "total_tokens": 5750,
+          "detectors_fired": {
+            "runaway_cost": {
+              "fired": true,
+              "confidence": null
+            }
+          }
+        },
+        {
+          "step": 7,
+          "loop_index": 7,
+          "coverage_score": 0.339,
+          "findings_count": 4,
+          "total_tokens": 8000,
+          "detectors_fired": {
+            "stuck": {
+              "fired": true,
+              "confidence": 0.775,
+              "trigger": "coverage_stagnation"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "trace_id": "stuck-syn-033",
+      "labels": {
+        "loop": false,
+        "stuck": true,
+        "confabulation": false,
+        "thrash": false,
+        "runaway_cost": false
+      },
+      "total_steps": 8,
+      "stuck_fires_at": [
+        4,
+        5,
+        7
+      ],
+      "runaway_fires_at": [
+        6
+      ],
+      "same_step_overlap": [],
+      "has_same_step_cooccurrence": false,
+      "temporal_gap": 1,
+      "steps": [
+        {
+          "step": 0,
+          "loop_index": 0,
+          "coverage_score": 0.106,
+          "findings_count": 1,
+          "total_tokens": 500,
+          "detectors_fired": {}
+        },
+        {
+          "step": 1,
+          "loop_index": 1,
+          "coverage_score": 0.212,
+          "findings_count": 2,
+          "total_tokens": 1000,
+          "detectors_fired": {}
+        },
+        {
+          "step": 2,
+          "loop_index": 2,
+          "coverage_score": 0.319,
+          "findings_count": 3,
+          "total_tokens": 1500,
+          "detectors_fired": {}
+        },
+        {
+          "step": 3,
+          "loop_index": 3,
+          "coverage_score": 0.319,
+          "findings_count": 3,
+          "total_tokens": 2000,
+          "detectors_fired": {}
+        },
+        {
+          "step": 4,
+          "loop_index": 4,
+          "coverage_score": 0.324,
+          "findings_count": 3,
+          "total_tokens": 2750,
+          "detectors_fired": {
+            "stuck": {
+              "fired": true,
+              "confidence": 0.725,
+              "trigger": "findings_plateau"
+            }
+          }
+        },
+        {
+          "step": 5,
+          "loop_index": 5,
+          "coverage_score": 0.329,
+          "findings_count": 3,
+          "total_tokens": 4000,
+          "detectors_fired": {
+            "stuck": {
+              "fired": true,
+              "confidence": 0.725,
+              "trigger": "findings_plateau"
+            }
+          }
+        },
+        {
+          "step": 6,
+          "loop_index": 6,
+          "coverage_score": 0.334,
+          "findings_count": 4,
+          "total_tokens": 5750,
+          "detectors_fired": {
+            "runaway_cost": {
+              "fired": true,
+              "confidence": null
+            }
+          }
+        },
+        {
+          "step": 7,
+          "loop_index": 7,
+          "coverage_score": 0.339,
+          "findings_count": 4,
+          "total_tokens": 8000,
+          "detectors_fired": {
+            "stuck": {
+              "fired": true,
+              "confidence": 0.8917,
+              "trigger": "coverage_stagnation"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "trace_id": "stuck-syn-036",
+      "labels": {
+        "loop": false,
+        "stuck": true,
+        "confabulation": false,
+        "thrash": false,
+        "runaway_cost": false
+      },
+      "total_steps": 8,
+      "stuck_fires_at": [
+        4,
+        5,
+        7
+      ],
+      "runaway_fires_at": [
+        6
+      ],
+      "same_step_overlap": [],
+      "has_same_step_cooccurrence": false,
+      "temporal_gap": 1,
+      "steps": [
+        {
+          "step": 0,
+          "loop_index": 0,
+          "coverage_score": 0.106,
+          "findings_count": 1,
+          "total_tokens": 500,
+          "detectors_fired": {}
+        },
+        {
+          "step": 1,
+          "loop_index": 1,
+          "coverage_score": 0.212,
+          "findings_count": 2,
+          "total_tokens": 1000,
+          "detectors_fired": {}
+        },
+        {
+          "step": 2,
+          "loop_index": 2,
+          "coverage_score": 0.319,
+          "findings_count": 3,
+          "total_tokens": 1500,
+          "detectors_fired": {}
+        },
+        {
+          "step": 3,
+          "loop_index": 3,
+          "coverage_score": 0.319,
+          "findings_count": 3,
+          "total_tokens": 2000,
+          "detectors_fired": {}
+        },
+        {
+          "step": 4,
+          "loop_index": 4,
+          "coverage_score": 0.324,
+          "findings_count": 3,
+          "total_tokens": 2750,
+          "detectors_fired": {
+            "stuck": {
+              "fired": true,
+              "confidence": 0.725,
+              "trigger": "findings_plateau"
+            }
+          }
+        },
+        {
+          "step": 5,
+          "loop_index": 5,
+          "coverage_score": 0.329,
+          "findings_count": 3,
+          "total_tokens": 4000,
+          "detectors_fired": {
+            "stuck": {
+              "fired": true,
+              "confidence": 0.725,
+              "trigger": "findings_plateau"
+            }
+          }
+        },
+        {
+          "step": 6,
+          "loop_index": 6,
+          "coverage_score": 0.334,
+          "findings_count": 4,
+          "total_tokens": 5750,
+          "detectors_fired": {
+            "runaway_cost": {
+              "fired": true,
+              "confidence": null
+            }
+          }
+        },
+        {
+          "step": 7,
+          "loop_index": 7,
+          "coverage_score": 0.339,
+          "findings_count": 4,
+          "total_tokens": 8000,
+          "detectors_fired": {
+            "stuck": {
+              "fired": true,
+              "confidence": 0.825,
+              "trigger": "coverage_stagnation"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "trace_id": "stuck-syn-048",
+      "labels": {
+        "loop": false,
+        "stuck": true,
+        "confabulation": false,
+        "thrash": false,
+        "runaway_cost": false
+      },
+      "total_steps": 10,
+      "stuck_fires_at": [
+        3,
+        4,
+        6,
+        7,
+        8,
+        9
+      ],
+      "runaway_fires_at": [
+        5
+      ],
+      "same_step_overlap": [],
+      "has_same_step_cooccurrence": false,
+      "temporal_gap": 1,
+      "steps": [
+        {
+          "step": 0,
+          "loop_index": 0,
+          "coverage_score": 0.085,
+          "findings_count": 1,
+          "total_tokens": 500,
+          "detectors_fired": {}
+        },
+        {
+          "step": 1,
+          "loop_index": 1,
+          "coverage_score": 0.17,
+          "findings_count": 2,
+          "total_tokens": 1000,
+          "detectors_fired": {}
+        },
+        {
+          "step": 2,
+          "loop_index": 2,
+          "coverage_score": 0.17,
+          "findings_count": 2,
+          "total_tokens": 1500,
+          "detectors_fired": {}
+        },
+        {
+          "step": 3,
+          "loop_index": 3,
+          "coverage_score": 0.175,
+          "findings_count": 2,
+          "total_tokens": 2250,
+          "detectors_fired": {
+            "stuck": {
+              "fired": true,
+              "confidence": 0.825,
+              "trigger": "coverage_stagnation"
+            }
+          }
+        },
+        {
+          "step": 4,
+          "loop_index": 4,
+          "coverage_score": 0.18,
+          "findings_count": 2,
+          "total_tokens": 3500,
+          "detectors_fired": {
+            "stuck": {
+              "fired": true,
+              "confidence": 0.9583,
+              "trigger": "coverage_stagnation"
+            }
+          }
+        },
+        {
+          "step": 5,
+          "loop_index": 5,
+          "coverage_score": 0.185,
+          "findings_count": 3,
+          "total_tokens": 5250,
+          "detectors_fired": {
+            "runaway_cost": {
+              "fired": true,
+              "confidence": null
+            }
+          }
+        },
+        {
+          "step": 6,
+          "loop_index": 6,
+          "coverage_score": 0.19,
+          "findings_count": 3,
+          "total_tokens": 7500,
+          "detectors_fired": {
+            "stuck": {
+              "fired": true,
+              "confidence": 0.775,
+              "trigger": "coverage_stagnation"
+            }
+          }
+        },
+        {
+          "step": 7,
+          "loop_index": 7,
+          "coverage_score": 0.195,
+          "findings_count": 3,
+          "total_tokens": 10250,
+          "detectors_fired": {
+            "stuck": {
+              "fired": true,
+              "confidence": 0.775,
+              "trigger": "coverage_stagnation"
+            }
+          }
+        },
+        {
+          "step": 8,
+          "loop_index": 8,
+          "coverage_score": 0.2,
+          "findings_count": 4,
+          "total_tokens": 13500,
+          "detectors_fired": {
+            "stuck": {
+              "fired": true,
+              "confidence": 0.775,
+              "trigger": "coverage_stagnation"
+            }
+          }
+        },
+        {
+          "step": 9,
+          "loop_index": 9,
+          "coverage_score": 0.205,
+          "findings_count": 4,
+          "total_tokens": 17250,
+          "detectors_fired": {
+            "stuck": {
+              "fired": true,
+              "confidence": 0.775,
+              "trigger": "coverage_stagnation"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "trace_id": "stuck-syn-051",
+      "labels": {
+        "loop": false,
+        "stuck": true,
+        "confabulation": false,
+        "thrash": false,
+        "runaway_cost": false
+      },
+      "total_steps": 10,
+      "stuck_fires_at": [
+        3,
+        4,
+        6,
+        7,
+        8,
+        9
+      ],
+      "runaway_fires_at": [
+        5
+      ],
+      "same_step_overlap": [],
+      "has_same_step_cooccurrence": false,
+      "temporal_gap": 1,
+      "steps": [
+        {
+          "step": 0,
+          "loop_index": 0,
+          "coverage_score": 0.085,
+          "findings_count": 1,
+          "total_tokens": 500,
+          "detectors_fired": {}
+        },
+        {
+          "step": 1,
+          "loop_index": 1,
+          "coverage_score": 0.17,
+          "findings_count": 2,
+          "total_tokens": 1000,
+          "detectors_fired": {}
+        },
+        {
+          "step": 2,
+          "loop_index": 2,
+          "coverage_score": 0.17,
+          "findings_count": 2,
+          "total_tokens": 1500,
+          "detectors_fired": {}
+        },
+        {
+          "step": 3,
+          "loop_index": 3,
+          "coverage_score": 0.175,
+          "findings_count": 2,
+          "total_tokens": 2250,
+          "detectors_fired": {
+            "stuck": {
+              "fired": true,
+              "confidence": 0.725,
+              "trigger": "coverage_stagnation"
+            }
+          }
+        },
+        {
+          "step": 4,
+          "loop_index": 4,
+          "coverage_score": 0.18,
+          "findings_count": 2,
+          "total_tokens": 3500,
+          "detectors_fired": {
+            "stuck": {
+              "fired": true,
+              "confidence": 0.8917,
+              "trigger": "coverage_stagnation"
+            }
+          }
+        },
+        {
+          "step": 5,
+          "loop_index": 5,
+          "coverage_score": 0.185,
+          "findings_count": 3,
+          "total_tokens": 5250,
+          "detectors_fired": {
+            "runaway_cost": {
+              "fired": true,
+              "confidence": null
+            }
+          }
+        },
+        {
+          "step": 6,
+          "loop_index": 6,
+          "coverage_score": 0.19,
+          "findings_count": 3,
+          "total_tokens": 7500,
+          "detectors_fired": {
+            "stuck": {
+              "fired": true,
+              "confidence": 0.8917,
+              "trigger": "coverage_stagnation"
+            }
+          }
+        },
+        {
+          "step": 7,
+          "loop_index": 7,
+          "coverage_score": 0.195,
+          "findings_count": 3,
+          "total_tokens": 10250,
+          "detectors_fired": {
+            "stuck": {
+              "fired": true,
+              "confidence": 0.8917,
+              "trigger": "coverage_stagnation"
+            }
+          }
+        },
+        {
+          "step": 8,
+          "loop_index": 8,
+          "coverage_score": 0.2,
+          "findings_count": 4,
+          "total_tokens": 13500,
+          "detectors_fired": {
+            "stuck": {
+              "fired": true,
+              "confidence": 0.8917,
+              "trigger": "coverage_stagnation"
+            }
+          }
+        },
+        {
+          "step": 9,
+          "loop_index": 9,
+          "coverage_score": 0.205,
+          "findings_count": 4,
+          "total_tokens": 17250,
+          "detectors_fired": {
+            "stuck": {
+              "fired": true,
+              "confidence": 0.8917,
+              "trigger": "coverage_stagnation"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "trace_id": "stuck-syn-054",
+      "labels": {
+        "loop": false,
+        "stuck": true,
+        "confabulation": false,
+        "thrash": false,
+        "runaway_cost": false
+      },
+      "total_steps": 10,
+      "stuck_fires_at": [
+        3,
+        4,
+        6,
+        7,
+        8,
+        9
+      ],
+      "runaway_fires_at": [
+        5
+      ],
+      "same_step_overlap": [],
+      "has_same_step_cooccurrence": false,
+      "temporal_gap": 1,
+      "steps": [
+        {
+          "step": 0,
+          "loop_index": 0,
+          "coverage_score": 0.085,
+          "findings_count": 1,
+          "total_tokens": 500,
+          "detectors_fired": {}
+        },
+        {
+          "step": 1,
+          "loop_index": 1,
+          "coverage_score": 0.17,
+          "findings_count": 2,
+          "total_tokens": 1000,
+          "detectors_fired": {}
+        },
+        {
+          "step": 2,
+          "loop_index": 2,
+          "coverage_score": 0.17,
+          "findings_count": 2,
+          "total_tokens": 1500,
+          "detectors_fired": {}
+        },
+        {
+          "step": 3,
+          "loop_index": 3,
+          "coverage_score": 0.175,
+          "findings_count": 2,
+          "total_tokens": 2250,
+          "detectors_fired": {
+            "stuck": {
+              "fired": true,
+              "confidence": 0.725,
+              "trigger": "findings_plateau"
+            }
+          }
+        },
+        {
+          "step": 4,
+          "loop_index": 4,
+          "coverage_score": 0.18,
+          "findings_count": 2,
+          "total_tokens": 3500,
+          "detectors_fired": {
+            "stuck": {
+              "fired": true,
+              "confidence": 0.825,
+              "trigger": "coverage_stagnation"
+            }
+          }
+        },
+        {
+          "step": 5,
+          "loop_index": 5,
+          "coverage_score": 0.185,
+          "findings_count": 3,
+          "total_tokens": 5250,
+          "detectors_fired": {
+            "runaway_cost": {
+              "fired": true,
+              "confidence": null
+            }
+          }
+        },
+        {
+          "step": 6,
+          "loop_index": 6,
+          "coverage_score": 0.19,
+          "findings_count": 3,
+          "total_tokens": 7500,
+          "detectors_fired": {
+            "stuck": {
+              "fired": true,
+              "confidence": 0.825,
+              "trigger": "coverage_stagnation"
+            }
+          }
+        },
+        {
+          "step": 7,
+          "loop_index": 7,
+          "coverage_score": 0.195,
+          "findings_count": 3,
+          "total_tokens": 10250,
+          "detectors_fired": {
+            "stuck": {
+              "fired": true,
+              "confidence": 0.825,
+              "trigger": "coverage_stagnation"
+            }
+          }
+        },
+        {
+          "step": 8,
+          "loop_index": 8,
+          "coverage_score": 0.2,
+          "findings_count": 4,
+          "total_tokens": 13500,
+          "detectors_fired": {
+            "stuck": {
+              "fired": true,
+              "confidence": 0.825,
+              "trigger": "coverage_stagnation"
+            }
+          }
+        },
+        {
+          "step": 9,
+          "loop_index": 9,
+          "coverage_score": 0.205,
+          "findings_count": 4,
+          "total_tokens": 17250,
+          "detectors_fired": {
+            "stuck": {
+              "fired": true,
+              "confidence": 0.825,
+              "trigger": "coverage_stagnation"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "trace_id": "stuck-syn-057",
+      "labels": {
+        "loop": false,
+        "stuck": true,
+        "confabulation": false,
+        "thrash": false,
+        "runaway_cost": false
+      },
+      "total_steps": 10,
+      "stuck_fires_at": [
+        3,
+        4,
+        5,
+        7,
+        8
+      ],
+      "runaway_fires_at": [
+        6,
+        9
+      ],
+      "same_step_overlap": [],
+      "has_same_step_cooccurrence": false,
+      "temporal_gap": 1,
+      "steps": [
+        {
+          "step": 0,
+          "loop_index": 0,
+          "coverage_score": 0.085,
+          "findings_count": 1,
+          "total_tokens": 500,
+          "detectors_fired": {}
+        },
+        {
+          "step": 1,
+          "loop_index": 1,
+          "coverage_score": 0.17,
+          "findings_count": 2,
+          "total_tokens": 1000,
+          "detectors_fired": {}
+        },
+        {
+          "step": 2,
+          "loop_index": 2,
+          "coverage_score": 0.255,
+          "findings_count": 3,
+          "total_tokens": 1500,
+          "detectors_fired": {}
+        },
+        {
+          "step": 3,
+          "loop_index": 3,
+          "coverage_score": 0.255,
+          "findings_count": 3,
+          "total_tokens": 2000,
+          "detectors_fired": {
+            "stuck": {
+              "fired": true,
+              "confidence": 0.825,
+              "trigger": "coverage_stagnation"
+            }
+          }
+        },
+        {
+          "step": 4,
+          "loop_index": 4,
+          "coverage_score": 0.26,
+          "findings_count": 3,
+          "total_tokens": 2750,
+          "detectors_fired": {
+            "stuck": {
+              "fired": true,
+              "confidence": 0.725,
+              "trigger": "findings_plateau"
+            }
+          }
+        },
+        {
+          "step": 5,
+          "loop_index": 5,
+          "coverage_score": 0.265,
+          "findings_count": 3,
+          "total_tokens": 4000,
+          "detectors_fired": {
+            "stuck": {
+              "fired": true,
+              "confidence": 0.725,
+              "trigger": "findings_plateau"
+            }
+          }
+        },
+        {
+          "step": 6,
+          "loop_index": 6,
+          "coverage_score": 0.27,
+          "findings_count": 4,
+          "total_tokens": 5750,
+          "detectors_fired": {
+            "runaway_cost": {
+              "fired": true,
+              "confidence": null
+            }
+          }
+        },
+        {
+          "step": 7,
+          "loop_index": 7,
+          "coverage_score": 0.275,
+          "findings_count": 4,
+          "total_tokens": 8000,
+          "detectors_fired": {
+            "stuck": {
+              "fired": true,
+              "confidence": 0.775,
+              "trigger": "coverage_stagnation"
+            }
+          }
+        },
+        {
+          "step": 8,
+          "loop_index": 8,
+          "coverage_score": 0.28,
+          "findings_count": 4,
+          "total_tokens": 10750,
+          "detectors_fired": {
+            "stuck": {
+              "fired": true,
+              "confidence": 0.775,
+              "trigger": "coverage_stagnation"
+            }
+          }
+        },
+        {
+          "step": 9,
+          "loop_index": 9,
+          "coverage_score": 0.285,
+          "findings_count": 5,
+          "total_tokens": 14000,
+          "detectors_fired": {
+            "runaway_cost": {
+              "fired": true,
+              "confidence": null
+            }
+          }
+        }
+      ]
+    },
+    {
+      "trace_id": "stuck-syn-060",
+      "labels": {
+        "loop": false,
+        "stuck": true,
+        "confabulation": false,
+        "thrash": false,
+        "runaway_cost": false
+      },
+      "total_steps": 10,
+      "stuck_fires_at": [
+        3,
+        4,
+        5,
+        7,
+        8
+      ],
+      "runaway_fires_at": [
+        6,
+        9
+      ],
+      "same_step_overlap": [],
+      "has_same_step_cooccurrence": false,
+      "temporal_gap": 1,
+      "steps": [
+        {
+          "step": 0,
+          "loop_index": 0,
+          "coverage_score": 0.085,
+          "findings_count": 1,
+          "total_tokens": 500,
+          "detectors_fired": {}
+        },
+        {
+          "step": 1,
+          "loop_index": 1,
+          "coverage_score": 0.17,
+          "findings_count": 2,
+          "total_tokens": 1000,
+          "detectors_fired": {}
+        },
+        {
+          "step": 2,
+          "loop_index": 2,
+          "coverage_score": 0.255,
+          "findings_count": 3,
+          "total_tokens": 1500,
+          "detectors_fired": {}
+        },
+        {
+          "step": 3,
+          "loop_index": 3,
+          "coverage_score": 0.255,
+          "findings_count": 3,
+          "total_tokens": 2000,
+          "detectors_fired": {
+            "stuck": {
+              "fired": true,
+              "confidence": 0.725,
+              "trigger": "coverage_stagnation"
+            }
+          }
+        },
+        {
+          "step": 4,
+          "loop_index": 4,
+          "coverage_score": 0.26,
+          "findings_count": 3,
+          "total_tokens": 2750,
+          "detectors_fired": {
+            "stuck": {
+              "fired": true,
+              "confidence": 0.725,
+              "trigger": "findings_plateau"
+            }
+          }
+        },
+        {
+          "step": 5,
+          "loop_index": 5,
+          "coverage_score": 0.265,
+          "findings_count": 3,
+          "total_tokens": 4000,
+          "detectors_fired": {
+            "stuck": {
+              "fired": true,
+              "confidence": 0.725,
+              "trigger": "findings_plateau"
+            }
+          }
+        },
+        {
+          "step": 6,
+          "loop_index": 6,
+          "coverage_score": 0.27,
+          "findings_count": 4,
+          "total_tokens": 5750,
+          "detectors_fired": {
+            "runaway_cost": {
+              "fired": true,
+              "confidence": null
+            }
+          }
+        },
+        {
+          "step": 7,
+          "loop_index": 7,
+          "coverage_score": 0.275,
+          "findings_count": 4,
+          "total_tokens": 8000,
+          "detectors_fired": {
+            "stuck": {
+              "fired": true,
+              "confidence": 0.8917,
+              "trigger": "coverage_stagnation"
+            }
+          }
+        },
+        {
+          "step": 8,
+          "loop_index": 8,
+          "coverage_score": 0.28,
+          "findings_count": 4,
+          "total_tokens": 10750,
+          "detectors_fired": {
+            "stuck": {
+              "fired": true,
+              "confidence": 0.8917,
+              "trigger": "coverage_stagnation"
+            }
+          }
+        },
+        {
+          "step": 9,
+          "loop_index": 9,
+          "coverage_score": 0.285,
+          "findings_count": 5,
+          "total_tokens": 14000,
+          "detectors_fired": {
+            "runaway_cost": {
+              "fired": true,
+              "confidence": null
+            }
+          }
+        }
+      ]
+    },
+    {
+      "trace_id": "stuck-syn-063",
+      "labels": {
+        "loop": false,
+        "stuck": true,
+        "confabulation": false,
+        "thrash": false,
+        "runaway_cost": false
+      },
+      "total_steps": 10,
+      "stuck_fires_at": [
+        4,
+        5,
+        7,
+        8
+      ],
+      "runaway_fires_at": [
+        6,
+        9
+      ],
+      "same_step_overlap": [],
+      "has_same_step_cooccurrence": false,
+      "temporal_gap": 1,
+      "steps": [
+        {
+          "step": 0,
+          "loop_index": 0,
+          "coverage_score": 0.085,
+          "findings_count": 1,
+          "total_tokens": 500,
+          "detectors_fired": {}
+        },
+        {
+          "step": 1,
+          "loop_index": 1,
+          "coverage_score": 0.17,
+          "findings_count": 2,
+          "total_tokens": 1000,
+          "detectors_fired": {}
+        },
+        {
+          "step": 2,
+          "loop_index": 2,
+          "coverage_score": 0.255,
+          "findings_count": 3,
+          "total_tokens": 1500,
+          "detectors_fired": {}
+        },
+        {
+          "step": 3,
+          "loop_index": 3,
+          "coverage_score": 0.255,
+          "findings_count": 3,
+          "total_tokens": 2000,
+          "detectors_fired": {}
+        },
+        {
+          "step": 4,
+          "loop_index": 4,
+          "coverage_score": 0.26,
+          "findings_count": 3,
+          "total_tokens": 2750,
+          "detectors_fired": {
+            "stuck": {
+              "fired": true,
+              "confidence": 0.725,
+              "trigger": "findings_plateau"
+            }
+          }
+        },
+        {
+          "step": 5,
+          "loop_index": 5,
+          "coverage_score": 0.265,
+          "findings_count": 3,
+          "total_tokens": 4000,
+          "detectors_fired": {
+            "stuck": {
+              "fired": true,
+              "confidence": 0.725,
+              "trigger": "findings_plateau"
+            }
+          }
+        },
+        {
+          "step": 6,
+          "loop_index": 6,
+          "coverage_score": 0.27,
+          "findings_count": 4,
+          "total_tokens": 5750,
+          "detectors_fired": {
+            "runaway_cost": {
+              "fired": true,
+              "confidence": null
+            }
+          }
+        },
+        {
+          "step": 7,
+          "loop_index": 7,
+          "coverage_score": 0.275,
+          "findings_count": 4,
+          "total_tokens": 8000,
+          "detectors_fired": {
+            "stuck": {
+              "fired": true,
+              "confidence": 0.825,
+              "trigger": "coverage_stagnation"
+            }
+          }
+        },
+        {
+          "step": 8,
+          "loop_index": 8,
+          "coverage_score": 0.28,
+          "findings_count": 4,
+          "total_tokens": 10750,
+          "detectors_fired": {
+            "stuck": {
+              "fired": true,
+              "confidence": 0.825,
+              "trigger": "coverage_stagnation"
+            }
+          }
+        },
+        {
+          "step": 9,
+          "loop_index": 9,
+          "coverage_score": 0.285,
+          "findings_count": 5,
+          "total_tokens": 14000,
+          "detectors_fired": {
+            "runaway_cost": {
+              "fired": true,
+              "confidence": null
+            }
+          }
+        }
+      ]
+    },
+    {
+      "trace_id": "stuck-syn-066",
+      "labels": {
+        "loop": false,
+        "stuck": true,
+        "confabulation": false,
+        "thrash": false,
+        "runaway_cost": false
+      },
+      "total_steps": 10,
+      "stuck_fires_at": [
+        5,
+        6,
+        7,
+        9
+      ],
+      "runaway_fires_at": [
+        8
+      ],
+      "same_step_overlap": [],
+      "has_same_step_cooccurrence": false,
+      "temporal_gap": 1,
+      "steps": [
+        {
+          "step": 0,
+          "loop_index": 0,
+          "coverage_score": 0.085,
+          "findings_count": 1,
+          "total_tokens": 500,
+          "detectors_fired": {}
+        },
+        {
+          "step": 1,
+          "loop_index": 1,
+          "coverage_score": 0.17,
+          "findings_count": 2,
+          "total_tokens": 1000,
+          "detectors_fired": {}
+        },
+        {
+          "step": 2,
+          "loop_index": 2,
+          "coverage_score": 0.255,
+          "findings_count": 3,
+          "total_tokens": 1500,
+          "detectors_fired": {}
+        },
+        {
+          "step": 3,
+          "loop_index": 3,
+          "coverage_score": 0.34,
+          "findings_count": 4,
+          "total_tokens": 2000,
+          "detectors_fired": {}
+        },
+        {
+          "step": 4,
+          "loop_index": 4,
+          "coverage_score": 0.425,
+          "findings_count": 5,
+          "total_tokens": 2500,
+          "detectors_fired": {}
+        },
+        {
+          "step": 5,
+          "loop_index": 5,
+          "coverage_score": 0.425,
+          "findings_count": 5,
+          "total_tokens": 3000,
+          "detectors_fired": {
+            "stuck": {
+              "fired": true,
+              "confidence": 0.9528,
+              "trigger": "coverage_stagnation"
+            }
+          }
+        },
+        {
+          "step": 6,
+          "loop_index": 6,
+          "coverage_score": 0.43,
+          "findings_count": 5,
+          "total_tokens": 3750,
+          "detectors_fired": {
+            "stuck": {
+              "fired": true,
+              "confidence": 0.725,
+              "trigger": "findings_plateau"
+            }
+          }
+        },
+        {
+          "step": 7,
+          "loop_index": 7,
+          "coverage_score": 0.435,
+          "findings_count": 5,
+          "total_tokens": 5000,
+          "detectors_fired": {
+            "stuck": {
+              "fired": true,
+              "confidence": 0.725,
+              "trigger": "findings_plateau"
+            }
+          }
+        },
+        {
+          "step": 8,
+          "loop_index": 8,
+          "coverage_score": 0.44,
+          "findings_count": 6,
+          "total_tokens": 6750,
+          "detectors_fired": {
+            "runaway_cost": {
+              "fired": true,
+              "confidence": null
+            }
+          }
+        },
+        {
+          "step": 9,
+          "loop_index": 9,
+          "coverage_score": 0.445,
+          "findings_count": 6,
+          "total_tokens": 9000,
+          "detectors_fired": {
+            "stuck": {
+              "fired": true,
+              "confidence": 0.775,
+              "trigger": "coverage_stagnation"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "trace_id": "stuck-syn-069",
+      "labels": {
+        "loop": false,
+        "stuck": true,
+        "confabulation": false,
+        "thrash": false,
+        "runaway_cost": false
+      },
+      "total_steps": 10,
+      "stuck_fires_at": [
+        5,
+        6,
+        7,
+        9
+      ],
+      "runaway_fires_at": [
+        8
+      ],
+      "same_step_overlap": [],
+      "has_same_step_cooccurrence": false,
+      "temporal_gap": 1,
+      "steps": [
+        {
+          "step": 0,
+          "loop_index": 0,
+          "coverage_score": 0.085,
+          "findings_count": 1,
+          "total_tokens": 500,
+          "detectors_fired": {}
+        },
+        {
+          "step": 1,
+          "loop_index": 1,
+          "coverage_score": 0.17,
+          "findings_count": 2,
+          "total_tokens": 1000,
+          "detectors_fired": {}
+        },
+        {
+          "step": 2,
+          "loop_index": 2,
+          "coverage_score": 0.255,
+          "findings_count": 3,
+          "total_tokens": 1500,
+          "detectors_fired": {}
+        },
+        {
+          "step": 3,
+          "loop_index": 3,
+          "coverage_score": 0.34,
+          "findings_count": 4,
+          "total_tokens": 2000,
+          "detectors_fired": {}
+        },
+        {
+          "step": 4,
+          "loop_index": 4,
+          "coverage_score": 0.425,
+          "findings_count": 5,
+          "total_tokens": 2500,
+          "detectors_fired": {}
+        },
+        {
+          "step": 5,
+          "loop_index": 5,
+          "coverage_score": 0.425,
+          "findings_count": 5,
+          "total_tokens": 3000,
+          "detectors_fired": {
+            "stuck": {
+              "fired": true,
+              "confidence": 0.9364,
+              "trigger": "coverage_stagnation"
+            }
+          }
+        },
+        {
+          "step": 6,
+          "loop_index": 6,
+          "coverage_score": 0.43,
+          "findings_count": 5,
+          "total_tokens": 3750,
+          "detectors_fired": {
+            "stuck": {
+              "fired": true,
+              "confidence": 0.725,
+              "trigger": "findings_plateau"
+            }
+          }
+        },
+        {
+          "step": 7,
+          "loop_index": 7,
+          "coverage_score": 0.435,
+          "findings_count": 5,
+          "total_tokens": 5000,
+          "detectors_fired": {
+            "stuck": {
+              "fired": true,
+              "confidence": 0.725,
+              "trigger": "findings_plateau"
+            }
+          }
+        },
+        {
+          "step": 8,
+          "loop_index": 8,
+          "coverage_score": 0.44,
+          "findings_count": 6,
+          "total_tokens": 6750,
+          "detectors_fired": {
+            "runaway_cost": {
+              "fired": true,
+              "confidence": null
+            }
+          }
+        },
+        {
+          "step": 9,
+          "loop_index": 9,
+          "coverage_score": 0.445,
+          "findings_count": 6,
+          "total_tokens": 9000,
+          "detectors_fired": {
+            "stuck": {
+              "fired": true,
+              "confidence": 0.8917,
+              "trigger": "coverage_stagnation"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "trace_id": "stuck-syn-072",
+      "labels": {
+        "loop": false,
+        "stuck": true,
+        "confabulation": false,
+        "thrash": false,
+        "runaway_cost": false
+      },
+      "total_steps": 10,
+      "stuck_fires_at": [
+        5,
+        6,
+        7,
+        9
+      ],
+      "runaway_fires_at": [
+        8
+      ],
+      "same_step_overlap": [],
+      "has_same_step_cooccurrence": false,
+      "temporal_gap": 1,
+      "steps": [
+        {
+          "step": 0,
+          "loop_index": 0,
+          "coverage_score": 0.085,
+          "findings_count": 1,
+          "total_tokens": 500,
+          "detectors_fired": {}
+        },
+        {
+          "step": 1,
+          "loop_index": 1,
+          "coverage_score": 0.17,
+          "findings_count": 2,
+          "total_tokens": 1000,
+          "detectors_fired": {}
+        },
+        {
+          "step": 2,
+          "loop_index": 2,
+          "coverage_score": 0.255,
+          "findings_count": 3,
+          "total_tokens": 1500,
+          "detectors_fired": {}
+        },
+        {
+          "step": 3,
+          "loop_index": 3,
+          "coverage_score": 0.34,
+          "findings_count": 4,
+          "total_tokens": 2000,
+          "detectors_fired": {}
+        },
+        {
+          "step": 4,
+          "loop_index": 4,
+          "coverage_score": 0.425,
+          "findings_count": 5,
+          "total_tokens": 2500,
+          "detectors_fired": {}
+        },
+        {
+          "step": 5,
+          "loop_index": 5,
+          "coverage_score": 0.425,
+          "findings_count": 5,
+          "total_tokens": 3000,
+          "detectors_fired": {
+            "stuck": {
+              "fired": true,
+              "confidence": 0.92,
+              "trigger": "coverage_stagnation"
+            }
+          }
+        },
+        {
+          "step": 6,
+          "loop_index": 6,
+          "coverage_score": 0.43,
+          "findings_count": 5,
+          "total_tokens": 3750,
+          "detectors_fired": {
+            "stuck": {
+              "fired": true,
+              "confidence": 0.725,
+              "trigger": "findings_plateau"
+            }
+          }
+        },
+        {
+          "step": 7,
+          "loop_index": 7,
+          "coverage_score": 0.435,
+          "findings_count": 5,
+          "total_tokens": 5000,
+          "detectors_fired": {
+            "stuck": {
+              "fired": true,
+              "confidence": 0.725,
+              "trigger": "findings_plateau"
+            }
+          }
+        },
+        {
+          "step": 8,
+          "loop_index": 8,
+          "coverage_score": 0.44,
+          "findings_count": 6,
+          "total_tokens": 6750,
+          "detectors_fired": {
+            "runaway_cost": {
+              "fired": true,
+              "confidence": null
+            }
+          }
+        },
+        {
+          "step": 9,
+          "loop_index": 9,
+          "coverage_score": 0.445,
+          "findings_count": 6,
+          "total_tokens": 9000,
+          "detectors_fired": {
+            "stuck": {
+              "fired": true,
+              "confidence": 0.825,
+              "trigger": "coverage_stagnation"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "trace_id": "stuck-syn-075",
+      "labels": {
+        "loop": false,
+        "stuck": true,
+        "confabulation": false,
+        "thrash": false,
+        "runaway_cost": false
+      },
+      "total_steps": 12,
+      "stuck_fires_at": [
+        3,
+        4,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "runaway_fires_at": [
+        5
+      ],
+      "same_step_overlap": [],
+      "has_same_step_cooccurrence": false,
+      "temporal_gap": 1,
+      "steps": [
+        {
+          "step": 0,
+          "loop_index": 0,
+          "coverage_score": 0.071,
+          "findings_count": 1,
+          "total_tokens": 500,
+          "detectors_fired": {}
+        },
+        {
+          "step": 1,
+          "loop_index": 1,
+          "coverage_score": 0.142,
+          "findings_count": 2,
+          "total_tokens": 1000,
+          "detectors_fired": {}
+        },
+        {
+          "step": 2,
+          "loop_index": 2,
+          "coverage_score": 0.142,
+          "findings_count": 2,
+          "total_tokens": 1500,
+          "detectors_fired": {}
+        },
+        {
+          "step": 3,
+          "loop_index": 3,
+          "coverage_score": 0.147,
+          "findings_count": 2,
+          "total_tokens": 2250,
+          "detectors_fired": {
+            "stuck": {
+              "fired": true,
+              "confidence": 0.825,
+              "trigger": "coverage_stagnation"
+            }
+          }
+        },
+        {
+          "step": 4,
+          "loop_index": 4,
+          "coverage_score": 0.152,
+          "findings_count": 2,
+          "total_tokens": 3500,
+          "detectors_fired": {
+            "stuck": {
+              "fired": true,
+              "confidence": 0.9583,
+              "trigger": "coverage_stagnation"
+            }
+          }
+        },
+        {
+          "step": 5,
+          "loop_index": 5,
+          "coverage_score": 0.157,
+          "findings_count": 3,
+          "total_tokens": 5250,
+          "detectors_fired": {
+            "runaway_cost": {
+              "fired": true,
+              "confidence": null
+            }
+          }
+        },
+        {
+          "step": 6,
+          "loop_index": 6,
+          "coverage_score": 0.162,
+          "findings_count": 3,
+          "total_tokens": 7500,
+          "detectors_fired": {
+            "stuck": {
+              "fired": true,
+              "confidence": 0.775,
+              "trigger": "coverage_stagnation"
+            }
+          }
+        },
+        {
+          "step": 7,
+          "loop_index": 7,
+          "coverage_score": 0.167,
+          "findings_count": 3,
+          "total_tokens": 10250,
+          "detectors_fired": {
+            "stuck": {
+              "fired": true,
+              "confidence": 0.775,
+              "trigger": "coverage_stagnation"
+            }
+          }
+        },
+        {
+          "step": 8,
+          "loop_index": 8,
+          "coverage_score": 0.172,
+          "findings_count": 4,
+          "total_tokens": 13500,
+          "detectors_fired": {
+            "stuck": {
+              "fired": true,
+              "confidence": 0.775,
+              "trigger": "coverage_stagnation"
+            }
+          }
+        },
+        {
+          "step": 9,
+          "loop_index": 9,
+          "coverage_score": 0.177,
+          "findings_count": 4,
+          "total_tokens": 17250,
+          "detectors_fired": {
+            "stuck": {
+              "fired": true,
+              "confidence": 0.775,
+              "trigger": "coverage_stagnation"
+            }
+          }
+        },
+        {
+          "step": 10,
+          "loop_index": 10,
+          "coverage_score": 0.182,
+          "findings_count": 4,
+          "total_tokens": 21500,
+          "detectors_fired": {
+            "stuck": {
+              "fired": true,
+              "confidence": 0.775,
+              "trigger": "coverage_stagnation"
+            }
+          }
+        },
+        {
+          "step": 11,
+          "loop_index": 11,
+          "coverage_score": 0.187,
+          "findings_count": 5,
+          "total_tokens": 26250,
+          "detectors_fired": {
+            "stuck": {
+              "fired": true,
+              "confidence": 0.775,
+              "trigger": "coverage_stagnation"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "trace_id": "stuck-syn-078",
+      "labels": {
+        "loop": false,
+        "stuck": true,
+        "confabulation": false,
+        "thrash": false,
+        "runaway_cost": false
+      },
+      "total_steps": 12,
+      "stuck_fires_at": [
+        3,
+        4,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "runaway_fires_at": [
+        5
+      ],
+      "same_step_overlap": [],
+      "has_same_step_cooccurrence": false,
+      "temporal_gap": 1,
+      "steps": [
+        {
+          "step": 0,
+          "loop_index": 0,
+          "coverage_score": 0.071,
+          "findings_count": 1,
+          "total_tokens": 500,
+          "detectors_fired": {}
+        },
+        {
+          "step": 1,
+          "loop_index": 1,
+          "coverage_score": 0.142,
+          "findings_count": 2,
+          "total_tokens": 1000,
+          "detectors_fired": {}
+        },
+        {
+          "step": 2,
+          "loop_index": 2,
+          "coverage_score": 0.142,
+          "findings_count": 2,
+          "total_tokens": 1500,
+          "detectors_fired": {}
+        },
+        {
+          "step": 3,
+          "loop_index": 3,
+          "coverage_score": 0.147,
+          "findings_count": 2,
+          "total_tokens": 2250,
+          "detectors_fired": {
+            "stuck": {
+              "fired": true,
+              "confidence": 0.725,
+              "trigger": "coverage_stagnation"
+            }
+          }
+        },
+        {
+          "step": 4,
+          "loop_index": 4,
+          "coverage_score": 0.152,
+          "findings_count": 2,
+          "total_tokens": 3500,
+          "detectors_fired": {
+            "stuck": {
+              "fired": true,
+              "confidence": 0.8917,
+              "trigger": "coverage_stagnation"
+            }
+          }
+        },
+        {
+          "step": 5,
+          "loop_index": 5,
+          "coverage_score": 0.157,
+          "findings_count": 3,
+          "total_tokens": 5250,
+          "detectors_fired": {
+            "runaway_cost": {
+              "fired": true,
+              "confidence": null
+            }
+          }
+        },
+        {
+          "step": 6,
+          "loop_index": 6,
+          "coverage_score": 0.162,
+          "findings_count": 3,
+          "total_tokens": 7500,
+          "detectors_fired": {
+            "stuck": {
+              "fired": true,
+              "confidence": 0.8917,
+              "trigger": "coverage_stagnation"
+            }
+          }
+        },
+        {
+          "step": 7,
+          "loop_index": 7,
+          "coverage_score": 0.167,
+          "findings_count": 3,
+          "total_tokens": 10250,
+          "detectors_fired": {
+            "stuck": {
+              "fired": true,
+              "confidence": 0.8917,
+              "trigger": "coverage_stagnation"
+            }
+          }
+        },
+        {
+          "step": 8,
+          "loop_index": 8,
+          "coverage_score": 0.172,
+          "findings_count": 4,
+          "total_tokens": 13500,
+          "detectors_fired": {
+            "stuck": {
+              "fired": true,
+              "confidence": 0.8917,
+              "trigger": "coverage_stagnation"
+            }
+          }
+        },
+        {
+          "step": 9,
+          "loop_index": 9,
+          "coverage_score": 0.177,
+          "findings_count": 4,
+          "total_tokens": 17250,
+          "detectors_fired": {
+            "stuck": {
+              "fired": true,
+              "confidence": 0.8917,
+              "trigger": "coverage_stagnation"
+            }
+          }
+        },
+        {
+          "step": 10,
+          "loop_index": 10,
+          "coverage_score": 0.182,
+          "findings_count": 4,
+          "total_tokens": 21500,
+          "detectors_fired": {
+            "stuck": {
+              "fired": true,
+              "confidence": 0.8917,
+              "trigger": "coverage_stagnation"
+            }
+          }
+        },
+        {
+          "step": 11,
+          "loop_index": 11,
+          "coverage_score": 0.187,
+          "findings_count": 5,
+          "total_tokens": 26250,
+          "detectors_fired": {
+            "stuck": {
+              "fired": true,
+              "confidence": 0.8917,
+              "trigger": "coverage_stagnation"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "trace_id": "stuck-syn-081",
+      "labels": {
+        "loop": false,
+        "stuck": true,
+        "confabulation": false,
+        "thrash": false,
+        "runaway_cost": false
+      },
+      "total_steps": 12,
+      "stuck_fires_at": [
+        3,
+        4,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "runaway_fires_at": [
+        5
+      ],
+      "same_step_overlap": [],
+      "has_same_step_cooccurrence": false,
+      "temporal_gap": 1,
+      "steps": [
+        {
+          "step": 0,
+          "loop_index": 0,
+          "coverage_score": 0.071,
+          "findings_count": 1,
+          "total_tokens": 500,
+          "detectors_fired": {}
+        },
+        {
+          "step": 1,
+          "loop_index": 1,
+          "coverage_score": 0.142,
+          "findings_count": 2,
+          "total_tokens": 1000,
+          "detectors_fired": {}
+        },
+        {
+          "step": 2,
+          "loop_index": 2,
+          "coverage_score": 0.142,
+          "findings_count": 2,
+          "total_tokens": 1500,
+          "detectors_fired": {}
+        },
+        {
+          "step": 3,
+          "loop_index": 3,
+          "coverage_score": 0.147,
+          "findings_count": 2,
+          "total_tokens": 2250,
+          "detectors_fired": {
+            "stuck": {
+              "fired": true,
+              "confidence": 0.725,
+              "trigger": "findings_plateau"
+            }
+          }
+        },
+        {
+          "step": 4,
+          "loop_index": 4,
+          "coverage_score": 0.152,
+          "findings_count": 2,
+          "total_tokens": 3500,
+          "detectors_fired": {
+            "stuck": {
+              "fired": true,
+              "confidence": 0.825,
+              "trigger": "coverage_stagnation"
+            }
+          }
+        },
+        {
+          "step": 5,
+          "loop_index": 5,
+          "coverage_score": 0.157,
+          "findings_count": 3,
+          "total_tokens": 5250,
+          "detectors_fired": {
+            "runaway_cost": {
+              "fired": true,
+              "confidence": null
+            }
+          }
+        },
+        {
+          "step": 6,
+          "loop_index": 6,
+          "coverage_score": 0.162,
+          "findings_count": 3,
+          "total_tokens": 7500,
+          "detectors_fired": {
+            "stuck": {
+              "fired": true,
+              "confidence": 0.825,
+              "trigger": "coverage_stagnation"
+            }
+          }
+        },
+        {
+          "step": 7,
+          "loop_index": 7,
+          "coverage_score": 0.167,
+          "findings_count": 3,
+          "total_tokens": 10250,
+          "detectors_fired": {
+            "stuck": {
+              "fired": true,
+              "confidence": 0.825,
+              "trigger": "coverage_stagnation"
+            }
+          }
+        },
+        {
+          "step": 8,
+          "loop_index": 8,
+          "coverage_score": 0.172,
+          "findings_count": 4,
+          "total_tokens": 13500,
+          "detectors_fired": {
+            "stuck": {
+              "fired": true,
+              "confidence": 0.825,
+              "trigger": "coverage_stagnation"
+            }
+          }
+        },
+        {
+          "step": 9,
+          "loop_index": 9,
+          "coverage_score": 0.177,
+          "findings_count": 4,
+          "total_tokens": 17250,
+          "detectors_fired": {
+            "stuck": {
+              "fired": true,
+              "confidence": 0.825,
+              "trigger": "coverage_stagnation"
+            }
+          }
+        },
+        {
+          "step": 10,
+          "loop_index": 10,
+          "coverage_score": 0.182,
+          "findings_count": 4,
+          "total_tokens": 21500,
+          "detectors_fired": {
+            "stuck": {
+              "fired": true,
+              "confidence": 0.825,
+              "trigger": "coverage_stagnation"
+            }
+          }
+        },
+        {
+          "step": 11,
+          "loop_index": 11,
+          "coverage_score": 0.187,
+          "findings_count": 5,
+          "total_tokens": 26250,
+          "detectors_fired": {
+            "stuck": {
+              "fired": true,
+              "confidence": 0.825,
+              "trigger": "coverage_stagnation"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "trace_id": "stuck-syn-084",
+      "labels": {
+        "loop": false,
+        "stuck": true,
+        "confabulation": false,
+        "thrash": false,
+        "runaway_cost": false
+      },
+      "total_steps": 12,
+      "stuck_fires_at": [
+        3,
+        4,
+        5,
+        7,
+        8,
+        10,
+        11
+      ],
+      "runaway_fires_at": [
+        6,
+        9
+      ],
+      "same_step_overlap": [],
+      "has_same_step_cooccurrence": false,
+      "temporal_gap": 1,
+      "steps": [
+        {
+          "step": 0,
+          "loop_index": 0,
+          "coverage_score": 0.071,
+          "findings_count": 1,
+          "total_tokens": 500,
+          "detectors_fired": {}
+        },
+        {
+          "step": 1,
+          "loop_index": 1,
+          "coverage_score": 0.142,
+          "findings_count": 2,
+          "total_tokens": 1000,
+          "detectors_fired": {}
+        },
+        {
+          "step": 2,
+          "loop_index": 2,
+          "coverage_score": 0.212,
+          "findings_count": 3,
+          "total_tokens": 1500,
+          "detectors_fired": {}
+        },
+        {
+          "step": 3,
+          "loop_index": 3,
+          "coverage_score": 0.212,
+          "findings_count": 3,
+          "total_tokens": 2000,
+          "detectors_fired": {
+            "stuck": {
+              "fired": true,
+              "confidence": 0.825,
+              "trigger": "coverage_stagnation"
+            }
+          }
+        },
+        {
+          "step": 4,
+          "loop_index": 4,
+          "coverage_score": 0.217,
+          "findings_count": 3,
+          "total_tokens": 2750,
+          "detectors_fired": {
+            "stuck": {
+              "fired": true,
+              "confidence": 0.725,
+              "trigger": "findings_plateau"
+            }
+          }
+        },
+        {
+          "step": 5,
+          "loop_index": 5,
+          "coverage_score": 0.223,
+          "findings_count": 3,
+          "total_tokens": 4000,
+          "detectors_fired": {
+            "stuck": {
+              "fired": true,
+              "confidence": 0.725,
+              "trigger": "findings_plateau"
+            }
+          }
+        },
+        {
+          "step": 6,
+          "loop_index": 6,
+          "coverage_score": 0.227,
+          "findings_count": 4,
+          "total_tokens": 5750,
+          "detectors_fired": {
+            "runaway_cost": {
+              "fired": true,
+              "confidence": null
+            }
+          }
+        },
+        {
+          "step": 7,
+          "loop_index": 7,
+          "coverage_score": 0.232,
+          "findings_count": 4,
+          "total_tokens": 8000,
+          "detectors_fired": {
+            "stuck": {
+              "fired": true,
+              "confidence": 0.775,
+              "trigger": "coverage_stagnation"
+            }
+          }
+        },
+        {
+          "step": 8,
+          "loop_index": 8,
+          "coverage_score": 0.237,
+          "findings_count": 4,
+          "total_tokens": 10750,
+          "detectors_fired": {
+            "stuck": {
+              "fired": true,
+              "confidence": 0.775,
+              "trigger": "coverage_stagnation"
+            }
+          }
+        },
+        {
+          "step": 9,
+          "loop_index": 9,
+          "coverage_score": 0.242,
+          "findings_count": 5,
+          "total_tokens": 14000,
+          "detectors_fired": {
+            "runaway_cost": {
+              "fired": true,
+              "confidence": null
+            }
+          }
+        },
+        {
+          "step": 10,
+          "loop_index": 10,
+          "coverage_score": 0.247,
+          "findings_count": 5,
+          "total_tokens": 17750,
+          "detectors_fired": {
+            "stuck": {
+              "fired": true,
+              "confidence": 0.775,
+              "trigger": "coverage_stagnation"
+            }
+          }
+        },
+        {
+          "step": 11,
+          "loop_index": 11,
+          "coverage_score": 0.253,
+          "findings_count": 5,
+          "total_tokens": 22000,
+          "detectors_fired": {
+            "stuck": {
+              "fired": true,
+              "confidence": 0.775,
+              "trigger": "coverage_stagnation"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "trace_id": "stuck-syn-087",
+      "labels": {
+        "loop": false,
+        "stuck": true,
+        "confabulation": false,
+        "thrash": false,
+        "runaway_cost": false
+      },
+      "total_steps": 12,
+      "stuck_fires_at": [
+        3,
+        4,
+        5,
+        7,
+        8,
+        10,
+        11
+      ],
+      "runaway_fires_at": [
+        6,
+        9
+      ],
+      "same_step_overlap": [],
+      "has_same_step_cooccurrence": false,
+      "temporal_gap": 1,
+      "steps": [
+        {
+          "step": 0,
+          "loop_index": 0,
+          "coverage_score": 0.071,
+          "findings_count": 1,
+          "total_tokens": 500,
+          "detectors_fired": {}
+        },
+        {
+          "step": 1,
+          "loop_index": 1,
+          "coverage_score": 0.142,
+          "findings_count": 2,
+          "total_tokens": 1000,
+          "detectors_fired": {}
+        },
+        {
+          "step": 2,
+          "loop_index": 2,
+          "coverage_score": 0.212,
+          "findings_count": 3,
+          "total_tokens": 1500,
+          "detectors_fired": {}
+        },
+        {
+          "step": 3,
+          "loop_index": 3,
+          "coverage_score": 0.212,
+          "findings_count": 3,
+          "total_tokens": 2000,
+          "detectors_fired": {
+            "stuck": {
+              "fired": true,
+              "confidence": 0.725,
+              "trigger": "coverage_stagnation"
+            }
+          }
+        },
+        {
+          "step": 4,
+          "loop_index": 4,
+          "coverage_score": 0.217,
+          "findings_count": 3,
+          "total_tokens": 2750,
+          "detectors_fired": {
+            "stuck": {
+              "fired": true,
+              "confidence": 0.725,
+              "trigger": "findings_plateau"
+            }
+          }
+        },
+        {
+          "step": 5,
+          "loop_index": 5,
+          "coverage_score": 0.223,
+          "findings_count": 3,
+          "total_tokens": 4000,
+          "detectors_fired": {
+            "stuck": {
+              "fired": true,
+              "confidence": 0.725,
+              "trigger": "findings_plateau"
+            }
+          }
+        },
+        {
+          "step": 6,
+          "loop_index": 6,
+          "coverage_score": 0.227,
+          "findings_count": 4,
+          "total_tokens": 5750,
+          "detectors_fired": {
+            "runaway_cost": {
+              "fired": true,
+              "confidence": null
+            }
+          }
+        },
+        {
+          "step": 7,
+          "loop_index": 7,
+          "coverage_score": 0.232,
+          "findings_count": 4,
+          "total_tokens": 8000,
+          "detectors_fired": {
+            "stuck": {
+              "fired": true,
+              "confidence": 0.8917,
+              "trigger": "coverage_stagnation"
+            }
+          }
+        },
+        {
+          "step": 8,
+          "loop_index": 8,
+          "coverage_score": 0.237,
+          "findings_count": 4,
+          "total_tokens": 10750,
+          "detectors_fired": {
+            "stuck": {
+              "fired": true,
+              "confidence": 0.8917,
+              "trigger": "coverage_stagnation"
+            }
+          }
+        },
+        {
+          "step": 9,
+          "loop_index": 9,
+          "coverage_score": 0.242,
+          "findings_count": 5,
+          "total_tokens": 14000,
+          "detectors_fired": {
+            "runaway_cost": {
+              "fired": true,
+              "confidence": null
+            }
+          }
+        },
+        {
+          "step": 10,
+          "loop_index": 10,
+          "coverage_score": 0.247,
+          "findings_count": 5,
+          "total_tokens": 17750,
+          "detectors_fired": {
+            "stuck": {
+              "fired": true,
+              "confidence": 0.8917,
+              "trigger": "coverage_stagnation"
+            }
+          }
+        },
+        {
+          "step": 11,
+          "loop_index": 11,
+          "coverage_score": 0.253,
+          "findings_count": 5,
+          "total_tokens": 22000,
+          "detectors_fired": {
+            "stuck": {
+              "fired": true,
+              "confidence": 0.8917,
+              "trigger": "coverage_stagnation"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "trace_id": "stuck-syn-090",
+      "labels": {
+        "loop": false,
+        "stuck": true,
+        "confabulation": false,
+        "thrash": false,
+        "runaway_cost": false
+      },
+      "total_steps": 12,
+      "stuck_fires_at": [
+        4,
+        5,
+        7,
+        8,
+        10,
+        11
+      ],
+      "runaway_fires_at": [
+        6,
+        9
+      ],
+      "same_step_overlap": [],
+      "has_same_step_cooccurrence": false,
+      "temporal_gap": 1,
+      "steps": [
+        {
+          "step": 0,
+          "loop_index": 0,
+          "coverage_score": 0.071,
+          "findings_count": 1,
+          "total_tokens": 500,
+          "detectors_fired": {}
+        },
+        {
+          "step": 1,
+          "loop_index": 1,
+          "coverage_score": 0.142,
+          "findings_count": 2,
+          "total_tokens": 1000,
+          "detectors_fired": {}
+        },
+        {
+          "step": 2,
+          "loop_index": 2,
+          "coverage_score": 0.212,
+          "findings_count": 3,
+          "total_tokens": 1500,
+          "detectors_fired": {}
+        },
+        {
+          "step": 3,
+          "loop_index": 3,
+          "coverage_score": 0.212,
+          "findings_count": 3,
+          "total_tokens": 2000,
+          "detectors_fired": {}
+        },
+        {
+          "step": 4,
+          "loop_index": 4,
+          "coverage_score": 0.217,
+          "findings_count": 3,
+          "total_tokens": 2750,
+          "detectors_fired": {
+            "stuck": {
+              "fired": true,
+              "confidence": 0.725,
+              "trigger": "findings_plateau"
+            }
+          }
+        },
+        {
+          "step": 5,
+          "loop_index": 5,
+          "coverage_score": 0.223,
+          "findings_count": 3,
+          "total_tokens": 4000,
+          "detectors_fired": {
+            "stuck": {
+              "fired": true,
+              "confidence": 0.725,
+              "trigger": "findings_plateau"
+            }
+          }
+        },
+        {
+          "step": 6,
+          "loop_index": 6,
+          "coverage_score": 0.227,
+          "findings_count": 4,
+          "total_tokens": 5750,
+          "detectors_fired": {
+            "runaway_cost": {
+              "fired": true,
+              "confidence": null
+            }
+          }
+        },
+        {
+          "step": 7,
+          "loop_index": 7,
+          "coverage_score": 0.232,
+          "findings_count": 4,
+          "total_tokens": 8000,
+          "detectors_fired": {
+            "stuck": {
+              "fired": true,
+              "confidence": 0.825,
+              "trigger": "coverage_stagnation"
+            }
+          }
+        },
+        {
+          "step": 8,
+          "loop_index": 8,
+          "coverage_score": 0.237,
+          "findings_count": 4,
+          "total_tokens": 10750,
+          "detectors_fired": {
+            "stuck": {
+              "fired": true,
+              "confidence": 0.825,
+              "trigger": "coverage_stagnation"
+            }
+          }
+        },
+        {
+          "step": 9,
+          "loop_index": 9,
+          "coverage_score": 0.242,
+          "findings_count": 5,
+          "total_tokens": 14000,
+          "detectors_fired": {
+            "runaway_cost": {
+              "fired": true,
+              "confidence": null
+            }
+          }
+        },
+        {
+          "step": 10,
+          "loop_index": 10,
+          "coverage_score": 0.247,
+          "findings_count": 5,
+          "total_tokens": 17750,
+          "detectors_fired": {
+            "stuck": {
+              "fired": true,
+              "confidence": 0.825,
+              "trigger": "coverage_stagnation"
+            }
+          }
+        },
+        {
+          "step": 11,
+          "loop_index": 11,
+          "coverage_score": 0.253,
+          "findings_count": 5,
+          "total_tokens": 22000,
+          "detectors_fired": {
+            "stuck": {
+              "fired": true,
+              "confidence": 0.825,
+              "trigger": "coverage_stagnation"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "trace_id": "stuck-syn-093",
+      "labels": {
+        "loop": false,
+        "stuck": true,
+        "confabulation": false,
+        "thrash": false,
+        "runaway_cost": false
+      },
+      "total_steps": 12,
+      "stuck_fires_at": [
+        5,
+        6,
+        7,
+        9,
+        10
+      ],
+      "runaway_fires_at": [
+        8,
+        11
+      ],
+      "same_step_overlap": [],
+      "has_same_step_cooccurrence": false,
+      "temporal_gap": 1,
+      "steps": [
+        {
+          "step": 0,
+          "loop_index": 0,
+          "coverage_score": 0.071,
+          "findings_count": 1,
+          "total_tokens": 500,
+          "detectors_fired": {}
+        },
+        {
+          "step": 1,
+          "loop_index": 1,
+          "coverage_score": 0.142,
+          "findings_count": 2,
+          "total_tokens": 1000,
+          "detectors_fired": {}
+        },
+        {
+          "step": 2,
+          "loop_index": 2,
+          "coverage_score": 0.212,
+          "findings_count": 3,
+          "total_tokens": 1500,
+          "detectors_fired": {}
+        },
+        {
+          "step": 3,
+          "loop_index": 3,
+          "coverage_score": 0.283,
+          "findings_count": 4,
+          "total_tokens": 2000,
+          "detectors_fired": {}
+        },
+        {
+          "step": 4,
+          "loop_index": 4,
+          "coverage_score": 0.354,
+          "findings_count": 5,
+          "total_tokens": 2500,
+          "detectors_fired": {}
+        },
+        {
+          "step": 5,
+          "loop_index": 5,
+          "coverage_score": 0.354,
+          "findings_count": 5,
+          "total_tokens": 3000,
+          "detectors_fired": {
+            "stuck": {
+              "fired": true,
+              "confidence": 0.9559,
+              "trigger": "coverage_stagnation"
+            }
+          }
+        },
+        {
+          "step": 6,
+          "loop_index": 6,
+          "coverage_score": 0.359,
+          "findings_count": 5,
+          "total_tokens": 3750,
+          "detectors_fired": {
+            "stuck": {
+              "fired": true,
+              "confidence": 0.725,
+              "trigger": "findings_plateau"
+            }
+          }
+        },
+        {
+          "step": 7,
+          "loop_index": 7,
+          "coverage_score": 0.364,
+          "findings_count": 5,
+          "total_tokens": 5000,
+          "detectors_fired": {
+            "stuck": {
+              "fired": true,
+              "confidence": 0.725,
+              "trigger": "findings_plateau"
+            }
+          }
+        },
+        {
+          "step": 8,
+          "loop_index": 8,
+          "coverage_score": 0.369,
+          "findings_count": 6,
+          "total_tokens": 6750,
+          "detectors_fired": {
+            "runaway_cost": {
+              "fired": true,
+              "confidence": null
+            }
+          }
+        },
+        {
+          "step": 9,
+          "loop_index": 9,
+          "coverage_score": 0.374,
+          "findings_count": 6,
+          "total_tokens": 9000,
+          "detectors_fired": {
+            "stuck": {
+              "fired": true,
+              "confidence": 0.775,
+              "trigger": "coverage_stagnation"
+            }
+          }
+        },
+        {
+          "step": 10,
+          "loop_index": 10,
+          "coverage_score": 0.379,
+          "findings_count": 6,
+          "total_tokens": 11750,
+          "detectors_fired": {
+            "stuck": {
+              "fired": true,
+              "confidence": 0.775,
+              "trigger": "coverage_stagnation"
+            }
+          }
+        },
+        {
+          "step": 11,
+          "loop_index": 11,
+          "coverage_score": 0.384,
+          "findings_count": 7,
+          "total_tokens": 15000,
+          "detectors_fired": {
+            "runaway_cost": {
+              "fired": true,
+              "confidence": null
+            }
+          }
+        }
+      ]
+    },
+    {
+      "trace_id": "stuck-syn-096",
+      "labels": {
+        "loop": false,
+        "stuck": true,
+        "confabulation": false,
+        "thrash": false,
+        "runaway_cost": false
+      },
+      "total_steps": 12,
+      "stuck_fires_at": [
+        5,
+        6,
+        7,
+        9,
+        10
+      ],
+      "runaway_fires_at": [
+        8,
+        11
+      ],
+      "same_step_overlap": [],
+      "has_same_step_cooccurrence": false,
+      "temporal_gap": 1,
+      "steps": [
+        {
+          "step": 0,
+          "loop_index": 0,
+          "coverage_score": 0.071,
+          "findings_count": 1,
+          "total_tokens": 500,
+          "detectors_fired": {}
+        },
+        {
+          "step": 1,
+          "loop_index": 1,
+          "coverage_score": 0.142,
+          "findings_count": 2,
+          "total_tokens": 1000,
+          "detectors_fired": {}
+        },
+        {
+          "step": 2,
+          "loop_index": 2,
+          "coverage_score": 0.212,
+          "findings_count": 3,
+          "total_tokens": 1500,
+          "detectors_fired": {}
+        },
+        {
+          "step": 3,
+          "loop_index": 3,
+          "coverage_score": 0.283,
+          "findings_count": 4,
+          "total_tokens": 2000,
+          "detectors_fired": {}
+        },
+        {
+          "step": 4,
+          "loop_index": 4,
+          "coverage_score": 0.354,
+          "findings_count": 5,
+          "total_tokens": 2500,
+          "detectors_fired": {}
+        },
+        {
+          "step": 5,
+          "loop_index": 5,
+          "coverage_score": 0.354,
+          "findings_count": 5,
+          "total_tokens": 3000,
+          "detectors_fired": {
+            "stuck": {
+              "fired": true,
+              "confidence": 0.9394,
+              "trigger": "coverage_stagnation"
+            }
+          }
+        },
+        {
+          "step": 6,
+          "loop_index": 6,
+          "coverage_score": 0.359,
+          "findings_count": 5,
+          "total_tokens": 3750,
+          "detectors_fired": {
+            "stuck": {
+              "fired": true,
+              "confidence": 0.725,
+              "trigger": "findings_plateau"
+            }
+          }
+        },
+        {
+          "step": 7,
+          "loop_index": 7,
+          "coverage_score": 0.364,
+          "findings_count": 5,
+          "total_tokens": 5000,
+          "detectors_fired": {
+            "stuck": {
+              "fired": true,
+              "confidence": 0.725,
+              "trigger": "findings_plateau"
+            }
+          }
+        },
+        {
+          "step": 8,
+          "loop_index": 8,
+          "coverage_score": 0.369,
+          "findings_count": 6,
+          "total_tokens": 6750,
+          "detectors_fired": {
+            "runaway_cost": {
+              "fired": true,
+              "confidence": null
+            }
+          }
+        },
+        {
+          "step": 9,
+          "loop_index": 9,
+          "coverage_score": 0.374,
+          "findings_count": 6,
+          "total_tokens": 9000,
+          "detectors_fired": {
+            "stuck": {
+              "fired": true,
+              "confidence": 0.8917,
+              "trigger": "coverage_stagnation"
+            }
+          }
+        },
+        {
+          "step": 10,
+          "loop_index": 10,
+          "coverage_score": 0.379,
+          "findings_count": 6,
+          "total_tokens": 11750,
+          "detectors_fired": {
+            "stuck": {
+              "fired": true,
+              "confidence": 0.8917,
+              "trigger": "coverage_stagnation"
+            }
+          }
+        },
+        {
+          "step": 11,
+          "loop_index": 11,
+          "coverage_score": 0.384,
+          "findings_count": 7,
+          "total_tokens": 15000,
+          "detectors_fired": {
+            "runaway_cost": {
+              "fired": true,
+              "confidence": null
+            }
+          }
+        }
+      ]
+    },
+    {
+      "trace_id": "stuck-syn-099",
+      "labels": {
+        "loop": false,
+        "stuck": true,
+        "confabulation": false,
+        "thrash": false,
+        "runaway_cost": false
+      },
+      "total_steps": 12,
+      "stuck_fires_at": [
+        5,
+        6,
+        7,
+        9,
+        10
+      ],
+      "runaway_fires_at": [
+        8,
+        11
+      ],
+      "same_step_overlap": [],
+      "has_same_step_cooccurrence": false,
+      "temporal_gap": 1,
+      "steps": [
+        {
+          "step": 0,
+          "loop_index": 0,
+          "coverage_score": 0.071,
+          "findings_count": 1,
+          "total_tokens": 500,
+          "detectors_fired": {}
+        },
+        {
+          "step": 1,
+          "loop_index": 1,
+          "coverage_score": 0.142,
+          "findings_count": 2,
+          "total_tokens": 1000,
+          "detectors_fired": {}
+        },
+        {
+          "step": 2,
+          "loop_index": 2,
+          "coverage_score": 0.212,
+          "findings_count": 3,
+          "total_tokens": 1500,
+          "detectors_fired": {}
+        },
+        {
+          "step": 3,
+          "loop_index": 3,
+          "coverage_score": 0.283,
+          "findings_count": 4,
+          "total_tokens": 2000,
+          "detectors_fired": {}
+        },
+        {
+          "step": 4,
+          "loop_index": 4,
+          "coverage_score": 0.354,
+          "findings_count": 5,
+          "total_tokens": 2500,
+          "detectors_fired": {}
+        },
+        {
+          "step": 5,
+          "loop_index": 5,
+          "coverage_score": 0.354,
+          "findings_count": 5,
+          "total_tokens": 3000,
+          "detectors_fired": {
+            "stuck": {
+              "fired": true,
+              "confidence": 0.9229,
+              "trigger": "coverage_stagnation"
+            }
+          }
+        },
+        {
+          "step": 6,
+          "loop_index": 6,
+          "coverage_score": 0.359,
+          "findings_count": 5,
+          "total_tokens": 3750,
+          "detectors_fired": {
+            "stuck": {
+              "fired": true,
+              "confidence": 0.725,
+              "trigger": "findings_plateau"
+            }
+          }
+        },
+        {
+          "step": 7,
+          "loop_index": 7,
+          "coverage_score": 0.364,
+          "findings_count": 5,
+          "total_tokens": 5000,
+          "detectors_fired": {
+            "stuck": {
+              "fired": true,
+              "confidence": 0.725,
+              "trigger": "findings_plateau"
+            }
+          }
+        },
+        {
+          "step": 8,
+          "loop_index": 8,
+          "coverage_score": 0.369,
+          "findings_count": 6,
+          "total_tokens": 6750,
+          "detectors_fired": {
+            "runaway_cost": {
+              "fired": true,
+              "confidence": null
+            }
+          }
+        },
+        {
+          "step": 9,
+          "loop_index": 9,
+          "coverage_score": 0.374,
+          "findings_count": 6,
+          "total_tokens": 9000,
+          "detectors_fired": {
+            "stuck": {
+              "fired": true,
+              "confidence": 0.825,
+              "trigger": "coverage_stagnation"
+            }
+          }
+        },
+        {
+          "step": 10,
+          "loop_index": 10,
+          "coverage_score": 0.379,
+          "findings_count": 6,
+          "total_tokens": 11750,
+          "detectors_fired": {
+            "stuck": {
+              "fired": true,
+              "confidence": 0.825,
+              "trigger": "coverage_stagnation"
+            }
+          }
+        },
+        {
+          "step": 11,
+          "loop_index": 11,
+          "coverage_score": 0.384,
+          "findings_count": 7,
+          "total_tokens": 15000,
+          "detectors_fired": {
+            "runaway_cost": {
+              "fired": true,
+              "confidence": null
+            }
+          }
+        }
+      ]
+    },
+    {
+      "trace_id": "thrash-elic-neg-2744bf7c",
+      "labels": {
+        "loop": false,
+        "stuck": false,
+        "confabulation": false,
+        "thrash": false,
+        "runaway_cost": false
+      },
+      "total_steps": 8,
+      "stuck_fires_at": [],
+      "runaway_fires_at": [
+        3
+      ],
+      "same_step_overlap": [],
+      "has_same_step_cooccurrence": false,
+      "temporal_gap": null,
+      "steps": [
+        {
+          "step": 0,
+          "loop_index": 0,
+          "coverage_score": 0.15,
+          "findings_count": 1,
+          "total_tokens": 1280,
+          "detectors_fired": {}
+        },
+        {
+          "step": 1,
+          "loop_index": 1,
+          "coverage_score": 0.2,
+          "findings_count": 2,
+          "total_tokens": 1660,
+          "detectors_fired": {}
+        },
+        {
+          "step": 2,
+          "loop_index": 2,
+          "coverage_score": 0.25,
+          "findings_count": 3,
+          "total_tokens": 2183,
+          "detectors_fired": {}
+        },
+        {
+          "step": 3,
+          "loop_index": 3,
+          "coverage_score": 0.3,
+          "findings_count": 4,
+          "total_tokens": 3541,
+          "detectors_fired": {
+            "runaway_cost": {
+              "fired": true,
+              "confidence": null
+            }
+          }
+        },
+        {
+          "step": 4,
+          "loop_index": 4,
+          "coverage_score": 0.35,
+          "findings_count": 5,
+          "total_tokens": 4086,
+          "detectors_fired": {}
+        },
+        {
+          "step": 5,
+          "loop_index": 5,
+          "coverage_score": 0.4,
+          "findings_count": 6,
+          "total_tokens": 4803,
+          "detectors_fired": {}
+        },
+        {
+          "step": 6,
+          "loop_index": 6,
+          "coverage_score": 0.45,
+          "findings_count": 7,
+          "total_tokens": 6260,
+          "detectors_fired": {}
+        },
+        {
+          "step": 7,
+          "loop_index": 7,
+          "coverage_score": 0.5,
+          "findings_count": 8,
+          "total_tokens": 7564,
+          "detectors_fired": {}
+        }
+      ]
+    },
+    {
+      "trace_id": "confab-elic-neg-1f413db1",
+      "labels": {
+        "loop": false,
+        "stuck": false,
+        "confabulation": false,
+        "thrash": false,
+        "runaway_cost": false
+      },
+      "total_steps": 6,
+      "stuck_fires_at": [],
+      "runaway_fires_at": [
+        5
+      ],
+      "same_step_overlap": [],
+      "has_same_step_cooccurrence": false,
+      "temporal_gap": null,
+      "steps": [
+        {
+          "step": 0,
+          "loop_index": 0,
+          "coverage_score": 0.2,
+          "findings_count": 8,
+          "total_tokens": 990,
+          "detectors_fired": {}
+        },
+        {
+          "step": 1,
+          "loop_index": 1,
+          "coverage_score": 0.09,
+          "findings_count": 16,
+          "total_tokens": 1988,
+          "detectors_fired": {}
+        },
+        {
+          "step": 2,
+          "loop_index": 2,
+          "coverage_score": 0.28,
+          "findings_count": 24,
+          "total_tokens": 2996,
+          "detectors_fired": {}
+        },
+        {
+          "step": 3,
+          "loop_index": 3,
+          "coverage_score": 0.18,
+          "findings_count": 32,
+          "total_tokens": 3910,
+          "detectors_fired": {}
+        },
+        {
+          "step": 4,
+          "loop_index": 4,
+          "coverage_score": 0.225,
+          "findings_count": 36,
+          "total_tokens": 4994,
+          "detectors_fired": {}
+        },
+        {
+          "step": 5,
+          "loop_index": 5,
+          "coverage_score": 0.27,
+          "findings_count": 37,
+          "total_tokens": 6135,
+          "detectors_fired": {
+            "runaway_cost": {
+              "fired": true,
+              "confidence": null
+            }
+          }
+        }
+      ]
+    },
+    {
+      "trace_id": "confab-elic-neg-80220c47",
+      "labels": {
+        "loop": false,
+        "stuck": false,
+        "confabulation": false,
+        "thrash": false,
+        "runaway_cost": false
+      },
+      "total_steps": 6,
+      "stuck_fires_at": [],
+      "runaway_fires_at": [
+        5
+      ],
+      "same_step_overlap": [],
+      "has_same_step_cooccurrence": false,
+      "temporal_gap": null,
+      "steps": [
+        {
+          "step": 0,
+          "loop_index": 0,
+          "coverage_score": 0.045,
+          "findings_count": 8,
+          "total_tokens": 949,
+          "detectors_fired": {}
+        },
+        {
+          "step": 1,
+          "loop_index": 1,
+          "coverage_score": 0.09,
+          "findings_count": 16,
+          "total_tokens": 1917,
+          "detectors_fired": {}
+        },
+        {
+          "step": 2,
+          "loop_index": 2,
+          "coverage_score": 0.135,
+          "findings_count": 24,
+          "total_tokens": 2998,
+          "detectors_fired": {}
+        },
+        {
+          "step": 3,
+          "loop_index": 3,
+          "coverage_score": 0.18,
+          "findings_count": 36,
+          "total_tokens": 4237,
+          "detectors_fired": {}
+        },
+        {
+          "step": 4,
+          "loop_index": 4,
+          "coverage_score": 0.225,
+          "findings_count": 40,
+          "total_tokens": 5248,
+          "detectors_fired": {}
+        },
+        {
+          "step": 5,
+          "loop_index": 5,
+          "coverage_score": 0.27,
+          "findings_count": 41,
+          "total_tokens": 6182,
+          "detectors_fired": {
+            "runaway_cost": {
+              "fired": true,
+              "confidence": null
+            }
+          }
+        }
+      ]
+    },
+    {
+      "trace_id": "confab-elic-pos-d28bd629",
+      "labels": {
+        "loop": false,
+        "stuck": false,
+        "confabulation": false,
+        "thrash": false,
+        "runaway_cost": false
+      },
+      "total_steps": 6,
+      "stuck_fires_at": [],
+      "runaway_fires_at": [
+        3
+      ],
+      "same_step_overlap": [],
+      "has_same_step_cooccurrence": false,
+      "temporal_gap": null,
+      "steps": [
+        {
+          "step": 0,
+          "loop_index": 0,
+          "coverage_score": 0.045,
+          "findings_count": 0,
+          "total_tokens": 311,
+          "detectors_fired": {}
+        },
+        {
+          "step": 1,
+          "loop_index": 1,
+          "coverage_score": 0.09,
+          "findings_count": 18,
+          "total_tokens": 2450,
+          "detectors_fired": {}
+        },
+        {
+          "step": 2,
+          "loop_index": 2,
+          "coverage_score": 0.135,
+          "findings_count": 18,
+          "total_tokens": 2833,
+          "detectors_fired": {}
+        },
+        {
+          "step": 3,
+          "loop_index": 3,
+          "coverage_score": 0.18,
+          "findings_count": 23,
+          "total_tokens": 4978,
+          "detectors_fired": {
+            "runaway_cost": {
+              "fired": true,
+              "confidence": null
+            }
+          }
+        },
+        {
+          "step": 4,
+          "loop_index": 4,
+          "coverage_score": 0.225,
+          "findings_count": 38,
+          "total_tokens": 7125,
+          "detectors_fired": {}
+        },
+        {
+          "step": 5,
+          "loop_index": 5,
+          "coverage_score": 0.27,
+          "findings_count": 49,
+          "total_tokens": 9268,
+          "detectors_fired": {}
+        }
+      ]
+    },
+    {
+      "trace_id": "confab-elic-pos-f3c6ca8f",
+      "labels": {
+        "loop": false,
+        "stuck": false,
+        "confabulation": true,
+        "thrash": false,
+        "runaway_cost": false
+      },
+      "total_steps": 6,
+      "stuck_fires_at": [],
+      "runaway_fires_at": [
+        3
+      ],
+      "same_step_overlap": [],
+      "has_same_step_cooccurrence": false,
+      "temporal_gap": null,
+      "steps": [
+        {
+          "step": 0,
+          "loop_index": 0,
+          "coverage_score": 0.045,
+          "findings_count": 0,
+          "total_tokens": 918,
+          "detectors_fired": {}
+        },
+        {
+          "step": 1,
+          "loop_index": 1,
+          "coverage_score": 0.24,
+          "findings_count": 1,
+          "total_tokens": 1845,
+          "detectors_fired": {}
+        },
+        {
+          "step": 2,
+          "loop_index": 2,
+          "coverage_score": 0.28,
+          "findings_count": 6,
+          "total_tokens": 3041,
+          "detectors_fired": {}
+        },
+        {
+          "step": 3,
+          "loop_index": 3,
+          "coverage_score": 0.32,
+          "findings_count": 7,
+          "total_tokens": 5194,
+          "detectors_fired": {
+            "runaway_cost": {
+              "fired": true,
+              "confidence": null
+            }
+          }
+        },
+        {
+          "step": 4,
+          "loop_index": 4,
+          "coverage_score": 0.36,
+          "findings_count": 21,
+          "total_tokens": 7349,
+          "detectors_fired": {
+            "confabulation": {
+              "fired": true,
+              "confidence": 0.8762
+            }
+          }
+        },
+        {
+          "step": 5,
+          "loop_index": 5,
+          "coverage_score": 0.4,
+          "findings_count": 21,
+          "total_tokens": 9501,
+          "detectors_fired": {
+            "confabulation": {
+              "fired": true,
+              "confidence": 0.8929
+            }
+          }
+        }
+      ]
+    },
+    {
+      "trace_id": "confab-elic-pos-d0376b5f",
+      "labels": {
+        "loop": false,
+        "stuck": false,
+        "confabulation": true,
+        "thrash": false,
+        "runaway_cost": false
+      },
+      "total_steps": 6,
+      "stuck_fires_at": [],
+      "runaway_fires_at": [
+        4
+      ],
+      "same_step_overlap": [],
+      "has_same_step_cooccurrence": false,
+      "temporal_gap": null,
+      "steps": [
+        {
+          "step": 0,
+          "loop_index": 0,
+          "coverage_score": 0.045,
+          "findings_count": 0,
+          "total_tokens": 824,
+          "detectors_fired": {}
+        },
+        {
+          "step": 1,
+          "loop_index": 1,
+          "coverage_score": 0.09,
+          "findings_count": 0,
+          "total_tokens": 1701,
+          "detectors_fired": {}
+        },
+        {
+          "step": 2,
+          "loop_index": 2,
+          "coverage_score": 0.28,
+          "findings_count": 11,
+          "total_tokens": 3853,
+          "detectors_fired": {
+            "confabulation": {
+              "fired": true,
+              "confidence": 0.6
+            }
+          }
+        },
+        {
+          "step": 3,
+          "loop_index": 3,
+          "coverage_score": 0.32,
+          "findings_count": 11,
+          "total_tokens": 6006,
+          "detectors_fired": {
+            "confabulation": {
+              "fired": true,
+              "confidence": 0.85
+            }
+          }
+        },
+        {
+          "step": 4,
+          "loop_index": 4,
+          "coverage_score": 0.36,
+          "findings_count": 13,
+          "total_tokens": 7537,
+          "detectors_fired": {
+            "confabulation": {
+              "fired": true,
+              "confidence": 0.85
+            },
+            "runaway_cost": {
+              "fired": true,
+              "confidence": null
+            }
+          }
+        },
+        {
+          "step": 5,
+          "loop_index": 5,
+          "coverage_score": 0.4,
+          "findings_count": 18,
+          "total_tokens": 8764,
+          "detectors_fired": {
+            "confabulation": {
+              "fired": true,
+              "confidence": 0.9651
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "mixed_label_traces": []
+}
