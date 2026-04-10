@@ -30344,7 +30344,7 @@
     "tier": "elicited",
     "labels": {
       "loop": false,
-      "stuck": false,
+      "stuck": true,
       "confabulation": false,
       "thrash": false,
       "runaway_cost": false
@@ -30360,7 +30360,7 @@
       "reviewer": null,
       "review_date": null,
       "confidence": 0.8,
-      "notes": "Fixed elicitor (coverage < 0.45, source_productive=False)"
+      "notes": "Fixed elicitor (coverage < 0.45, source_productive=False); relabeled stuck=True (s19-m02): genuine coverage_stagnation behavior"
     }
   },
   {
@@ -36715,7 +36715,7 @@
     "tier": "synthetic",
     "labels": {
       "loop": false,
-      "stuck": false,
+      "stuck": true,
       "confabulation": false,
       "thrash": false,
       "runaway_cost": false
@@ -36739,7 +36739,7 @@
       "reviewer": null,
       "review_date": null,
       "confidence": 1.0,
-      "notes": "framework-profile: dspy (stuck disabled)"
+      "notes": "framework-profile: dspy (stuck disabled); relabeled stuck=True (s19-m02): ground truth is stuck-positive, DSPy exclusion handled by profile config"
     }
   },
   {
@@ -36748,7 +36748,7 @@
     "tier": "synthetic",
     "labels": {
       "loop": false,
-      "stuck": false,
+      "stuck": true,
       "confabulation": false,
       "thrash": false,
       "runaway_cost": false
@@ -36772,7 +36772,7 @@
       "reviewer": null,
       "review_date": null,
       "confidence": 1.0,
-      "notes": "framework-profile: dspy (stuck disabled)"
+      "notes": "framework-profile: dspy (stuck disabled); relabeled stuck=True (s19-m02): ground truth is stuck-positive, DSPy exclusion handled by profile config"
     }
   },
   {
@@ -36781,7 +36781,7 @@
     "tier": "synthetic",
     "labels": {
       "loop": false,
-      "stuck": false,
+      "stuck": true,
       "confabulation": false,
       "thrash": false,
       "runaway_cost": false
@@ -36805,7 +36805,7 @@
       "reviewer": null,
       "review_date": null,
       "confidence": 1.0,
-      "notes": "framework-profile: dspy (stuck disabled)"
+      "notes": "framework-profile: dspy (stuck disabled); relabeled stuck=True (s19-m02): ground truth is stuck-positive, DSPy exclusion handled by profile config"
     }
   },
   {

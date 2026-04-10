@@ -3,7 +3,7 @@
   "profile": "dspy",
   "runtime_mode": "default",
   "trace_count": 1312,
-  "generated_at": "2026-04-10 00:25 UTC",
+  "generated_at": "2026-04-10 19:14 UTC",
   "excluded_detectors": [
     "stuck"
   ],
@@ -27,16 +27,16 @@
       "detector": "stuck",
       "tp": 0,
       "fp": 0,
-      "fn": 102,
-      "tn": 1210,
+      "fn": 106,
+      "tn": 1206,
       "precision": 0.0,
       "recall": 0.0,
       "f1": 0.0,
       "precision_lb": 0.0,
       "precision_ub": 0.0,
       "recall_lb": 0.0,
-      "recall_ub": 0.0363,
-      "total_positives": 102
+      "recall_ub": 0.035,
+      "total_positives": 106
     },
     "confabulation": {
       "detector": "confabulation",
@@ -71,14 +71,14 @@
     "runaway_cost": {
       "detector": "runaway_cost",
       "tp": 205,
-      "fp": 38,
+      "fp": 31,
       "fn": 0,
-      "tn": 1069,
-      "precision": 0.8436,
+      "tn": 1076,
+      "precision": 0.8686,
       "recall": 1.0,
-      "f1": 0.9152,
-      "precision_lb": 0.7926,
-      "precision_ub": 0.8839,
+      "f1": 0.9297,
+      "precision_lb": 0.8196,
+      "precision_ub": 0.9059,
       "recall_lb": 0.9816,
       "recall_ub": 1.0,
       "total_positives": 205
@@ -122,11 +122,11 @@
       "f1": 0.0,
       "precision_lb": 0.0,
       "recall_lb": 0.0,
-      "total_positives": 102,
+      "total_positives": 106,
       "checks": {
         "min_positives": {
           "required": 25,
-          "actual": 102,
+          "actual": 106,
           "passed": true
         },
         "precision_lb": {
@@ -201,12 +201,12 @@
     },
     "runaway_cost": {
       "detector": "runaway_cost",
-      "passed": false,
-      "status": "NO-GO",
-      "precision": 0.8436,
+      "passed": true,
+      "status": "HARD GATE",
+      "precision": 0.8686,
       "recall": 1.0,
-      "f1": 0.9152,
-      "precision_lb": 0.7926,
+      "f1": 0.9297,
+      "precision_lb": 0.8196,
       "recall_lb": 0.9816,
       "total_positives": 205,
       "checks": {
@@ -217,8 +217,8 @@
         },
         "precision_lb": {
           "required": 0.8,
-          "actual": 0.7926,
-          "passed": false
+          "actual": 0.8196,
+          "passed": true
         },
         "recall_lb": {
           "required": 0.75,

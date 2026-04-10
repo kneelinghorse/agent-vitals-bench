@@ -1,6 +1,6 @@
 # Cross-Framework Gate Report — Post-Replay-Audit
 
-**Generated:** 2026-04-08T21:56:52Z
+**Generated:** 2026-04-10T14:30:09Z
 **Corpus:** v1, min_confidence ≥ 0.80
 **Detectors:** loop, stuck, confabulation, thrash, runaway_cost (canonical bench five)
 **Profiles:** default, crewai, dspy, langgraph (default = no framework override; the other three apply the agent-vitals thresholds.yaml profile via the v1.14.0 public VitalsConfig profile-introspection API)
@@ -13,10 +13,10 @@ Counts are non-excluded detectors only. DSPy intentionally disables `workflow_st
 
 | Profile | default mode | tda mode |
 |---|---|---|
-| default | 4/5 NO-GO | 5/5 PASS |
-| crewai | 4/5 NO-GO | 5/5 PASS |
-| dspy | 3/4 NO-GO | 4/4 PASS |
-| langgraph | 4/5 NO-GO | 5/5 PASS |
+| default | 5/5 PASS | 5/5 PASS |
+| crewai | 5/5 PASS | 5/5 PASS |
+| dspy | 4/4 PASS | 4/4 PASS |
+| langgraph | 5/5 PASS | 5/5 PASS |
 
 ## TL;DR — runaway_cost precision lower bound
 
@@ -24,10 +24,10 @@ Cross-cut on the load-bearing number for the m02 §8.4 / m03 §4.3 discussion. P
 
 | Profile | default mode P_lb | tda mode P_lb |
 |---|---|---|
-| default | 0.7654 | 0.9198 |
-| crewai | 0.7443 | 0.9111 |
-| dspy | 0.7926 | 0.8760 |
-| langgraph | 0.7443 | 0.9111 |
+| default | 0.9454 | 0.9510 |
+| crewai | 0.9394 | 0.9455 |
+| dspy | 0.8196 | 0.9058 |
+| langgraph | 0.9394 | 0.9455 |
 
 ## Methodology
 
@@ -43,7 +43,7 @@ Manifest filtering also threads the profile: when a profile is active, traces ta
 
 ## Profile: default
 
-- **default runtime mode** — composite 4/5 (NO-GO), trace_count=1494
+- **default runtime mode** — composite 5/5 (PASS), trace_count=1494
 - **tda runtime mode** — composite 5/5 (PASS), trace_count=1494
 
 ### default × default runtime mode
@@ -51,24 +51,24 @@ Manifest filtering also threads the profile: when a profile is active, traces ta
 | Detector | Status | TP | FP | FN | TN | P | R | F1 | P_lb | R_lb |
 |---|---|---|---|---|---|---|---|---|---|---|
 | loop | HARD GATE | 212 | 0 | 0 | 1282 | 1.0000 | 1.0000 | 1.0000 | 0.9822 | 0.9822 |
-| stuck | HARD GATE | 138 | 4 | 0 | 1352 | 0.9718 | 1.0000 | 0.9857 | 0.9298 | 0.9729 |
+| stuck | HARD GATE | 142 | 0 | 0 | 1352 | 1.0000 | 1.0000 | 1.0000 | 0.9737 | 0.9737 |
 | confabulation | HARD GATE | 282 | 4 | 26 | 1182 | 0.9860 | 0.9156 | 0.9495 | 0.9646 | 0.8792 |
 | thrash | HARD GATE | 261 | 0 | 0 | 1233 | 1.0000 | 1.0000 | 1.0000 | 0.9855 | 0.9855 |
-| runaway_cost | NO-GO | 229 | 52 | 0 | 1213 | 0.8149 | 1.0000 | 0.8980 | 0.7654 | 0.9835 |
+| runaway_cost | HARD GATE | 229 | 6 | 0 | 1259 | 0.9745 | 1.0000 | 0.9871 | 0.9454 | 0.9835 |
 
 ### default × tda runtime mode
 
 | Detector | Status | TP | FP | FN | TN | P | R | F1 | P_lb | R_lb |
 |---|---|---|---|---|---|---|---|---|---|---|
 | loop | HARD GATE | 212 | 0 | 0 | 1282 | 1.0000 | 1.0000 | 1.0000 | 0.9822 | 0.9822 |
-| stuck | HARD GATE | 138 | 4 | 0 | 1352 | 0.9718 | 1.0000 | 0.9857 | 0.9298 | 0.9729 |
+| stuck | HARD GATE | 142 | 0 | 0 | 1352 | 1.0000 | 1.0000 | 1.0000 | 0.9737 | 0.9737 |
 | confabulation | HARD GATE | 282 | 4 | 26 | 1182 | 0.9860 | 0.9156 | 0.9495 | 0.9646 | 0.8792 |
 | thrash | HARD GATE | 261 | 0 | 0 | 1233 | 1.0000 | 1.0000 | 1.0000 | 0.9855 | 0.9855 |
-| runaway_cost | HARD GATE | 229 | 11 | 0 | 1254 | 0.9542 | 1.0000 | 0.9765 | 0.9198 | 0.9835 |
+| runaway_cost | HARD GATE | 229 | 5 | 0 | 1260 | 0.9786 | 1.0000 | 0.9892 | 0.9510 | 0.9835 |
 
 ## Profile: crewai
 
-- **default runtime mode** — composite 4/5 (NO-GO), trace_count=1334
+- **default runtime mode** — composite 5/5 (PASS), trace_count=1334
 - **tda runtime mode** — composite 5/5 (PASS), trace_count=1334
 
 ### crewai × default runtime mode
@@ -76,24 +76,24 @@ Manifest filtering also threads the profile: when a profile is active, traces ta
 | Detector | Status | TP | FP | FN | TN | P | R | F1 | P_lb | R_lb |
 |---|---|---|---|---|---|---|---|---|---|---|
 | loop | HARD GATE | 184 | 0 | 0 | 1150 | 1.0000 | 1.0000 | 1.0000 | 0.9795 | 0.9795 |
-| stuck | HARD GATE | 120 | 1 | 0 | 1213 | 0.9917 | 1.0000 | 0.9959 | 0.9547 | 0.9690 |
+| stuck | HARD GATE | 121 | 0 | 0 | 1213 | 1.0000 | 1.0000 | 1.0000 | 0.9692 | 0.9692 |
 | confabulation | HARD GATE | 246 | 4 | 26 | 1058 | 0.9840 | 0.9044 | 0.9425 | 0.9596 | 0.8636 |
 | thrash | HARD GATE | 237 | 0 | 0 | 1097 | 1.0000 | 1.0000 | 1.0000 | 0.9840 | 0.9840 |
-| runaway_cost | NO-GO | 205 | 52 | 0 | 1077 | 0.7977 | 1.0000 | 0.8874 | 0.7443 | 0.9816 |
+| runaway_cost | HARD GATE | 205 | 6 | 0 | 1123 | 0.9716 | 1.0000 | 0.9856 | 0.9394 | 0.9816 |
 
 ### crewai × tda runtime mode
 
 | Detector | Status | TP | FP | FN | TN | P | R | F1 | P_lb | R_lb |
 |---|---|---|---|---|---|---|---|---|---|---|
 | loop | HARD GATE | 184 | 0 | 0 | 1150 | 1.0000 | 1.0000 | 1.0000 | 0.9795 | 0.9795 |
-| stuck | HARD GATE | 120 | 1 | 0 | 1213 | 0.9917 | 1.0000 | 0.9959 | 0.9547 | 0.9690 |
+| stuck | HARD GATE | 121 | 0 | 0 | 1213 | 1.0000 | 1.0000 | 1.0000 | 0.9692 | 0.9692 |
 | confabulation | HARD GATE | 246 | 4 | 26 | 1058 | 0.9840 | 0.9044 | 0.9425 | 0.9596 | 0.8636 |
 | thrash | HARD GATE | 237 | 0 | 0 | 1097 | 1.0000 | 1.0000 | 1.0000 | 0.9840 | 0.9840 |
-| runaway_cost | HARD GATE | 205 | 11 | 0 | 1118 | 0.9491 | 1.0000 | 0.9739 | 0.9111 | 0.9816 |
+| runaway_cost | HARD GATE | 205 | 5 | 0 | 1124 | 0.9762 | 1.0000 | 0.9880 | 0.9455 | 0.9816 |
 
 ## Profile: dspy
 
-- **default runtime mode** — composite 3/4 (NO-GO), trace_count=1312 — excluded: stuck
+- **default runtime mode** — composite 4/4 (PASS), trace_count=1312 — excluded: stuck
 - **tda runtime mode** — composite 4/4 (PASS), trace_count=1312 — excluded: stuck
 
 ### dspy × default runtime mode
@@ -101,10 +101,10 @@ Manifest filtering also threads the profile: when a profile is active, traces ta
 | Detector | Status | TP | FP | FN | TN | P | R | F1 | P_lb | R_lb |
 |---|---|---|---|---|---|---|---|---|---|---|
 | loop | HARD GATE | 180 | 0 | 0 | 1132 | 1.0000 | 1.0000 | 1.0000 | 0.9791 | 0.9791 |
-| stuck | EXCLUDED | 0 | 0 | 102 | 1210 | 0.0000 | 0.0000 | 0.0000 | 0.0000 | 0.0000 |
+| stuck | EXCLUDED | 0 | 0 | 106 | 1206 | 0.0000 | 0.0000 | 0.0000 | 0.0000 | 0.0000 |
 | confabulation | HARD GATE | 246 | 4 | 26 | 1036 | 0.9840 | 0.9044 | 0.9425 | 0.9596 | 0.8636 |
 | thrash | HARD GATE | 237 | 0 | 0 | 1075 | 1.0000 | 1.0000 | 1.0000 | 0.9840 | 0.9840 |
-| runaway_cost | NO-GO | 205 | 38 | 0 | 1069 | 0.8436 | 1.0000 | 0.9152 | 0.7926 | 0.9816 |
+| runaway_cost | HARD GATE | 205 | 31 | 0 | 1076 | 0.8686 | 1.0000 | 0.9297 | 0.8196 | 0.9816 |
 
 *Excluded from composite gate (disabled by profile): stuck.*
 
@@ -113,16 +113,16 @@ Manifest filtering also threads the profile: when a profile is active, traces ta
 | Detector | Status | TP | FP | FN | TN | P | R | F1 | P_lb | R_lb |
 |---|---|---|---|---|---|---|---|---|---|---|
 | loop | HARD GATE | 180 | 0 | 0 | 1132 | 1.0000 | 1.0000 | 1.0000 | 0.9791 | 0.9791 |
-| stuck | EXCLUDED | 0 | 0 | 102 | 1210 | 0.0000 | 0.0000 | 0.0000 | 0.0000 | 0.0000 |
+| stuck | EXCLUDED | 0 | 0 | 106 | 1206 | 0.0000 | 0.0000 | 0.0000 | 0.0000 | 0.0000 |
 | confabulation | HARD GATE | 246 | 4 | 26 | 1036 | 0.9840 | 0.9044 | 0.9425 | 0.9596 | 0.8636 |
 | thrash | HARD GATE | 237 | 0 | 0 | 1075 | 1.0000 | 1.0000 | 1.0000 | 0.9840 | 0.9840 |
-| runaway_cost | HARD GATE | 205 | 18 | 0 | 1089 | 0.9193 | 1.0000 | 0.9579 | 0.8760 | 0.9816 |
+| runaway_cost | HARD GATE | 205 | 12 | 0 | 1095 | 0.9447 | 1.0000 | 0.9716 | 0.9058 | 0.9816 |
 
 *Excluded from composite gate (disabled by profile): stuck.*
 
 ## Profile: langgraph
 
-- **default runtime mode** — composite 4/5 (NO-GO), trace_count=1334
+- **default runtime mode** — composite 5/5 (PASS), trace_count=1334
 - **tda runtime mode** — composite 5/5 (PASS), trace_count=1334
 
 ### langgraph × default runtime mode
@@ -130,20 +130,20 @@ Manifest filtering also threads the profile: when a profile is active, traces ta
 | Detector | Status | TP | FP | FN | TN | P | R | F1 | P_lb | R_lb |
 |---|---|---|---|---|---|---|---|---|---|---|
 | loop | HARD GATE | 184 | 0 | 0 | 1150 | 1.0000 | 1.0000 | 1.0000 | 0.9795 | 0.9795 |
-| stuck | HARD GATE | 120 | 0 | 0 | 1214 | 1.0000 | 1.0000 | 1.0000 | 0.9690 | 0.9690 |
+| stuck | HARD GATE | 120 | 0 | 1 | 1213 | 1.0000 | 0.9917 | 0.9959 | 0.9690 | 0.9547 |
 | confabulation | HARD GATE | 246 | 4 | 26 | 1058 | 0.9840 | 0.9044 | 0.9425 | 0.9596 | 0.8636 |
 | thrash | HARD GATE | 237 | 0 | 0 | 1097 | 1.0000 | 1.0000 | 1.0000 | 0.9840 | 0.9840 |
-| runaway_cost | NO-GO | 205 | 52 | 0 | 1077 | 0.7977 | 1.0000 | 0.8874 | 0.7443 | 0.9816 |
+| runaway_cost | HARD GATE | 205 | 6 | 0 | 1123 | 0.9716 | 1.0000 | 0.9856 | 0.9394 | 0.9816 |
 
 ### langgraph × tda runtime mode
 
 | Detector | Status | TP | FP | FN | TN | P | R | F1 | P_lb | R_lb |
 |---|---|---|---|---|---|---|---|---|---|---|
 | loop | HARD GATE | 184 | 0 | 0 | 1150 | 1.0000 | 1.0000 | 1.0000 | 0.9795 | 0.9795 |
-| stuck | HARD GATE | 120 | 0 | 0 | 1214 | 1.0000 | 1.0000 | 1.0000 | 0.9690 | 0.9690 |
+| stuck | HARD GATE | 120 | 0 | 1 | 1213 | 1.0000 | 0.9917 | 0.9959 | 0.9690 | 0.9547 |
 | confabulation | HARD GATE | 246 | 4 | 26 | 1058 | 0.9840 | 0.9044 | 0.9425 | 0.9596 | 0.8636 |
 | thrash | HARD GATE | 237 | 0 | 0 | 1097 | 1.0000 | 1.0000 | 1.0000 | 0.9840 | 0.9840 |
-| runaway_cost | HARD GATE | 205 | 11 | 0 | 1118 | 0.9491 | 1.0000 | 0.9739 | 0.9111 | 0.9816 |
+| runaway_cost | HARD GATE | 205 | 5 | 0 | 1124 | 0.9762 | 1.0000 | 0.9880 | 0.9455 | 0.9816 |
 
 ## Reproducibility
 

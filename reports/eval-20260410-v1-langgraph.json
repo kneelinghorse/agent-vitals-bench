@@ -3,7 +3,7 @@
   "profile": "langgraph",
   "runtime_mode": "default",
   "trace_count": 1334,
-  "generated_at": "2026-04-10 00:25 UTC",
+  "generated_at": "2026-04-10 19:14 UTC",
   "excluded_detectors": [],
   "detectors": {
     "loop": {
@@ -25,16 +25,16 @@
       "detector": "stuck",
       "tp": 120,
       "fp": 0,
-      "fn": 0,
-      "tn": 1214,
+      "fn": 1,
+      "tn": 1213,
       "precision": 1.0,
-      "recall": 1.0,
-      "f1": 1.0,
+      "recall": 0.9917,
+      "f1": 0.9959,
       "precision_lb": 0.969,
       "precision_ub": 1.0,
-      "recall_lb": 0.969,
-      "recall_ub": 1.0,
-      "total_positives": 120
+      "recall_lb": 0.9547,
+      "recall_ub": 0.9985,
+      "total_positives": 121
     },
     "confabulation": {
       "detector": "confabulation",
@@ -69,14 +69,14 @@
     "runaway_cost": {
       "detector": "runaway_cost",
       "tp": 205,
-      "fp": 52,
+      "fp": 6,
       "fn": 0,
-      "tn": 1077,
-      "precision": 0.7977,
+      "tn": 1123,
+      "precision": 0.9716,
       "recall": 1.0,
-      "f1": 0.8874,
-      "precision_lb": 0.7443,
-      "precision_ub": 0.8422,
+      "f1": 0.9856,
+      "precision_lb": 0.9394,
+      "precision_ub": 0.9869,
       "recall_lb": 0.9816,
       "recall_ub": 1.0,
       "total_positives": 205
@@ -116,15 +116,15 @@
       "passed": true,
       "status": "HARD GATE",
       "precision": 1.0,
-      "recall": 1.0,
-      "f1": 1.0,
+      "recall": 0.9917,
+      "f1": 0.9959,
       "precision_lb": 0.969,
-      "recall_lb": 0.969,
-      "total_positives": 120,
+      "recall_lb": 0.9547,
+      "total_positives": 121,
       "checks": {
         "min_positives": {
           "required": 25,
-          "actual": 120,
+          "actual": 121,
           "passed": true
         },
         "precision_lb": {
@@ -134,7 +134,7 @@
         },
         "recall_lb": {
           "required": 0.75,
-          "actual": 0.969,
+          "actual": 0.9547,
           "passed": true
         }
       }
@@ -197,12 +197,12 @@
     },
     "runaway_cost": {
       "detector": "runaway_cost",
-      "passed": false,
-      "status": "NO-GO",
-      "precision": 0.7977,
+      "passed": true,
+      "status": "HARD GATE",
+      "precision": 0.9716,
       "recall": 1.0,
-      "f1": 0.8874,
-      "precision_lb": 0.7443,
+      "f1": 0.9856,
+      "precision_lb": 0.9394,
       "recall_lb": 0.9816,
       "total_positives": 205,
       "checks": {
@@ -213,8 +213,8 @@
         },
         "precision_lb": {
           "required": 0.8,
-          "actual": 0.7443,
-          "passed": false
+          "actual": 0.9394,
+          "passed": true
         },
         "recall_lb": {
           "required": 0.75,

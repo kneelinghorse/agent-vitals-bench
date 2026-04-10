@@ -3,7 +3,7 @@
   "profile": "default",
   "runtime_mode": "default",
   "trace_count": 1494,
-  "generated_at": "2026-04-10 00:19 UTC",
+  "generated_at": "2026-04-10 19:14 UTC",
   "excluded_detectors": [],
   "detectors": {
     "loop": {
@@ -23,18 +23,18 @@
     },
     "stuck": {
       "detector": "stuck",
-      "tp": 138,
-      "fp": 4,
+      "tp": 142,
+      "fp": 0,
       "fn": 0,
       "tn": 1352,
-      "precision": 0.9718,
+      "precision": 1.0,
       "recall": 1.0,
-      "f1": 0.9857,
-      "precision_lb": 0.9298,
-      "precision_ub": 0.989,
-      "recall_lb": 0.9729,
+      "f1": 1.0,
+      "precision_lb": 0.9737,
+      "precision_ub": 1.0,
+      "recall_lb": 0.9737,
       "recall_ub": 1.0,
-      "total_positives": 138
+      "total_positives": 142
     },
     "confabulation": {
       "detector": "confabulation",
@@ -69,14 +69,14 @@
     "runaway_cost": {
       "detector": "runaway_cost",
       "tp": 229,
-      "fp": 52,
+      "fp": 6,
       "fn": 0,
-      "tn": 1213,
-      "precision": 0.8149,
+      "tn": 1259,
+      "precision": 0.9745,
       "recall": 1.0,
-      "f1": 0.898,
-      "precision_lb": 0.7654,
-      "precision_ub": 0.856,
+      "f1": 0.9871,
+      "precision_lb": 0.9454,
+      "precision_ub": 0.9882,
       "recall_lb": 0.9835,
       "recall_ub": 1.0,
       "total_positives": 229
@@ -115,26 +115,26 @@
       "detector": "stuck",
       "passed": true,
       "status": "HARD GATE",
-      "precision": 0.9718,
+      "precision": 1.0,
       "recall": 1.0,
-      "f1": 0.9857,
-      "precision_lb": 0.9298,
-      "recall_lb": 0.9729,
-      "total_positives": 138,
+      "f1": 1.0,
+      "precision_lb": 0.9737,
+      "recall_lb": 0.9737,
+      "total_positives": 142,
       "checks": {
         "min_positives": {
           "required": 25,
-          "actual": 138,
+          "actual": 142,
           "passed": true
         },
         "precision_lb": {
           "required": 0.8,
-          "actual": 0.9298,
+          "actual": 0.9737,
           "passed": true
         },
         "recall_lb": {
           "required": 0.75,
-          "actual": 0.9729,
+          "actual": 0.9737,
           "passed": true
         }
       }
@@ -197,12 +197,12 @@
     },
     "runaway_cost": {
       "detector": "runaway_cost",
-      "passed": false,
-      "status": "NO-GO",
-      "precision": 0.8149,
+      "passed": true,
+      "status": "HARD GATE",
+      "precision": 0.9745,
       "recall": 1.0,
-      "f1": 0.898,
-      "precision_lb": 0.7654,
+      "f1": 0.9871,
+      "precision_lb": 0.9454,
       "recall_lb": 0.9835,
       "total_positives": 229,
       "checks": {
@@ -213,8 +213,8 @@
         },
         "precision_lb": {
           "required": 0.8,
-          "actual": 0.7654,
-          "passed": false
+          "actual": 0.9454,
+          "passed": true
         },
         "recall_lb": {
           "required": 0.75,

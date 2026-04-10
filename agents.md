@@ -3,7 +3,7 @@
 **Project Name**: Agent Vitals Bench
 **Project Type**: Python validation/benchmarking harness
 **Primary Language**: Python 3.10+
-**Dependencies**: agent-vitals >= 1.11.0, pytest, ruff, mypy
+**Dependencies**: agent-vitals >= 1.18.0, pytest, ruff, mypy
 
 **Description**: Publication-grade empirical validation harness for the agent-vitals detector package. Produces Wilson CI gate reports as primary evidence for Paper C (Agent Vitals Empirical Paper). Tests 5 detectors — loop, stuck, confabulation, thrash, runaway_cost — against labeled trace corpora using synthetic generation, real LLM elicitation, and legacy migration.
 
@@ -144,15 +144,17 @@ agent-vitals-bench/
 
 HARD GATE thresholds: **P_lb >= 0.80, R_lb >= 0.75** (Wilson CI 95%), min 25 positives per detector.
 
-Numbers are from the post-replay-audit cross-framework evaluation on corpus v1 (default profile). Two runtime modes are tracked — see `reports/eval-cross-framework-v1.md` for full per-profile × per-mode detail.
+Numbers are from the cross-framework evaluation on corpus v1 with agent-vitals v1.18.0 (default profile). Two runtime modes are tracked — see `reports/eval-cross-framework-v1.md` for full per-profile × per-mode detail.
 
 | Detector | default mode | tda mode | Notes |
 |---|---|---|---|
 | loop | HARD GATE | HARD GATE | Regression guard only. |
-| stuck | HARD GATE | HARD GATE | Regression guard only. |
+| stuck | HARD GATE (P_lb=0.974) | HARD GATE (P_lb=0.974) | v1.18.0 trace-level stuck+runaway suppression eliminated all 38 FPs (34 upstream fix + 4 bench label corrections). |
 | confabulation | HARD GATE | HARD GATE | Tightest margin — R_lb=0.879 (26 FN / 308 pos) |
 | thrash | HARD GATE | HARD GATE | Reached via elicited corpus |
-| runaway_cost | **NO-GO** (P_lb=0.765) | HARD GATE (P_lb=0.920) | Default path has 52 FP; TDA reduces to 11 |
+| runaway_cost | HARD GATE (P_lb=0.945) | HARD GATE (P_lb=0.951) | v1.17.0 co-occurrence suppression reduced FP from 30→6. |
+
+**Composite gate:** PASS on all profiles (default, langgraph, crewai, dspy).
 
 **Runtime mode definitions:**
 - **default** (`tda_enabled=False`): pure handcrafted detection rules — the out-of-box product default.
