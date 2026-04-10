@@ -1,0 +1,1026 @@
+{
+  "generated_at": "2026-04-10T01:31:00.458370+00:00",
+  "corpus": "v1",
+  "runtime_mode": "default",
+  "summary": {
+    "total_runaway_traces": 1494,
+    "labeled_positive": 229,
+    "labeled_negative": 1265,
+    "true_positives": 229,
+    "false_positives": 52
+  },
+  "question_1_coverage": {
+    "description": "FPs with coverage >= 0.50 at firing step",
+    "count": 0,
+    "total_fps": 52,
+    "fraction": 0.0,
+    "trace_ids": [],
+    "also_above_025": {
+      "count": 37,
+      "fraction": 0.7115
+    }
+  },
+  "question_2_findings_delta": {
+    "description": "FPs with findings_delta >= 2 at firing step",
+    "count": 8,
+    "total_fps": 52,
+    "fraction": 0.1538,
+    "trace_ids": [
+      "confab-elic-pos-40302bc3",
+      "confab-elic-pos-9e5ecb6a",
+      "confab-elic-neg-9f2c19f7",
+      "confab-elic-pos-64de761d",
+      "confab-elic-neg-cb17d42e",
+      "confab-elic-pos-24458ed8",
+      "confab-elic-pos-d28bd629",
+      "confab-elic-pos-d0376b5f"
+    ],
+    "also_ge_1": {
+      "count": 52,
+      "fraction": 1.0
+    }
+  },
+  "question_3_ratio_distribution": {
+    "description": "Burn rate ratio distribution at FP firing step (ratio = actual/baseline, detector fires when > 2.5x baseline)",
+    "buckets": {
+      "2.5": 0,
+      "3.0": 21,
+      "3.5": 25,
+      "4.0": 3,
+      "4.0+": 3
+    },
+    "total_fps": 52,
+    "fp_ratios": [
+      {
+        "trace_id": "thrash-elic-neg-711104d5",
+        "ratio": 2.525
+      },
+      {
+        "trace_id": "runaway-elic-neg-31dc9040",
+        "ratio": 2.534
+      },
+      {
+        "trace_id": "runaway-elic-neg-8932d780",
+        "ratio": 2.541
+      },
+      {
+        "trace_id": "confab-elic-neg-9f2c19f7",
+        "ratio": 2.547
+      },
+      {
+        "trace_id": "thrash-elic-neg-2b2ab20c",
+        "ratio": 2.554
+      },
+      {
+        "trace_id": "thrash-elic-neg-ef13b991",
+        "ratio": 2.579
+      },
+      {
+        "trace_id": "runaway-elic-neg-5d6c2e7a",
+        "ratio": 2.585
+      },
+      {
+        "trace_id": "runaway-elic-neg-e45fe40b",
+        "ratio": 2.586
+      },
+      {
+        "trace_id": "runaway-elic-neg-3dffd05d",
+        "ratio": 2.615
+      },
+      {
+        "trace_id": "runaway-elic-neg-70b4d955",
+        "ratio": 2.617
+      },
+      {
+        "trace_id": "confab-elic-pos-64de761d",
+        "ratio": 2.644
+      },
+      {
+        "trace_id": "thrash-elic-neg-09e45418",
+        "ratio": 2.669
+      },
+      {
+        "trace_id": "runaway-elic-neg-078c4bd2",
+        "ratio": 2.709
+      },
+      {
+        "trace_id": "confab-elic-pos-9e5ecb6a",
+        "ratio": 2.738
+      },
+      {
+        "trace_id": "confab-elic-pos-24458ed8",
+        "ratio": 2.755
+      },
+      {
+        "trace_id": "runaway-elic-neg-f7e04f1a",
+        "ratio": 2.785
+      },
+      {
+        "trace_id": "runaway-elic-neg-4f7d06fa",
+        "ratio": 2.838
+      },
+      {
+        "trace_id": "runaway-elic-neg-ca5d0eb9",
+        "ratio": 2.852
+      },
+      {
+        "trace_id": "runaway-elic-neg-2effbcf1",
+        "ratio": 2.859
+      },
+      {
+        "trace_id": "confab-elic-pos-40302bc3",
+        "ratio": 2.921
+      },
+      {
+        "trace_id": "thrash-elic-neg-bd02b2dc",
+        "ratio": 2.968
+      },
+      {
+        "trace_id": "thrash-elic-neg-2744bf7c",
+        "ratio": 3.008
+      },
+      {
+        "trace_id": "stuck-syn-021",
+        "ratio": 3.5
+      },
+      {
+        "trace_id": "stuck-syn-024",
+        "ratio": 3.5
+      },
+      {
+        "trace_id": "stuck-syn-027",
+        "ratio": 3.5
+      },
+      {
+        "trace_id": "stuck-syn-030",
+        "ratio": 3.5
+      },
+      {
+        "trace_id": "stuck-syn-033",
+        "ratio": 3.5
+      },
+      {
+        "trace_id": "stuck-syn-036",
+        "ratio": 3.5
+      },
+      {
+        "trace_id": "stuck-syn-048",
+        "ratio": 3.5
+      },
+      {
+        "trace_id": "stuck-syn-051",
+        "ratio": 3.5
+      },
+      {
+        "trace_id": "stuck-syn-054",
+        "ratio": 3.5
+      },
+      {
+        "trace_id": "stuck-syn-057",
+        "ratio": 3.5
+      },
+      {
+        "trace_id": "stuck-syn-060",
+        "ratio": 3.5
+      },
+      {
+        "trace_id": "stuck-syn-063",
+        "ratio": 3.5
+      },
+      {
+        "trace_id": "stuck-syn-066",
+        "ratio": 3.5
+      },
+      {
+        "trace_id": "stuck-syn-069",
+        "ratio": 3.5
+      },
+      {
+        "trace_id": "stuck-syn-072",
+        "ratio": 3.5
+      },
+      {
+        "trace_id": "stuck-syn-075",
+        "ratio": 3.5
+      },
+      {
+        "trace_id": "stuck-syn-078",
+        "ratio": 3.5
+      },
+      {
+        "trace_id": "stuck-syn-081",
+        "ratio": 3.5
+      },
+      {
+        "trace_id": "stuck-syn-084",
+        "ratio": 3.5
+      },
+      {
+        "trace_id": "stuck-syn-087",
+        "ratio": 3.5
+      },
+      {
+        "trace_id": "stuck-syn-090",
+        "ratio": 3.5
+      },
+      {
+        "trace_id": "stuck-syn-093",
+        "ratio": 3.5
+      },
+      {
+        "trace_id": "stuck-syn-096",
+        "ratio": 3.5
+      },
+      {
+        "trace_id": "stuck-syn-099",
+        "ratio": 3.5
+      },
+      {
+        "trace_id": "confab-elic-pos-d28bd629",
+        "ratio": 3.61
+      },
+      {
+        "trace_id": "confab-elic-pos-f3c6ca8f",
+        "ratio": 3.692
+      },
+      {
+        "trace_id": "confab-elic-pos-d0376b5f",
+        "ratio": 3.913
+      },
+      {
+        "trace_id": "confab-elic-neg-cb17d42e",
+        "ratio": 5.995
+      },
+      {
+        "trace_id": "confab-elic-neg-80220c47",
+        "ratio": 6.103
+      },
+      {
+        "trace_id": "confab-elic-neg-1f413db1",
+        "ratio": 7.176
+      }
+    ]
+  },
+  "question_4_safety_check": {
+    "description": "TPs with coverage >= 0.50 at firing step (safety check for Option A)",
+    "count": 203,
+    "total_tps": 229,
+    "safe": false,
+    "trace_ids": [
+      "runaway-syn-001",
+      "runaway-syn-002",
+      "runaway-syn-003",
+      "runaway-syn-004",
+      "runaway-syn-005",
+      "runaway-syn-006",
+      "runaway-syn-007",
+      "runaway-syn-008",
+      "runaway-syn-009",
+      "runaway-syn-010",
+      "runaway-syn-011",
+      "runaway-syn-012",
+      "runaway-syn-013",
+      "runaway-syn-014",
+      "runaway-syn-015",
+      "runaway-syn-016",
+      "runaway-syn-017",
+      "runaway-syn-018",
+      "runaway-syn-019",
+      "runaway-syn-020",
+      "runaway-syn-021",
+      "runaway-syn-022",
+      "runaway-syn-023",
+      "runaway-syn-024",
+      "runaway-syn-025",
+      "runaway-syn-026",
+      "runaway-syn-027",
+      "runaway-syn-028",
+      "runaway-syn-029",
+      "runaway-syn-030",
+      "runaway-syn-031",
+      "runaway-syn-032",
+      "runaway-syn-033",
+      "runaway-syn-034",
+      "runaway-syn-035",
+      "runaway-syn-036",
+      "runaway-syn-037",
+      "runaway-syn-038",
+      "runaway-syn-039",
+      "runaway-syn-040",
+      "runaway-syn-041",
+      "runaway-syn-042",
+      "runaway-syn-043",
+      "runaway-syn-044",
+      "runaway-syn-045",
+      "runaway-syn-046",
+      "runaway-syn-047",
+      "runaway-syn-048",
+      "runaway-syn-049",
+      "runaway-syn-050",
+      "runaway-syn-051",
+      "runaway-syn-052",
+      "runaway-syn-053",
+      "runaway-syn-054",
+      "runaway-syn-055",
+      "runaway-syn-056",
+      "runaway-syn-057",
+      "runaway-syn-058",
+      "runaway-syn-059",
+      "runaway-syn-060",
+      "runaway-syn-061",
+      "runaway-syn-062",
+      "runaway-syn-063",
+      "runaway-syn-064",
+      "runaway-syn-065",
+      "runaway-syn-066",
+      "runaway-syn-067",
+      "runaway-syn-068",
+      "runaway-syn-069",
+      "runaway-syn-070",
+      "runaway-syn-071",
+      "runaway-syn-072",
+      "runaway-elic-pos-872b1b87",
+      "runaway-elic-pos-9be9f415",
+      "runaway-elic-pos-a446c848",
+      "runaway-elic-pos-510c4a05",
+      "runaway-elic-pos-ec48d2b4",
+      "runaway-elic-pos-deba52a3",
+      "runaway-elic-pos-3a04608a",
+      "runaway-elic-pos-d2e88a82",
+      "runaway-elic-pos-8b127a15",
+      "runaway-elic-pos-fbae49df",
+      "runaway-elic-pos-cf617f82",
+      "runaway-elic-pos-f8b43090",
+      "runaway-elic-pos-7c88a2f5",
+      "runaway-elic-pos-1106bdc8",
+      "runaway-elic-pos-811c2ddd",
+      "runaway-elic-pos-58284801",
+      "runaway-elic-pos-e74f8354",
+      "runaway-elic-pos-ac874015",
+      "runaway-elic-pos-33a9e3e0",
+      "runaway-elic-pos-15a77247",
+      "runaway-elic-pos-4e118df0",
+      "runaway-elic-pos-bb0d8044",
+      "runaway-elic-pos-5f6b975b",
+      "runaway-elic-pos-ee9842a3",
+      "runaway-elic-pos-c4b68840",
+      "runaway-elic-pos-9c0ec0af",
+      "runaway-elic-pos-fbcd33d2",
+      "runaway-elic-pos-1692b602",
+      "runaway-elic-pos-9a9a4b77",
+      "runaway-elic-pos-9f1532b8",
+      "runaway-elic-pos-e5c6822e",
+      "runaway-la-001",
+      "runaway-la-002",
+      "runaway-la-003",
+      "runaway-la-004",
+      "runaway-la-005",
+      "runaway-la-006",
+      "runaway-la-007",
+      "runaway-la-008",
+      "runaway-la-009",
+      "runaway-la-010",
+      "runaway-la-011",
+      "runaway-la-012",
+      "runaway-cr-001",
+      "runaway-cr-002",
+      "runaway-cr-003",
+      "runaway-cr-004",
+      "runaway-cr-005",
+      "runaway-cr-006",
+      "runaway-cr-007",
+      "runaway-cr-008",
+      "runaway-cr-009",
+      "runaway-cr-010",
+      "runaway-cr-011",
+      "runaway-cr-012",
+      "runaway-ds-001",
+      "runaway-ds-002",
+      "runaway-ds-003",
+      "runaway-ds-004",
+      "runaway-ds-005",
+      "runaway-ds-006",
+      "runaway-ds-007",
+      "runaway-ds-008",
+      "runaway-ds-009",
+      "runaway-ds-010",
+      "runaway-ds-011",
+      "runaway-ds-012",
+      "runaway-elic-pos-2b28e712",
+      "runaway-elic-pos-15487256",
+      "runaway-elic-pos-78e8a7f7",
+      "runaway-elic-pos-e9493b44",
+      "runaway-elic-pos-2232c6d5",
+      "runaway-elic-pos-2c465103",
+      "runaway-elic-pos-16611a0b",
+      "runaway-elic-pos-95f8f05e",
+      "runaway-elic-pos-daa7de9c",
+      "runaway-elic-pos-5680ace9",
+      "runaway-elic-pos-f0ac515d",
+      "runaway-elic-pos-0f32c041",
+      "runaway-elic-pos-b56facb8",
+      "runaway-elic-pos-653bb594",
+      "runaway-elic-pos-36165af5",
+      "runaway-elic-pos-347c8fef",
+      "runaway-elic-pos-6c6aee19",
+      "runaway-elic-pos-7776e48f",
+      "runaway-elic-pos-13cb61fc",
+      "runaway-elic-pos-2dfb3bbe",
+      "runaway-elic-pos-7c9e4c3d",
+      "runaway-elic-pos-81ae204d",
+      "runaway-elic-pos-f338b109",
+      "runaway-elic-pos-65102ba5",
+      "runaway-elic-pos-68dc9538",
+      "runaway-elic-pos-f0d5967d",
+      "runaway-elic-pos-93205115",
+      "runaway-elic-pos-2aa4c7df",
+      "runaway-elic-pos-2f3e8471",
+      "runaway-elic-pos-551d35cd",
+      "runaway-elic-pos-10a866c9",
+      "runaway-elic-pos-64588dc4",
+      "runaway-elic-pos-c8c1e0ab",
+      "runaway-elic-pos-1dd26019",
+      "runaway-elic-pos-7758865d",
+      "runaway-elic-pos-c73d0b94",
+      "runaway-elic-pos-4fc8cd17",
+      "runaway-elic-pos-b4263a65",
+      "runaway-elic-pos-35f4c62a",
+      "runaway-elic-pos-11d5c22d",
+      "runaway-elic-pos-aa8f9d94",
+      "runaway-elic-pos-d7120e07",
+      "runaway-elic-pos-87569d07",
+      "runaway-elic-pos-6b89d957",
+      "runaway-elic-pos-4164b521",
+      "runaway-elic-pos-e21c3893",
+      "runaway-elic-pos-10ea5cf4",
+      "runaway-elic-pos-c9fbb86b",
+      "runaway-elic-pos-4797bddd",
+      "runaway-elic-pos-15303c73",
+      "runaway-elic-pos-df5553c6",
+      "runaway-elic-pos-366fe7d5",
+      "runaway-elic-pos-48caa137",
+      "runaway-elic-pos-59d93a6b",
+      "runaway-elic-pos-e5cc220d",
+      "runaway-elic-pos-4df3ed7a",
+      "runaway-elic-pos-db22a453",
+      "runaway-elic-pos-83e01307",
+      "runaway-elic-pos-31a01ad2",
+      "runaway-elic-pos-03f50b3e",
+      "runaway-elic-pos-dec7a355",
+      "runaway-elic-pos-b3717a74",
+      "runaway-elic-pos-f5a86b95",
+      "runaway-elic-pos-124394da"
+    ]
+  },
+  "option_a": {
+    "description": "Coverage suppression: suppress when coverage >= 0.50",
+    "fp_suppressed": 0,
+    "fp_remaining": 52,
+    "tp_suppressed": 203,
+    "tp_remaining": 26,
+    "safe": false
+  },
+  "option_b": {
+    "description": "Raise multiplier from 2.5 to 3.0",
+    "fp_suppressed": 20,
+    "fp_remaining": 32,
+    "tp_suppressed": 0,
+    "tp_remaining": 229
+  },
+  "option_c": {
+    "description": "Minimum baseline depth >= 3",
+    "fp_suppressed": 39,
+    "fp_remaining": 13,
+    "tp_suppressed": 220,
+    "tp_remaining": 9
+  },
+  "combined_a_b": {
+    "description": "Option A + B combined",
+    "fp_suppressed": 20,
+    "fp_remaining": 32,
+    "tp_suppressed": 203,
+    "tp_remaining": 26
+  },
+  "fp_details": [
+    {
+      "trace_id": "thrash-elic-neg-711104d5",
+      "firing_step": 3,
+      "total_steps": 8,
+      "coverage_at_fire": 0.3,
+      "findings_delta_at_fire": 1.0,
+      "token_delta_at_fire": 1155.0,
+      "burn_rate_ratio": 2.525,
+      "baseline_depth": 2
+    },
+    {
+      "trace_id": "runaway-elic-neg-31dc9040",
+      "firing_step": 2,
+      "total_steps": 8,
+      "coverage_at_fire": 0.319,
+      "findings_delta_at_fire": 1.0,
+      "token_delta_at_fire": 489.0,
+      "burn_rate_ratio": 2.534,
+      "baseline_depth": 1
+    },
+    {
+      "trace_id": "runaway-elic-neg-8932d780",
+      "firing_step": 2,
+      "total_steps": 8,
+      "coverage_at_fire": 0.319,
+      "findings_delta_at_fire": 1.0,
+      "token_delta_at_fire": 498.0,
+      "burn_rate_ratio": 2.541,
+      "baseline_depth": 1
+    },
+    {
+      "trace_id": "confab-elic-neg-9f2c19f7",
+      "firing_step": 4,
+      "total_steps": 6,
+      "coverage_at_fire": 0.225,
+      "findings_delta_at_fire": 3.0,
+      "token_delta_at_fire": 1008.0,
+      "burn_rate_ratio": 2.547,
+      "baseline_depth": 3
+    },
+    {
+      "trace_id": "thrash-elic-neg-2b2ab20c",
+      "firing_step": 6,
+      "total_steps": 8,
+      "coverage_at_fire": 0.45,
+      "findings_delta_at_fire": 1.0,
+      "token_delta_at_fire": 2084.0,
+      "burn_rate_ratio": 2.554,
+      "baseline_depth": 5
+    },
+    {
+      "trace_id": "thrash-elic-neg-ef13b991",
+      "firing_step": 6,
+      "total_steps": 8,
+      "coverage_at_fire": 0.45,
+      "findings_delta_at_fire": 1.0,
+      "token_delta_at_fire": 1585.0,
+      "burn_rate_ratio": 2.579,
+      "baseline_depth": 5
+    },
+    {
+      "trace_id": "runaway-elic-neg-5d6c2e7a",
+      "firing_step": 2,
+      "total_steps": 8,
+      "coverage_at_fire": 0.319,
+      "findings_delta_at_fire": 1.0,
+      "token_delta_at_fire": 486.0,
+      "burn_rate_ratio": 2.585,
+      "baseline_depth": 1
+    },
+    {
+      "trace_id": "runaway-elic-neg-e45fe40b",
+      "firing_step": 2,
+      "total_steps": 8,
+      "coverage_at_fire": 0.319,
+      "findings_delta_at_fire": 1.0,
+      "token_delta_at_fire": 512.0,
+      "burn_rate_ratio": 2.586,
+      "baseline_depth": 1
+    },
+    {
+      "trace_id": "runaway-elic-neg-3dffd05d",
+      "firing_step": 2,
+      "total_steps": 8,
+      "coverage_at_fire": 0.319,
+      "findings_delta_at_fire": 1.0,
+      "token_delta_at_fire": 502.0,
+      "burn_rate_ratio": 2.615,
+      "baseline_depth": 1
+    },
+    {
+      "trace_id": "runaway-elic-neg-70b4d955",
+      "firing_step": 2,
+      "total_steps": 8,
+      "coverage_at_fire": 0.319,
+      "findings_delta_at_fire": 1.0,
+      "token_delta_at_fire": 505.0,
+      "burn_rate_ratio": 2.617,
+      "baseline_depth": 1
+    },
+    {
+      "trace_id": "confab-elic-pos-64de761d",
+      "firing_step": 4,
+      "total_steps": 6,
+      "coverage_at_fire": 0.36,
+      "findings_delta_at_fire": 3.0,
+      "token_delta_at_fire": 786.0,
+      "burn_rate_ratio": 2.644,
+      "baseline_depth": 1
+    },
+    {
+      "trace_id": "thrash-elic-neg-09e45418",
+      "firing_step": 3,
+      "total_steps": 8,
+      "coverage_at_fire": 0.3,
+      "findings_delta_at_fire": 1.0,
+      "token_delta_at_fire": 1261.0,
+      "burn_rate_ratio": 2.669,
+      "baseline_depth": 2
+    },
+    {
+      "trace_id": "runaway-elic-neg-078c4bd2",
+      "firing_step": 2,
+      "total_steps": 8,
+      "coverage_at_fire": 0.319,
+      "findings_delta_at_fire": 1.0,
+      "token_delta_at_fire": 531.0,
+      "burn_rate_ratio": 2.709,
+      "baseline_depth": 1
+    },
+    {
+      "trace_id": "confab-elic-pos-9e5ecb6a",
+      "firing_step": 2,
+      "total_steps": 6,
+      "coverage_at_fire": 0.28,
+      "findings_delta_at_fire": 8.0,
+      "token_delta_at_fire": 1465.0,
+      "burn_rate_ratio": 2.738,
+      "baseline_depth": 1
+    },
+    {
+      "trace_id": "confab-elic-pos-24458ed8",
+      "firing_step": 4,
+      "total_steps": 6,
+      "coverage_at_fire": 0.225,
+      "findings_delta_at_fire": 2.0,
+      "token_delta_at_fire": 606.0,
+      "burn_rate_ratio": 2.755,
+      "baseline_depth": 2
+    },
+    {
+      "trace_id": "runaway-elic-neg-f7e04f1a",
+      "firing_step": 2,
+      "total_steps": 8,
+      "coverage_at_fire": 0.319,
+      "findings_delta_at_fire": 1.0,
+      "token_delta_at_fire": 543.0,
+      "burn_rate_ratio": 2.785,
+      "baseline_depth": 1
+    },
+    {
+      "trace_id": "runaway-elic-neg-4f7d06fa",
+      "firing_step": 2,
+      "total_steps": 8,
+      "coverage_at_fire": 0.319,
+      "findings_delta_at_fire": 1.0,
+      "token_delta_at_fire": 559.0,
+      "burn_rate_ratio": 2.838,
+      "baseline_depth": 1
+    },
+    {
+      "trace_id": "runaway-elic-neg-ca5d0eb9",
+      "firing_step": 2,
+      "total_steps": 8,
+      "coverage_at_fire": 0.319,
+      "findings_delta_at_fire": 1.0,
+      "token_delta_at_fire": 559.0,
+      "burn_rate_ratio": 2.852,
+      "baseline_depth": 1
+    },
+    {
+      "trace_id": "runaway-elic-neg-2effbcf1",
+      "firing_step": 2,
+      "total_steps": 8,
+      "coverage_at_fire": 0.319,
+      "findings_delta_at_fire": 1.0,
+      "token_delta_at_fire": 549.0,
+      "burn_rate_ratio": 2.859,
+      "baseline_depth": 1
+    },
+    {
+      "trace_id": "confab-elic-pos-40302bc3",
+      "firing_step": 2,
+      "total_steps": 6,
+      "coverage_at_fire": 0.28,
+      "findings_delta_at_fire": 8.0,
+      "token_delta_at_fire": 1589.0,
+      "burn_rate_ratio": 2.921,
+      "baseline_depth": 1
+    },
+    {
+      "trace_id": "thrash-elic-neg-bd02b2dc",
+      "firing_step": 6,
+      "total_steps": 8,
+      "coverage_at_fire": 0.45,
+      "findings_delta_at_fire": 1.0,
+      "token_delta_at_fire": 1899.0,
+      "burn_rate_ratio": 2.968,
+      "baseline_depth": 5
+    },
+    {
+      "trace_id": "thrash-elic-neg-2744bf7c",
+      "firing_step": 3,
+      "total_steps": 8,
+      "coverage_at_fire": 0.3,
+      "findings_delta_at_fire": 1.0,
+      "token_delta_at_fire": 1358.0,
+      "burn_rate_ratio": 3.008,
+      "baseline_depth": 2
+    },
+    {
+      "trace_id": "stuck-syn-021",
+      "firing_step": 5,
+      "total_steps": 8,
+      "coverage_at_fire": 0.227,
+      "findings_delta_at_fire": 1.0,
+      "token_delta_at_fire": 1750.0,
+      "burn_rate_ratio": 3.5,
+      "baseline_depth": 1
+    },
+    {
+      "trace_id": "stuck-syn-024",
+      "firing_step": 5,
+      "total_steps": 8,
+      "coverage_at_fire": 0.227,
+      "findings_delta_at_fire": 1.0,
+      "token_delta_at_fire": 1750.0,
+      "burn_rate_ratio": 3.5,
+      "baseline_depth": 1
+    },
+    {
+      "trace_id": "stuck-syn-027",
+      "firing_step": 5,
+      "total_steps": 8,
+      "coverage_at_fire": 0.227,
+      "findings_delta_at_fire": 1.0,
+      "token_delta_at_fire": 1750.0,
+      "burn_rate_ratio": 3.5,
+      "baseline_depth": 1
+    },
+    {
+      "trace_id": "stuck-syn-030",
+      "firing_step": 6,
+      "total_steps": 8,
+      "coverage_at_fire": 0.334,
+      "findings_delta_at_fire": 1.0,
+      "token_delta_at_fire": 1750.0,
+      "burn_rate_ratio": 3.5,
+      "baseline_depth": 2
+    },
+    {
+      "trace_id": "stuck-syn-033",
+      "firing_step": 6,
+      "total_steps": 8,
+      "coverage_at_fire": 0.334,
+      "findings_delta_at_fire": 1.0,
+      "token_delta_at_fire": 1750.0,
+      "burn_rate_ratio": 3.5,
+      "baseline_depth": 2
+    },
+    {
+      "trace_id": "stuck-syn-036",
+      "firing_step": 6,
+      "total_steps": 8,
+      "coverage_at_fire": 0.334,
+      "findings_delta_at_fire": 1.0,
+      "token_delta_at_fire": 1750.0,
+      "burn_rate_ratio": 3.5,
+      "baseline_depth": 2
+    },
+    {
+      "trace_id": "stuck-syn-048",
+      "firing_step": 5,
+      "total_steps": 10,
+      "coverage_at_fire": 0.185,
+      "findings_delta_at_fire": 1.0,
+      "token_delta_at_fire": 1750.0,
+      "burn_rate_ratio": 3.5,
+      "baseline_depth": 1
+    },
+    {
+      "trace_id": "stuck-syn-051",
+      "firing_step": 5,
+      "total_steps": 10,
+      "coverage_at_fire": 0.185,
+      "findings_delta_at_fire": 1.0,
+      "token_delta_at_fire": 1750.0,
+      "burn_rate_ratio": 3.5,
+      "baseline_depth": 1
+    },
+    {
+      "trace_id": "stuck-syn-054",
+      "firing_step": 5,
+      "total_steps": 10,
+      "coverage_at_fire": 0.185,
+      "findings_delta_at_fire": 1.0,
+      "token_delta_at_fire": 1750.0,
+      "burn_rate_ratio": 3.5,
+      "baseline_depth": 1
+    },
+    {
+      "trace_id": "stuck-syn-057",
+      "firing_step": 6,
+      "total_steps": 10,
+      "coverage_at_fire": 0.27,
+      "findings_delta_at_fire": 1.0,
+      "token_delta_at_fire": 1750.0,
+      "burn_rate_ratio": 3.5,
+      "baseline_depth": 2
+    },
+    {
+      "trace_id": "stuck-syn-060",
+      "firing_step": 6,
+      "total_steps": 10,
+      "coverage_at_fire": 0.27,
+      "findings_delta_at_fire": 1.0,
+      "token_delta_at_fire": 1750.0,
+      "burn_rate_ratio": 3.5,
+      "baseline_depth": 2
+    },
+    {
+      "trace_id": "stuck-syn-063",
+      "firing_step": 6,
+      "total_steps": 10,
+      "coverage_at_fire": 0.27,
+      "findings_delta_at_fire": 1.0,
+      "token_delta_at_fire": 1750.0,
+      "burn_rate_ratio": 3.5,
+      "baseline_depth": 2
+    },
+    {
+      "trace_id": "stuck-syn-066",
+      "firing_step": 8,
+      "total_steps": 10,
+      "coverage_at_fire": 0.44,
+      "findings_delta_at_fire": 1.0,
+      "token_delta_at_fire": 1750.0,
+      "burn_rate_ratio": 3.5,
+      "baseline_depth": 4
+    },
+    {
+      "trace_id": "stuck-syn-069",
+      "firing_step": 8,
+      "total_steps": 10,
+      "coverage_at_fire": 0.44,
+      "findings_delta_at_fire": 1.0,
+      "token_delta_at_fire": 1750.0,
+      "burn_rate_ratio": 3.5,
+      "baseline_depth": 4
+    },
+    {
+      "trace_id": "stuck-syn-072",
+      "firing_step": 8,
+      "total_steps": 10,
+      "coverage_at_fire": 0.44,
+      "findings_delta_at_fire": 1.0,
+      "token_delta_at_fire": 1750.0,
+      "burn_rate_ratio": 3.5,
+      "baseline_depth": 4
+    },
+    {
+      "trace_id": "stuck-syn-075",
+      "firing_step": 5,
+      "total_steps": 12,
+      "coverage_at_fire": 0.157,
+      "findings_delta_at_fire": 1.0,
+      "token_delta_at_fire": 1750.0,
+      "burn_rate_ratio": 3.5,
+      "baseline_depth": 1
+    },
+    {
+      "trace_id": "stuck-syn-078",
+      "firing_step": 5,
+      "total_steps": 12,
+      "coverage_at_fire": 0.157,
+      "findings_delta_at_fire": 1.0,
+      "token_delta_at_fire": 1750.0,
+      "burn_rate_ratio": 3.5,
+      "baseline_depth": 1
+    },
+    {
+      "trace_id": "stuck-syn-081",
+      "firing_step": 5,
+      "total_steps": 12,
+      "coverage_at_fire": 0.157,
+      "findings_delta_at_fire": 1.0,
+      "token_delta_at_fire": 1750.0,
+      "burn_rate_ratio": 3.5,
+      "baseline_depth": 1
+    },
+    {
+      "trace_id": "stuck-syn-084",
+      "firing_step": 6,
+      "total_steps": 12,
+      "coverage_at_fire": 0.227,
+      "findings_delta_at_fire": 1.0,
+      "token_delta_at_fire": 1750.0,
+      "burn_rate_ratio": 3.5,
+      "baseline_depth": 2
+    },
+    {
+      "trace_id": "stuck-syn-087",
+      "firing_step": 6,
+      "total_steps": 12,
+      "coverage_at_fire": 0.227,
+      "findings_delta_at_fire": 1.0,
+      "token_delta_at_fire": 1750.0,
+      "burn_rate_ratio": 3.5,
+      "baseline_depth": 2
+    },
+    {
+      "trace_id": "stuck-syn-090",
+      "firing_step": 6,
+      "total_steps": 12,
+      "coverage_at_fire": 0.227,
+      "findings_delta_at_fire": 1.0,
+      "token_delta_at_fire": 1750.0,
+      "burn_rate_ratio": 3.5,
+      "baseline_depth": 2
+    },
+    {
+      "trace_id": "stuck-syn-093",
+      "firing_step": 8,
+      "total_steps": 12,
+      "coverage_at_fire": 0.369,
+      "findings_delta_at_fire": 1.0,
+      "token_delta_at_fire": 1750.0,
+      "burn_rate_ratio": 3.5,
+      "baseline_depth": 4
+    },
+    {
+      "trace_id": "stuck-syn-096",
+      "firing_step": 8,
+      "total_steps": 12,
+      "coverage_at_fire": 0.369,
+      "findings_delta_at_fire": 1.0,
+      "token_delta_at_fire": 1750.0,
+      "burn_rate_ratio": 3.5,
+      "baseline_depth": 4
+    },
+    {
+      "trace_id": "stuck-syn-099",
+      "firing_step": 8,
+      "total_steps": 12,
+      "coverage_at_fire": 0.369,
+      "findings_delta_at_fire": 1.0,
+      "token_delta_at_fire": 1750.0,
+      "burn_rate_ratio": 3.5,
+      "baseline_depth": 4
+    },
+    {
+      "trace_id": "confab-elic-pos-d28bd629",
+      "firing_step": 3,
+      "total_steps": 6,
+      "coverage_at_fire": 0.18,
+      "findings_delta_at_fire": 5.0,
+      "token_delta_at_fire": 2145.0,
+      "burn_rate_ratio": 3.61,
+      "baseline_depth": 1
+    },
+    {
+      "trace_id": "confab-elic-pos-f3c6ca8f",
+      "firing_step": 3,
+      "total_steps": 6,
+      "coverage_at_fire": 0.32,
+      "findings_delta_at_fire": 1.0,
+      "token_delta_at_fire": 2153.0,
+      "burn_rate_ratio": 3.692,
+      "baseline_depth": 2
+    },
+    {
+      "trace_id": "confab-elic-pos-d0376b5f",
+      "firing_step": 4,
+      "total_steps": 6,
+      "coverage_at_fire": 0.36,
+      "findings_delta_at_fire": 2.0,
+      "token_delta_at_fire": 1531.0,
+      "burn_rate_ratio": 3.913,
+      "baseline_depth": 1
+    },
+    {
+      "trace_id": "confab-elic-neg-cb17d42e",
+      "firing_step": 5,
+      "total_steps": 6,
+      "coverage_at_fire": 0.27,
+      "findings_delta_at_fire": 2.0,
+      "token_delta_at_fire": 2129.0,
+      "burn_rate_ratio": 5.995,
+      "baseline_depth": 4
+    },
+    {
+      "trace_id": "confab-elic-neg-80220c47",
+      "firing_step": 5,
+      "total_steps": 6,
+      "coverage_at_fire": 0.27,
+      "findings_delta_at_fire": 1.0,
+      "token_delta_at_fire": 934.0,
+      "burn_rate_ratio": 6.103,
+      "baseline_depth": 4
+    },
+    {
+      "trace_id": "confab-elic-neg-1f413db1",
+      "firing_step": 5,
+      "total_steps": 6,
+      "coverage_at_fire": 0.27,
+      "findings_delta_at_fire": 1.0,
+      "token_delta_at_fire": 1141.0,
+      "burn_rate_ratio": 7.176,
+      "baseline_depth": 4
+    }
+  ]
+}

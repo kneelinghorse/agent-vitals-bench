@@ -93,10 +93,12 @@ def cross_validate_trace(snapshots, detector: str):
         # detector_priority="confabulation" suppression (runner.py:150-151).
         # Only flag as cross-fire when stuck fires WITHOUT the expected
         # detector priority for the target detector.
+        # v1.14.2: read explicit runaway_cost_detected instead of the
+        # legacy stuck_trigger == "burn_rate_anomaly" sentinel string.
         if (
             detector != "stuck"
             and result.stuck_detected
-            and result.stuck_trigger != "burn_rate_anomaly"
+            and not result.runaway_cost_detected
             and result.detector_priority != detector
         ):
             stuck_cross = True

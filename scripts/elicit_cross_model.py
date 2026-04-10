@@ -120,10 +120,12 @@ def cross_validate_trace(snapshots, detector: str) -> dict:
         elif detector == "runaway_cost" and signals.runaway_cost_detected:
             target_detected = True
 
+        # v1.14.2: read explicit runaway_cost_detected instead of the
+        # legacy stuck_trigger == "burn_rate_anomaly" sentinel string.
         if (
             detector != "stuck"
             and result.stuck_detected
-            and result.stuck_trigger != "burn_rate_anomaly"
+            and not result.runaway_cost_detected
             and result.detector_priority != detector
         ):
             stuck_cross = True

@@ -39,10 +39,12 @@ def revalidate_confab_trace(snapshots):
         if result.confabulation_detected:
             confab_detected = True
 
-        # Only flag cross-fire when stuck fires AND confab doesn't have priority
+        # Only flag cross-fire when stuck fires AND confab doesn't have priority.
+        # v1.14.2: read explicit runaway_cost_detected instead of the legacy
+        # stuck_trigger == "burn_rate_anomaly" sentinel string.
         if (
             result.stuck_detected
-            and result.stuck_trigger != "burn_rate_anomaly"
+            and not result.runaway_cost_detected
             and result.detector_priority != "confabulation"
         ):
             stuck_cross = True

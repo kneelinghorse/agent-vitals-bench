@@ -10,7 +10,7 @@ from pathlib import Path
 from typing import Any
 
 from agent_vitals import VitalsConfig
-from agent_vitals.backtest import _replay_trace as _production_replay_trace
+from agent_vitals.backtest import replay_trace as _production_replay_trace
 from agent_vitals.schema import VitalsSnapshot
 
 from evaluator.metrics import DetectorMetrics, compute_metrics
@@ -138,9 +138,8 @@ def replay_trace(
     """Replay a trace through the canonical production detector pipeline.
 
     Bench owns corpus/labels/metrics/reporting. Agent-vitals owns replay
-    semantics. This wrapper delegates to production `_replay_trace()` and
-    normalizes away the production-only `any` aggregate so bench metrics
-    remain keyed to the canonical detector five.
+    semantics. This wrapper delegates to the public replay_trace() API
+    (v1.16.0+) which returns the canonical five detectors directly.
     """
     if not snapshots:
         return {d: False for d in DETECTORS}

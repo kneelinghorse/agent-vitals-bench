@@ -55,9 +55,15 @@ def cross_validate_trace(snapshots, *, config=None):
         snapshot_dict.update(result.as_snapshot_update())
         signals = derive_stop_signals(snapshot_dict, step_count=i + 1)
 
+        # agent-vitals v1.14.2 replaced the implicit `stuck_trigger ==
+        # "burn_rate_anomaly"` sentinel with an explicit
+        # `runaway_cost_detected` field on LoopDetectionResult. The check
+        # below means "stuck genuinely fired and is not the burn-rate
+        # runaway side channel" — under v1.14.2 we read the explicit field
+        # directly instead of relying on the legacy sentinel string.
         if (
             result.stuck_detected
-            and result.stuck_trigger != "burn_rate_anomaly"
+            and not result.runaway_cost_detected
             and result.detector_priority != "runaway_cost"
         ):
             stuck_fired = True
