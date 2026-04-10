@@ -183,7 +183,12 @@ def make_handcrafted_predictor(
         # ``resolve_workflow_type`` only inspects the combined string for
         # ``.bc.``/``.rc.`` markers so this is sufficient.
         wf_type = resolve_workflow_type("", mission_id)
-        return replay_trace(list(snapshots), effective_config, workflow_type=wf_type)
+        return replay_trace(
+            list(snapshots),
+            effective_config,
+            workflow_type=wf_type,
+            runtime_mode="default",
+        )
 
     return predictor
 

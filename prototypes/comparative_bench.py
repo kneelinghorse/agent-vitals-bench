@@ -266,7 +266,11 @@ def collect_trace_records(
         snapshots = load_trace(corpus_version, path)
         mission_id = snapshots[0].mission_id if snapshots else None
         workflow_type = resolve_workflow_type(str(entry["trace_id"]), mission_id)
-        handcrafted = replay_trace(snapshots, workflow_type=workflow_type)
+        handcrafted = replay_trace(
+            snapshots,
+            workflow_type=workflow_type,
+            runtime_mode="default",
+        )
 
         causal_confab = detect_causal_confabulation(snapshots)
         causal_runaway = detect_causal_runaway_cost(snapshots)

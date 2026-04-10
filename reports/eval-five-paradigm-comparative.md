@@ -1,6 +1,6 @@
 # Five-Paradigm Comparative Report
 
-**Generated:** 2026-04-07T04:52:36Z
+**Generated:** 2026-04-07T18:43:46Z
 **Corpus:** v1
 **Min confidence:** 0.80
 **Filtered traces:** 1494
@@ -30,7 +30,7 @@ Every paradigm is invoked through the bench M04 partial-trace harness (`evaluato
 
 | Paradigm | loop | stuck | confabulation | thrash | runaway_cost |
 |---|---|---|---|---|---|
-| handcrafted | 1.000 | 0.986 | 0.949 | 1.000 | 0.942 |
+| handcrafted | 1.000 | 0.986 | 0.949 | 1.000 | 0.898 |
 | causal | 0.000 | 0.000 | 0.949 | 0.000 | 0.944 |
 | tda | 1.000 | 0.871 | 0.818 | 0.939 | 0.930 |
 | mamba | 1.000 | 0.989 | 1.000 | 1.000 | 1.000 |
@@ -40,7 +40,7 @@ Every paradigm is invoked through the bench M04 partial-trace harness (`evaluato
 
 | Paradigm | loop | stuck | confabulation | thrash | runaway_cost |
 |---|---|---|---|---|---|
-| handcrafted | 0.982 | 0.930 | 0.965 | 0.985 | 0.847 |
+| handcrafted | 0.982 | 0.930 | 0.965 | 0.985 | 0.765 |
 | causal | 0.000 | 0.000 | 0.965 | 0.000 | 0.851 |
 | tda | 0.982 | 0.936 | 0.982 | 0.984 | 0.981 |
 | mamba | 0.982 | 0.939 | 0.988 | 0.985 | 0.984 |
@@ -114,7 +114,7 @@ One table per detector. Rows are paradigms, columns are step-prefix cutoffs plus
 
 | Paradigm | 3 steps | 5 steps | 7 steps | Full |
 |---|---|---|---|---|
-| handcrafted | 0.497 | 0.956 | 0.942 | 0.942 |
+| handcrafted | 0.497 | 0.956 | 0.909 | 0.898 |
 | causal | 0.000 | 0.285 | 0.947 | 0.944 |
 | tda | 0.000 | 0.000 | 0.534 | 0.930 |
 | mamba | 0.000 | 0.382 | 1.000 | 1.000 |
@@ -168,7 +168,7 @@ Mean F1 across the five detectors at each cutoff. Useful as a single-number para
 
 | Paradigm | 3 steps | 5 steps | 7 steps | Full |
 |---|---|---|---|---|
-| handcrafted | 0.466 | 0.885 | 0.953 | 0.976 |
+| handcrafted | 0.466 | 0.885 | 0.946 | 0.967 |
 | causal | 0.000 | 0.218 | 0.373 | 0.379 |
 | tda | 0.000 | 0.000 | 0.531 | 0.912 |
 | mamba | 0.000 | 0.642 | 0.972 | 0.998 |
@@ -259,7 +259,7 @@ Every figure in this report is regenerable from `reports/eval-five-paradigm-comp
 |---|---|
 | handcrafted | 4.6 |
 | causal | 0.2 |
-| tda | 20.3 |
-| mamba | 81.2 |
-| hopfield | 20.6 |
+| tda | 19.3 |
+| mamba | 75.9 |
+| hopfield | 19.0 |
 

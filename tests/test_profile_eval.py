@@ -22,7 +22,11 @@ class TestProfileConfig:
     def test_for_framework_crewai(self) -> None:
         base = VitalsConfig.from_yaml()
         cr = base.for_framework("crewai")
-        assert cr.burn_rate_multiplier == pytest.approx(3.0)
+        # burn_rate_multiplier override removed in agent-vitals v1.14.1 — it
+        # was triggering 34 stuck FPs on short runaway-positive traces via an
+        # implicit `burn_rate_anomaly` arbitration-plus-filter side channel.
+        # crewai now inherits the default burn_rate_multiplier=2.5.
+        assert cr.burn_rate_multiplier == pytest.approx(2.5)
         assert cr.token_scale_factor == pytest.approx(0.7)
 
     def test_for_framework_dspy(self) -> None:
@@ -77,3 +81,10 @@ class TestProfileReporter:
         result = run_evaluation(corpus_version="v1")
         report = report_results(result, save=False)
         assert "**Profile:** default" in report
+
+    def test_report_includes_runtime_mode_label(self) -> None:
+        from evaluator.reporter import report_results
+
+        result = run_evaluation(corpus_version="v1", runtime_mode="tda")
+        report = report_results(result, save=False)
+        assert "**Runtime Mode:** tda" in report

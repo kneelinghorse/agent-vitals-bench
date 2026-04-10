@@ -1,14 +1,15 @@
 """Ad-hoc validation harness for agent-vitals 4855cde (M02 TDA hybrid).
 
-Calls bench's existing replay_trace mirror to get the c39ae64-equivalent
-baseline predictions, then applies the new TDA hybrid override-only block
-externally (mirroring the diff in agent_vitals/backtest.py:401-430). This
-avoids mutating bench's mirror file while still measuring the M02 effect.
+Uses bench's canonical production-replay wrapper in explicit ``default``
+mode to get the non-TDA baseline, then applies the TDA hybrid override-only
+block externally (mirroring the diff in ``agent_vitals.backtest``) so the
+release-branch validation remains reproducible.
 
 Run from either:
   - tda-experiment venv (TDA available)  → Scenario A
   - bench main venv (TDA missing)        → Scenario B
 """
+
 from __future__ import annotations
 
 import sys
@@ -64,12 +65,17 @@ def main() -> int:
             continue
         snaps = load_trace("v1", entry["path"])
         wf = resolve_workflow_type(entry["trace_id"], entry.get("mission_id"))
-        preds = replay_trace(snaps, config=cfg, workflow_type=wf)
+        preds = replay_trace(
+            snaps,
+            config=cfg,
+            workflow_type=wf,
+            runtime_mode="default",
+        )
         n_traces += 1
 
         # Apply TDA hybrid override-only (mirrors agent-vitals/backtest.py:410-430)
         if preds["runaway_cost"] and tda is not None and tda_available:
-            if len(snaps) >= 5:
+            if len(snaps) >= 7:
                 try:
                     tda_cfg = tda["TDAConfig"]()
                     tda_pred = tda["predict_runaway_cost"](snaps, config=tda_cfg)
@@ -84,28 +90,27 @@ def main() -> int:
         for d in DETECTORS:
             pred = bool(preds[d])
             label = bool(entry["labels"].get(d, False))
-            key = (
-                "tp" if pred and label
-                else "fp" if pred
-                else "fn" if label
-                else "tn"
-            )
+            key = "tp" if pred and label else "fp" if pred else "fn" if label else "tn"
             counts[d][key] += 1
 
     print()
     print(f"traces evaluated: {n_traces}")
     print(f"TDA overrides applied: {n_runaway_overrides}")
-    print(f"runaway-fired traces below TDA min_steps=5: {n_runaway_eligible_short}")
+    print(f"runaway-fired traces below TDA min_steps=7: {n_runaway_eligible_short}")
     print()
-    print(f"{'detector':14s} {'TP':>4s} {'FP':>4s} {'FN':>4s} {'TN':>5s} "
-          f"{'P':>7s} {'R':>7s} {'F1':>7s}")
+    print(
+        f"{'detector':14s} {'TP':>4s} {'FP':>4s} {'FN':>4s} {'TN':>5s} "
+        f"{'P':>7s} {'R':>7s} {'F1':>7s}"
+    )
     for d in DETECTORS:
         c = counts[d]
         p = c["tp"] / (c["tp"] + c["fp"]) if c["tp"] + c["fp"] else 0
         r = c["tp"] / (c["tp"] + c["fn"]) if c["tp"] + c["fn"] else 0
         f1 = 2 * p * r / (p + r) if p + r else 0
-        print(f"{d:14s} {c['tp']:>4d} {c['fp']:>4d} {c['fn']:>4d} {c['tn']:>5d} "
-              f"{p:>7.4f} {r:>7.4f} {f1:>7.4f}")
+        print(
+            f"{d:14s} {c['tp']:>4d} {c['fp']:>4d} {c['fn']:>4d} {c['tn']:>5d} "
+            f"{p:>7.4f} {r:>7.4f} {f1:>7.4f}"
+        )
     return 0
 
 

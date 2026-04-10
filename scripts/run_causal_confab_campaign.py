@@ -99,7 +99,11 @@ def _evaluate_slice(entries: list[dict[str, Any]], min_confidence: float) -> dic
         snapshots = load_trace("v1", str(entry["path"]))
         mission_id = snapshots[0].mission_id if snapshots else None
         workflow_type = resolve_workflow_type(str(entry["trace_id"]), mission_id)
-        handcrafted = replay_trace(snapshots, workflow_type=workflow_type)["confabulation"]
+        handcrafted = replay_trace(
+            snapshots,
+            workflow_type=workflow_type,
+            runtime_mode="default",
+        )["confabulation"]
         causal = detect_causal_confabulation(snapshots).detected
         rows.append(
             {

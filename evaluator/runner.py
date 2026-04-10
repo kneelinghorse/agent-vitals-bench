@@ -5,11 +5,12 @@ from __future__ import annotations
 import argparse
 import json
 import sys
-from dataclasses import dataclass
+from dataclasses import dataclass, replace
 from pathlib import Path
 from typing import Any
 
-from agent_vitals import VitalsConfig, detect_loop, derive_stop_signals
+from agent_vitals import VitalsConfig
+from agent_vitals.backtest import _replay_trace as _production_replay_trace
 from agent_vitals.schema import VitalsSnapshot
 
 from evaluator.metrics import DetectorMetrics, compute_metrics
@@ -19,6 +20,7 @@ from evaluator.reporter import report_results
 CORPUS_ROOT = Path(__file__).resolve().parent.parent / "corpus"
 
 DETECTORS = ("loop", "stuck", "confabulation", "thrash", "runaway_cost")
+RUNTIME_MODES = ("default", "tda")
 
 
 @dataclass
@@ -42,6 +44,7 @@ class EvaluationResult:
     gate_results: dict[str, dict[str, Any]]
     detectors_evaluated: tuple[str, ...]
     profile: str | None = None
+    runtime_mode: str = "default"
     excluded_detectors: tuple[str, ...] = ()
 
 
@@ -104,121 +107,51 @@ def resolve_workflow_type(trace_id: str, mission_id: str | None = None) -> str:
     return "unknown"
 
 
+def _config_for_runtime_mode(
+    config: VitalsConfig | None,
+    runtime_mode: str | None = None,
+) -> VitalsConfig:
+    """Return a config with an explicit runtime mode applied.
+
+    Bench separates corpus/metrics/reporting from app execution semantics.
+    Production replay remains canonical, and runtime mode only toggles
+    whether the optional TDA runaway adjudicator is enabled.
+    """
+    cfg = config or VitalsConfig.from_yaml()
+    if runtime_mode is None:
+        return cfg
+    if runtime_mode not in RUNTIME_MODES:
+        allowed = ", ".join(RUNTIME_MODES)
+        raise ValueError(f"runtime_mode must be one of {allowed}, got {runtime_mode!r}")
+    target_tda_enabled = runtime_mode == "tda"
+    if cfg.tda_enabled == target_tda_enabled:
+        return cfg
+    return replace(cfg, tda_enabled=target_tda_enabled)
+
+
 def replay_trace(
     snapshots: list[VitalsSnapshot],
     config: VitalsConfig | None = None,
     workflow_type: str = "unknown",
+    runtime_mode: str | None = None,
 ) -> dict[str, bool]:
-    """Replay a trace through all detectors and return predictions.
+    """Replay a trace through the canonical production detector pipeline.
 
-    Mirrors agent-vitals backtest.py _replay_trace() exactly:
-    - Step-by-step replay through detect_loop with accumulated history
-    - Stuck suppression: skip if detector_priority is confabulation or
-      stuck_trigger is burn_rate_anomaly
-    - Co-occurrence resolution: suppress stuck if loop fired with
-      content_similarity trigger
-    - derive_stop_signals for thrash/runaway_cost from final snapshot
+    Bench owns corpus/labels/metrics/reporting. Agent-vitals owns replay
+    semantics. This wrapper delegates to production `_replay_trace()` and
+    normalizes away the production-only `any` aggregate so bench metrics
+    remain keyed to the canonical detector five.
     """
     if not snapshots:
         return {d: False for d in DETECTORS}
 
-    cfg = config or VitalsConfig.from_yaml()
-    predictions: dict[str, bool] = {d: False for d in DETECTORS}
-
-    loop_fired = False
-    stuck_fired = False
-    has_content_similarity = False
-    preserve_stuck_overlap = False
-    best_loop_trigger: str | None = None
-    best_loop_confidence = 0.0
-    thrash_fired = False
-    runaway_fired = False
-    runaway_from_burn_rate = False  # Track burn_rate_anomaly from detect_loop
-    final_confabulation_detected = False  # av-s06-m01: final-step adjudication
-    # Replay through detect_loop step by step (accumulating history)
-    for i, snapshot in enumerate(snapshots):
-        history = snapshots[:i] if i > 0 else None
-        result = detect_loop(snapshot, history, config=cfg, workflow_type=workflow_type)
-
-        # Track best loop trigger for co-occurrence resolution
-        if result.loop_detected and result.loop_confidence > best_loop_confidence:
-            best_loop_confidence = result.loop_confidence
-            best_loop_trigger = result.loop_trigger
-        if result.loop_detected and result.loop_trigger == "content_similarity":
-            has_content_similarity = True
-
-        # Preserve stuck when it's the priority detector in a co-occurrence
-        if result.loop_detected and result.stuck_detected and result.detector_priority == "stuck":
-            preserve_stuck_overlap = True
-
-        if result.loop_detected:
-            loop_fired = True
-
-        # Stuck suppression rules (matching backtest.py)
-        if (
-            result.stuck_detected
-            and result.detector_priority != "confabulation"
-            and result.stuck_trigger != "burn_rate_anomaly"
-        ):
-            stuck_fired = True
-
-        if result.confabulation_detected:
-            predictions["confabulation"] = True
-        # av-s06-m01: capture final-step confab verdict for whole-trace
-        # adjudication. Overwritten each iteration so the value after the
-        # loop is the verdict from the last snapshot, which the bench
-        # reference uses as its one-shot evaluation.
-        final_confabulation_detected = result.confabulation_detected
-
-        # Bridge burn_rate_anomaly → runaway_cost: detect_loop computes
-        # burn_rate_anomaly as a stuck candidate, then suppresses stuck_detected.
-        # The stuck_trigger remains on the result for stop-rule derivation.
-        # Raw snapshots lack stuck_trigger, so derive_stop_signals can't find it.
-        # Capture it here directly from the detect_loop result.
-        if result.stuck_trigger == "burn_rate_anomaly":
-            runaway_from_burn_rate = True
-
-    # av-s06-m01: final-step adjudication for causal confabulation.
-    # Streaming per-step replay aggregates with any-step semantics, but the
-    # bench reference evaluates the whole trace once at the tail. The two
-    # diverge on Path 3 (verified_source_decoupling) when an early window
-    # is weak but later windows recover. The final loop iteration above
-    # already calls detect_loop with the full prefix as history, which is
-    # the bench-equivalent one-shot. Override-only: if streaming says
-    # "fired" but final-step says "no", final-step wins for trace label.
-    if predictions["confabulation"] and not final_confabulation_detected:
-        predictions["confabulation"] = False
-
-    # Derive stop signals from the final snapshot for thrash/runaway_cost
-    final = snapshots[-1]
-    stop = derive_stop_signals(
-        final,
-        step_count=len(snapshots),
-        thrash_error_threshold=cfg.thrash_error_threshold,
+    cfg = _config_for_runtime_mode(config, runtime_mode)
+    predictions = _production_replay_trace(
+        snapshots,
+        config=cfg,
+        workflow_type=workflow_type,
     )
-    if stop.thrash_detected:
-        thrash_fired = True
-    # Bridge burn_rate to runaway only when stuck isn't the root cause.
-    # If stuck fired at any step, the token growth is a symptom of being stuck,
-    # not an independent runaway cost issue.
-    if stop.runaway_cost_detected or (runaway_from_burn_rate and not stuck_fired):
-        runaway_fired = True
-
-    # Co-occurrence resolution (matching backtest.py av32-m02):
-    # Only suppress stuck when loop has strong content-based evidence
-    # AND stuck was not the priority detector at any step.
-    if stuck_fired and loop_fired and not (thrash_fired or runaway_fired):
-        if (
-            has_content_similarity or best_loop_trigger == "content_similarity"
-        ) and not preserve_stuck_overlap:
-            stuck_fired = False
-
-    predictions["loop"] = loop_fired
-    predictions["stuck"] = stuck_fired
-    predictions["thrash"] = thrash_fired
-    predictions["runaway_cost"] = runaway_fired
-
-    return predictions
+    return {detector: bool(predictions.get(detector, False)) for detector in DETECTORS}
 
 
 def run_evaluation(
@@ -227,6 +160,7 @@ def run_evaluation(
     min_confidence: float = 0.8,
     config: VitalsConfig | None = None,
     profile: str | None = None,
+    runtime_mode: str | None = None,
 ) -> EvaluationResult:
     """Run full evaluation pipeline against a corpus version.
 
@@ -236,12 +170,17 @@ def run_evaluation(
             agent-vitals thresholds.yaml via VitalsConfig.for_framework().
             Traces are also filtered to matching framework if the manifest
             entry includes a ``framework`` field.
+        runtime_mode: Explicit runtime detector mode. ``default`` forces
+            ``tda_enabled=False``. ``tda`` forces ``tda_enabled=True``.
+            ``None`` preserves the supplied config as-is.
     """
     target_detectors = detectors or DETECTORS
 
     # Load base config, then apply per-profile overrides if requested
     base_config = config or VitalsConfig.from_yaml()
     effective_config = base_config.for_framework(profile) if profile else base_config
+    effective_config = _config_for_runtime_mode(effective_config, runtime_mode)
+    resolved_runtime_mode = "tda" if effective_config.tda_enabled else "default"
 
     manifest = load_manifest(corpus_version)
 
@@ -269,7 +208,12 @@ def run_evaluation(
         mission_id = snapshots[0].mission_id if snapshots else None
         wf_type = resolve_workflow_type(trace_id, mission_id)
 
-        predictions = replay_trace(snapshots, effective_config, workflow_type=wf_type)
+        predictions = replay_trace(
+            snapshots,
+            effective_config,
+            workflow_type=wf_type,
+            runtime_mode=resolved_runtime_mode,
+        )
 
         trace_results.append(
             TraceResult(
@@ -304,6 +248,7 @@ def run_evaluation(
         gate_results=gate_results,
         detectors_evaluated=target_detectors,
         profile=profile,
+        runtime_mode=resolved_runtime_mode,
         excluded_detectors=excluded,
     )
 
@@ -328,6 +273,12 @@ def main() -> None:
         choices=["langgraph", "crewai", "dspy"],
         help="Framework profile — applies per-profile threshold overrides from agent-vitals",
     )
+    parser.add_argument(
+        "--runtime-mode",
+        default="default",
+        choices=list(RUNTIME_MODES),
+        help="Runtime detector mode: default keeps TDA off, tda forces the TDA adjudicator on",
+    )
     args = parser.parse_args()
 
     detectors_arg: tuple[str, ...] | None = None
@@ -339,6 +290,7 @@ def main() -> None:
         detectors=detectors_arg,
         min_confidence=args.min_confidence,
         profile=args.profile,
+        runtime_mode=args.runtime_mode,
     )
 
     report = report_results(result)
