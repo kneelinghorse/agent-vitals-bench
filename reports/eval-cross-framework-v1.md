@@ -1,6 +1,6 @@
 # Cross-Framework Gate Report — Post-Replay-Audit
 
-**Generated:** 2026-04-08T03:58:57Z
+**Generated:** 2026-04-08T21:56:52Z
 **Corpus:** v1, min_confidence ≥ 0.80
 **Detectors:** loop, stuck, confabulation, thrash, runaway_cost (canonical bench five)
 **Profiles:** default, crewai, dspy, langgraph (default = no framework override; the other three apply the agent-vitals thresholds.yaml profile via the v1.14.0 public VitalsConfig profile-introspection API)

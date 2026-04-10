@@ -39,6 +39,7 @@ REPO_ROOT = Path(__file__).resolve().parent.parent
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
+from agent_vitals import VitalsConfig  # noqa: E402
 from agent_vitals.detection.tda import is_tda_available  # noqa: E402
 
 from evaluator.runner import DETECTORS, EvaluationResult, run_evaluation  # noqa: E402
@@ -102,26 +103,55 @@ def _summarize_cell(result: EvaluationResult) -> CellSummary:
     )
 
 
-def run_grid() -> list[CellSummary]:
-    if not is_tda_available():
+def run_grid(
+    *,
+    runtime_modes: tuple[str, ...] = RUNTIME_MODES,
+    hopfield_enabled: bool = False,
+) -> list[CellSummary]:
+    """Run the {profiles × runtime_modes} evaluation grid.
+
+    Args:
+        runtime_modes: Subset of runtime modes to run. Defaults to ("default",
+            "tda"). Pass ("default",) to skip the TDA cells when running from
+            an interpreter without the TDA backend (e.g. bench main venv).
+        hopfield_enabled: When True, sets ``VitalsConfig.hopfield_enabled``
+            on the base config so the v1.15.0+ Hopfield early-detection
+            informational marker fires on traces in the [3, 6] step window.
+            The marker is additive (it does not flip detector flags) by
+            design, so cell-level metrics should remain bit-identical to the
+            ``hopfield_enabled=False`` baseline. Requires ``onnxruntime`` to
+            be importable; the agent-vitals path silently no-ops the marker
+            if the backend is missing.
+    """
+    if "tda" in runtime_modes and not is_tda_available():
         raise RuntimeError(
-            "TDA backend not available in current interpreter — run from the "
-            "tda-experiment Python 3.12 venv (PYTHONPATH=<bench> "
-            "../tda-experiment/.venv/bin/python scripts/regen_cross_framework.py). "
-            "The bench main venv does not ship the TDA backend and would produce "
-            "incorrect tda-mode numbers."
+            "TDA backend not available in current interpreter but tda runtime "
+            "mode was requested — run from the tda-experiment Python 3.12 venv "
+            "(PYTHONPATH=<bench> ../tda-experiment/.venv/bin/python "
+            "scripts/regen_cross_framework.py) or pass --runtime-modes default "
+            "to skip the TDA cells."
         )
+
+    base_config: VitalsConfig | None = None
+    if hopfield_enabled:
+        base_config = VitalsConfig.from_yaml()
+        # VitalsConfig is a frozen dataclass; rely on dataclasses.replace.
+        from dataclasses import replace as _replace
+
+        base_config = _replace(base_config, hopfield_enabled=True)
 
     cells: list[CellSummary] = []
     for profile in PROFILES:
-        for mode in RUNTIME_MODES:
+        for mode in runtime_modes:
             profile_arg = None if profile == DEFAULT_PROFILE_LABEL else profile
             print(
-                f"[cross-framework] running profile={profile} runtime_mode={mode}",
+                f"[cross-framework] running profile={profile} runtime_mode={mode} "
+                f"hopfield_enabled={hopfield_enabled}",
                 flush=True,
             )
             result = run_evaluation(
                 corpus_version="v1",
+                config=base_config,
                 profile=profile_arg,
                 runtime_mode=mode,
             )

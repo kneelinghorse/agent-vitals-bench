@@ -19,7 +19,40 @@ on:
           - dspy
 
 jobs:
+  lint-and-test:
+    runs-on: ubuntu-latest
+    name: Lint & test
+
+    steps:
+      - name: Checkout bench repo
+        uses: actions/checkout@v4
+
+      - name: Checkout agent-vitals (sibling)
+        uses: actions/checkout@v4
+        with:
+          repository: ${{ github.repository_owner }}/agent-vitals
+          path: agent-vitals
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install dependencies
+        run: |
+          pip install -e "./agent-vitals[dev]"
+          pip install -e ".[dev]"
+
+      - name: Lint
+        run: make lint
+
+      - name: Test
+        run: make test
+
   gate-eval:
+    needs: lint-and-test
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
@@ -67,15 +100,19 @@ jobs:
           retention-days: 30
 
   gate-summary:
-    needs: gate-eval
+    needs: [lint-and-test, gate-eval]
     if: always()
     runs-on: ubuntu-latest
     name: Gate summary
     steps:
       - name: Check gate results
         run: |
+          if [ "${{ needs.lint-and-test.result }}" = "failure" ]; then
+            echo "::error::Lint or test failed. Fix before evaluating gates."
+            exit 1
+          fi
           if [ "${{ needs.gate-eval.result }}" = "failure" ]; then
             echo "::error::One or more gate evaluations failed. Check individual profile results."
             exit 1
           fi
-          echo "All gate evaluations passed."
+          echo "All lint, test, and gate evaluations passed."

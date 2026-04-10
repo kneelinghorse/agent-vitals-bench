@@ -120,7 +120,7 @@ agent-vitals-bench/
 - **Wilson CI lower bounds** are the publication metric — never use raw P/R for gate decisions
 - **Confidence tiers**: 1.0 = synthetic, 0.9 = clean elicited, 0.8 = ambiguous elicited, 0.7 = legacy
 - **Evaluator filters at min_confidence >= 0.8** by default
-- **Co-occurrence resolution**: mirrors agent-vitals `backtest.py` exactly — stuck suppression, burn_rate-to-runaway bridging, loop+stuck tiebreaker
+- **Co-occurrence resolution**: bench delegates to `agent_vitals.backtest._replay_trace` via `evaluator/runner.replay_trace()` and normalizes away the production-only `any` composite — co-occurrence rules (stuck suppression, burn_rate-to-runaway bridging, loop+stuck tiebreaker) are owned by agent-vitals, not duplicated here
 - **source_productive gate**: runaway/confab generators must maintain coverage>=0.5, sources>=10, findings>=5 during failure phase to avoid stuck cross-triggers
 
 ### Testing
@@ -144,13 +144,19 @@ agent-vitals-bench/
 
 HARD GATE thresholds: **P_lb >= 0.80, R_lb >= 0.75** (Wilson CI 95%), min 25 positives per detector.
 
-| Detector | Gate Status | Notes |
-|---|---|---|
-| loop | HARD GATE | Passing. Regression guard only. |
-| stuck | HARD GATE | Passing. Regression guard only. |
-| confabulation | HARD GATE | Tightest margin — R_lb=0.807 (20 FN / 153 pos) |
-| thrash | HARD GATE | Reached via elicited corpus |
-| runaway_cost | HARD GATE | Reached via elicited corpus |
+Numbers are from the post-replay-audit cross-framework evaluation on corpus v1 (default profile). Two runtime modes are tracked — see `reports/eval-cross-framework-v1.md` for full per-profile × per-mode detail.
+
+| Detector | default mode | tda mode | Notes |
+|---|---|---|---|
+| loop | HARD GATE | HARD GATE | Regression guard only. |
+| stuck | HARD GATE | HARD GATE | Regression guard only. |
+| confabulation | HARD GATE | HARD GATE | Tightest margin — R_lb=0.879 (26 FN / 308 pos) |
+| thrash | HARD GATE | HARD GATE | Reached via elicited corpus |
+| runaway_cost | **NO-GO** (P_lb=0.765) | HARD GATE (P_lb=0.920) | Default path has 52 FP; TDA reduces to 11 |
+
+**Runtime mode definitions:**
+- **default** (`tda_enabled=False`): pure handcrafted detection rules — the out-of-box product default.
+- **tda** (`tda_enabled=True`): handcrafted rules + TDA persistence-feature gradient-boosting override on runaway_cost only.
 
 ---
 

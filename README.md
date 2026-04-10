@@ -4,7 +4,7 @@
 
 Validation and benchmarking harness for the [agent-vitals](../agent-vitals/) detector package.
 
-**Status:** Active — composite gate PASS on the default profile; two known per-profile gaps under investigation (see below).
+**Status:** Active — composite gate PASS on all profiles in TDA-enhanced mode; default mode has a known runaway_cost precision gap (see below).
 
 ---
 
@@ -18,7 +18,14 @@ This repo is the evidence source for **Paper C: Agent Vitals Empirical Paper**.
 
 Gate thresholds: P_lb >= 0.80, R_lb >= 0.75 (Wilson CI 95%), min 25 positives.
 
-### Default profile — composite PASS
+All numbers below are from the post-replay-audit cross-framework evaluation on corpus v1 (`min_confidence >= 0.80`). Two runtime modes are evaluated:
+
+- **default** (`tda_enabled=False`): pure handcrafted detection rules — the out-of-box product default.
+- **tda** (`tda_enabled=True`): handcrafted rules with TDA persistence-feature gradient-boosting override on runaway_cost.
+
+Source: `reports/eval-cross-framework-v1.{md,json}`
+
+### Default profile, default runtime mode — composite FAIL
 
 | Detector | P_lb | R_lb | Positives | Gate |
 |----------|------|------|-----------|------|
@@ -26,23 +33,35 @@ Gate thresholds: P_lb >= 0.80, R_lb >= 0.75 (Wilson CI 95%), min 25 positives.
 | stuck | 0.930 | 0.973 | 138 | PASS |
 | confabulation | 0.965 | 0.879 | 308 | PASS |
 | thrash | 0.986 | 0.986 | 261 | PASS |
-| runaway_cost | 0.847 | 0.984 | 229 | PASS |
+| runaway_cost | 0.765 | 0.984 | 229 | **NO-GO** |
+
+### Default profile, TDA runtime mode — composite PASS
+
+| Detector | P_lb | R_lb | Positives | Gate |
+|----------|------|------|-----------|------|
+| loop | 0.982 | 0.982 | 212 | PASS |
+| stuck | 0.930 | 0.973 | 138 | PASS |
+| confabulation | 0.965 | 0.879 | 308 | PASS |
+| thrash | 0.986 | 0.986 | 261 | PASS |
+| runaway_cost | 0.920 | 0.984 | 229 | PASS |
 
 ### Per-framework profile composite
 
-| Profile | loop | stuck | confab | thrash | runaway | Composite |
-|---------|------|-------|--------|--------|---------|-----------|
-| default | PASS | PASS | PASS | PASS | PASS | **PASS** |
-| langgraph | PASS | PASS | PASS | PASS | PASS | **PASS** |
-| crewai | PASS | **NO-GO** (P_lb=0.702) | PASS | PASS | PASS | **FAIL** |
-| dspy | PASS | EXCLUDED | PASS | PASS | **NO-GO** (P_lb=0.793) | **FAIL** |
+| Profile | Mode | loop | stuck | confab | thrash | runaway | Composite |
+|---------|------|------|-------|--------|--------|---------|-----------|
+| default | default | PASS | PASS | PASS | PASS | **NO-GO** (P_lb=0.765) | **FAIL** |
+| default | tda | PASS | PASS | PASS | PASS | PASS | **PASS** |
+| langgraph | default | PASS | PASS | PASS | PASS | **NO-GO** (P_lb=0.744) | **FAIL** |
+| langgraph | tda | PASS | PASS | PASS | PASS | PASS | **PASS** |
+| crewai | default | PASS | PASS | PASS | PASS | **NO-GO** (P_lb=0.744) | **FAIL** |
+| crewai | tda | PASS | PASS | PASS | PASS | PASS | **PASS** |
+| dspy | default | PASS | EXCLUDED | PASS | PASS | **NO-GO** (P_lb=0.793) | **FAIL** |
+| dspy | tda | PASS | EXCLUDED | PASS | PASS | PASS | **PASS** |
 
-Two known per-profile gaps, both pre-existing in the corpus prior to the v1.13.x release validation cycle:
+**Key finding:** In default mode, runaway_cost fails the precision gate on every profile (P_lb range 0.744–0.793 vs threshold 0.80). The handcrafted runaway_cost path produces 38–52 false positives per profile. With TDA enabled, false positives drop to 11–18 and all profiles clear the gate.
 
-- **crewai stuck**: 35 false positives over 120 true positives (P_lb=0.702 vs target 0.80). crewai's profile only overrides `burn_rate_multiplier` and `token_scale_factor` — it does not touch any stuck thresholds — so the FP rate is structurally driven by the corpus subset rather than threshold drift. ~5 fewer FPs would clear the gate.
-- **dspy runaway_cost**: 38 false positives over 205 true positives (P_lb=0.793 vs target 0.80). dspy disables stuck entirely (`workflow_stuck_enabled=none`), which removes the stuck-suppresses-runaway co-occurrence path in evaluator/runner.py. Every burn_rate_anomaly that would normally be suppressed by a co-firing stuck becomes a runaway FP under dspy. ~6 fewer FPs would clear the gate.
-
-Both issues are tracked for investigation; the v1.13.x production stack is solid for default-config users (the dominant deployment) and for langgraph users.
+- **dspy stuck EXCLUDED**: dspy disables stuck entirely (`workflow_stuck_enabled=none`), so stuck is excluded from the composite gate — this is an intentional framework-specific integration constraint, not a detector failure.
+- **Upstream coordination**: s18-m04 tracks the request for agent-vitals to harden the default-mode runaway_cost path so it can reach HARD GATE without requiring TDA, or to explicitly re-bless TDA as a required production component.
 
 ## Repository Layout
 
