@@ -3,7 +3,7 @@
   "profile": "default",
   "runtime_mode": "default",
   "trace_count": 1494,
-  "generated_at": "2026-04-10 19:14 UTC",
+  "generated_at": "2026-04-10 22:20 UTC",
   "excluded_detectors": [],
   "detectors": {
     "loop": {

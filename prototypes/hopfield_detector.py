@@ -594,13 +594,30 @@ def train_hopfield_models(
         tn, fp = int(cm[0, 0]), int(cm[0, 1])
         fn, tp = int(cm[1, 0]), int(cm[1, 1])
 
-        # Train final artifact on full dataset
+        # Train final artifact with best-checkpoint tracking (s21-m01).
+        # Hold out 15% stratified for validation to select the best epoch.
+        # Pre-fix: last-epoch state was saved unconditionally, which degraded
+        # p7 models whose val F1 peaked mid-training and decayed in late epochs.
         final_mean, final_std = _compute_normalization(traces)
         final_norm = _normalize(traces, final_mean, final_std)
 
         TraceDataset = _build_dataset_class()
-        final_ds = TraceDataset(final_norm, y, cfg.max_steps, prefix_len=prefix_len)
-        final_loader = backend["DataLoader"](final_ds, batch_size=cfg.batch_size, shuffle=True)
+        val_fraction = 0.15
+        val_fold = StratifiedKFold(
+            n_splits=max(2, round(1.0 / val_fraction)),
+            shuffle=True,
+            random_state=cfg.random_state,
+        )
+        train_idx, val_idx = next(val_fold.split(final_norm, y))
+        train_norm = [final_norm[i] for i in train_idx]
+        train_y = y[train_idx]
+        val_norm = [final_norm[i] for i in val_idx]
+        val_y = y[val_idx]
+
+        train_ds = TraceDataset(train_norm, train_y, cfg.max_steps, prefix_len=prefix_len)
+        train_loader = backend["DataLoader"](train_ds, batch_size=cfg.batch_size, shuffle=True)
+        val_ds = TraceDataset(val_norm, val_y, cfg.max_steps, prefix_len=prefix_len)
+        val_loader_final = backend["DataLoader"](val_ds, batch_size=cfg.batch_size, shuffle=False)
 
         final_model = Classifier(
             n_features=N_FEATURES,
@@ -617,9 +634,14 @@ def train_hopfield_models(
         )
         scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(optimizer, T_max=cfg.epochs)
         F_mod = backend["F"]
+
+        import copy
+
+        best_val_f1 = -1.0
+        best_state_dict = copy.deepcopy(final_model.state_dict())
         for _epoch in range(cfg.epochs):
             final_model.train()
-            for x, lengths, y_batch in final_loader:
+            for x, lengths, y_batch in train_loader:
                 x = x.to(device)
                 lengths = lengths.to(device)
                 y_batch = y_batch.to(device)
@@ -631,13 +653,28 @@ def train_hopfield_models(
                 optimizer.step()
             scheduler.step()
 
+            # Evaluate on held-out validation split
+            final_model.eval()
+            val_preds_list: list[Any] = []
+            with torch.no_grad():
+                for x, lengths, _yb in val_loader_final:
+                    x = x.to(device)
+                    lengths = lengths.to(device)
+                    logits = final_model(x, lengths)
+                    preds = (torch.sigmoid(logits) > 0.5).float().cpu().numpy()
+                    val_preds_list.append(preds)
+            epoch_val_f1 = float(f1_score(val_y, np.concatenate(val_preds_list), zero_division=0))
+            if epoch_val_f1 > best_val_f1:
+                best_val_f1 = epoch_val_f1
+                best_state_dict = copy.deepcopy(final_model.state_dict())
+
         artifact_path = output_dir / f"{detector}{artifact_suffix}.pt"
         torch.save(
             {
                 "detector": detector,
                 "mode": mode,
                 "prefix_len": prefix_len,
-                "state_dict": final_model.state_dict(),
+                "state_dict": best_state_dict,
                 "mean": final_mean.tolist(),
                 "std": final_std.tolist(),
                 "config": _config_to_dict(cfg),

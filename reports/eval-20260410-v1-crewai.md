@@ -5,7 +5,7 @@
 **Runtime Mode:** default
 **Traces evaluated:** 1334
 **Detectors:** loop, stuck, confabulation, thrash, runaway_cost
-**Generated:** 2026-04-10 19:14 UTC
+**Generated:** 2026-04-10 22:20 UTC
 
 ## Gate Results
 
