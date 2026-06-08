@@ -25,11 +25,11 @@ test:
 	pytest tests/ -v --tb=short
 
 lint:
-	ruff check generators/ evaluator/ elicitation/ prototypes/ tests/
-	ruff format --check generators/ evaluator/ elicitation/ prototypes/ tests/
+	ruff check generators/ evaluator/ elicitation/ prototypes/ adapters/ tests/
+	ruff format --check generators/ evaluator/ elicitation/ prototypes/ adapters/ tests/
 
 typecheck:
-	mypy generators/ evaluator/ elicitation/ prototypes/
+	mypy generators/ evaluator/ elicitation/ prototypes/ adapters/
 
 elicit-cross-model:
 	python scripts/elicit_cross_model.py \

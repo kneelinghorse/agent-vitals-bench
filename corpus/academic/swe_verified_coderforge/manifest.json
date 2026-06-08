@@ -1,0 +1,38 @@
+{
+  "family": "swe_verified_coderforge",
+  "upstream_sources": {
+    "issues": {
+      "dataset": "princeton-nlp/SWE-bench_Verified",
+      "split": "test",
+      "license": "public (no explicit license field on the trajectory dataset itself)"
+    },
+    "trajectories": {
+      "dataset": "togethercomputer/CoderForge-Preview-32B-SWE-Bench-Verified-Evaluation-trajectories",
+      "config": "trajectory",
+      "split": "train",
+      "license_status": "unresolved — no explicit license field exposed via dataset API"
+    }
+  },
+  "staged_by": "scripts/dump_swe_verified_coderforge.py (HF_HUB_OFFLINE=1 via metrics pivot_probe_env)",
+  "staged_at": "2026-04-21",
+  "file": "trajectories.jsonl",
+  "rows": 500,
+  "size_bytes": 129545945,
+  "sha256": "b2e15398da4a07ecde86f8e02f24ec9c09c32107989a2d1386e4dfba7ff70799",
+  "trace_label_counts": {"incident": 203, "calm": 297},
+  "raw_reward_dist": {"0.0": 203, "1.0": 297},
+  "raw_record_schema": {
+    "trajectory_id": "stable id or fallback '<instance_id>:run<run_id>'",
+    "instance_id": "SWE-bench Verified instance id (joined against princeton-nlp/SWE-bench_Verified test split)",
+    "run_id": "CoderForge run index",
+    "reward": "binary pass/fail of the evaluation harness: 1.0 = all tests passed, 0.0 = failed",
+    "messages": "OpenAI-style chat transcript produced by CoderForge-Preview-32B",
+    "output_patch": "unified-diff patch emitted by the agent at end of trajectory",
+    "verified_issue": "joined metadata from SWE-bench_Verified (problem_statement, hints_text, repo, base_commit, test_patch, patch)"
+  },
+  "label_semantics": {
+    "reward_binarization_convention": "reward < 1.0 -> trace_incident=1 (matches metrics TR-20260418-001 convention: failure is the positive class for detection)"
+  },
+  "per_detector_mapping": "NONE. CoderForge reward is run-level pass/fail only; it does not distinguish which behavioral-health category caused the failure. Use run-level flag-frequency analysis, not per-detector confusion matrix.",
+  "scope_note": "The metrics TR-20260418-001 feature table has 550 swe_bench rows because it concatenates 500 CoderForge trajectories with 50 pre-pivot SWE-smith-trajectory rows from TR-20260417-001. Sprint 22 scope is CoderForge-only, so we stage 500 rows, not 550."
+}

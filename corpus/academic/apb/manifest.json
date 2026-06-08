@@ -1,0 +1,58 @@
+{
+  "family_group": "apb",
+  "upstream_source": {
+    "repo": "https://github.com/RUCBM/AgentProcessBench.git",
+    "hf_card_license": "MIT",
+    "github_license_file": "absent",
+    "license_status": "ambiguous — proceeding under user override per metrics TR-20260418-001"
+  },
+  "staged_from": "/Users/mac-studio/projects/unified-system-state/metrics_and_protocols/tmp/TR-20260418-001/AgentProcessBench/data/AgentProcessBench/",
+  "staged_at": "2026-04-21",
+  "families": {
+    "bfcl": {
+      "file": "bfcl.jsonl",
+      "rows": 250,
+      "sha256": "6aee0b71eff7feb872c6b54d962f8831b56f7bebf770cba9cb657f219afb6fe5",
+      "size_bytes": 15010475,
+      "trace_label_counts": {"incident": 184, "calm": 66},
+      "raw_final_label_dist": {"-1": 152, "0": 7, "1": 91}
+    },
+    "gaia_dev": {
+      "file": "gaia_dev.jsonl",
+      "rows": 250,
+      "sha256": "f7b75c668fc1e6ad943e8f6d93a21a9a8f5f076841e1230e1ed2fc6d05ce8192",
+      "size_bytes": 11957593,
+      "trace_label_counts": {"incident": 183, "calm": 67},
+      "raw_final_label_dist": {"-1": 163, "0": 4, "1": 83}
+    },
+    "hotpotqa": {
+      "file": "hotpotqa.jsonl",
+      "rows": 250,
+      "sha256": "160eef2ded872d8dc6ddf4cee5752295fda691b6a9e99b5bafc2d484e6309c57",
+      "size_bytes": 3174572,
+      "trace_label_counts": {"incident": 104, "calm": 146},
+      "raw_final_label_dist": {"-1": 87, "0": 0, "1": 163}
+    },
+    "tau2": {
+      "file": "tau2.jsonl",
+      "rows": 250,
+      "sha256": "6f22818ff88822512767fe735f56e7b78bed4b9aaf26959144feb92f127e1e95",
+      "size_bytes": 9960563,
+      "trace_label_counts": {"incident": 143, "calm": 107},
+      "raw_final_label_dist": {"-1": 114, "0": 13, "1": 123}
+    }
+  },
+  "raw_record_schema": {
+    "question": "user task prompt (string)",
+    "data_source": "e.g. bfcl_multi_turn_base",
+    "ground_truth": "task-specific reference answer (array / string)",
+    "messages": "OpenAI-style chat transcript: [{role: system|user|assistant|tool, content, tool_calls?}, ...]",
+    "step_labels": "dict: assistant_message_index -> ternary {-1, 0, 1}",
+    "final_label": "trace-level ternary {-1, 0, 1}"
+  },
+  "label_semantics": {
+    "step_label_ternary": {"-1": "process-quality incident", "0": "neutral", "1": "positive step"},
+    "trace_label_binarization_convention": "any step_label < 0 -> trace_incident=1 (per metrics TR-20260418-001 any-negative-step rule)"
+  },
+  "per_detector_mapping": "NONE. APB's process-incident label is generic; it does not distinguish loop vs stuck vs confabulation vs thrash vs runaway_cost. Use run-level flag-frequency analysis, not per-detector confusion matrix."
+}

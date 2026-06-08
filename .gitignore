@@ -14,3 +14,12 @@ htmlcov/
 .env
 .venv/
 venv/
+
+# macOS
+.DS_Store
+
+# Academic corpus raw trace data (162 MB; the 124 MB SWE file exceeds GitHub's
+# 100 MB per-file limit). Regenerable: APB from the metrics_and_protocols clone,
+# SWE via scripts/dump_swe_verified_coderforge.py against the HF cache. The
+# manifests (SHA-256 + provenance + row counts) ARE committed; raw .jsonl stays local.
+corpus/academic/**/*.jsonl
