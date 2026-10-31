@@ -2,6 +2,8 @@
 
 ![Gate Evaluation](https://github.com/kneelinghorse/agent-vitals-bench/actions/workflows/gate-eval.yml/badge.svg)
 
+> **Archived, 31 October 2026.** This harness evaluated Agent Vitals on a development corpus whose loop and stuck positives were synthetic, generated around the detectors' own thresholds. Its scores show that the detectors match their specifications. They do not show field performance. Correction and post-mortem: https://doi.org/10.5281/zenodo.23745098
+
 Validation and benchmarking harness for the [agent-vitals](../agent-vitals/) detector package.
 
 **Status:** Active — composite gate PASS on all profiles in TDA-enhanced mode; default mode has a known runaway_cost precision gap (see below).
